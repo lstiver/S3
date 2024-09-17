@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/S3C++.dir/main.cpp.o CMakeFiles/S3C++.dir/translate/translate.cpp.o CMakeFiles/S3C++.dir/sort/sort.cpp.o CMakeFiles/S3C++.dir/queryMethod/query.cpp.o CMakeFiles/S3C++.dir/algorithm/merge.cpp.o -o S3C++  /usr/lib64/libpython3.9.so leveldb/libleveldb.a -lpthread -lm -ldl 
