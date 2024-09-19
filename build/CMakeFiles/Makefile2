@@ -289,8 +289,8 @@ leveldb/CMakeFiles/leveldbutil.dir/clean:
 # Target rules for target leveldb/CMakeFiles/leveldb_tests.dir
 
 # All Build rule for target.
-leveldb/CMakeFiles/leveldb_tests.dir/all: leveldb/CMakeFiles/leveldb.dir/all
 leveldb/CMakeFiles/leveldb_tests.dir/all: leveldb/third_party/googletest/googlemock/CMakeFiles/gmock.dir/all
+leveldb/CMakeFiles/leveldb_tests.dir/all: leveldb/CMakeFiles/leveldb.dir/all
 leveldb/CMakeFiles/leveldb_tests.dir/all: leveldb/third_party/googletest/googletest/CMakeFiles/gtest.dir/all
 leveldb/CMakeFiles/leveldb_tests.dir/all: leveldb/third_party/googletest/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f leveldb/CMakeFiles/leveldb_tests.dir/build.make leveldb/CMakeFiles/leveldb_tests.dir/depend
@@ -318,8 +318,8 @@ leveldb/CMakeFiles/leveldb_tests.dir/clean:
 # Target rules for target leveldb/CMakeFiles/c_test.dir
 
 # All Build rule for target.
-leveldb/CMakeFiles/c_test.dir/all: leveldb/CMakeFiles/leveldb.dir/all
 leveldb/CMakeFiles/c_test.dir/all: leveldb/third_party/googletest/googlemock/CMakeFiles/gmock.dir/all
+leveldb/CMakeFiles/c_test.dir/all: leveldb/CMakeFiles/leveldb.dir/all
 leveldb/CMakeFiles/c_test.dir/all: leveldb/third_party/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f leveldb/CMakeFiles/c_test.dir/build.make leveldb/CMakeFiles/c_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f leveldb/CMakeFiles/c_test.dir/build.make leveldb/CMakeFiles/c_test.dir/build
@@ -346,8 +346,8 @@ leveldb/CMakeFiles/c_test.dir/clean:
 # Target rules for target leveldb/CMakeFiles/env_posix_test.dir
 
 # All Build rule for target.
-leveldb/CMakeFiles/env_posix_test.dir/all: leveldb/CMakeFiles/leveldb.dir/all
 leveldb/CMakeFiles/env_posix_test.dir/all: leveldb/third_party/googletest/googlemock/CMakeFiles/gmock.dir/all
+leveldb/CMakeFiles/env_posix_test.dir/all: leveldb/CMakeFiles/leveldb.dir/all
 leveldb/CMakeFiles/env_posix_test.dir/all: leveldb/third_party/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f leveldb/CMakeFiles/env_posix_test.dir/build.make leveldb/CMakeFiles/env_posix_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f leveldb/CMakeFiles/env_posix_test.dir/build.make leveldb/CMakeFiles/env_posix_test.dir/build
@@ -374,8 +374,8 @@ leveldb/CMakeFiles/env_posix_test.dir/clean:
 # Target rules for target leveldb/CMakeFiles/db_bench.dir
 
 # All Build rule for target.
-leveldb/CMakeFiles/db_bench.dir/all: leveldb/CMakeFiles/leveldb.dir/all
 leveldb/CMakeFiles/db_bench.dir/all: leveldb/third_party/googletest/googlemock/CMakeFiles/gmock.dir/all
+leveldb/CMakeFiles/db_bench.dir/all: leveldb/CMakeFiles/leveldb.dir/all
 leveldb/CMakeFiles/db_bench.dir/all: leveldb/third_party/googletest/googletest/CMakeFiles/gtest.dir/all
 leveldb/CMakeFiles/db_bench.dir/all: leveldb/third_party/benchmark/src/CMakeFiles/benchmark.dir/all
 	$(MAKE) $(MAKESILENT) -f leveldb/CMakeFiles/db_bench.dir/build.make leveldb/CMakeFiles/db_bench.dir/depend

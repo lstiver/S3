@@ -55,6 +55,7 @@ void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap,ist
     while (getline(input, line)) {
         istringstream lineStream(line);
         vector<int> row;
+        row.reserve(2); //预分配空间，每次必然是两列
         pair<int, int> key(-1, -1);
 
         string_view sv(line);
@@ -80,21 +81,10 @@ void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap,ist
             row.emplace_back(value);
         }
         
-        dataMap[key].emplace_back(move(row));
+        auto& rowsForKey = dataMap[key]; 
+        rowsForKey.emplace_back(move(row));
     }
     
-    // cout<<"data:"<<endl;
-    // for (const auto& entry : dataMap) {
-    //     cout << "Key: (" << entry.first.first << ", " << entry.first.second << ")\n";
-    //     for (const auto& row : entry.second) {
-    //         cout << "  Row: ";
-    //         for (int val : row) {
-    //             cout << val << " ";
-    //         }
-    //         cout << endl;
-    //     }
-    // }
-    // return dataMap;
     high_resolution_clock::time_point endTime = high_resolution_clock::now();
     milliseconds overallTime = chrono::duration_cast<milliseconds>(endTime - beginTime);
     cout<<"从char*[]->hash_map耗时："<<overallTime.count()<<"ms"<<endl;
@@ -153,7 +143,6 @@ flat_hash_map<pair<int,int>, vector<vector<int>>> merge(flat_hash_map<pair<int,i
     cout<<"transformdata耗时："<<timeInterval.count()<<"ms"<<endl;
     flat_hash_map<pair<int,int>, vector<vector<int>>> result; //merge结果 
     flat_hash_map<pair<int,int>, vector<vector<int>>> dataB;
-    processData(dataB,input,keyColumnIndex);
     BloomFilter<100000> bloomFilter;
 
     // 将数据集A中的所有key添加到布隆过滤器中

@@ -9,7 +9,6 @@
 #include <Python.h>
 #include <parallel_hashmap/phmap.h>
 #include <leveldb/db.h>
-#include <Eigen/Dense>
 #include "translate.h"
 #include "sort.h"
 #include "query.h"
@@ -19,9 +18,10 @@
 using chrono::high_resolution_clock;
 using chrono::milliseconds;
 using namespace std;
-using namespace Eigen;
 using phmap::flat_hash_map;
-flat_hash_map<string,int> tag;
+static flat_hash_map<string,int> tag;
+// 全局静态线程池，初始化时指定线程数
+static ThreadPool pool(4);  // 使用4个线程
 
 class MyObject {
 public:
