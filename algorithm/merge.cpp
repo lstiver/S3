@@ -6,6 +6,7 @@
 #include <vector>
 #include <thread>
 #include <mutex>
+#include <chrono>
 #include <shared_mutex>
 #include <parallel_hashmap/phmap.h>
 
@@ -48,6 +49,7 @@ inline int fastAtoi(const std::string& str) {
 
 // 将每行数据解析为整数，并存储在flat_hash_map（key,vector<int>）中(因为对于连续读取vector效率比list高)
 void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap,istringstream& input, const vector<int>& keyColumnIndex) {
+    high_resolution_clock::time_point beginTime = high_resolution_clock::now();
     string line;
 
     while (getline(input, line)) {
@@ -93,6 +95,9 @@ void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap,ist
     //     }
     // }
     // return dataMap;
+    high_resolution_clock::time_point endTime = high_resolution_clock::now();
+    milliseconds overallTime = chrono::duration_cast<milliseconds>(endTime - beginTime);
+    cout<<"从char*[]->hash_map耗时："<<overallTime.count()<<"ms"<<endl;
 }
 
 
@@ -141,19 +146,17 @@ void transformMap(flat_hash_map<pair<int, int>, vector<vector<int>>>& originalMa
 flat_hash_map<pair<int,int>, vector<vector<int>>> merge(flat_hash_map<pair<int,int>, vector<vector<int>>>& dataA,istringstream& input,const vector<int>& keyColumnIndex){
     int start = (keyColumnIndex[0] == -1) ? 0 : 1;
     int end = (keyColumnIndex[1] == -1) ? 0 : 1;
-    transformMap(dataA,keyColumnIndex);
-    // cout<<start<<" "<<end<<endl;
-    // cout<<dataA.size()<<endl;
     high_resolution_clock::time_point beginTime = high_resolution_clock::now();
-    flat_hash_map<pair<int,int>, vector<vector<int>>> result; //merge结果 
-    flat_hash_map<pair<int,int>, vector<vector<int>>> dataB;
-    processData(dataB,input,keyColumnIndex);
+    transformMap(dataA,keyColumnIndex);
     high_resolution_clock::time_point endTime = high_resolution_clock::now();
     milliseconds timeInterval = std::chrono::duration_cast<milliseconds>(endTime - beginTime);
     cout<<"transformdata耗时："<<timeInterval.count()<<"ms"<<endl;
+    flat_hash_map<pair<int,int>, vector<vector<int>>> result; //merge结果 
+    flat_hash_map<pair<int,int>, vector<vector<int>>> dataB;
+    processData(dataB,input,keyColumnIndex);
     BloomFilter<100000> bloomFilter;
 
-    // 将数据集B中的所有key添加到布隆过滤器中
+    // 将数据集A中的所有key添加到布隆过滤器中
     for (const auto& data : dataA) {
         bloomFilter.Set(data.first);
     }
@@ -170,9 +173,7 @@ flat_hash_map<pair<int,int>, vector<vector<int>>> merge(flat_hash_map<pair<int,i
                 vector<vector<int>> &vecA = dataA[key];
                 // 如果在 dataB 中找到匹配的键，合并它们的向量
                 for (const auto &a : vecA) {
-                    // cout<<"2"<<endl;
                     for (const auto &b : vecB) {
-                        // cout<<"3"<<endl;
                         // cout << "Size of A: " << a.size() << endl;
                         // cout << "Size of B: " << b.size() << endl;
                         vector<int> merged(a);
