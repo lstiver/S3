@@ -1,18 +1,4 @@
 #include "merge.h"
-#include "BloomFilter.h"
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <vector>
-#include <thread>
-#include <mutex>
-#include <chrono>
-#include <shared_mutex>
-#include <parallel_hashmap/phmap.h>
-
-using namespace std;
-using phmap::flat_hash_map;
-extern flat_hash_map<string,int>tag;
 
 // 将字符串按指定字符分割为多个字符串
 vector<string> split(const string& str, char delimiter) {
@@ -27,7 +13,7 @@ vector<string> split(const string& str, char delimiter) {
     return tokens;
 }
 
-inline int fastAtoi(const std::string& str) {
+inline int fastAtoi(const string& str) {
     int num = 0;
     const char* p = str.c_str();  // 使用指针代替索引
     bool isNegative = false;
@@ -46,8 +32,7 @@ inline int fastAtoi(const std::string& str) {
     return isNegative ? -num : num;
 }
 
-
-// 将每行数据解析为整数，并存储在flat_hash_map（key,vector<int>）中(因为对于连续读取vector效率比list高)
+// 将每行数据解析为整数，并存储在flat_hash_map（key,vector<int>）中(因为对于连续读取vector效率比list高)，需要用到额外的内存和缓存
 void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap,istringstream& input, const vector<int>& keyColumnIndex) {
     high_resolution_clock::time_point beginTime = high_resolution_clock::now();
     string line;
@@ -90,6 +75,53 @@ void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap,ist
     cout<<"从char*[]->hash_map耗时："<<overallTime.count()<<"ms"<<endl;
 }
 
+// 将每行数据解析为整数，并存储在flat_hash_map（key,vector<int>）中，这里直接处理char*,更节省内存，更高效
+void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap, const char* input, const vector<int>& keyColumnIndex) {
+    high_resolution_clock::time_point beginTime = high_resolution_clock::now();
+
+    const char* current = input;
+    const char* lineEnd = nullptr;
+
+    while ((lineEnd = strchr(current, '\n')) != nullptr) {
+        string_view line(current, lineEnd - current);
+        vector<int> row;
+        row.reserve(2);  // 预分配空间
+        pair<int, int> key(-1, -1);
+
+        size_t start = 0, end = 0;
+        int i = 0;
+
+        while ((end = line.find(',', start)) != string_view::npos) {
+            int value = fastAtoi(string(line.substr(start, end - start)));
+            start = end + 1;
+            if (i == keyColumnIndex[2]) {
+                key.first = value;
+            }
+            row.emplace_back(value);
+            ++i;
+        }
+
+        // 第二列处理
+        if (start < line.size()) {
+            int value = fastAtoi(string(line.substr(start)));
+            if (i == keyColumnIndex[3]) {
+                key.second = value;
+            }
+            row.emplace_back(value);
+        }
+
+        auto& rowsForKey = dataMap[key];
+        rowsForKey.emplace_back(move(row));
+
+        // 移动到下一行
+        current = lineEnd + 1;
+    }
+
+    high_resolution_clock::time_point endTime = high_resolution_clock::now();
+    milliseconds overallTime = chrono::duration_cast<milliseconds>(endTime - beginTime);
+    cout<<"从char*[]->hash_map耗时："<<overallTime.count()<<"ms"<<endl;
+}
+
 
 //修改索引键值对
 void transformMap(flat_hash_map<pair<int, int>, vector<vector<int>>>& originalMap, const vector<int>& columnIndex) {
@@ -119,31 +151,27 @@ void transformMap(flat_hash_map<pair<int, int>, vector<vector<int>>>& originalMa
     
     // 将新的键值对插入到 originalMap 中
     originalMap = std::move(newMap);
-    // cout<<"transFormMap:"<<endl;
-    //  for (const auto& entry : originalMap) {
-    //     cout << "Key: (" << entry.first.first << ", " << entry.first.second << ")\n";
-    //     for (const auto& row : entry.second) {
-    //         cout << "  Row: ";
-    //         for (int val : row) {
-    //             cout << val << " ";
-    //         }
-    //         cout << endl;
-    //     }
-    // }
 }
 
 // bloomfilter过滤后merge
-flat_hash_map<pair<int,int>, vector<vector<int>>> merge(flat_hash_map<pair<int,int>, vector<vector<int>>>& dataA,istringstream& input,const vector<int>& keyColumnIndex){
-    int start = (keyColumnIndex[0] == -1) ? 0 : 1;
-    int end = (keyColumnIndex[1] == -1) ? 0 : 1;
+flat_hash_map<pair<int,int>, vector<vector<int>>> merge(flat_hash_map<pair<int,int>, vector<vector<int>>>& dataA, const char* input, const vector<int>& keyColumnIndex){
+    bool col1 = (keyColumnIndex[0] == -1) ? true : false;
+    bool col2 = (keyColumnIndex[1] == -1) ? true : false;
     high_resolution_clock::time_point beginTime = high_resolution_clock::now();
     transformMap(dataA,keyColumnIndex);
     high_resolution_clock::time_point endTime = high_resolution_clock::now();
     milliseconds timeInterval = std::chrono::duration_cast<milliseconds>(endTime - beginTime);
     cout<<"transformdata耗时："<<timeInterval.count()<<"ms"<<endl;
     flat_hash_map<pair<int,int>, vector<vector<int>>> result; //merge结果 
-    flat_hash_map<pair<int,int>, vector<vector<int>>> dataB;
+    // flat_hash_map<pair<int,int>, vector<vector<int>>> dataB;
+    // processData(dataB,input,keyColumnIndex);
     BloomFilter<100000> bloomFilter;
+    const char* current = input;
+    const char* lineEnd = nullptr;
+    pair<int,int>keyB(-1,-1);
+    vector<int> row;
+    row.reserve(2);  // 预分配空间
+    int value1,value2;
 
     // 将数据集A中的所有key添加到布隆过滤器中
     for (const auto& data : dataA) {
@@ -151,33 +179,53 @@ flat_hash_map<pair<int,int>, vector<vector<int>>> merge(flat_hash_map<pair<int,i
     }
     high_resolution_clock::time_point bloomfilterTime = high_resolution_clock::now();
     // 使用布隆过滤器过滤数据集A中的key并合并
-    for (auto it = dataB.begin(); it != dataB.end(); ) {
-        // cout<<"1"<<endl;
-        auto key = it->first;
-        if (!bloomFilter.Test(key)) {
-            it = dataB.erase(it);  // 如果key不在布隆过滤器中，删除该元素
-        } else {
-            vector<vector<int>> &vecB = it->second;
-            if (dataA.find(key) != dataA.end()){
-                vector<vector<int>> &vecA = dataA[key];
-                // 如果在 dataB 中找到匹配的键，合并它们的向量
-                for (const auto &a : vecA) {
-                    for (const auto &b : vecB) {
-                        // cout << "Size of A: " << a.size() << endl;
-                        // cout << "Size of B: " << b.size() << endl;
-                        vector<int> merged(a);
-                        merged.insert(merged.end(), b.begin() + start, b.end()-end); // 合并 B 中去掉重复部分的向量
-                        // cout << "Size of merged: " << merged.size() << endl;
-                        result[key].push_back(merged); // 插入结果
-                    }
-                }
-            }
-            ++it;  // 继续检查下一个元素 
+    
+    while ((lineEnd = strchr(current, '\n')) != nullptr) {
+        string_view line(current, lineEnd - current);
+        size_t start = 0, end = 0;
+
+        while ((end = line.find(',', start)) != string_view::npos) {
+            value1 = fastAtoi(string(line.substr(start, end - start)));
+            start = end + 1;
+            if (0 == keyColumnIndex[2]) {
+                keyB.first = value1;
+            }    
         }
+
+        // 第二列处理
+        if (start < line.size()) {
+            value2 = fastAtoi(string(line.substr(start)));
+            if (1 == keyColumnIndex[3]) {
+                keyB.second = value2;
+            }
+        }
+        if (!bloomFilter.Test(keyB) && dataA.find(keyB) == dataA.end()) {
+            current = lineEnd + 1;
+            continue;  // 如果key不在布隆过滤器中
+        } 
+        vector<vector<int>> &vecA = dataA[keyB];
+        // 如果在 dataA 中找到匹配的键，合并它们的向量
+        for (const auto &a : vecA) {
+            vector<int>merged(a);
+            if(col1){
+                merged.emplace_back(value1);
+            }else if(col2){
+                merged.emplace_back(value2);
+            }
+            // 合并 B 中去掉重复部分的向量
+            // cout << "Size of merged: " << a.size() << endl;
+            auto& rowsForKey = result[keyB];
+            rowsForKey.emplace_back(move(merged)); // 插入结果
+        }
+
+        // 移动到下一行
+        current = lineEnd + 1;
     }
+   
     high_resolution_clock::time_point bloomfilterend = high_resolution_clock::now();
     milliseconds bloomfilterInterval = std::chrono::duration_cast<milliseconds>(bloomfilterend - bloomfilterTime);
     cout<<"bloomfilterend+笛卡尔积耗时："<<bloomfilterInterval.count()<<"ms"<<endl;
+
     return result;
 }
 
@@ -195,7 +243,6 @@ void writtein(string filepath,const flat_hash_map<pair<int,int>, vector<vector<i
         const vector<vector<int>>& vec = entry.second;  // 忽略键，只使用值
         // 将 vector<vector<int>> 写入文件
         for (const auto& innerVec : vec) {
-           
             for (int num : innerVec) {
                 outFile << num << " ";  // 写入每个元素，用空格分隔
             }

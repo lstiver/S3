@@ -38,7 +38,7 @@ int main() {
   {
     cout << "python translator initialized." << endl;
   }
-  const string query_name = "c2";
+  const string query_name = "S3";
   const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
   const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
   const string bucket = "watdiv100mconvert";
@@ -119,7 +119,7 @@ int main() {
             high_resolution_clock::time_point begin = high_resolution_clock::now();
             keyName = query_result[index][1]+".csv"; //排序后这里要修改
             cout<<"第"<<index+1<<"个查询"<<keyName<<endl;
-            // cout<<col[0]<<" "<<col[1]<<" "<<col[2]<<" "<<col[3]<<endl;
+            cout<<col[0]<<" "<<col[1]<<" "<<col[2]<<" "<<col[3]<<endl;
             data = getObject(bucket,keyName);
             high_resolution_clock::time_point endTime = high_resolution_clock::now();
             milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - begin);
@@ -127,20 +127,19 @@ int main() {
 
           try {
             if(index == 0) {
-              istringstream input(data);
-              processData(result,input, col);
+              processData(result,data, col);
             } else{
-              istringstream input(data);
-              result = merge(result, input, col);
+              result = merge(result, data, col);
             }
           } catch (const exception& e) {
             cerr << "Exception occurred in function: " << __func__ << ", with message: " << e.what() << endl;
             exit(0);
           } 
+          
           high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
           milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
           cout<<"getObject总耗时："<<overallTime.count()<<"ms"<<endl;
-          // writtein("/home/ec2-user/s3/S3C++/res/"+to_string(index),result);
+          writtein("/home/ec2-user/s3/S3C++/res/"+to_string(index),result);
           break;  
           }
           case 2://s3SelectIndex
