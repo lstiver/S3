@@ -9,11 +9,14 @@
 #include <string>
 #include <vector>
 #include "BloomFilter.h"
+#include "ThreadPool.h" 
 #include <parallel_hashmap/phmap.h>
 using namespace std;
 using std::chrono::high_resolution_clock;
 using std::chrono::milliseconds;
 using phmap::flat_hash_map;
+
+extern ThreadPool pool;
 
 vector<string> split(const string& str, char delimiter);
 void processData(flat_hash_map<pair<int,int>, vector<vector<int>>>&dataMap,istringstream& input, const vector<int>& keyColumnIndex);

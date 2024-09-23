@@ -20,8 +20,8 @@ using chrono::milliseconds;
 using namespace std;
 using phmap::flat_hash_map;
 static flat_hash_map<string,int> tag;
-// 全局静态线程池，初始化时指定线程数
-static ThreadPool pool(4);  // 使用4个线程
+// 全局线程池，初始化时指定线程数
+ThreadPool pool(4);  // 使用4个线程
 
 class MyObject {
 public:
@@ -38,7 +38,7 @@ int main() {
   {
     cout << "python translator initialized." << endl;
   }
-  const string query_name = "S3";
+  const string query_name = "c2";
   const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
   const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
   const string bucket = "watdiv100mconvert";

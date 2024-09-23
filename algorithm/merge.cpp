@@ -1,4 +1,7 @@
 #include "merge.h"
+mutex result_mutex; // 互斥锁，用于保护结果集
+mutex dataA_mutex;      // 互斥锁，用于保护 dataA 访问
+mutex bloomFilter_mutex;// 互斥锁，用于保护布隆过滤器访问
 
 // 将字符串按指定字符分割为多个字符串
 vector<string> split(const string& str, char delimiter) {
@@ -153,78 +156,109 @@ void transformMap(flat_hash_map<pair<int, int>, vector<vector<int>>>& originalMa
     originalMap = std::move(newMap);
 }
 
-// bloomfilter过滤后merge
-flat_hash_map<pair<int,int>, vector<vector<int>>> merge(flat_hash_map<pair<int,int>, vector<vector<int>>>& dataA, const char* input, const vector<int>& keyColumnIndex){
-    bool col1 = (keyColumnIndex[0] == -1) ? true : false;
-    bool col2 = (keyColumnIndex[1] == -1) ? true : false;
-    high_resolution_clock::time_point beginTime = high_resolution_clock::now();
-    transformMap(dataA,keyColumnIndex);
-    high_resolution_clock::time_point endTime = high_resolution_clock::now();
-    milliseconds timeInterval = std::chrono::duration_cast<milliseconds>(endTime - beginTime);
-    cout<<"transformdata耗时："<<timeInterval.count()<<"ms"<<endl;
-    flat_hash_map<pair<int,int>, vector<vector<int>>> result; //merge结果 
-    // flat_hash_map<pair<int,int>, vector<vector<int>>> dataB;
-    // processData(dataB,input,keyColumnIndex);
+
+// 处理每一行的逻辑
+void processLine(string_view line, flat_hash_map<pair<int, int>, vector<vector<int>>>& dataA, 
+                 BloomFilter<100000>& bloomFilter, flat_hash_map<pair<int, int>, vector<vector<int>>>& result, 
+                 const vector<int>& keyColumnIndex, bool col1, bool col2) {
+    pair<int, int> keyB(-1, -1);
+    int value1, value2;
+    size_t start = 0, end = 0;
+
+    // 解析CSV行，提取 key
+    while ((end = line.find(',', start)) != string_view::npos) {
+        value1 = fastAtoi(string(line.substr(start, end - start)));
+        start = end + 1;
+        if (0 == keyColumnIndex[2]) {
+            keyB.first = value1;
+        }
+    }
+
+    // 处理第二列
+    if (start < line.size()) {
+        value2 = fastAtoi(string(line.substr(start)));
+        if (1 == keyColumnIndex[3]) {
+            keyB.second = value2;
+        }
+    }
+
+    // 过滤掉不在布隆过滤器中的数据
+    {
+        std::lock_guard<std::mutex> lock(bloomFilter_mutex);  // 锁定布隆过滤器访问
+        if (!bloomFilter.Test(keyB) && dataA.find(keyB) == dataA.end()) {
+            return;  // 如果key不在布隆过滤器中，跳过当前行
+        }
+    }
+
+    // 合并数据
+    std::lock_guard<std::mutex> lock(dataA_mutex); // 锁住 dataA 访问
+    vector<vector<int>>& vecA = dataA[keyB];
+    for (const auto& a : vecA) {
+        vector<int> merged(a);  // 合并向量
+        if (col1) {
+            merged.emplace_back(value1);
+        } else if (col2) {
+            merged.emplace_back(value2);
+        }
+
+        // 插入到结果集，使用互斥锁保护
+        std::lock_guard<std::mutex> resultLock(result_mutex);
+        auto& rowsForKey = result[keyB];
+        rowsForKey.emplace_back(move(merged)); // 插入结果
+    }
+}
+
+// 用指针遍历 char* 输入的每一行，并利用线程池处理
+flat_hash_map<pair<int, int>, vector<vector<int>>> merge(flat_hash_map<pair<int, int>, vector<vector<int>>>& dataA, const char* input, const vector<int>& keyColumnIndex) {
+    transformMap(dataA, keyColumnIndex);
+    bool col1 = (keyColumnIndex[0] == -1);
+    bool col2 = (keyColumnIndex[1] == -1);
+
+    flat_hash_map<pair<int, int>, vector<vector<int>>> result;
     BloomFilter<100000> bloomFilter;
     const char* current = input;
     const char* lineEnd = nullptr;
-    pair<int,int>keyB(-1,-1);
-    vector<int> row;
-    row.reserve(2);  // 预分配空间
-    int value1,value2;
 
     // 将数据集A中的所有key添加到布隆过滤器中
     for (const auto& data : dataA) {
         bloomFilter.Set(data.first);
     }
-    high_resolution_clock::time_point bloomfilterTime = high_resolution_clock::now();
-    // 使用布隆过滤器过滤数据集A中的key并合并
-    
+
+    vector<future<void>> futures;  // 用于存储异步任务
+    vector<string_view> batchLines; // 批量处理的行
+    const int batchSize = 100; // 每次处理100行
+
+    // 遍历每一行，处理数据
     while ((lineEnd = strchr(current, '\n')) != nullptr) {
         string_view line(current, lineEnd - current);
-        size_t start = 0, end = 0;
+        batchLines.push_back(line);
 
-        while ((end = line.find(',', start)) != string_view::npos) {
-            value1 = fastAtoi(string(line.substr(start, end - start)));
-            start = end + 1;
-            if (0 == keyColumnIndex[2]) {
-                keyB.first = value1;
-            }    
+        // 批量处理
+        if (batchLines.size() >= batchSize) {
+            futures.push_back(pool.enqueue([batchLines, &dataA, &bloomFilter, &result, &keyColumnIndex, col1, col2]() {
+                for (const auto& line : batchLines) {
+                    processLine(line, dataA, bloomFilter, result, keyColumnIndex, col1, col2);
+                }
+            }));
+            batchLines.clear();  // 清空批次
         }
 
-        // 第二列处理
-        if (start < line.size()) {
-            value2 = fastAtoi(string(line.substr(start)));
-            if (1 == keyColumnIndex[3]) {
-                keyB.second = value2;
-            }
-        }
-        if (!bloomFilter.Test(keyB) && dataA.find(keyB) == dataA.end()) {
-            current = lineEnd + 1;
-            continue;  // 如果key不在布隆过滤器中
-        } 
-        vector<vector<int>> &vecA = dataA[keyB];
-        // 如果在 dataA 中找到匹配的键，合并它们的向量
-        for (const auto &a : vecA) {
-            vector<int>merged(a);
-            if(col1){
-                merged.emplace_back(value1);
-            }else if(col2){
-                merged.emplace_back(value2);
-            }
-            // 合并 B 中去掉重复部分的向量
-            // cout << "Size of merged: " << a.size() << endl;
-            auto& rowsForKey = result[keyB];
-            rowsForKey.emplace_back(move(merged)); // 插入结果
-        }
-
-        // 移动到下一行
         current = lineEnd + 1;
     }
-   
-    high_resolution_clock::time_point bloomfilterend = high_resolution_clock::now();
-    milliseconds bloomfilterInterval = std::chrono::duration_cast<milliseconds>(bloomfilterend - bloomfilterTime);
-    cout<<"bloomfilterend+笛卡尔积耗时："<<bloomfilterInterval.count()<<"ms"<<endl;
+
+    // 处理剩余行
+    if (!batchLines.empty()) {
+        futures.push_back(pool.enqueue([batchLines, &dataA, &bloomFilter, &result, &keyColumnIndex, col1, col2]() {
+            for (const auto& line : batchLines) {
+                processLine(line, dataA, bloomFilter, result, keyColumnIndex, col1, col2);
+            }
+        }));
+    }
+
+    // 等待所有线程任务完成
+    for (auto& future : futures) {
+        future.get();
+    }
 
     return result;
 }
