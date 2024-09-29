@@ -22,6 +22,7 @@ using phmap::flat_hash_map;
 static flat_hash_map<string,int> tag;
 // 全局线程池，初始化时指定线程数
 ThreadPool pool(4);  // 使用4个线程
+int index_ = 0;
 
 class MyObject {
 public:
@@ -32,12 +33,8 @@ public:
 };
 
 int main() {
-  // load_predicate();
   Py_Initialize();
-  if(Py_IsInitialized())
-  {
-    cout << "python translator initialized." << endl;
-  }
+  // load_predicate();
   const string query_name = "c2";
   const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
   const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
@@ -50,7 +47,7 @@ int main() {
   int index = 0;
   vector<vector<QueryInfo>>selectQuery;
   for (const auto& row : query_result) {
-    auto[timeAndCost,tmp] = getTimeAndCost(bucket, row[1], row[3], index);
+    auto[timeAndCost,tmp] = getTimeAndCost(bucket, row, index);
     selectQuery.push_back(timeAndCost);
     index++;
     cout <<"第"<<index<<"个子查询"<<endl;
@@ -89,16 +86,20 @@ int main() {
   vector<string> result_tag;
   int colindex = 0;
   if (timeflag) {
-    index = 0;
+    index_ = 0;
     if (min != nullptr) {
       for (const auto& it : *min){
-        cout<<"==================================query"<<index<<"=================================="<<endl;
-        cout<<"index:"<<it.index<<endl;
-        cout<<"func:"<<it.method<<endl;
-        cout<<"time:"<<it.time<<endl;
-        cout<<"cost:"<<it.cost<<endl;
-        string subject = query_result[index][0];
-        string object = query_result[index][2];
+        cout<<"==================================query"<<index_<<"=================================="<<endl;
+        // cout<<"index:"<<it.index<<endl;
+        // cout<<"func:"<<it.method<<endl;
+        // cout<<"time:"<<it.time<<endl;
+        // cout<<"cost:"<<it.cost<<endl;
+        // string subject = it.subject;
+        // string object = it.object;
+        string subject = query_result[index_][0];
+        string object = query_result[index_][2];
+        // cout<<subject<<endl;
+        // cout<<object<<endl;
 
         vector<int>col(4,-1);
         if(tag.find(subject)!=tag.end()){
@@ -111,35 +112,20 @@ int main() {
         }
         
         int method = it.method;
-        const char* data = nullptr; 
         string keyName;
         switch(method){
           //getObject
           case 1:{
             high_resolution_clock::time_point begin = high_resolution_clock::now();
-            keyName = query_result[index][1]+".csv"; //排序后这里要修改
-            cout<<"第"<<index+1<<"个查询"<<keyName<<endl;
-            cout<<col[0]<<" "<<col[1]<<" "<<col[2]<<" "<<col[3]<<endl;
-            data = getObject(bucket,keyName);
-            high_resolution_clock::time_point endTime = high_resolution_clock::now();
-            milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - begin);
-            cout<<"从python接到getObject耗时："<<timeInterval.count()<<"ms"<<endl;
-
-          try {
-            if(index == 0) {
-              processData(result,data, col);
-            } else{
-              result = merge(result, data, col);
-            }
-          } catch (const exception& e) {
-            cerr << "Exception occurred in function: " << __func__ << ", with message: " << e.what() << endl;
-            exit(0);
-          } 
-          
+            // keyName = it.keyName + ".csv"; 
+            keyName = query_result[index_][1]+".csv"; //排序后这里要修改
+            cout<<"第"<<index_+1<<"个查询"<<keyName<<endl;
+            // cout<<col[0]<<" "<<col[1]<<" "<<col[2]<<" "<<col[3]<<endl;
+            result = getObject(result,bucket,keyName,col);
           high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
           milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
           cout<<"getObject总耗时："<<overallTime.count()<<"ms"<<endl;
-          writtein("/home/ec2-user/s3/S3C++/res/"+to_string(index),result);
+          // writtein("/home/ec2-user/s3/S3C++/res/"+to_string(index_),result);
           break;  
           }
           case 2://s3SelectIndex
@@ -151,7 +137,7 @@ int main() {
           default:
             cout<<"query"<<index<<"Error!";
         }
-        index++;
+        index_++;
         if(subject.find("?") != string::npos && tag.find(subject)==tag.end()){
           tag[subject] = colindex;
           colindex++;
@@ -172,6 +158,9 @@ int main() {
   high_resolution_clock::time_point endTime = high_resolution_clock::now();
   milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - beginTime);
   cout<<"总耗时："<<timeInterval.count()<<"ms"<<endl;
+
+  Py_Finalize();
+
   // LevelDB 存储位置
   string dbPath = "/home/ec2-user/s3/S3C++/index";
 
@@ -216,6 +205,5 @@ int main() {
 
   cout << "Data has been written to" << written_path << endl;
 
-  Py_Finalize();
   return 0;
 }

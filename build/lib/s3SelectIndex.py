@@ -85,7 +85,6 @@ def getRange(bucket, key, parsed_conditions):
             else:           
                 start = int(row[1])
                 end = int(row[2])    
-    # print(start,end,size)
     return start, end,size
         
     

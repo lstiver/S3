@@ -48,27 +48,25 @@ void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap,ist
 
         string_view sv(line);
         size_t start = 0, end = 0;
-        int i = 0;
 
         while ((end = sv.find(',', start)) != string_view::npos) {
             int value = fastAtoi(string(sv.substr(start, end - start)));
             start = end + 1;
-            if (i == keyColumnIndex[2]) {
+            if (0 == keyColumnIndex[2]) {
                 key.first = value;
             } 
             row.emplace_back(value);
-            ++i;
         }
 
         // 第二列
         if (start < sv.size()) {
             int value = fastAtoi(string(sv.substr(start)));
-             if (i == keyColumnIndex[3]) {
+             if (1 == keyColumnIndex[3]) {
                 key.second = value;
             } 
             row.emplace_back(value);
         }
-        
+        cout<<key.first<<" "<<key.second<<endl;
         auto& rowsForKey = dataMap[key]; 
         rowsForKey.emplace_back(move(row));
     }
@@ -92,27 +90,25 @@ void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap, co
         pair<int, int> key(-1, -1);
 
         size_t start = 0, end = 0;
-        int i = 0;
 
         while ((end = line.find(',', start)) != string_view::npos) {
             int value = fastAtoi(string(line.substr(start, end - start)));
             start = end + 1;
-            if (i == keyColumnIndex[2]) {
+            if (0 == keyColumnIndex[2]) {
                 key.first = value;
             }
             row.emplace_back(value);
-            ++i;
         }
 
         // 第二列处理
         if (start < line.size()) {
             int value = fastAtoi(string(line.substr(start)));
-            if (i == keyColumnIndex[3]) {
+            if (1 == keyColumnIndex[3]) {
                 key.second = value;
             }
             row.emplace_back(value);
-        }
-
+        }   
+        
         auto& rowsForKey = dataMap[key];
         rowsForKey.emplace_back(move(row));
 
@@ -129,7 +125,7 @@ void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap, co
 //修改索引键值对
 void transformMap(flat_hash_map<pair<int, int>, vector<vector<int>>>& originalMap, const vector<int>& columnIndex) {
     flat_hash_map<pair<int, int>, vector<vector<int>>> newMap;
-
+    
     // 遍历原始的映射
     for (auto it = originalMap.begin(); it != originalMap.end(); ++it) {
        const vector<vector<int>>& value = it->second;
@@ -147,19 +143,19 @@ void transformMap(flat_hash_map<pair<int, int>, vector<vector<int>>>& originalMa
                     newKey.second = row[columnIndex[1]];
                 } 
                 // 插入到 newMap
-                newMap[newKey].push_back(row);
+                // cout<<newKey.first<<" "<<newKey.second<<endl;
+                newMap[newKey].emplace_back(row);
             }
         }
     }
-    
-    // 将新的键值对插入到 originalMap 中
+   
     originalMap = std::move(newMap);
 }
 
 
 // 处理每一行的逻辑
-void processLine(string_view line, flat_hash_map<pair<int, int>, vector<vector<int>>>& dataA, 
-                 BloomFilter<100000>& bloomFilter, flat_hash_map<pair<int, int>, vector<vector<int>>>& result, 
+inline void processLine(string_view line, flat_hash_map<pair<int, int>, vector<vector<int>>>& dataA, 
+                 flat_hash_map<pair<int, int>, vector<vector<int>>>& result, 
                  const vector<int>& keyColumnIndex, bool col1, bool col2) {
     pair<int, int> keyB(-1, -1);
     int value1, value2;
@@ -183,12 +179,12 @@ void processLine(string_view line, flat_hash_map<pair<int, int>, vector<vector<i
     }
 
     // 过滤掉不在布隆过滤器中的数据
-    {
-        std::lock_guard<std::mutex> lock(bloomFilter_mutex);  // 锁定布隆过滤器访问
-        if (!bloomFilter.Test(keyB) && dataA.find(keyB) == dataA.end()) {
-            return;  // 如果key不在布隆过滤器中，跳过当前行
-        }
-    }
+    // {
+    //     // std::lock_guard<std::mutex> lock(bloomFilter_mutex);  // 锁定布隆过滤器访问
+    //     if (!bloomFilter.Test(keyB) && dataA.find(keyB) == dataA.end()) {
+    //         return;  // 如果key不在布隆过滤器中，跳过当前行
+    //     }
+    // }
 
     // 合并数据
     std::lock_guard<std::mutex> lock(dataA_mutex); // 锁住 dataA 访问
@@ -209,24 +205,28 @@ void processLine(string_view line, flat_hash_map<pair<int, int>, vector<vector<i
 }
 
 // 用指针遍历 char* 输入的每一行，并利用线程池处理
-flat_hash_map<pair<int, int>, vector<vector<int>>> merge(flat_hash_map<pair<int, int>, vector<vector<int>>>& dataA, const char* input, const vector<int>& keyColumnIndex) {
-    transformMap(dataA, keyColumnIndex);
+flat_hash_map<pair<int, int>, vector<vector<int>>> merge(flat_hash_map<pair<int,int>, vector<vector<int>>>& result, 
+                                                         flat_hash_map<pair<int, int>, vector<vector<int>>>& dataA, 
+                                                         const char* input, const vector<int>& keyColumnIndex, 
+                                                         const bool& flag) {
+    if(flag) {
+        transformMap(dataA, keyColumnIndex);
+    }
     bool col1 = (keyColumnIndex[0] == -1);
     bool col2 = (keyColumnIndex[1] == -1);
 
-    flat_hash_map<pair<int, int>, vector<vector<int>>> result;
-    BloomFilter<100000> bloomFilter;
+    // BloomFilter<100000> bloomFilter;
     const char* current = input;
     const char* lineEnd = nullptr;
 
     // 将数据集A中的所有key添加到布隆过滤器中
-    for (const auto& data : dataA) {
-        bloomFilter.Set(data.first);
-    }
+    // for (const auto& data : dataA) {
+    //     bloomFilter.Set(data.first);
+    // }
 
     vector<future<void>> futures;  // 用于存储异步任务
     vector<string_view> batchLines; // 批量处理的行
-    const int batchSize = 100; // 每次处理100行
+    const int batchSize = 500; // 每次处理100行
 
     // 遍历每一行，处理数据
     while ((lineEnd = strchr(current, '\n')) != nullptr) {
@@ -235,9 +235,9 @@ flat_hash_map<pair<int, int>, vector<vector<int>>> merge(flat_hash_map<pair<int,
 
         // 批量处理
         if (batchLines.size() >= batchSize) {
-            futures.push_back(pool.enqueue([batchLines, &dataA, &bloomFilter, &result, &keyColumnIndex, col1, col2]() {
+            futures.push_back(pool.enqueue([batchLines, &dataA, &result, &keyColumnIndex, col1, col2]() {
                 for (const auto& line : batchLines) {
-                    processLine(line, dataA, bloomFilter, result, keyColumnIndex, col1, col2);
+                    processLine(line, dataA, result, keyColumnIndex, col1, col2);
                 }
             }));
             batchLines.clear();  // 清空批次
@@ -248,9 +248,9 @@ flat_hash_map<pair<int, int>, vector<vector<int>>> merge(flat_hash_map<pair<int,
 
     // 处理剩余行
     if (!batchLines.empty()) {
-        futures.push_back(pool.enqueue([batchLines, &dataA, &bloomFilter, &result, &keyColumnIndex, col1, col2]() {
+        futures.push_back(pool.enqueue([batchLines, &dataA, &result, &keyColumnIndex, col1, col2]() {
             for (const auto& line : batchLines) {
-                processLine(line, dataA, bloomFilter, result, keyColumnIndex, col1, col2);
+                processLine(line, dataA, result, keyColumnIndex, col1, col2);
             }
         }));
     }

@@ -89,7 +89,7 @@ vector<vector<string>> get_query(string file_path){
   }
 }
 
-pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const string & key, const string & value, int index){
+pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const vector<string> & row, int index){
   // 调用python getRange函数
   PyRun_SimpleString("import sys");
 	PyRun_SimpleString("sys.path.append('..')");
@@ -109,8 +109,8 @@ pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const string &
   }
   pFunc = PyObject_GetAttrString(pModule, "getRange");//获取函数名称
   const char *t1 = bucket.c_str();
-  const char *t2 = key.c_str();
-  const char *t3 = value.c_str();
+  const char *t2 = row[1].c_str();
+  const char *t3 = row[3].c_str();
   args = Py_BuildValue("(sss)",t1,t2,t3);
   PyErr_Print(); 
   pReturn = PyObject_CallObject(pFunc, args);//函数调用
@@ -125,7 +125,6 @@ pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const string &
   Py_DECREF(pFunc);
   Py_DECREF(pModule);
 
-
   int total=0; //用来记录查询totallength
   vector<QueryInfo>time_and_cost;
   // 根据获得的size，start，end来估算cost和time
@@ -138,15 +137,10 @@ pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const string &
   double totallength = static_cast<float>(total)/1024/1024/1024;
 
   QueryInfo query1;
-  //找到subject，object
-  // regex pattern(R"(\?(\w+))");
-  // smatch matches;
-  // string::const_iterator searchStart(value.cbegin());
-  // while (regex_search(searchStart, value.cend(), matches, pattern)) {
-  //   cout << "Found word: " << matches[0] << endl;
-    // query1.parameter.append(matches[0]).append(" ");
-  //   searchStart = matches.suffix().first; // 继续查找下一个匹配
-  // }
+  query1.subject = row[0];
+  query1.object = row[2];
+  query1.keyName = row[1];
+   
   query1.method= 1;  // Using integer values for keys to represent "getObject"
   query1.time = size * 0.00121138;
   query1.cost = 0;
@@ -186,31 +180,6 @@ void writeVectorToCSV(ofstream &csvFile, const vector<string>& resultVector) {
     csvFile << "\n";
 }
 
-// Function to process a batch of data and write it to CSV
-// void processBatch(leveldb::DB* db, ofstream &csvFile, const vector<vector<int>>& batch) {
-//     for (const auto& vec : batch) {
-//         vector<string> resultVector;  // 用于存储从 LevelDB 获取到的字符串值
-//         for (int key : vec) {
-//             string keyStr = to_string(key);
-//             string value;
-//             leveldb::Status s = db->Get(leveldb::ReadOptions(), keyStr, &value);
-//             if (s.ok()) {
-//                 // 输出调试信息：输出键值对
-//                 // cout << "Key: " << keyStr << ", Value: " << value << endl;            
-//                 // 直接将字符串 value 存储到 resultVector 中
-//                 resultVector.push_back(value);
-//             } else {
-//                 cerr << "Key not found: " << keyStr << endl;
-//             }
-//         }
-
-//         // 写入CSV文件（受mutex保护）
-//         {
-//             lock_guard<mutex> guard(writeMutex);
-//             writeVectorToCSV(csvFile, resultVector);
-//         }
-//     }
-// }
 
 // 从 LevelDB 获取值并写入 CSV 文件
 void processBatch(leveldb::DB* db, ofstream &csvFile, const vector<vector<int>>& batch) {
@@ -253,3 +222,29 @@ void processBatch(leveldb::DB* db, ofstream &csvFile, const vector<vector<int>>&
         csvFile << buffer.str();  // 写入文件
     }
 }
+
+// Function to process a batch of data and write it to CSV
+// void processBatch(leveldb::DB* db, ofstream &csvFile, const vector<vector<int>>& batch) {
+//     for (const auto& vec : batch) {
+//         vector<string> resultVector;  // 用于存储从 LevelDB 获取到的字符串值
+//         for (int key : vec) {
+//             string keyStr = to_string(key);
+//             string value;
+//             leveldb::Status s = db->Get(leveldb::ReadOptions(), keyStr, &value);
+//             if (s.ok()) {
+//                 // 输出调试信息：输出键值对
+//                 // cout << "Key: " << keyStr << ", Value: " << value << endl;            
+//                 // 直接将字符串 value 存储到 resultVector 中
+//                 resultVector.push_back(value);
+//             } else {
+//                 cerr << "Key not found: " << keyStr << endl;
+//             }
+//         }
+
+//         // 写入CSV文件（受mutex保护）
+//         {
+//             lock_guard<mutex> guard(writeMutex);
+//             writeVectorToCSV(csvFile, resultVector);
+//         }
+//     }
+// }

@@ -1,0 +1,7 @@
+==7140== Massif, a heap profiler
+==7140== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
+==7140== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==7140== Command: ./S3C++
+==7140== Parent PID: 3862
+==7140== 
+==7140== 

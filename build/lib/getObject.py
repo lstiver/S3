@@ -1,46 +1,63 @@
+import sys
 import boto3
-import polars as pl
 from getQueries import parseQuery
 from s3SelectIndex import getRange
 
-def execGetByIndex(bucket, key, parsed_conditions):
-    s3 = boto3.client('s3')
-    start, end,size = getRange(bucket, key, parsed_conditions)
-    response = s3.get_object(Bucket=bucket, Key=key, Range=f'bytes={start}-{end}')
-    print(f"s3.get_object.ContentLength: {response['ContentLength']}")
-    result = pl.read_csv(response['Body'],raise_if_empty=False,low_memory=True,has_header=False)
-    return result
+# def execGetByIndex(bucket, key, parsed_conditions):
+#     s3 = boto3.client('s3')
+#     start, end,size = getRange(bucket, key, parsed_conditions)
+#     response = s3.get_object(Bucket=bucket, Key=key, Range=f'bytes={start}-{end}')
+#     print(f"s3.get_object.ContentLength: {response['ContentLength']}")
+#     # result = pl.read_csv(response['Body'],raise_if_empty=False,low_memory=True,has_header=False)
+#     # return result
 
 def getObject(bucket, key):
     s3 = boto3.client('s3')
     response = s3.get_object(Bucket=bucket, Key=key)
-    print(f"s3.get_object.ContentLength: {response['ContentLength']}")
-    result = response['Body'].read()
-    return result
+    s3.close()
+    print("关闭s3")
 
-def getObjectByIndex(bucket, key, query):
-    columns, parsed_conditions = parseQuery(query)
-    result = execGetByIndex(bucket, key, parsed_conditions)
-    result.columns = ['subject','object']
-    if columns == '*':
-        return result
-    elif columns == 'object':
-        parsed_conditions = int(parsed_conditions[0]['value'])
-        q=(
-            result.lazy()
-            .filter(pl.col('subject') == parsed_conditions)
-            .select(columns)
-        )
-        result = q.collect(streaming=True)
-    else:
-        parsed_conditions = int(parsed_conditions[0]['value'])
-        q=(
-            result.lazy()
-            .filter(pl.col('object') == parsed_conditions)
-            .select(columns)
-        )
-        result = q.collect(streaming=True)
-    return result
+    try:
+        body = response['Body']
+        chunk = []
+        
+        for line in body.iter_lines():  # 逐行读取数据
+            chunk.append(line)  # 保存每一行数据
+
+            if len(chunk) >= 500:
+                yield b'\n'.join(chunk) + b'\n'
+                chunk.clear()
+
+        if chunk:
+            yield b'\n'.join(chunk) + b'\n'
+        print("Yield complete")  # 确认是否到达此处
+    finally:
+        # 确保在处理完响应后关闭 Body
+        body.close()
+
+# def getObjectByIndex(bucket, key, query):
+#     columns, parsed_conditions = parseQuery(query)
+#     result = execGetByIndex(bucket, key, parsed_conditions)
+#     result.columns = ['subject','object']
+#     if columns == '*':
+#         return result
+#     elif columns == 'object':
+#         parsed_conditions = int(parsed_conditions[0]['value'])
+#         q=(
+#             result.lazy()
+#             .filter(pl.col('subject') == parsed_conditions)
+#             .select(columns)
+#         )
+#         result = q.collect(streaming=True)
+#     else:
+#         parsed_conditions = int(parsed_conditions[0]['value'])
+#         q=(
+#             result.lazy()
+#             .filter(pl.col('object') == parsed_conditions)
+#             .select(columns)
+#         )
+#         result = q.collect(streaming=True)
+#     return result
 
 # print(f"Type of response: {type(response['Body'])}")
 # getObject("watdiv100mconvert","1.csv","SELECT * FROM s3object s")
