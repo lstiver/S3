@@ -1,0 +1,435 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						7,
+						8,
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "leveldb",
+					"childIndexes" : 
+					[
+						2,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-leveldb-Debug-d2b7fb34bbd9e58df9c4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.9"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "leveldb",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						13,
+						14,
+						15
+					]
+				},
+				{
+					"build" : "leveldb/third_party/googletest",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-leveldb.third_party.googletest-Debug-86367bd7790846dc06e6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "leveldb/third_party/googletest"
+				},
+				{
+					"build" : "leveldb/third_party/googletest/googlemock",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-leveldb.third_party.googletest.googlemock-Debug-15e4b60d6a812e22ea75.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "leveldb/third_party/googletest/googlemock",
+					"targetIndexes" : 
+					[
+						9,
+						10
+					]
+				},
+				{
+					"build" : "leveldb/third_party/googletest/googletest",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-leveldb.third_party.googletest.googletest-Debug-1ede08cb54509f1dc2fd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "leveldb/third_party/googletest/googletest",
+					"targetIndexes" : 
+					[
+						11,
+						12
+					]
+				},
+				{
+					"build" : "leveldb/third_party/benchmark",
+					"childIndexes" : 
+					[
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-leveldb.third_party.benchmark-Debug-7e014b1ed74610163f34.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 5,
+					"source" : "leveldb/third_party/benchmark"
+				},
+				{
+					"build" : "leveldb/third_party/benchmark/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-leveldb.third_party.benchmark.src-Debug-7e795a99f1f7001a0432.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 5,
+					"source" : "leveldb/third_party/benchmark/src",
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				},
+				{
+					"build" : "parallel-hashmap",
+					"jsonFile" : "directory-parallel-hashmap-Debug-c052779182d5822a3b3a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "parallel-hashmap"
+				},
+				{
+					"build" : "fpdb-aws",
+					"jsonFile" : "directory-fpdb-aws-Debug-006b1c07d0ef25b8cc20.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "fpdb-aws",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "fpdb-util",
+					"jsonFile" : "directory-fpdb-util-Debug-aa80f4f75093dfe4af5b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "fpdb-util",
+					"targetIndexes" : 
+					[
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						9
+					],
+					"name" : "S3C++",
+					"targetIndexes" : 
+					[
+						0,
+						7,
+						8
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "leveldb",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						13,
+						14,
+						15
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 1
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gmock",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						9,
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "gtest",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						11,
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5,
+						6
+					],
+					"name" : "benchmark",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "phmap",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "fpdb-aws",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "S3C++::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-S3C++-Debug-7728ad3ea0edba9f5703.json",
+					"name" : "S3C++",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "benchmark::@3eaa4cfd66a9158010bb",
+					"jsonFile" : "target-benchmark-Debug-8614466bd150688850a6.json",
+					"name" : "benchmark",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "benchmark_main::@3eaa4cfd66a9158010bb",
+					"jsonFile" : "target-benchmark_main-Debug-5a45563164c379ebca80.json",
+					"name" : "benchmark_main",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "c_test::@fd116fd6900a2752e96d",
+					"jsonFile" : "target-c_test-Debug-e0314753e7e588c0d936.json",
+					"name" : "c_test",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "db_bench::@fd116fd6900a2752e96d",
+					"jsonFile" : "target-db_bench-Debug-a1fb96b92fe732af03d2.json",
+					"name" : "db_bench",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "env_posix_test::@fd116fd6900a2752e96d",
+					"jsonFile" : "target-env_posix_test-Debug-7a368a9280b70d24784c.json",
+					"name" : "env_posix_test",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "fpdb-aws::@3961b85e9f43f74886f7",
+					"jsonFile" : "target-fpdb-aws-Debug-8a1a50a960a74f76fd28.json",
+					"name" : "fpdb-aws",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "fpdb-util::@27293a2e19525db1180e",
+					"jsonFile" : "target-fpdb-util-Debug-5e5d1bd112c95e48d298.json",
+					"name" : "fpdb-util",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "fpdb-util-test::@27293a2e19525db1180e",
+					"jsonFile" : "target-fpdb-util-test-Debug-ef9b8868868fd24cc7c5.json",
+					"name" : "fpdb-util-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock::@26fd4d37619d29aed726",
+					"jsonFile" : "target-gmock-Debug-98ba56619705a9726d7b.json",
+					"name" : "gmock",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock_main::@26fd4d37619d29aed726",
+					"jsonFile" : "target-gmock_main-Debug-78be5a30a882bd282c65.json",
+					"name" : "gmock_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest::@6ac4b6cc4df7fe213291",
+					"jsonFile" : "target-gtest-Debug-5c05eba5c6f04f798476.json",
+					"name" : "gtest",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest_main::@6ac4b6cc4df7fe213291",
+					"jsonFile" : "target-gtest_main-Debug-a1a9d420be0bedcd53ae.json",
+					"name" : "gtest_main",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "leveldb::@fd116fd6900a2752e96d",
+					"jsonFile" : "target-leveldb-Debug-feb14d8f73f60891480c.json",
+					"name" : "leveldb",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "leveldb_tests::@fd116fd6900a2752e96d",
+					"jsonFile" : "target-leveldb_tests-Debug-9996d38283c8d080daed.json",
+					"name" : "leveldb_tests",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "leveldbutil::@fd116fd6900a2752e96d",
+					"jsonFile" : "target-leveldbutil-Debug-8689cba866c2a25a06d4.json",
+					"name" : "leveldbutil",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ec2-user/s3/S3C++/build",
+		"source" : "/home/ec2-user/s3/S3C++"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

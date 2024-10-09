@@ -1,0 +1,822 @@
+generated/src/aws-cpp-sdk-athena/CMakeFiles/aws-cpp-sdk-athena.dir/ub_ATHENA.cpp.o: \
+ /home/ec2-user/s3/S3C++/sdk_build/generated/src/aws-cpp-sdk-athena/ub_ATHENA.cpp \
+ /usr/include/stdc-predef.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/AthenaEndpointProvider.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/AthenaEndpointProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/Athena_EXPORTS.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/GenericClientConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/Core_EXPORTS.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/SDKConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/ClientConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/Scheme.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSString.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSAllocator.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/AWSMemory.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/UnreferencedParam.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/MemorySystemInterface.h \
+ /usr/include/c++/11/cstdlib \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/c++config.h \
+ /usr/include/bits/wordsize.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/os_defines.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/cpu_defines.h \
+ /usr/include/stdlib.h /usr/include/bits/libc-header-start.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
+ /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/endianness.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/struct_timespec.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h /usr/include/bits/struct_mutex.h \
+ /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-float.h /usr/include/c++/11/bits/std_abs.h \
+ /usr/include/assert.h /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_algobase.h \
+ /usr/include/c++/11/bits/functexcept.h \
+ /usr/include/c++/11/bits/exception_defines.h \
+ /usr/include/c++/11/bits/cpp_type_traits.h \
+ /usr/include/c++/11/ext/type_traits.h \
+ /usr/include/c++/11/ext/numeric_traits.h \
+ /usr/include/c++/11/bits/stl_pair.h /usr/include/c++/11/bits/move.h \
+ /usr/include/c++/11/type_traits \
+ /usr/include/c++/11/bits/stl_iterator_base_types.h \
+ /usr/include/c++/11/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/11/bits/concept_check.h \
+ /usr/include/c++/11/debug/assertions.h \
+ /usr/include/c++/11/bits/stl_iterator.h \
+ /usr/include/c++/11/bits/ptr_traits.h /usr/include/c++/11/debug/debug.h \
+ /usr/include/c++/11/bits/predefined_ops.h \
+ /usr/include/c++/11/bits/allocator.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/c++allocator.h \
+ /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \
+ /usr/include/c++/11/bits/exception.h \
+ /usr/include/c++/11/bits/memoryfwd.h \
+ /usr/include/c++/11/bits/stl_construct.h \
+ /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/ext/alloc_traits.h \
+ /usr/include/c++/11/bits/alloc_traits.h \
+ /usr/include/c++/11/bits/stl_tempbuf.h \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /usr/include/bits/stdint-uintn.h \
+ /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/utility \
+ /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/initializer_list /usr/include/c++/11/tuple \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/range_access.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_function.h \
+ /usr/include/c++/11/backward/binders.h \
+ /usr/include/c++/11/bits/functional_hash.h \
+ /usr/include/c++/11/bits/hash_bytes.h \
+ /usr/include/c++/11/bits/shared_ptr.h /usr/include/c++/11/iosfwd \
+ /usr/include/c++/11/bits/stringfwd.h /usr/include/c++/11/bits/postypes.h \
+ /usr/include/c++/11/cwchar /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/stdarg.h \
+ /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
+ /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
+ /usr/include/bits/types/FILE.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h /usr/include/c++/11/typeinfo \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/bits/refwrap.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/ext/atomicity.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/gthr.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
+ /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
+ /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_itimerspec.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/types/struct___jmp_buf_tag.h \
+ /usr/include/bits/pthread_stack_min-dynamic.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/atomic_word.h \
+ /usr/include/sys/single_threaded.h /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/exception /usr/include/c++/11/bits/exception_ptr.h \
+ /usr/include/c++/11/bits/cxxabi_init_exception.h \
+ /usr/include/c++/11/bits/nested_exception.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/11/backward/auto_ptr.h /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/bits/stl_heap.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/StlAllocator.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Allocator.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/common.h \
+ /home/ec2-user/s3/S3C++/sdk_build/crt/aws-crt-cpp/crt/aws-c-common/generated/include/aws/common/config.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/exports.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/allocator.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/macros.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/stdbool.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/stdbool.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/stdint.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/assert.h \
+ /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
+ /usr/include/bits/types/__fpos64_t.h \
+ /usr/include/bits/types/struct_FILE.h \
+ /usr/include/bits/types/cookie_io_functions_t.h \
+ /usr/include/bits/stdio_lim.h /usr/include/c++/11/stdlib.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/error.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/package.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/error.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/platform.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/predicates.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/zero.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/zero.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Exports.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
+ /usr/include/c++/11/string /usr/include/c++/11/bits/char_traits.h \
+ /usr/include/c++/11/cstdint /usr/include/c++/11/bits/localefwd.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/c++locale.h \
+ /usr/include/c++/11/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/11/cctype \
+ /usr/include/ctype.h /usr/include/c++/11/bits/ostream_insert.h \
+ /usr/include/c++/11/bits/cxxabi_forced.h \
+ /usr/include/c++/11/bits/basic_string.h \
+ /usr/include/c++/11/ext/string_conversions.h /usr/include/c++/11/cstdio \
+ /usr/include/c++/11/cerrno /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h /usr/include/bits/types/error_t.h \
+ /usr/include/c++/11/bits/charconv.h \
+ /usr/include/c++/11/bits/basic_string.tcc \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/Version.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/Region.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpTypes.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSList.h \
+ /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
+ /usr/include/c++/11/bits/list.tcc \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSMap.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/unordered_map \
+ /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/unordered_map.h /usr/include/c++/11/cstring \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/Array.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSVector.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Types.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Optional.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Utility.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/StringView.h \
+ /usr/include/c++/11/cassert /usr/include/c++/11/iterator \
+ /usr/include/c++/11/bits/stream_iterator.h \
+ /usr/include/c++/11/bits/streambuf_iterator.h \
+ /usr/include/c++/11/streambuf /usr/include/c++/11/bits/ios_base.h \
+ /usr/include/c++/11/bits/locale_classes.h \
+ /usr/include/c++/11/bits/locale_classes.tcc \
+ /usr/include/c++/11/system_error \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/error_constants.h \
+ /usr/include/c++/11/stdexcept /usr/include/c++/11/bits/streambuf.tcc \
+ /usr/include/c++/11/limits \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/socket.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/channel.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/io.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/byte_buf.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/array_list.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/math.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/math.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/math.gcc_x64_asm.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/math.gcc_builtin.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/array_list.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/byte_order.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/byte_order.inl \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/bits/socket.h \
+ /usr/include/bits/socket_type.h /usr/include/bits/sockaddr.h \
+ /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
+ /usr/include/linux/posix_types.h /usr/include/linux/stddef.h \
+ /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h /usr/include/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/linked_list.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/linked_list.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/exports.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/statistics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/task_scheduler.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/priority_queue.h \
+ /usr/include/sys/un.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-mqtt/include/aws/mqtt/mqtt.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/logging.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/atomics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/atomics.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/atomics_gnu.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/atomics_fallback.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/thread.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/string.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/string.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-mqtt/include/aws/mqtt/exports.h \
+ /usr/include/c++/11/sstream /usr/include/c++/11/istream \
+ /usr/include/c++/11/ios /usr/include/c++/11/bits/basic_ios.h \
+ /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
+ /usr/include/wctype.h /usr/include/bits/wctype-wchar.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/ctype_base.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/ctype_inline.h \
+ /usr/include/c++/11/bits/locale_facets.tcc \
+ /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
+ /usr/include/c++/11/bits/ostream.tcc \
+ /usr/include/c++/11/bits/istream.tcc \
+ /usr/include/c++/11/bits/sstream.tcc \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/TelemetryProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/Smithy_EXPORTS.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/TracerProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/Tracer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/TraceSpan.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/MeterProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/Meter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/Gauge.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/MonotonicCounter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/UpDownCounter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/Histogram.h \
+ /usr/include/c++/11/mutex /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
+ /usr/include/c++/11/bits/parse_numbers.h \
+ /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/unique_lock.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/DefaultEndpointProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/AWSPartitions.h \
+ /usr/include/c++/11/cstddef \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/EndpointProviderBase.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/AWSEndpoint.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/URI.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/StringUtils.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSStringStream.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/internal/AWSEndpointAttribute.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSError.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpResponse.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
+ /usr/include/c++/11/iostream \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/stream/ResponseStream.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/UUID.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/monitoring/HttpClientMetrics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/CoreErrors.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/xml/XmlSerializer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/Outcome.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/json/JsonSerializer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/external/cjson/cJSON.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/EndpointParameter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/BuiltInParameters.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/ClientContextParameters.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSArray.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/endpoints/RuleEngine.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/LogMacros.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/LogLevel.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/AWSLogging.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/LogSystemInterface.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/AthenaEndpointRules.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/AthenaEndpointRules.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/AthenaErrorMarshaller.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/AthenaErrorMarshaller.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSErrorMarshaller.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/AthenaErrors.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/AthenaErrors.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/HashingUtils.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ResourceNotFoundException.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/TooManyRequestsException.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ThrottleReason.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/InvalidRequestException.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/AthenaRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/AthenaRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/AmazonSerializableWebServiceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/AmazonWebServiceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/RequestCompression.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSAuthSigner.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSAuthSignerBase.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/DateTime.h \
+ /usr/include/c++/11/atomic \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSAuthSignerCommon.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSAuthV4Signer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSSet.h \
+ /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/stl_multiset.h \
+ /usr/include/c++/11/unordered_set \
+ /usr/include/c++/11/bits/unordered_set.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/ReaderWriterLock.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/Semaphore.h \
+ /usr/include/c++/11/condition_variable \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/Sha256.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/Hash.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/HashResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/Sha256HMAC.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/HMAC.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/auth/Sigv4Signing.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/DateTime.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/date_time.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/auth/Signing.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-auth/include/aws/auth/signing_config.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-auth/include/aws/auth/auth.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-auth/include/aws/auth/exports.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/logging.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-sdkutils/include/aws/sdkutils/sdkutils.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-sdkutils/include/aws/sdkutils/exports.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSAuthEventStreamV4Signer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSNullSigner.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/AclConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/AclConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/S3AclOption.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ApplicationDPUSizes.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ApplicationDPUSizes.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/AthenaError.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/AthenaError.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/AuthenticationType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/AuthenticationType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/Globals.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/EnumParseOverflowContainer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/BatchGetNamedQueryRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/BatchGetNamedQueryRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/BatchGetNamedQueryResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/BatchGetNamedQueryResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/NamedQuery.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UnprocessedNamedQueryId.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/AmazonWebServiceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/BatchGetPreparedStatementRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/BatchGetPreparedStatementRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/BatchGetPreparedStatementResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/BatchGetPreparedStatementResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/PreparedStatement.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UnprocessedPreparedStatementName.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/BatchGetQueryExecutionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/BatchGetQueryExecutionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/BatchGetQueryExecutionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/BatchGetQueryExecutionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryExecution.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StatementType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ResultConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/EncryptionConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/EncryptionOption.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ResultReuseConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ResultReuseByAgeConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryExecutionContext.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryExecutionStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryExecutionState.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryExecutionStatistics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ResultReuseInformation.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/EngineVersion.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryResultsS3AccessGrantsConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UnprocessedQueryExecutionId.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CalculationExecutionState.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CalculationExecutionState.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CalculationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CalculationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CalculationStatistics.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CalculationStatistics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CalculationStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CalculationStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CalculationSummary.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CalculationSummary.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CancelCapacityReservationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CancelCapacityReservationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CancelCapacityReservationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CancelCapacityReservationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CapacityAllocation.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CapacityAllocation.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CapacityAllocationStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CapacityAllocationStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CapacityAssignment.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CapacityAssignment.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CapacityAssignmentConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CapacityAssignmentConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CapacityReservation.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CapacityReservation.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CapacityReservationStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CapacityReservationStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/Column.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/Column.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ColumnInfo.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ColumnInfo.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ColumnNullable.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ColumnNullable.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ConnectionType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ConnectionType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateCapacityReservationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateCapacityReservationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/Tag.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateCapacityReservationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateCapacityReservationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateDataCatalogRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateDataCatalogRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DataCatalogType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateDataCatalogResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateDataCatalogResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DataCatalog.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DataCatalogStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateNamedQueryRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateNamedQueryRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateNamedQueryResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateNamedQueryResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateNotebookRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateNotebookRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateNotebookResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateNotebookResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreatePreparedStatementRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreatePreparedStatementRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreatePreparedStatementResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreatePreparedStatementResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreatePresignedNotebookUrlRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreatePresignedNotebookUrlRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreatePresignedNotebookUrlResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreatePresignedNotebookUrlResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateWorkGroupRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateWorkGroupRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/WorkGroupConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CustomerContentEncryptionConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/IdentityCenterConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CreateWorkGroupResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/CreateWorkGroupResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/CustomerContentEncryptionConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DataCatalog.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DataCatalogStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DataCatalogSummary.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DataCatalogSummary.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DataCatalogType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/Database.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/Database.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/Datum.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/Datum.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteCapacityReservationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteCapacityReservationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteCapacityReservationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteCapacityReservationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteDataCatalogRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteDataCatalogRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteDataCatalogResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteDataCatalogResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteNamedQueryRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteNamedQueryRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteNamedQueryResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteNamedQueryResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteNotebookRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteNotebookRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteNotebookResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteNotebookResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeletePreparedStatementRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeletePreparedStatementRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeletePreparedStatementResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeletePreparedStatementResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteWorkGroupRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteWorkGroupRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/DeleteWorkGroupResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/DeleteWorkGroupResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/EncryptionConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/EncryptionOption.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/EngineConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/EngineConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/EngineVersion.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ExecutorState.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ExecutorState.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ExecutorType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ExecutorType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ExecutorsSummary.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ExecutorsSummary.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ExportNotebookRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ExportNotebookRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ExportNotebookResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ExportNotebookResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/NotebookMetadata.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/NotebookType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/FilterDefinition.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/FilterDefinition.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCalculationExecutionCodeRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCalculationExecutionCodeRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCalculationExecutionCodeResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCalculationExecutionCodeResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCalculationExecutionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCalculationExecutionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCalculationExecutionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCalculationExecutionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCalculationExecutionStatusRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCalculationExecutionStatusRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCalculationExecutionStatusResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCalculationExecutionStatusResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCapacityAssignmentConfigurationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCapacityAssignmentConfigurationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCapacityAssignmentConfigurationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCapacityAssignmentConfigurationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCapacityReservationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCapacityReservationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetCapacityReservationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetCapacityReservationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetDataCatalogRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetDataCatalogRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetDataCatalogResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetDataCatalogResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetDatabaseRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetDatabaseRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetDatabaseResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetDatabaseResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetNamedQueryRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetNamedQueryRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetNamedQueryResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetNamedQueryResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetNotebookMetadataRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetNotebookMetadataRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetNotebookMetadataResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetNotebookMetadataResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetPreparedStatementRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetPreparedStatementRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetPreparedStatementResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetPreparedStatementResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetQueryExecutionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetQueryExecutionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetQueryExecutionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetQueryExecutionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetQueryResultsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetQueryResultsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetQueryResultsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetQueryResultsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ResultSet.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ResultSetMetadata.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/Row.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetQueryRuntimeStatisticsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetQueryRuntimeStatisticsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetQueryRuntimeStatisticsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetQueryRuntimeStatisticsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryRuntimeStatistics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryRuntimeStatisticsTimeline.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryRuntimeStatisticsRows.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryStage.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/QueryStagePlanNode.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetSessionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetSessionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetSessionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetSessionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/SessionConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/SessionStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/SessionState.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/SessionStatistics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetSessionStatusRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetSessionStatusRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetSessionStatusResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetSessionStatusResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetTableMetadataRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetTableMetadataRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetTableMetadataResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetTableMetadataResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/TableMetadata.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetWorkGroupRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetWorkGroupRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/GetWorkGroupResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/GetWorkGroupResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/WorkGroup.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/WorkGroupState.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/IdentityCenterConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ImportNotebookRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ImportNotebookRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ImportNotebookResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ImportNotebookResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/InvalidRequestException.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListApplicationDPUSizesRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListApplicationDPUSizesRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListApplicationDPUSizesResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListApplicationDPUSizesResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListCalculationExecutionsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListCalculationExecutionsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListCalculationExecutionsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListCalculationExecutionsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListCapacityReservationsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListCapacityReservationsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListCapacityReservationsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListCapacityReservationsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListDataCatalogsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListDataCatalogsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListDataCatalogsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListDataCatalogsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListDatabasesRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListDatabasesRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListDatabasesResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListDatabasesResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListEngineVersionsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListEngineVersionsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListEngineVersionsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListEngineVersionsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListExecutorsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListExecutorsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListExecutorsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListExecutorsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListNamedQueriesRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListNamedQueriesRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListNamedQueriesResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListNamedQueriesResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListNotebookMetadataRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListNotebookMetadataRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListNotebookMetadataResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListNotebookMetadataResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListNotebookSessionsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListNotebookSessionsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListNotebookSessionsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListNotebookSessionsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/NotebookSessionSummary.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListPreparedStatementsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListPreparedStatementsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListPreparedStatementsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListPreparedStatementsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/PreparedStatementSummary.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListQueryExecutionsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListQueryExecutionsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListQueryExecutionsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListQueryExecutionsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListSessionsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListSessionsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListSessionsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListSessionsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/SessionSummary.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListTableMetadataRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListTableMetadataRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListTableMetadataResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListTableMetadataResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListTagsForResourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListTagsForResourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListTagsForResourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListTagsForResourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListWorkGroupsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListWorkGroupsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ListWorkGroupsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ListWorkGroupsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/WorkGroupSummary.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/NamedQuery.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/NotebookMetadata.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/NotebookSessionSummary.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/NotebookType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/PreparedStatement.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/PreparedStatementSummary.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/PutCapacityAssignmentConfigurationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/PutCapacityAssignmentConfigurationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/PutCapacityAssignmentConfigurationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/PutCapacityAssignmentConfigurationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryExecution.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryExecutionContext.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryExecutionState.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryExecutionStatistics.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryExecutionStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryResultsS3AccessGrantsConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryRuntimeStatistics.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryRuntimeStatisticsRows.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryRuntimeStatisticsTimeline.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryStage.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/QueryStagePlanNode.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ResourceNotFoundException.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ResultConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ResultConfigurationUpdates.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/ResultConfigurationUpdates.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ResultReuseByAgeConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ResultReuseConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ResultReuseInformation.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ResultSet.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ResultSetMetadata.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/Row.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/S3AclOption.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/SessionConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/SessionState.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/SessionStatistics.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/SessionStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/SessionSummary.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StartCalculationExecutionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StartCalculationExecutionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StartCalculationExecutionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StartCalculationExecutionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StartQueryExecutionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StartQueryExecutionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StartQueryExecutionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StartQueryExecutionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StartSessionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StartSessionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StartSessionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StartSessionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StatementType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StopCalculationExecutionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StopCalculationExecutionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StopCalculationExecutionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StopCalculationExecutionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StopQueryExecutionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StopQueryExecutionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/StopQueryExecutionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/StopQueryExecutionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/TableMetadata.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/Tag.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/TagResourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/TagResourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/TagResourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/TagResourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/TerminateSessionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/TerminateSessionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/TerminateSessionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/TerminateSessionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/ThrottleReason.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/TooManyRequestsException.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UnprocessedNamedQueryId.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UnprocessedPreparedStatementName.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UnprocessedQueryExecutionId.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UntagResourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UntagResourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UntagResourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UntagResourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateCapacityReservationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateCapacityReservationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateCapacityReservationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateCapacityReservationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateDataCatalogRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateDataCatalogRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateDataCatalogResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateDataCatalogResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateNamedQueryRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateNamedQueryRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateNamedQueryResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateNamedQueryResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateNotebookMetadataRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateNotebookMetadataRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateNotebookMetadataResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateNotebookMetadataResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateNotebookRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateNotebookRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateNotebookResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateNotebookResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdatePreparedStatementRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdatePreparedStatementRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdatePreparedStatementResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdatePreparedStatementResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateWorkGroupRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateWorkGroupRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/WorkGroupConfigurationUpdates.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/UpdateWorkGroupResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/model/UpdateWorkGroupResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/WorkGroup.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/WorkGroupConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/WorkGroupConfigurationUpdates.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/WorkGroupState.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/model/WorkGroupSummary.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/source/AthenaClient.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/RetryStrategy.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpClientFactory.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSCredentialsProviderChain.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSCredentialsProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/internal/AWSHttpResourceClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSCredentials.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/AWSProfileConfigLoader.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/AWSProfileConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/AWSProfileConfigLoaderBase.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/AWSConfigFileProfileConfigLoader.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/EC2InstanceProfileConfigLoader.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/ConfigAndCredentialsCacheManager.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/GeneralHTTPCredentialsProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/Executor.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/DefaultExecutor.h \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/PooledThreadExecutor.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSQueue.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSDeque.h \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
+ /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/queue \
+ /usr/include/c++/11/bits/stl_queue.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/DNS.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/ErrorMacros.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/RAIICounter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/AthenaClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSUrlPresigner.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSAuthSignerProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer-provider/AWSAuthSignerProviderBase.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer-provider/DefaultAuthSignerProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSJsonClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSXmlClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSClientAsyncCRTP.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSAsyncOperationTemplate.h \
+ /usr/include/c++/11/future /usr/include/c++/11/bits/atomic_futex.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/component-registry/ComponentRegistry.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-athena/include/aws/athena/AthenaServiceClientModel.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AsyncCallerContext.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/TracingUtils.h

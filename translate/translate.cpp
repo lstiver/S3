@@ -89,42 +89,10 @@ vector<vector<string>> get_query(string file_path){
   }
 }
 
-pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const vector<string> & row, int index){
-  // 调用python getRange函数
-  PyRun_SimpleString("import sys");
-	PyRun_SimpleString("sys.path.append('..')");
-
-	PyObject* pModule = NULL;
-	PyObject* pFunc = NULL;
-	PyObject* args = NULL;
-  PyObject* pReturn = NULL;
-  //import模块
-  pModule = PyImport_ImportModule("s3DemoService.bin.s3SelectIndex");//模块文件名
-  //找不到模块则报错
-	if (pModule == nullptr) {
-    cout<<"ERROR"<<endl;
-	  PyErr_Print();
-	  Py_Finalize();
-	  exit(0);
-  }
-  pFunc = PyObject_GetAttrString(pModule, "getRange");//获取函数名称
-  const char *t1 = bucket.c_str();
-  const char *t2 = row[1].c_str();
-  const char *t3 = row[3].c_str();
-  args = Py_BuildValue("(sss)",t1,t2,t3);
-  PyErr_Print(); 
-  pReturn = PyObject_CallObject(pFunc, args);//函数调用
-  PyErr_Print();
-  cout<<"调用python方法成功"<<endl;
-  int size=0,start=0,end=0;
-  PyArg_ParseTuple(pReturn,"iii",&start,&end,&size);
-  PyErr_Print(); 
-  cout<<"result:"<<size<<" "<<start<<" "<<end<<endl;
-  Py_DECREF(args);
-  Py_DECREF(pReturn);
-  Py_DECREF(pFunc);
-  Py_DECREF(pModule);
-
+pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const vector<string> & row, int index, std::shared_ptr<fpdb::aws::AWSClient> awsClient){
+  getRange(bucket,row[0],row[1],awsClient);
+  exit(0);
+  int size,start,end;
   int total=0; //用来记录查询totallength
   vector<QueryInfo>time_and_cost;
   // 根据获得的size，start，end来估算cost和time

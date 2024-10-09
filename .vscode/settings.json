@@ -76,6 +76,15 @@
     "complex": "cpp",
     "hash_map": "cpp",
     "future": "cpp",
-    "alignedvector3": "cpp"
+    "alignedvector3": "cpp",
+    "*.inc": "cpp",
+    "strstream": "cpp",
+    "cfenv": "cpp",
+    "charconv": "cpp",
+    "source_location": "cpp",
+    "ranges": "cpp",
+    "typeindex": "cpp",
+    "valarray": "cpp",
+    "*.ipp": "cpp"
   }
 }

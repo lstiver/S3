@@ -1,0 +1,800 @@
+generated/src/aws-cpp-sdk-appsync/CMakeFiles/aws-cpp-sdk-appsync.dir/ub_APPSYNC.cpp.o: \
+ /home/ec2-user/s3/S3C++/sdk_build/generated/src/aws-cpp-sdk-appsync/ub_APPSYNC.cpp \
+ /usr/include/stdc-predef.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/AppSyncEndpointProvider.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/AppSyncEndpointProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/AppSync_EXPORTS.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/GenericClientConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/Core_EXPORTS.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/SDKConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/ClientConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/Scheme.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSString.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSAllocator.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/AWSMemory.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/UnreferencedParam.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/MemorySystemInterface.h \
+ /usr/include/c++/11/cstdlib \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/c++config.h \
+ /usr/include/bits/wordsize.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/os_defines.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/cpu_defines.h \
+ /usr/include/stdlib.h /usr/include/bits/libc-header-start.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
+ /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/endianness.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/struct_timespec.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h /usr/include/bits/struct_mutex.h \
+ /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-float.h /usr/include/c++/11/bits/std_abs.h \
+ /usr/include/assert.h /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_algobase.h \
+ /usr/include/c++/11/bits/functexcept.h \
+ /usr/include/c++/11/bits/exception_defines.h \
+ /usr/include/c++/11/bits/cpp_type_traits.h \
+ /usr/include/c++/11/ext/type_traits.h \
+ /usr/include/c++/11/ext/numeric_traits.h \
+ /usr/include/c++/11/bits/stl_pair.h /usr/include/c++/11/bits/move.h \
+ /usr/include/c++/11/type_traits \
+ /usr/include/c++/11/bits/stl_iterator_base_types.h \
+ /usr/include/c++/11/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/11/bits/concept_check.h \
+ /usr/include/c++/11/debug/assertions.h \
+ /usr/include/c++/11/bits/stl_iterator.h \
+ /usr/include/c++/11/bits/ptr_traits.h /usr/include/c++/11/debug/debug.h \
+ /usr/include/c++/11/bits/predefined_ops.h \
+ /usr/include/c++/11/bits/allocator.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/c++allocator.h \
+ /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \
+ /usr/include/c++/11/bits/exception.h \
+ /usr/include/c++/11/bits/memoryfwd.h \
+ /usr/include/c++/11/bits/stl_construct.h \
+ /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/ext/alloc_traits.h \
+ /usr/include/c++/11/bits/alloc_traits.h \
+ /usr/include/c++/11/bits/stl_tempbuf.h \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /usr/include/bits/stdint-uintn.h \
+ /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/utility \
+ /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/initializer_list /usr/include/c++/11/tuple \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/range_access.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_function.h \
+ /usr/include/c++/11/backward/binders.h \
+ /usr/include/c++/11/bits/functional_hash.h \
+ /usr/include/c++/11/bits/hash_bytes.h \
+ /usr/include/c++/11/bits/shared_ptr.h /usr/include/c++/11/iosfwd \
+ /usr/include/c++/11/bits/stringfwd.h /usr/include/c++/11/bits/postypes.h \
+ /usr/include/c++/11/cwchar /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/stdarg.h \
+ /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
+ /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
+ /usr/include/bits/types/FILE.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h /usr/include/c++/11/typeinfo \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/bits/refwrap.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/ext/atomicity.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/gthr.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
+ /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
+ /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_itimerspec.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/types/struct___jmp_buf_tag.h \
+ /usr/include/bits/pthread_stack_min-dynamic.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/atomic_word.h \
+ /usr/include/sys/single_threaded.h /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/exception /usr/include/c++/11/bits/exception_ptr.h \
+ /usr/include/c++/11/bits/cxxabi_init_exception.h \
+ /usr/include/c++/11/bits/nested_exception.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/11/backward/auto_ptr.h /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/bits/stl_heap.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/StlAllocator.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Allocator.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/common.h \
+ /home/ec2-user/s3/S3C++/sdk_build/crt/aws-crt-cpp/crt/aws-c-common/generated/include/aws/common/config.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/exports.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/allocator.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/macros.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/stdbool.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/stdbool.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/stdint.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/assert.h \
+ /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
+ /usr/include/bits/types/__fpos64_t.h \
+ /usr/include/bits/types/struct_FILE.h \
+ /usr/include/bits/types/cookie_io_functions_t.h \
+ /usr/include/bits/stdio_lim.h /usr/include/c++/11/stdlib.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/error.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/package.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/error.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/platform.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/predicates.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/zero.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/zero.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Exports.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
+ /usr/include/c++/11/string /usr/include/c++/11/bits/char_traits.h \
+ /usr/include/c++/11/cstdint /usr/include/c++/11/bits/localefwd.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/c++locale.h \
+ /usr/include/c++/11/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/11/cctype \
+ /usr/include/ctype.h /usr/include/c++/11/bits/ostream_insert.h \
+ /usr/include/c++/11/bits/cxxabi_forced.h \
+ /usr/include/c++/11/bits/basic_string.h \
+ /usr/include/c++/11/ext/string_conversions.h /usr/include/c++/11/cstdio \
+ /usr/include/c++/11/cerrno /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h /usr/include/bits/types/error_t.h \
+ /usr/include/c++/11/bits/charconv.h \
+ /usr/include/c++/11/bits/basic_string.tcc \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/Version.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/Region.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpTypes.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSList.h \
+ /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
+ /usr/include/c++/11/bits/list.tcc \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSMap.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/unordered_map \
+ /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/unordered_map.h /usr/include/c++/11/cstring \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/Array.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSVector.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Types.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Optional.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/Utility.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/StringView.h \
+ /usr/include/c++/11/cassert /usr/include/c++/11/iterator \
+ /usr/include/c++/11/bits/stream_iterator.h \
+ /usr/include/c++/11/bits/streambuf_iterator.h \
+ /usr/include/c++/11/streambuf /usr/include/c++/11/bits/ios_base.h \
+ /usr/include/c++/11/bits/locale_classes.h \
+ /usr/include/c++/11/bits/locale_classes.tcc \
+ /usr/include/c++/11/system_error \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/error_constants.h \
+ /usr/include/c++/11/stdexcept /usr/include/c++/11/bits/streambuf.tcc \
+ /usr/include/c++/11/limits \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/socket.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/channel.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/io.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/byte_buf.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/array_list.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/math.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/math.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/math.gcc_x64_asm.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/math.gcc_builtin.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/array_list.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/byte_order.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/byte_order.inl \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/bits/socket.h \
+ /usr/include/bits/socket_type.h /usr/include/bits/sockaddr.h \
+ /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
+ /usr/include/linux/posix_types.h /usr/include/linux/stddef.h \
+ /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h /usr/include/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/linked_list.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/linked_list.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/exports.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/statistics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/task_scheduler.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/priority_queue.h \
+ /usr/include/sys/un.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-mqtt/include/aws/mqtt/mqtt.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/logging.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/atomics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/atomics.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/atomics_gnu.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/atomics_fallback.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/thread.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/string.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/string.inl \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-mqtt/include/aws/mqtt/exports.h \
+ /usr/include/c++/11/sstream /usr/include/c++/11/istream \
+ /usr/include/c++/11/ios /usr/include/c++/11/bits/basic_ios.h \
+ /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
+ /usr/include/wctype.h /usr/include/bits/wctype-wchar.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/ctype_base.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/ctype_inline.h \
+ /usr/include/c++/11/bits/locale_facets.tcc \
+ /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
+ /usr/include/c++/11/bits/ostream.tcc \
+ /usr/include/c++/11/bits/istream.tcc \
+ /usr/include/c++/11/bits/sstream.tcc \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/TelemetryProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/Smithy_EXPORTS.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/TracerProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/Tracer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/TraceSpan.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/MeterProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/Meter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/Gauge.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/MonotonicCounter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/UpDownCounter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/Histogram.h \
+ /usr/include/c++/11/mutex /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
+ /usr/include/c++/11/bits/parse_numbers.h \
+ /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/unique_lock.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/DefaultEndpointProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/AWSPartitions.h \
+ /usr/include/c++/11/cstddef \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/EndpointProviderBase.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/AWSEndpoint.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/URI.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/StringUtils.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSStringStream.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/internal/AWSEndpointAttribute.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSError.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpResponse.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
+ /usr/include/c++/11/iostream \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/stream/ResponseStream.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/UUID.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/monitoring/HttpClientMetrics.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/CoreErrors.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/xml/XmlSerializer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/Outcome.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/json/JsonSerializer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/external/cjson/cJSON.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/EndpointParameter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/BuiltInParameters.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/endpoint/ClientContextParameters.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSArray.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/endpoints/RuleEngine.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/LogMacros.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/LogLevel.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/AWSLogging.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/LogSystemInterface.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/AppSyncEndpointRules.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/AppSyncEndpointRules.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/AppSyncErrorMarshaller.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/AppSyncErrorMarshaller.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSErrorMarshaller.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/AppSyncErrors.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/AppSyncErrors.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/HashingUtils.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/BadRequestException.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/BadRequestReason.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/BadRequestDetail.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CodeError.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CodeErrorLocation.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/AppSyncRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/AppSyncRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/AmazonSerializableWebServiceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/AmazonWebServiceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/RequestCompression.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSAuthSigner.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSAuthSignerBase.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/DateTime.h \
+ /usr/include/c++/11/atomic \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSAuthSignerCommon.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSAuthV4Signer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSSet.h \
+ /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/stl_multiset.h \
+ /usr/include/c++/11/unordered_set \
+ /usr/include/c++/11/bits/unordered_set.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/ReaderWriterLock.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/Semaphore.h \
+ /usr/include/c++/11/condition_variable \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/Sha256.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/Hash.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/HashResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/Sha256HMAC.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/crypto/HMAC.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/auth/Sigv4Signing.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/DateTime.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-common/include/aws/common/date_time.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/include/aws/crt/auth/Signing.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-auth/include/aws/auth/signing_config.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-auth/include/aws/auth/auth.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-auth/include/aws/auth/exports.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-io/include/aws/io/logging.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-sdkutils/include/aws/sdkutils/sdkutils.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/crt/aws-crt-cpp/crt/aws-c-sdkutils/include/aws/sdkutils/exports.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSAuthEventStreamV4Signer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer/AWSNullSigner.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AdditionalAuthenticationProvider.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AdditionalAuthenticationProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AuthenticationType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/OpenIDConnectConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CognitoUserPoolConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/LambdaAuthorizerConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ApiAssociation.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ApiAssociation.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AssociationStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ApiCache.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ApiCache.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ApiCachingBehavior.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ApiCacheType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ApiCacheStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CacheHealthMetricsConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ApiCacheStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/Globals.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/EnumParseOverflowContainer.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ApiCacheType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ApiCachingBehavior.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ApiKey.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ApiKey.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AppSyncRuntime.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AppSyncRuntime.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/RuntimeName.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AssociateApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AssociateApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AssociateApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AssociateApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/AmazonWebServiceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AssociateMergedGraphqlApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AssociateMergedGraphqlApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/SourceApiAssociationConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/MergeType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AssociateMergedGraphqlApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AssociateMergedGraphqlApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/SourceApiAssociation.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/SourceApiAssociationStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AssociateSourceGraphqlApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AssociateSourceGraphqlApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AssociateSourceGraphqlApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AssociateSourceGraphqlApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AssociationStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AuthenticationType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AuthorizationConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AuthorizationConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AuthorizationType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/AwsIamConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AuthorizationType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/AwsIamConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/BadRequestDetail.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/BadRequestException.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/BadRequestReason.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CacheHealthMetricsConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CachingConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CachingConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CodeError.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CodeErrorLocation.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CognitoUserPoolConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ConflictDetectionType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ConflictDetectionType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ConflictHandlerType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ConflictHandlerType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateApiCacheRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateApiCacheRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateApiCacheResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateApiCacheResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateApiKeyRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateApiKeyRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateApiKeyResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateApiKeyResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateDataSourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateDataSourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSourceType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DynamodbDataSourceConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeltaSyncConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/LambdaDataSourceConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ElasticsearchDataSourceConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/OpenSearchServiceDataSourceConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/HttpDataSourceConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/RelationalDatabaseDataSourceConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/RelationalDatabaseSourceType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/RdsHttpEndpointConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/EventBridgeDataSourceConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSourceLevelMetricsConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateDataSourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateDataSourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSource.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateDomainNameRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateDomainNameRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateDomainNameResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateDomainNameResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DomainNameConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateFunctionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateFunctionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/SyncConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/LambdaConflictHandlerConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateFunctionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateFunctionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/FunctionConfiguration.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateGraphqlApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateGraphqlApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/LogConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/FieldLogLevel.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UserPoolConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DefaultAction.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GraphQLApiVisibility.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GraphQLApiType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GraphQLApiIntrospectionConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/EnhancedMetricsConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ResolverLevelMetricsBehavior.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSourceLevelMetricsBehavior.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/OperationLevelMetricsConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateGraphqlApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateGraphqlApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GraphqlApi.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateResolverRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateResolverRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ResolverKind.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/PipelineConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ResolverLevelMetricsConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateResolverResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateResolverResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/Resolver.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateTypeRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateTypeRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/TypeDefinitionFormat.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/CreateTypeResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/CreateTypeResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/Type.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSource.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSourceIntrospectionModel.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSourceIntrospectionModel.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSourceIntrospectionModelIndex.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSourceIntrospectionModelField.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSourceIntrospectionModelFieldType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSourceIntrospectionModelField.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSourceIntrospectionModelFieldType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSourceIntrospectionModelIndex.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSourceIntrospectionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSourceIntrospectionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSourceIntrospectionStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DataSourceIntrospectionStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSourceLevelMetricsBehavior.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSourceLevelMetricsConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DataSourceType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DefaultAction.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteApiCacheRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteApiCacheRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteApiCacheResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteApiCacheResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteApiKeyRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteApiKeyRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteApiKeyResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteApiKeyResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteDataSourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteDataSourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteDataSourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteDataSourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteDomainNameRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteDomainNameRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteDomainNameResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteDomainNameResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteFunctionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteFunctionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteFunctionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteFunctionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteGraphqlApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteGraphqlApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteGraphqlApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteGraphqlApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteResolverRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteResolverRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteResolverResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteResolverResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteTypeRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteTypeRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeleteTypeResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DeleteTypeResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DeltaSyncConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DisassociateApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DisassociateApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DisassociateApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DisassociateApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DisassociateMergedGraphqlApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DisassociateMergedGraphqlApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DisassociateMergedGraphqlApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DisassociateMergedGraphqlApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DisassociateSourceGraphqlApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DisassociateSourceGraphqlApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DisassociateSourceGraphqlApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/DisassociateSourceGraphqlApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DomainNameConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/DynamodbDataSourceConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ElasticsearchDataSourceConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/EnhancedMetricsConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ErrorDetail.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ErrorDetail.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/EvaluateCodeErrorDetail.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/EvaluateCodeErrorDetail.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/EvaluateCodeRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/EvaluateCodeRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/EvaluateCodeResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/EvaluateCodeResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/EvaluateMappingTemplateRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/EvaluateMappingTemplateRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/EvaluateMappingTemplateResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/EvaluateMappingTemplateResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/EventBridgeDataSourceConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/FieldLogLevel.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/FlushApiCacheRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/FlushApiCacheRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/FlushApiCacheResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/FlushApiCacheResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/FunctionConfiguration.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetApiAssociationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetApiAssociationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetApiAssociationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetApiAssociationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetApiCacheRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetApiCacheRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetApiCacheResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetApiCacheResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetDataSourceIntrospectionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetDataSourceIntrospectionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetDataSourceIntrospectionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetDataSourceIntrospectionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetDataSourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetDataSourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetDataSourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetDataSourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetDomainNameRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetDomainNameRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetDomainNameResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetDomainNameResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetFunctionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetFunctionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetFunctionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetFunctionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetGraphqlApiEnvironmentVariablesRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetGraphqlApiEnvironmentVariablesRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetGraphqlApiEnvironmentVariablesResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetGraphqlApiEnvironmentVariablesResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetGraphqlApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetGraphqlApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetGraphqlApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetGraphqlApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetIntrospectionSchemaRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetIntrospectionSchemaRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/OutputType.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetIntrospectionSchemaResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetIntrospectionSchemaResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetResolverRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetResolverRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetResolverResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetResolverResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetSchemaCreationStatusRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetSchemaCreationStatusRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetSchemaCreationStatusResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetSchemaCreationStatusResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/SchemaStatus.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetSourceApiAssociationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetSourceApiAssociationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetSourceApiAssociationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetSourceApiAssociationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetTypeRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetTypeRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GetTypeResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/GetTypeResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GraphQLApiIntrospectionConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GraphQLApiType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GraphQLApiVisibility.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/GraphqlApi.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/HttpDataSourceConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/LambdaAuthorizerConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/LambdaConflictHandlerConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/LambdaDataSourceConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListApiKeysRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListApiKeysRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListApiKeysResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListApiKeysResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListDataSourcesRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListDataSourcesRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListDataSourcesResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListDataSourcesResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListDomainNamesRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListDomainNamesRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListDomainNamesResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListDomainNamesResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListFunctionsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListFunctionsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListFunctionsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListFunctionsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListGraphqlApisRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListGraphqlApisRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/Ownership.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListGraphqlApisResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListGraphqlApisResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListResolversByFunctionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListResolversByFunctionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListResolversByFunctionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListResolversByFunctionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListResolversRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListResolversRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListResolversResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListResolversResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListSourceApiAssociationsRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListSourceApiAssociationsRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListSourceApiAssociationsResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListSourceApiAssociationsResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/SourceApiAssociationSummary.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListTagsForResourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListTagsForResourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListTagsForResourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListTagsForResourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListTypesByAssociationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListTypesByAssociationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListTypesByAssociationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListTypesByAssociationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListTypesRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListTypesRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ListTypesResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/ListTypesResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/LogConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/MergeType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/OpenIDConnectConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/OpenSearchServiceDataSourceConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/OperationLevelMetricsConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/OutputType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/Ownership.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/PipelineConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/PutGraphqlApiEnvironmentVariablesRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/PutGraphqlApiEnvironmentVariablesRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/PutGraphqlApiEnvironmentVariablesResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/PutGraphqlApiEnvironmentVariablesResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/RdsDataApiConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/RdsDataApiConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/RdsHttpEndpointConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/RelationalDatabaseDataSourceConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/RelationalDatabaseSourceType.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/Resolver.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ResolverKind.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ResolverLevelMetricsBehavior.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/ResolverLevelMetricsConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/RuntimeName.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/SchemaStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/SourceApiAssociation.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/SourceApiAssociationConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/SourceApiAssociationStatus.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/SourceApiAssociationSummary.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/StartDataSourceIntrospectionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/StartDataSourceIntrospectionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/StartDataSourceIntrospectionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/StartDataSourceIntrospectionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/StartSchemaCreationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/StartSchemaCreationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/StartSchemaCreationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/StartSchemaCreationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/StartSchemaMergeRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/StartSchemaMergeRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/StartSchemaMergeResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/StartSchemaMergeResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/SyncConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/TagResourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/TagResourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/TagResourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/TagResourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/Type.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/TypeDefinitionFormat.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UntagResourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UntagResourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UntagResourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UntagResourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateApiCacheRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateApiCacheRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateApiCacheResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateApiCacheResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateApiKeyRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateApiKeyRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateApiKeyResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateApiKeyResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateDataSourceRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateDataSourceRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateDataSourceResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateDataSourceResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateDomainNameRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateDomainNameRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateDomainNameResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateDomainNameResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateFunctionRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateFunctionRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateFunctionResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateFunctionResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateGraphqlApiRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateGraphqlApiRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateGraphqlApiResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateGraphqlApiResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateResolverRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateResolverRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateResolverResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateResolverResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateSourceApiAssociationRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateSourceApiAssociationRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateSourceApiAssociationResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateSourceApiAssociationResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateTypeRequest.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateTypeRequest.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UpdateTypeResult.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/model/UpdateTypeResult.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/model/UserPoolConfig.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/source/AppSyncClient.cpp \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/RetryStrategy.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/http/HttpClientFactory.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSCredentialsProviderChain.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSCredentialsProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/internal/AWSHttpResourceClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSCredentials.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/AWSProfileConfigLoader.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/AWSProfileConfig.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/AWSProfileConfigLoaderBase.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/AWSConfigFileProfileConfigLoader.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/EC2InstanceProfileConfigLoader.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/config/ConfigAndCredentialsCacheManager.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/GeneralHTTPCredentialsProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/Executor.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/DefaultExecutor.h \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/threading/PooledThreadExecutor.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSQueue.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSDeque.h \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
+ /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/queue \
+ /usr/include/c++/11/bits/stl_queue.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/DNS.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/logging/ErrorMacros.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/RAIICounter.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/AppSyncClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSUrlPresigner.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/AWSAuthSignerProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer-provider/AWSAuthSignerProviderBase.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/auth/signer-provider/DefaultAuthSignerProvider.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSJsonClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSXmlClient.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSClientAsyncCRTP.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AWSAsyncOperationTemplate.h \
+ /usr/include/c++/11/future /usr/include/c++/11/bits/atomic_futex.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/utils/component-registry/ComponentRegistry.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/generated/src/aws-cpp-sdk-appsync/include/aws/appsync/AppSyncServiceClientModel.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/aws/core/client/AsyncCallerContext.h \
+ /home/ec2-user/s3/S3C++/aws-sdk-cpp/src/aws-cpp-sdk-core/include/smithy/tracing/TracingUtils.h

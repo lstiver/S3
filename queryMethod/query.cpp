@@ -1,92 +1,132 @@
-#include "query.h"
-using namespace std;
-extern int index_;
+#include "query.h" 
+#include <aws/s3/model/SelectObjectContentRequest.h>
+#include <aws/s3/model/InputSerialization.h>
+#include <aws/s3/model/OutputSerialization.h>
+#include <aws/s3/model/CSVInput.h>
+#include <aws/s3/model/CSVOutput.h>
+#include <aws/s3/model/ExpressionType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
-flat_hash_map<pair<int,int>, vector<vector<int>>> getObject(
+// InputSerialization getInputSerialization() {
+//   InputSerialization inputSerialization;
+//   CSVInput csvInput;
+//   csvInput.SetFileHeaderInfo(FileHeaderInfo::USE);
+//   auto csvFormat = std::static_pointer_cast<csv::CSVFormat>(table_->getFormat());
+//   std::string delimiter = std::string(1, csvFormat->getFieldDelimiter());
+//   csvInput.SetFieldDelimiter(Aws::String(delimiter));
+//   csvInput.SetRecordDelimiter("\n");
+//   inputSerialization.SetCSV(csvInput);
+//   return inputSerialization;
+// }
+InputSerialization getInputSerialization() {
+    InputSerialization inputSerialization;
+    CSVInput csvInput;
+    csvInput.SetFileHeaderInfo(FileHeaderInfo::USE);
+
+    // 这里修正了csvFormat的命名空间
+    auto csvFormat = std::static_pointer_cast<Aws::S3::Model::CSVFormat>(table_->getFormat());
+    std::string delimiter = std::string(1, csvFormat->getFieldDelimiter());
+    csvInput.SetFieldDelimiter(Aws::String(delimiter));
+    csvInput.SetRecordDelimiter("\n");
+    
+    inputSerialization.SetCSV(csvInput);
+    return inputSerialization;
+}
+
+void getObject(
     flat_hash_map<pair<int,int>, vector<vector<int>>> &result, 
     const string &bucket, 
     const string &key, 
+    std::shared_ptr<fpdb::aws::AWSClient> awsClient,
     const vector<int>& keyColumnIndex) 
 {
-    cout << "调用getObject函数" << endl;
+    Aws::S3::Model::GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(Aws::String(bucket));
+    getObjectRequest.SetKey(Aws::String(key));
 
-    // Initialize Python interpreter
-    PyRun_SimpleString("import sys");
-    PyRun_SimpleString("sys.path.append('..')");
+    std::chrono::steady_clock::time_point startTransferTime = std::chrono::steady_clock::now();
+    GetObjectOutcome getObjectOutcome;
+    // 发起请求
+    getObjectOutcome = awsClient->getS3Client()->GetObject(getObjectRequest);
 
-    flat_hash_map<pair<int,int>, vector<vector<int>>> new_result;
-    PyObject* pModule = PyImport_ImportModule("s3DemoService.bin.getObject"); // 模块文件名
-    if (!pModule) {
-        cerr << "Failed to load module" << endl;
-        return new_result; // 或者进行更好的错误处理
+    // 检查请求是否成功
+    if (getObjectOutcome.IsSuccess()) {
+      auto getResult = getObjectOutcome.GetResultWithOwnership();
+      int64_t resultSize = getResult.GetContentLength();
+      // 获取响应体（Body）
+      // auto& retrievedFile = getObjectOutcome.GetResult().GetBody();
+      Aws::IOStream &retrievedFile = getResult.GetBody();
+      // 读取文件内容到 std::string
+      Aws::StringStream ss;
+      ss << retrievedFile.rdbuf();  // 将流内容写入stringstream
+      Aws::String fileContent = ss.str();  // 转换为字符串
+      // 打印内容
+      std::cout << "File content:\n" << fileContent << std::endl;
+    } else {
+        // 请求失败，输出错误信息
+        const auto& err = getObjectOutcome.GetError();
+        std::cerr << "Error occurred while fetching object: " << err.GetMessage() << std::endl;
     }
-
-    PyObject* pFunc = PyObject_GetAttrString(pModule, "getObject");
-    if (!pFunc || !PyCallable_Check(pFunc)) {
-        cerr << "Function not callable" << endl;
-        Py_DECREF(pModule);
-        return new_result; // 或者进行更好的错误处理
-    }
-
-    PyObject* pArgs = PyTuple_Pack(2, 
-        PyUnicode_FromString(bucket.c_str()), 
-        PyUnicode_FromString(key.c_str())
-    );
     
-    // Check if pArgs was created successfully
-    if (!pArgs) {
-        cerr << "Failed to create arguments" << endl;
-        Py_DECREF(pFunc);
-        Py_DECREF(pModule);
-        return new_result; // 或者进行更好的错误处理
+    
+    // 获取响应体（Body）
+    auto& retrievedFile = getObjectOutcome.GetResult().GetBody();
+
+    // 读取文件内容到 std::string
+    Aws::StringStream ss;
+    ss << retrievedFile.rdbuf();  // 将流内容写入stringstream
+    Aws::String fileContent = ss.str();  // 转换为字符串
+
+}
+
+array<int, 3> getRange(const string &bucket, 
+                       const string &key,
+                       const string &parsed_conditions,
+                       std::shared_ptr<fpdb::aws::AWSClient> awsClient)
+{
+    string key_ = key + '_index.csv';
+    int start = 0;
+    int end = 0;
+    int size = 0;
+    string sql;
+    vector<unsigned char> s3Result_{};
+
+    // 如果 parsed_conditions 为空字符串或 "None"，返回默认查询
+    if (parsed_conditions.empty()) {
+        sql = "SELECT * FROM s3object s WHERE s.object = 'size'";
+    } else {
+        sql = "SELECT * FROM s3object s WHERE s.object = '" + parsed_conditions + "' OR s.object = 'size'";
     }
 
-    PyObject* pIterator = PyObject_CallObject(pFunc, pArgs);
-    Py_DECREF(pArgs); // 这里应立即释放 pArgs
+    Aws::String bucketName = Aws::String(bucket);
 
-    if (pIterator && PyIter_Check(pIterator)) {
-        PyObject* pItem;
-        bool flag = true; // 移动到这里，避免在异常处理中重复声明
+    SelectObjectContentRequest selectObjectContentRequest;
+    selectObjectContentRequest.SetBucket(bucketName);
+    selectObjectContentRequest.SetKey(Aws::String(key_));
+    selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
+    //设置 S3 Select 的 SQL 查询语句
+    selectObjectContentRequest.SetExpression(Aws::String(sql));
+    //InputSerialization 指定输入数据的格式
+    InputSerialization inputSerialization = getInputSerialization();
+    selectObjectContentRequest.SetInputSerialization(inputSerialization);
+    //指定输出格式为csv
+    CSVOutput csvOutput;
+    OutputSerialization outputSerialization;
+    outputSerialization.SetCSV(csvOutput);
+    selectObjectContentRequest.SetOutputSerialization(outputSerialization);
 
-        while ((pItem = PyIter_Next(pIterator)) != nullptr) {
-            char* data;
-            Py_ssize_t size;
+    SelectObjectContentHandler handler;
+    bool hasEndEvent = false;
 
-            if (PyBytes_AsStringAndSize(pItem, &data, &size) == 0) {
-                // cout<<"AAA"<<endl;
-                try {
-                    if (index_ == 0) {
-                        // processData(result, data, keyColumnIndex);
-                        // 直接返回时释放其他对象
-                        Py_DECREF(pItem);
-                        Py_DECREF(pIterator);
-                        Py_DECREF(pFunc);
-                        Py_DECREF(pModule);
-                        return result;
-                    } else {
-                        // merge(new_result, result, data, keyColumnIndex, flag);
-                        flag = false;
-                    }
-                } catch (const exception& e) {
-                    cerr << "Exception occurred in function: " << __func__ << ", with message: " << e.what() << endl;
-                    Py_DECREF(pItem); // 确保释放
-                }
-            }
-            Py_DECREF(pItem); // 确保 pItem 被释放
-        }
-
-        // 迭代完成后检查是否有异常发生
-        if (PyErr_Occurred()) {
-            cerr << "Error occurred during iteration" << endl;
-        // 处理错误：你可以根据需求进行进一步的错误处理或清理
-        }
-
-        Py_DECREF(pIterator); // 释放迭代器
-        } else {
-        cerr << "Failed to get iterator from function" << endl;
-    }
-
-    Py_DECREF(pFunc); // 释放函数引用
-    Py_DECREF(pModule); // 释放模块引用
-    return new_result;
+    //处理 RecordsEvent 的回调函数。当收到 S3 传回的 RecordsEvent 时，这个回调函数会被触发
+    handler.SetRecordsEventCallback([&](const RecordsEvent &recordsEvent) {
+      std::cerr << "  Record\n";
+      spdlog::info("S3 Select RecordsEvent  |  name: {}, size: {}",
+                   recordsEvent.GetPayload().size());
+      auto payload = recordsEvent.GetPayload();
+      if (!payload.empty()) {
+        s3Result_.insert(s3Result_.end(), payload.begin(), payload.end());
+      }
+    });
+    return {1,2,3};
 }

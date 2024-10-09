@@ -1,0 +1,280 @@
+Performing C SOURCE FILE Test AWS_HAVE_WINAPI_DESKTOP failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_bc8b4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_bc8b4.dir/build.make CMakeFiles/cmTC_bc8b4.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bc8b4.dir/src.c.o
+/usr/bin/cc -DAWS_HAVE_WINAPI_DESKTOP   -o CMakeFiles/cmTC_bc8b4.dir/src.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c:2:14: fatal error: windows.h: No such file or directory
+    2 |     #include <windows.h>
+      |              ^~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_bc8b4.dir/build.make:78: CMakeFiles/cmTC_bc8b4.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_bc8b4/fast] Error 2
+
+
+Source file was:
+
+    #include <windows.h>
+    #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+    int main() {
+        return 0;
+    }
+    #else
+    it's not windows desktop
+    #endif
+
+Performing C SOURCE FILE Test AWS_ARCH_ARM64 failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_21f35/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_21f35.dir/build.make CMakeFiles/cmTC_21f35.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_21f35.dir/src.c.o
+/usr/bin/cc -DAWS_ARCH_ARM64   -o CMakeFiles/cmTC_21f35.dir/src.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c:4:6: error: #error "not arm64"
+    4 | #    error "not arm64"
+      |      ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_21f35.dir/build.make:78: CMakeFiles/cmTC_21f35.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_21f35/fast] Error 2
+
+
+Source file was:
+
+    int main() {
+#if !(defined(__aarch64__) || defined(_M_ARM64))
+#    error "not arm64"
+#endif
+        return 0;
+    }
+
+Performing C SOURCE FILE Test AWS_ARCH_ARM32 failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3a44b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3a44b.dir/build.make CMakeFiles/cmTC_3a44b.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3a44b.dir/src.c.o
+/usr/bin/cc -DAWS_ARCH_ARM32   -o CMakeFiles/cmTC_3a44b.dir/src.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c:4:6: error: #error "not arm"
+    4 | #    error "not arm"
+      |      ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_3a44b.dir/build.make:78: CMakeFiles/cmTC_3a44b.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_3a44b/fast] Error 2
+
+
+Source file was:
+
+    int main() {
+#if !(defined(__arm__) || defined(_M_ARM))
+#    error "not arm"
+#endif
+        return 0;
+    }
+
+Performing C SOURCE FILE Test AWS_HAVE_ARM32_CRC failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0b963/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0b963.dir/build.make CMakeFiles/cmTC_0b963.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0b963.dir/src.c.o
+/usr/bin/cc -DAWS_HAVE_ARM32_CRC  -march=armv8-a+crc+crypto -mtune=neoverse-v1 -Werror -o CMakeFiles/cmTC_0b963.dir/src.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c
+cc1: error: bad value (‘armv8-a+crc+crypto’) for ‘-march=’ switch
+cc1: note: valid arguments to ‘-march=’ switch are: nocona core2 nehalem corei7 westmere sandybridge corei7-avx ivybridge core-avx-i haswell core-avx2 broadwell skylake skylake-avx512 cannonlake icelake-client rocketlake icelake-server cascadelake tigerlake cooperlake sapphirerapids alderlake bonnell atom silvermont slm goldmont goldmont-plus tremont knl knm x86-64 x86-64-v2 x86-64-v3 x86-64-v4 eden-x2 nano nano-1000 nano-2000 nano-3000 nano-x2 eden-x4 nano-x4 k8 k8-sse3 opteron opteron-sse3 athlon64 athlon64-sse3 athlon-fx amdfam10 barcelona bdver1 bdver2 bdver3 bdver4 znver1 znver2 znver3 btver1 btver2 native
+cc1: error: bad value (‘neoverse-v1’) for ‘-mtune=’ switch
+cc1: note: valid arguments to ‘-mtune=’ switch are: nocona core2 nehalem corei7 westmere sandybridge corei7-avx ivybridge core-avx-i haswell core-avx2 broadwell skylake skylake-avx512 cannonlake icelake-client rocketlake icelake-server cascadelake tigerlake cooperlake sapphirerapids alderlake bonnell atom silvermont slm goldmont goldmont-plus tremont knl knm intel x86-64 eden-x2 nano nano-1000 nano-2000 nano-3000 nano-x2 eden-x4 nano-x4 k8 k8-sse3 opteron opteron-sse3 athlon64 athlon64-sse3 athlon-fx amdfam10 barcelona bdver1 bdver2 bdver3 bdver4 znver1 znver2 znver3 btver1 btver2 generic native
+gmake[1]: *** [CMakeFiles/cmTC_0b963.dir/build.make:78: CMakeFiles/cmTC_0b963.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_0b963/fast] Error 2
+
+
+Source file was:
+
+            #include <arm_acle.h>
+            int main() {
+                int crc = __crc32d(0, 1);
+                return 0;
+            }
+Performing C SOURCE FILE Test AWS_HAVE_ARMv8_1 failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_874f6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_874f6.dir/build.make CMakeFiles/cmTC_874f6.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_874f6.dir/src.c.o
+/usr/bin/cc -DAWS_HAVE_ARMv8_1  -march=armv8-a+crc+crypto -mtune=neoverse-v1 -Werror -o CMakeFiles/cmTC_874f6.dir/src.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c
+cc1: error: bad value (‘armv8-a+crc+crypto’) for ‘-march=’ switch
+cc1: note: valid arguments to ‘-march=’ switch are: nocona core2 nehalem corei7 westmere sandybridge corei7-avx ivybridge core-avx-i haswell core-avx2 broadwell skylake skylake-avx512 cannonlake icelake-client rocketlake icelake-server cascadelake tigerlake cooperlake sapphirerapids alderlake bonnell atom silvermont slm goldmont goldmont-plus tremont knl knm x86-64 x86-64-v2 x86-64-v3 x86-64-v4 eden-x2 nano nano-1000 nano-2000 nano-3000 nano-x2 eden-x4 nano-x4 k8 k8-sse3 opteron opteron-sse3 athlon64 athlon64-sse3 athlon-fx amdfam10 barcelona bdver1 bdver2 bdver3 bdver4 znver1 znver2 znver3 btver1 btver2 native
+cc1: error: bad value (‘neoverse-v1’) for ‘-mtune=’ switch
+cc1: note: valid arguments to ‘-mtune=’ switch are: nocona core2 nehalem corei7 westmere sandybridge corei7-avx ivybridge core-avx-i haswell core-avx2 broadwell skylake skylake-avx512 cannonlake icelake-client rocketlake icelake-server cascadelake tigerlake cooperlake sapphirerapids alderlake bonnell atom silvermont slm goldmont goldmont-plus tremont knl knm intel x86-64 eden-x2 nano nano-1000 nano-2000 nano-3000 nano-x2 eden-x4 nano-x4 k8 k8-sse3 opteron opteron-sse3 athlon64 athlon64-sse3 athlon-fx amdfam10 barcelona bdver1 bdver2 bdver3 bdver4 znver1 znver2 znver3 btver1 btver2 generic native
+gmake[1]: *** [CMakeFiles/cmTC_874f6.dir/build.make:78: CMakeFiles/cmTC_874f6.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_874f6/fast] Error 2
+
+
+Source file was:
+
+        #include <stdatomic.h>
+        int main() {
+            _Atomic int var = 0;
+            atomic_fetch_add_explicit(&var, 1, memory_order_relaxed);
+            return 0;
+    }
+Determining if the pthread_mutexattr_init exist failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a1ced/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a1ced.dir/build.make CMakeFiles/cmTC_a1ced.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a1ced.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_a1ced.dir/CheckSymbolExists.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:22: warning: extra tokens at end of #include directive
+    2 | #include <<pthread.h>>
+      |                      ^
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: <pthread.h: No such file or directory
+    2 | #include <<pthread.h>>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_a1ced.dir/build.make:78: CMakeFiles/cmTC_a1ced.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_a1ced/fast] Error 2
+
+
+File /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <<pthread.h>>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_mutexattr_init
+  return ((int*)(&pthread_mutexattr_init))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test HAS_WGNU failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7c394/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7c394.dir/build.make CMakeFiles/cmTC_7c394.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7c394.dir/src.c.o
+/usr/bin/cc -DHAS_WGNU  -Wgnu -Werror -o CMakeFiles/cmTC_7c394.dir/src.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command-line option '-Wgnu'
+gmake[1]: *** [CMakeFiles/cmTC_7c394.dir/build.make:78: CMakeFiles/cmTC_7c394.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_7c394/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test PTHREAD_GETNAME_TAKES_2ARGS failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_463d0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_463d0.dir/build.make CMakeFiles/cmTC_463d0.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_463d0.dir/src.c.o
+/usr/bin/cc -DPTHREAD_GETNAME_TAKES_2ARGS -D_GNU_SOURCE   -o CMakeFiles/cmTC_463d0.dir/src.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c:3: warning: "_GNU_SOURCE" redefined
+    3 |         #define _GNU_SOURCE
+      | 
+<command-line>: note: this is the location of the previous definition
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c:14:17: error: too few arguments to function ‘pthread_getname_np’
+   14 |                 pthread_getname_np(thread_id, name);
+      |                 ^~~~~~~~~~~~~~~~~~
+In file included from /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c:4:
+/usr/include/pthread.h:458:12: note: declared here
+  458 | extern int pthread_getname_np (pthread_t __target_thread, char *__buf,
+      |            ^~~~~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_463d0.dir/build.make:78: CMakeFiles/cmTC_463d0.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_463d0/fast] Error 2
+
+
+Source file was:
+
+            
+        #define _GNU_SOURCE
+        #include <pthread.h>
+
+        #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+        #include <pthread_np.h>
+        #endif
+
+        int main() {
+            pthread_t thread_id;
+        
+                char name[16] = {0};
+                pthread_getname_np(thread_id, name);
+            }
+        
+Performing C SOURCE FILE Test PTHREAD_GET_NAME_TAKES_2ARGS failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d8a3f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d8a3f.dir/build.make CMakeFiles/cmTC_d8a3f.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d8a3f.dir/src.c.o
+/usr/bin/cc -DPTHREAD_GET_NAME_TAKES_2ARGS -D_GNU_SOURCE   -o CMakeFiles/cmTC_d8a3f.dir/src.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c:3: warning: "_GNU_SOURCE" redefined
+    3 |         #define _GNU_SOURCE
+      | 
+<command-line>: note: this is the location of the previous definition
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp/src.c:14:17: warning: implicit declaration of function ‘pthread_get_name_np’; did you mean ‘pthread_getname_np’? [-Wimplicit-function-declaration]
+   14 |                 pthread_get_name_np(thread_id, name);
+      |                 ^~~~~~~~~~~~~~~~~~~
+      |                 pthread_getname_np
+Linking C executable cmTC_d8a3f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8a3f.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_d8a3f.dir/src.c.o -o cmTC_d8a3f  -lpthread 
+/usr/bin/ld: CMakeFiles/cmTC_d8a3f.dir/src.c.o: in function `main':
+src.c:(.text+0x2c): undefined reference to `pthread_get_name_np'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_d8a3f.dir/build.make:99: cmTC_d8a3f] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d8a3f/fast] Error 2
+
+
+Source file was:
+
+            
+        #define _GNU_SOURCE
+        #include <pthread.h>
+
+        #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+        #include <pthread_np.h>
+        #endif
+
+        int main() {
+            pthread_t thread_id;
+        
+                char name[16] = {0};
+                pthread_get_name_np(thread_id, name);
+            }
+        
+Determining if files pulse/simple.h exist failed with the following output:
+Change Dir: /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_aec61/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_aec61.dir/build.make CMakeFiles/cmTC_aec61.dir/build
+gmake[1]: Entering directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_aec61.dir/HAVE_PULSE.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_aec61.dir/HAVE_PULSE.c.o -c /home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CheckIncludeFiles/HAVE_PULSE.c
+/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CheckIncludeFiles/HAVE_PULSE.c:2:10: fatal error: pulse/simple.h: No such file or directory
+    2 | #include <pulse/simple.h>
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_aec61.dir/build.make:78: CMakeFiles/cmTC_aec61.dir/HAVE_PULSE.c.o] Error 1
+gmake[1]: Leaving directory '/home/ec2-user/s3/S3C++/sdk_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_aec61/fast] Error 2
+
+
+Source:
+/* */
+#include <pulse/simple.h>
+
+
+int main(void){return 0;}
+

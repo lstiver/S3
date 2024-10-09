@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <iterator>
 #include <functional>
-#include <Python.h>
 #include <parallel_hashmap/phmap.h>
 #include <leveldb/db.h>
 #include "translate.h"
@@ -15,8 +14,15 @@
 #include "merge.h"
 #include "ThreadPool.h"
 #include <chrono>
+#include <memory>
+#include "fpdb/aws/AWSClient.h" // 包含 AWSClient 的头文件
+#include "fpdb/aws/AWSConfig.h"  // 包含 AWSConfig 的头文件
+#include "fpdb/aws/S3ClientType.h"
 using chrono::high_resolution_clock;
 using chrono::milliseconds;
+using namespace fpdb::aws;
+using namespace Aws::S3;
+using namespace Aws::S3::Model;
 using namespace std;
 using phmap::flat_hash_map;
 static flat_hash_map<string,int> tag;
@@ -33,8 +39,6 @@ public:
 };
 
 int main() {
-  Py_Initialize();
-  // load_predicate();
   const string query_name = "c2";
   const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
   const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
@@ -42,12 +46,20 @@ int main() {
   int totalTime = 458700;  // 最大时间
   high_resolution_clock::time_point beginTime = high_resolution_clock::now();
 
+  // 从配置文件中解析配置并创建 AWSConfig 对象
+  auto awsConfig = fpdb::aws::AWSConfig::parseAWSConfig();
+  // 创建 AWSClient 对象，并将 awsConfig 传递进去
+  auto awsClient = std::make_shared<fpdb::aws::AWSClient>(awsConfig);
+
+  // 初始化 AWS 客户端
+  awsClient->init();
+
   //获得分解后的子查询
   auto query_result = get_query(file_path); 
   int index = 0;
   vector<vector<QueryInfo>>selectQuery;
   for (const auto& row : query_result) {
-    auto[timeAndCost,tmp] = getTimeAndCost(bucket, row, index);
+    auto[timeAndCost,tmp] = getTimeAndCost(bucket, row, index,awsClient);
     selectQuery.push_back(timeAndCost);
     index++;
     cout <<"第"<<index<<"个子查询"<<endl;
@@ -121,7 +133,7 @@ int main() {
             keyName = query_result[index_][1]+".csv"; //排序后这里要修改
             cout<<"第"<<index_+1<<"个查询"<<keyName<<endl;
             // cout<<col[0]<<" "<<col[1]<<" "<<col[2]<<" "<<col[3]<<endl;
-            result = getObject(result,bucket,keyName,col);
+            getObject(result,bucket,keyName,awsClient,col);
           high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
           milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
           cout<<"getObject总耗时："<<overallTime.count()<<"ms"<<endl;
@@ -207,3 +219,29 @@ int main() {
 
   return 0;
 }
+// // 从配置文件中解析配置并创建 AWSConfig 对象
+//     auto awsConfig = fpdb::aws::AWSConfig::parseAWSConfig();
+//     // 创建 AWSClient 对象，并将 awsConfig 传递进去
+//     AWSClient awsClient(awsConfig);
+
+//     // 初始化 AWS 客户端
+//     awsClient.init();
+//     // 获取 S3 客户端
+//     auto s3Client = awsClient.getS3Client();
+
+//     // // 示例：列出 S3 存储桶中的对象
+//     // Aws::S3::Model::ListObjectsRequest request;
+//     // request.SetBucket("your-bucket-name");
+
+//     // auto outcome = s3Client->ListObjects(request);
+
+//     // if (outcome.IsSuccess()) {
+//     //     const auto& result = outcome.GetResult();
+//     //     for (const auto& object : result.GetContents()) {
+//     //         std::cout << "Object: " << object.GetKey() << std::endl;
+//     //     }
+//     // } else {
+//     //     std::cerr << "Failed to list objects: " << outcome.GetError().GetMessage() << std::endl;
+//     // }
+
+//     return 0;

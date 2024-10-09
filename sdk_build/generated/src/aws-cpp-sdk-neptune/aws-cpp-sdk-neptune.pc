@@ -1,0 +1,10 @@
+includedir=include
+libdir=lib64
+
+Name: aws-cpp-sdk-neptune
+Description: 
+Version: 1.11.415
+Cflags: -I${includedir} -fno-exceptions -std=c++11
+Libs: -L${libdir} -laws-cpp-sdk-neptune 
+Libs.private: 
+Requires:  aws-cpp-sdk-core

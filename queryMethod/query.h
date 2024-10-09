@@ -4,14 +4,28 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <Python.h>
+#include <array>
 #include "merge.h"
+#include <spdlog/spdlog.h>
+#include <fpdb/aws/AWSClient.h>
+#include <aws/core/auth/AWSAuthSigner.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
+#include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/S3Client.h>
+#include <aws/s3/model/InputSerialization.h>
+using chrono::high_resolution_clock;
+using chrono::milliseconds;
+using namespace fpdb::aws;
+using namespace Aws::S3;
+using namespace Aws::S3::Model;
 using namespace std;
 using phmap::flat_hash_map;
 
 void s3Select(const string &bucket, const string &key, const string &query);
 void s3SelectIndex(const string &bucket, const string &key, const string &query);
-flat_hash_map<pair<int,int>, vector<vector<int>>> getObject(flat_hash_map<pair<int,int>, vector<vector<int>>>& result, const string &bucket, const string &key, const vector<int>& keyColumnIndex);
+void getObject(flat_hash_map<pair<int,int>, vector<vector<int>>>& result, const string &bucket, const string &key, std::shared_ptr<fpdb::aws::AWSClient> awsClient,const vector<int>& keyColumnIndex);
 void getObjectByIndex(const string &bucket, const string &key, const string &query);
+array<int, 3> getRange(const string &bucket, const string &key, const string &parsed_conditions, std::shared_ptr<fpdb::aws::AWSClient> awsClient);
 
 #endif
