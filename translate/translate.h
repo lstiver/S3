@@ -13,7 +13,6 @@
 #include <queue>
 #include <future>
 #include <regex>
-#include <Python.h>
 #include <leveldb/db.h>
 #include <parallel_hashmap/phmap.h>
 #include "query.h"

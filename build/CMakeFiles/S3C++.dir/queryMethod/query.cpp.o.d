@@ -222,6 +222,13 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
  /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_base.h \
  /usr/include/c++/11/shared_mutex /usr/include/c++/11/optional \
+ /usr/local/include/aws/core/utils/stream/ResponseStream.h \
+ /usr/local/include/aws/core/Core_EXPORTS.h \
+ /usr/local/include/aws/core/SDKConfig.h \
+ /usr/local/include/aws/core/utils/memory/AWSMemory.h \
+ /usr/local/include/aws/core/utils/UnreferencedParam.h \
+ /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
+ /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
  /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
  /usr/local/include/spdlog/details/null_mutex.h \
  /usr/local/include/spdlog/tweakme.h /usr/local/include/spdlog/fmt/fmt.h \
@@ -242,13 +249,8 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /home/ec2-user/s3/S3C++/fpdb-aws/include/fpdb/aws/S3ClientType.h \
  /usr/local/include/aws/core/Aws.h \
  /usr/local/include/aws/core/utils/logging/LogLevel.h \
- /usr/local/include/aws/core/Core_EXPORTS.h \
- /usr/local/include/aws/core/SDKConfig.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSString.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSAllocator.h \
- /usr/local/include/aws/core/utils/memory/AWSMemory.h \
- /usr/local/include/aws/core/utils/UnreferencedParam.h \
- /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
  /usr/local/include/aws/crt/StlAllocator.h \
  /usr/local/include/aws/crt/Allocator.h \
  /usr/local/include/aws/common/common.h \
@@ -321,7 +323,6 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/core/http/HttpTypes.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSList.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSMap.h \
- /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
  /usr/local/include/aws/core/monitoring/MonitoringManager.h \
  /usr/local/include/aws/core/client/AWSClient.h \
  /usr/local/include/aws/core/client/CoreErrors.h \
@@ -366,7 +367,6 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/core/http/HttpRequest.h \
  /usr/local/include/aws/core/http/URI.h \
  /usr/local/include/aws/core/utils/StringUtils.h \
- /usr/local/include/aws/core/utils/stream/ResponseStream.h \
  /usr/local/include/aws/core/utils/UUID.h \
  /usr/local/include/aws/core/monitoring/HttpClientMetrics.h \
  /usr/local/include/aws/core/endpoint/internal/AWSEndpointAttribute.h \

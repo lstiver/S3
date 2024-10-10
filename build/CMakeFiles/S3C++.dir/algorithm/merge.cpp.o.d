@@ -221,4 +221,11 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
  /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_base.h \
- /usr/include/c++/11/shared_mutex /usr/include/c++/11/optional
+ /usr/include/c++/11/shared_mutex /usr/include/c++/11/optional \
+ /usr/local/include/aws/core/utils/stream/ResponseStream.h \
+ /usr/local/include/aws/core/Core_EXPORTS.h \
+ /usr/local/include/aws/core/SDKConfig.h \
+ /usr/local/include/aws/core/utils/memory/AWSMemory.h \
+ /usr/local/include/aws/core/utils/UnreferencedParam.h \
+ /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
+ /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h

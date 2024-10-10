@@ -24,7 +24,7 @@ using phmap::flat_hash_map;
 
 void s3Select(const string &bucket, const string &key, const string &query);
 void s3SelectIndex(const string &bucket, const string &key, const string &query);
-void getObject(flat_hash_map<pair<int,int>, vector<vector<int>>>& result, const string &bucket, const string &key, std::shared_ptr<fpdb::aws::AWSClient> awsClient,const vector<int>& keyColumnIndex);
+std::shared_ptr<char[]> getObject(const string &bucket, const string &key, std::shared_ptr<fpdb::aws::AWSClient> awsClient,const vector<int>& keyColumnIndex);
 void getObjectByIndex(const string &bucket, const string &key, const string &query);
 array<int, 3> getRange(const string &bucket, const string &key, const string &parsed_conditions, std::shared_ptr<fpdb::aws::AWSClient> awsClient);
 

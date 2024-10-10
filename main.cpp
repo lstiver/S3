@@ -27,7 +27,7 @@ using namespace std;
 using phmap::flat_hash_map;
 static flat_hash_map<string,int> tag;
 // 全局线程池，初始化时指定线程数
-ThreadPool pool(4);  // 使用4个线程
+ThreadPool pool(2);  // 使用2个线程
 int index_ = 0;
 
 class MyObject {
@@ -132,8 +132,13 @@ int main() {
             // keyName = it.keyName + ".csv"; 
             keyName = query_result[index_][1]+".csv"; //排序后这里要修改
             cout<<"第"<<index_+1<<"个查询"<<keyName<<endl;
-            // cout<<col[0]<<" "<<col[1]<<" "<<col[2]<<" "<<col[3]<<endl;
-            getObject(result,bucket,keyName,awsClient,col);
+            auto retrievedFile = getObject(bucket, keyName, awsClient, col);
+            cout<<"AAA"<<endl;
+            if(index_ == 0){
+              processData(result, retrievedFile, col);
+            } else {
+              result = merge(result, retrievedFile, col, true);
+            }
           high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
           milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
           cout<<"getObject总耗时："<<overallTime.count()<<"ms"<<endl;
@@ -170,8 +175,6 @@ int main() {
   high_resolution_clock::time_point endTime = high_resolution_clock::now();
   milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - beginTime);
   cout<<"总耗时："<<timeInterval.count()<<"ms"<<endl;
-
-  Py_Finalize();
 
   // LevelDB 存储位置
   string dbPath = "/home/ec2-user/s3/S3C++/index";

@@ -90,9 +90,7 @@ vector<vector<string>> get_query(string file_path){
 }
 
 pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const vector<string> & row, int index, std::shared_ptr<fpdb::aws::AWSClient> awsClient){
-  getRange(bucket,row[0],row[1],awsClient);
-  exit(0);
-  int size,start,end;
+  auto[size,start,end]=getRange(bucket,row[1],row[3],awsClient);
   int total=0; //用来记录查询totallength
   vector<QueryInfo>time_and_cost;
   // 根据获得的size，start，end来估算cost和time

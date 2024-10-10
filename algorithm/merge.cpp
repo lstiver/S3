@@ -16,83 +16,137 @@ vector<string> split(const string& str, char delimiter) {
     return tokens;
 }
 
-inline int fastAtoi(const string& str) {
+// inline int fastAtoi(const string& str) {
+//     int num = 0;
+//     const char* p = str.c_str();  // 使用指针代替索引
+//     bool isNegative = false;
+
+//     if (*p == '-') {
+//         isNegative = true;
+//         ++p;  // 跳过负号
+//     }
+
+//     // 快速遍历字符串并转换为整数
+//     while (*p) {
+//         num = num * 10 + (*p - '0');  // 使用无符号字符避免符号扩展
+//         ++p;  // 移动指针到下一个字符
+//     }
+
+//     return isNegative ? -num : num;
+// }
+
+// 修改 fastAtoi 函数，使其接受 std::string_view
+inline int fastAtoi(std::string_view str) {
     int num = 0;
-    const char* p = str.c_str();  // 使用指针代替索引
-    bool isNegative = false;
-
-    if (*p == '-') {
-        isNegative = true;
-        ++p;  // 跳过负号
+    for (char c : str) {
+        num = num * 10 + (c - '0');
     }
-
-    // 快速遍历字符串并转换为整数
-    while (*p) {
-        num = num * 10 + (*p - '0');  // 使用无符号字符避免符号扩展
-        ++p;  // 移动指针到下一个字符
-    }
-
-    return isNegative ? -num : num;
+    return num;
 }
 
-// 将每行数据解析为整数，并存储在flat_hash_map（key,vector<int>）中(因为对于连续读取vector效率比list高)，需要用到额外的内存和缓存
-void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap,istringstream& input, const vector<int>& keyColumnIndex) {
-    high_resolution_clock::time_point beginTime = high_resolution_clock::now();
-    string line;
+// // 将每行数据解析为整数，并存储在flat_hash_map（key,vector<int>）中(因为对于连续读取vector效率比list高)，需要用到额外的内存和缓存
+// void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap,istringstream& input, const vector<int>& keyColumnIndex) {
+//     high_resolution_clock::time_point beginTime = high_resolution_clock::now();
+//     string line;
 
-    while (getline(input, line)) {
-        istringstream lineStream(line);
-        vector<int> row;
-        row.reserve(2); //预分配空间，每次必然是两列
-        pair<int, int> key(-1, -1);
+//     while (getline(input, line)) {
+//         istringstream lineStream(line);
+//         vector<int> row;
+//         row.reserve(2); //预分配空间，每次必然是两列
+//         pair<int, int> key(-1, -1);
 
-        string_view sv(line);
-        size_t start = 0, end = 0;
+//         string_view sv(line);
+//         size_t start = 0, end = 0;
 
-        while ((end = sv.find(',', start)) != string_view::npos) {
-            int value = fastAtoi(string(sv.substr(start, end - start)));
-            start = end + 1;
-            if (0 == keyColumnIndex[2]) {
-                key.first = value;
-            } 
-            row.emplace_back(value);
-        }
+//         while ((end = sv.find(',', start)) != string_view::npos) {
+//             int value = fastAtoi(string(sv.substr(start, end - start)));
+//             start = end + 1;
+//             if (0 == keyColumnIndex[2]) {
+//                 key.first = value;
+//             } 
+//             row.emplace_back(value);
+//         }
 
-        // 第二列
-        if (start < sv.size()) {
-            int value = fastAtoi(string(sv.substr(start)));
-             if (1 == keyColumnIndex[3]) {
-                key.second = value;
-            } 
-            row.emplace_back(value);
-        }
-        cout<<key.first<<" "<<key.second<<endl;
-        auto& rowsForKey = dataMap[key]; 
-        rowsForKey.emplace_back(move(row));
-    }
+//         // 第二列
+//         if (start < sv.size()) {
+//             int value = fastAtoi(string(sv.substr(start)));
+//              if (1 == keyColumnIndex[3]) {
+//                 key.second = value;
+//             } 
+//             row.emplace_back(value);
+//         }
+//         cout<<key.first<<" "<<key.second<<endl;
+//         auto& rowsForKey = dataMap[key]; 
+//         rowsForKey.emplace_back(move(row));
+//     }
     
-    high_resolution_clock::time_point endTime = high_resolution_clock::now();
-    milliseconds overallTime = chrono::duration_cast<milliseconds>(endTime - beginTime);
-    cout<<"从char*[]->hash_map耗时："<<overallTime.count()<<"ms"<<endl;
-}
+//     high_resolution_clock::time_point endTime = high_resolution_clock::now();
+//     milliseconds overallTime = chrono::duration_cast<milliseconds>(endTime - beginTime);
+//     cout<<"从char*[]->hash_map耗时："<<overallTime.count()<<"ms"<<endl;
+// }
 
-// 将每行数据解析为整数，并存储在flat_hash_map（key,vector<int>）中，这里直接处理char*,更节省内存，更高效
-void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap, const char* input, const vector<int>& keyColumnIndex) {
+// // 将每行数据解析为整数，并存储在flat_hash_map（key,vector<int>）中，这里直接处理char*,更节省内存，更高效
+// void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap, const char *& input, const vector<int>& keyColumnIndex) {
+//     high_resolution_clock::time_point beginTime = high_resolution_clock::now();
+
+//     const char* current = input;
+//     const char* lineEnd = nullptr;
+
+//     while ((lineEnd = strchr(current, '\n')) != nullptr) {
+//         string_view line(current, lineEnd - current);
+//         vector<int> row;
+//         row.reserve(2);  // 预分配空间
+//         pair<int, int> key(-1, -1);
+
+//         size_t start = 0, end = 0;
+
+//         while ((end = line.find(',', start)) != string_view::npos) {
+//             int value = fastAtoi(string(line.substr(start, end - start)));
+//             start = end + 1;
+//             if (0 == keyColumnIndex[2]) {
+//                 key.first = value;
+//             }
+//             row.emplace_back(value);
+//         }
+
+//         // 第二列处理
+//         if (start < line.size()) {
+//             int value = fastAtoi(string(line.substr(start)));
+//             if (1 == keyColumnIndex[3]) {
+//                 key.second = value;
+//             }
+//             row.emplace_back(value);
+//         }   
+        
+//         auto& rowsForKey = dataMap[key];
+//         rowsForKey.emplace_back(move(row));
+
+//         // 移动到下一行
+//         current = lineEnd + 1;
+//     }
+
+//     high_resolution_clock::time_point endTime = high_resolution_clock::now();
+//     milliseconds overallTime = chrono::duration_cast<milliseconds>(endTime - beginTime);
+//     cout<<"从char*[]->hash_map耗时："<<overallTime.count()<<"ms"<<endl;
+// }
+
+void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap, std::shared_ptr<char[]>& input, const vector<int>& keyColumnIndex) {
     high_resolution_clock::time_point beginTime = high_resolution_clock::now();
 
-    const char* current = input;
+    const char* current = input.get();  // 使用 get() 获取原始指针
     const char* lineEnd = nullptr;
 
     while ((lineEnd = strchr(current, '\n')) != nullptr) {
-        string_view line(current, lineEnd - current);
+        std::string_view line(current, lineEnd - current);
         vector<int> row;
         row.reserve(2);  // 预分配空间
         pair<int, int> key(-1, -1);
 
         size_t start = 0, end = 0;
 
-        while ((end = line.find(',', start)) != string_view::npos) {
-            int value = fastAtoi(string(line.substr(start, end - start)));
+        while ((end = line.find(',', start)) != std::string_view::npos) {
+            // fastAtoi 函数现在需要接受 std::string_view
+            int value = fastAtoi(line.substr(start, end - start));  // 传递 std::string_view
             start = end + 1;
             if (0 == keyColumnIndex[2]) {
                 key.first = value;
@@ -102,7 +156,7 @@ void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap, co
 
         // 第二列处理
         if (start < line.size()) {
-            int value = fastAtoi(string(line.substr(start)));
+            int value = fastAtoi(line.substr(start));  // 传递 std::string_view
             if (1 == keyColumnIndex[3]) {
                 key.second = value;
             }
@@ -118,32 +172,36 @@ void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap, co
 
     high_resolution_clock::time_point endTime = high_resolution_clock::now();
     milliseconds overallTime = chrono::duration_cast<milliseconds>(endTime - beginTime);
-    cout<<"从char*[]->hash_map耗时："<<overallTime.count()<<"ms"<<endl;
+    cout << "从 char*[]->hash_map 耗时：" << overallTime.count() << "ms" << endl;
 }
-
 
 //修改索引键值对
 void transformMap(flat_hash_map<pair<int, int>, vector<vector<int>>>& originalMap, const vector<int>& columnIndex) {
     flat_hash_map<pair<int, int>, vector<vector<int>>> newMap;
     
+    // 提取索引
+    int idx0 = columnIndex[0];
+    int idx1 = columnIndex[1];
+    
     // 遍历原始的映射
     for (auto it = originalMap.begin(); it != originalMap.end(); ++it) {
-       const vector<vector<int>>& value = it->second;
+        const vector<vector<int>>& value = it->second;
+        
         // 根据 columnIndex 中的索引从 oldValue 中提取数据生成新 key
         for (auto& row : value) {
             int length = row.size();
-            pair<int, int> newKey(-1,-1);
+            pair<int, int> newKey(-1, -1);
+            
             // Ensure the row has enough columns to access the specified indices
-            if (columnIndex[0] < length && columnIndex[1] < length) {
+            if (idx0 < length && idx1 < length) {
                 // Create a new key based on the columnIndex specified columns
-                if(columnIndex[0] != -1) {
-                    newKey.first = row[columnIndex[0]];
+                if (idx0 != -1) {
+                    newKey.first = row[idx0];
                 } 
-                if(columnIndex[1] != -1) {
-                    newKey.second = row[columnIndex[1]];
+                if (idx1 != -1) {
+                    newKey.second = row[idx1];
                 } 
                 // 插入到 newMap
-                // cout<<newKey.first<<" "<<newKey.second<<endl;
                 newMap[newKey].emplace_back(row);
             }
         }
@@ -163,7 +221,7 @@ inline void processLine(string_view line, flat_hash_map<pair<int, int>, vector<v
 
     // 解析CSV行，提取 key
     while ((end = line.find(',', start)) != string_view::npos) {
-        value1 = fastAtoi(string(line.substr(start, end - start)));
+        value1 = fastAtoi(string_view(line.substr(start, end - start)));
         start = end + 1;
         if (0 == keyColumnIndex[2]) {
             keyB.first = value1;
@@ -172,7 +230,7 @@ inline void processLine(string_view line, flat_hash_map<pair<int, int>, vector<v
 
     // 处理第二列
     if (start < line.size()) {
-        value2 = fastAtoi(string(line.substr(start)));
+        value2 = fastAtoi(string_view(line.substr(start)));
         if (1 == keyColumnIndex[3]) {
             keyB.second = value2;
         }
@@ -205,9 +263,9 @@ inline void processLine(string_view line, flat_hash_map<pair<int, int>, vector<v
 }
 
 // 用指针遍历 char* 输入的每一行，并利用线程池处理
-flat_hash_map<pair<int, int>, vector<vector<int>>> merge(flat_hash_map<pair<int,int>, vector<vector<int>>>& result, 
-                                                         flat_hash_map<pair<int, int>, vector<vector<int>>>& dataA, 
-                                                         const char* input, const vector<int>& keyColumnIndex, 
+flat_hash_map<pair<int, int>, vector<vector<int>>> merge(flat_hash_map<pair<int, int>, vector<vector<int>>>& dataA, 
+                                                         std::shared_ptr<char[]>& input, 
+                                                         const vector<int>& keyColumnIndex, 
                                                          const bool& flag) {
     if(flag) {
         transformMap(dataA, keyColumnIndex);
@@ -216,9 +274,9 @@ flat_hash_map<pair<int, int>, vector<vector<int>>> merge(flat_hash_map<pair<int,
     bool col2 = (keyColumnIndex[1] == -1);
 
     // BloomFilter<100000> bloomFilter;
-    const char* current = input;
+    const char* current = input.get();
     const char* lineEnd = nullptr;
-
+    flat_hash_map<pair<int,int>, vector<vector<int>>> result;
     // 将数据集A中的所有key添加到布隆过滤器中
     // for (const auto& data : dataA) {
     //     bloomFilter.Set(data.first);
@@ -226,7 +284,7 @@ flat_hash_map<pair<int, int>, vector<vector<int>>> merge(flat_hash_map<pair<int,
 
     vector<future<void>> futures;  // 用于存储异步任务
     vector<string_view> batchLines; // 批量处理的行
-    const int batchSize = 500; // 每次处理100行
+    const int batchSize = 5000; // 每次处理100行
 
     // 遍历每一行，处理数据
     while ((lineEnd = strchr(current, '\n')) != nullptr) {
