@@ -6,5 +6,5 @@ CXX_DEFINES = -DLEVELDB_PLATFORM_POSIX=1
 
 CXX_INCLUDES = -I/home/ec2-user/s3/S3C++/build/leveldb/include -I/home/ec2-user/s3/S3C++/leveldb/. -I/home/ec2-user/s3/S3C++/leveldb/include -isystem /home/ec2-user/s3/S3C++/leveldb/third_party/googletest/googlemock/include -isystem /home/ec2-user/s3/S3C++/leveldb/third_party/googletest/googlemock -isystem /home/ec2-user/s3/S3C++/leveldb/third_party/googletest/googletest/include -isystem /home/ec2-user/s3/S3C++/leveldb/third_party/googletest/googletest
 
-CXX_FLAGS =  -fno-exceptions -fno-rtti -g -std=gnu++17
+CXX_FLAGS =  -fno-exceptions -fno-rtti -std=gnu++17
 

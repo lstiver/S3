@@ -8,12 +8,23 @@
 #include <aws/s3/model/RecordsEvent.h>
 #include <aws/s3/model/StatsEvent.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <arrow/api.h>
+#include <arrow/io/api.h>
+#include <arrow/csv/api.h>
+#include "ArrowInputStream.h"
+#include <arrow/api.h>
+#include <arrow/io/file.h>
+#include <arrow/ipc/writer.h>
+#include <arrow/csv/api.h>
+#include <iostream>
+#include <memory>
 
-std::shared_ptr<char[]> getObject(
-    const std::string &bucket, 
-    const std::string &key, 
-    std::shared_ptr<fpdb::aws::AWSClient> awsClient,
-    const std::vector<int>& keyColumnIndex) 
+
+shared_ptr<arrow::Table> getObject(
+    const string &bucket, 
+    const string &key, 
+    shared_ptr<fpdb::aws::AWSClient> awsClient,
+    const vector<int>& keyColumnIndex) 
 {
     Aws::S3::Model::GetObjectRequest getObjectRequest;
     getObjectRequest.SetBucket(Aws::String(bucket));
@@ -28,20 +39,49 @@ std::shared_ptr<char[]> getObject(
         int64_t resultSize = getResult.GetContentLength();
         
         // 获取响应体（Body）
-        std::cout << "getObject size: " << resultSize << std::endl;
+        cout << "getObject size: " << resultSize << endl;
         
-        // 创建一个 std::shared_ptr<char[]> 来存储数据
-        std::shared_ptr<char[]> retrievedFile(new char[resultSize]);
+         // 将 S3 的 Body (stream) 转换为 Arrow 的输入流
+        Aws::IOStream &retrievedFile = getResult.GetBody(); 
+        shared_ptr<arrow::io::InputStream> inputStream = make_shared<ArrowInputStream>(retrievedFile);
 
-        // 读取数据到 retrievedFile
-        getResult.GetBody().read(retrievedFile.get(), resultSize);  
+        vector<string> column_names = {"subject","object"};
+        auto read_options = arrow::csv::ReadOptions::Defaults();
+        // read_options.autogenerate_column_names = true; 
+        read_options.column_names = column_names;
+        // 自动利用 Arrow 并发进行 CSV 读取
+        auto csv_reader = arrow::csv::TableReader::Make(
+            arrow::io::default_io_context(), inputStream,
+            read_options,
+            arrow::csv::ParseOptions::Defaults(),
+            arrow::csv::ConvertOptions::Defaults());
+        if (!csv_reader.ok()) {
+            spdlog::error("Failed to create CSV TableReader");
+            exit(1);
+        }
+        shared_ptr<arrow::csv::TableReader> reader = *csv_reader;
 
-        // 返回 std::shared_ptr<char[]>，确保它在使用后被正确管理
-        return retrievedFile;
+        // Read table from CSV file
+        auto table = reader->Read();
+        if(table.ok()) {
+            // 定义输出文件路径
+            // 打印表的行数
+            cout << "Table has " << table.ValueOrDie()->num_rows() << " rows." << endl;
+            // 获取表的模式（schema）并打印列名
+    shared_ptr<arrow::Schema> schema = table.ValueOrDie()->schema();
+    cout << "Table columns: " << endl;
+    for (int i = 0; i < schema->num_fields(); ++i) {
+        cout << "Column " << i + 1 << ": " << schema->field(i)->name() << endl;
+    }
+            return table.ValueOrDie();
+        } else {
+            spdlog::error("转化结果为arrow表格失败");
+            exit(1);
+        }
     } else {
         // 请求失败，输出错误信息
         const auto& err = getObjectOutcome.GetError();
-        std::cerr << "Error occurred while fetching object: " << err.GetMessage() << std::endl;
+        cerr << "Error occurred while fetching object: " << err.GetMessage() << endl;
         exit(0);  // 根据需要处理错误，退出或其他操作
     }
 }
@@ -145,12 +185,12 @@ array<int, 3> getRange(const string &bucket,
         getline(lineStream, token, ',');
         if(token == "size"){
             getline(lineStream, token, ',');
-            size = std::stoi(token);
+            size = stoi(token);
         } else {
             getline(lineStream, token, ',');
-            start = std::stoi(token);
+            start = stoi(token);
             getline(lineStream, token, ',');
-            end = std::stoi(token);
+            end = stoi(token);
         }
     }
     return {size,start,end};

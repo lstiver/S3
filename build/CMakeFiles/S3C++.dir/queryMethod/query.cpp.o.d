@@ -129,50 +129,45 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/array \
  /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
- /home/ec2-user/s3/S3C++/algorithm/merge.h /usr/include/c++/11/fstream \
- /usr/include/c++/11/bits/codecvt.h \
- /usr/include/c++/11/x86_64-amazon-linux/bits/basic_file.h \
- /usr/include/c++/11/x86_64-amazon-linux/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/chrono \
+ /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
+ /usr/local/include/spdlog/details/null_mutex.h \
+ /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+ /usr/local/include/spdlog/tweakme.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/limits \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
- /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
- /home/ec2-user/s3/S3C++/algorithm/BloomFilter.h \
- /usr/include/c++/11/bitset \
- /home/ec2-user/s3/S3C++/translate/ThreadPool.h \
- /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/tuple /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/tuple \
+ /usr/include/c++/11/bits/uses_allocator.h \
  /usr/include/c++/11/bits/invoke.h /usr/include/c++/11/bits/refwrap.h \
- /usr/include/c++/11/bits/unique_ptr.h \
- /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/mutex \
- /usr/include/c++/11/bits/std_mutex.h \
- /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/queue \
- /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
- /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_heap.h \
- /usr/include/c++/11/bits/stl_queue.h \
- /usr/include/c++/11/condition_variable \
- /usr/include/c++/11/bits/shared_ptr.h \
- /usr/include/c++/11/bits/shared_ptr_base.h \
- /usr/include/c++/11/bits/allocated_ptr.h \
- /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/ext/concurrence.h /usr/include/c++/11/functional \
  /usr/include/c++/11/bits/std_function.h \
- /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/unordered_map \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/bits/stl_algo.h \
  /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
- /usr/include/c++/11/bits/uniform_int_dist.h /usr/include/c++/11/future \
- /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
- /usr/include/c++/11/bits/atomic_lockfree_defines.h \
- /usr/include/c++/11/bits/atomic_futex.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap.h \
- /usr/include/c++/11/algorithm \
- /usr/include/c++/11/pstl/glue_algorithm_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/cmath \
+ /usr/include/c++/11/bits/uniform_int_dist.h /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/bits/unique_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/backward/auto_ptr.h \
+ /usr/include/c++/11/pstl/glue_memory_defs.h \
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /usr/local/include/spdlog/fmt/fmt.h \
+ /usr/local/include/spdlog/fmt/bundled/core.h /usr/include/c++/11/cstddef \
+ /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
+ /usr/local/include/spdlog/fmt/bundled/format.h /usr/include/c++/11/cmath \
  /usr/include/math.h /usr/include/bits/math-vector.h \
  /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
@@ -191,56 +186,20 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
- /usr/include/c++/11/tr1/riemann_zeta.tcc /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
- /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/backward/auto_ptr.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/c++/11/cassert \
- /usr/include/assert.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_utils.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_bits.h \
- /usr/include/byteswap.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_config.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /usr/include/c++/11/cstddef \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
- /usr/include/c++/11/stdlib.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_base.h \
- /usr/include/c++/11/shared_mutex /usr/include/c++/11/optional \
- /usr/local/include/aws/core/utils/stream/ResponseStream.h \
- /usr/local/include/aws/core/Core_EXPORTS.h \
- /usr/local/include/aws/core/SDKConfig.h \
- /usr/local/include/aws/core/utils/memory/AWSMemory.h \
- /usr/local/include/aws/core/utils/UnreferencedParam.h \
- /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
- /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
- /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
- /usr/local/include/spdlog/details/null_mutex.h \
- /usr/local/include/spdlog/tweakme.h /usr/local/include/spdlog/fmt/fmt.h \
- /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/local/include/spdlog/fmt/bundled/format.h \
+ /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /usr/local/include/spdlog/fmt/bundled/core.h \
  /usr/local/include/spdlog/details/registry.h \
  /usr/local/include/spdlog/details/periodic_worker.h \
+ /usr/include/c++/11/condition_variable \
+ /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/mutex \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h \
  /usr/local/include/spdlog/details/synchronous_factory.h \
  /usr/local/include/spdlog/logger.h \
  /usr/local/include/spdlog/details/backtracer.h \
  /usr/local/include/spdlog/details/circular_q.h \
+ /usr/include/c++/11/cassert /usr/include/assert.h \
  /usr/local/include/spdlog/details/log_msg_buffer.h \
  /usr/local/include/spdlog/details/log_msg.h \
  /usr/local/include/spdlog/version.h \
@@ -249,8 +208,15 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /home/ec2-user/s3/S3C++/fpdb-aws/include/fpdb/aws/S3ClientType.h \
  /usr/local/include/aws/core/Aws.h \
  /usr/local/include/aws/core/utils/logging/LogLevel.h \
+ /usr/local/include/aws/core/Core_EXPORTS.h \
+ /usr/local/include/aws/core/SDKConfig.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSString.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSAllocator.h \
+ /usr/local/include/aws/core/utils/memory/AWSMemory.h \
+ /usr/local/include/aws/core/utils/UnreferencedParam.h \
+ /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
+ /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/local/include/aws/crt/StlAllocator.h \
  /usr/local/include/aws/crt/Allocator.h \
  /usr/local/include/aws/common/common.h \
@@ -261,7 +227,7 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/common/stdbool.h \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/stdbool.h \
  /usr/local/include/aws/common/stdint.h \
- /usr/local/include/aws/common/assert.h \
+ /usr/local/include/aws/common/assert.h /usr/include/c++/11/stdlib.h \
  /usr/local/include/aws/common/error.h \
  /usr/local/include/aws/common/package.h \
  /usr/local/include/aws/common/error.inl \
@@ -272,6 +238,7 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/crt/Exports.h \
  /usr/local/include/aws/core/utils/logging/LogSystemInterface.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSStringStream.h \
+ /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /usr/local/include/aws/core/utils/logging/CRTLogSystem.h \
  /usr/local/include/aws/common/logging.h \
  /usr/local/include/aws/common/atomics.h \
@@ -282,7 +249,12 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/common/byte_buf.h \
  /usr/local/include/aws/common/array_list.h \
  /usr/local/include/aws/common/math.h \
- /usr/local/include/aws/common/math.inl \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/local/include/aws/common/math.inl \
  /usr/local/include/aws/common/math.gcc_x64_asm.inl \
  /usr/local/include/aws/common/math.gcc_builtin.inl \
  /usr/local/include/aws/common/array_list.inl \
@@ -323,6 +295,7 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/core/http/HttpTypes.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSList.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSMap.h \
+ /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
  /usr/local/include/aws/core/monitoring/MonitoringManager.h \
  /usr/local/include/aws/core/client/AWSClient.h \
  /usr/local/include/aws/core/client/CoreErrors.h \
@@ -367,6 +340,7 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/core/http/HttpRequest.h \
  /usr/local/include/aws/core/http/URI.h \
  /usr/local/include/aws/core/utils/StringUtils.h \
+ /usr/local/include/aws/core/utils/stream/ResponseStream.h \
  /usr/local/include/aws/core/utils/UUID.h \
  /usr/local/include/aws/core/monitoring/HttpClientMetrics.h \
  /usr/local/include/aws/core/endpoint/internal/AWSEndpointAttribute.h \
@@ -403,7 +377,8 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/common/ref_count.h \
  /usr/local/include/aws/crt/io/HostResolver.h \
  /usr/local/include/aws/io/host_resolver.h \
- /usr/local/include/aws/io/channel_bootstrap.h \
+ /usr/local/include/aws/io/channel_bootstrap.h /usr/include/c++/11/future \
+ /usr/include/c++/11/bits/atomic_futex.h \
  /usr/local/include/aws/crt/io/TlsOptions.h \
  /usr/local/include/aws/crt/io/ChannelHandler.h \
  /usr/local/include/aws/io/tls_channel_handler.h \
@@ -428,6 +403,9 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/core/utils/threading/PooledThreadExecutor.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSQueue.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSDeque.h \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
+ /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/queue \
+ /usr/include/c++/11/bits/stl_queue.h \
  /usr/local/include/aws/s3/S3Client.h \
  /usr/local/include/aws/s3/S3_EXPORTS.h \
  /usr/local/include/aws/core/client/AWSClientAsyncCRTP.h \
@@ -666,47 +644,34 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/core/AmazonSerializableWebServiceRequest.h \
  /usr/local/include/aws/core/AmazonStreamingWebServiceRequest.h \
  /usr/local/include/aws/s3/model/ListBucketsRequest.h \
- /usr/local/include/aws/core/NoResult.h \
- /usr/local/include/arrow/flight/client.h /usr/include/c++/11/variant \
- /usr/local/include/arrow/ipc/options.h \
- /usr/local/include/arrow/io/caching.h \
- /usr/local/include/arrow/io/interfaces.h \
- /usr/local/include/arrow/io/type_fwd.h \
- /usr/local/include/arrow/type_fwd.h \
- /usr/local/include/arrow/util/macros.h \
- /usr/local/include/arrow/util/visibility.h \
- /usr/local/include/arrow/util/cancel.h /usr/local/include/arrow/status.h \
- /usr/local/include/arrow/util/compare.h \
- /usr/local/include/arrow/util/string_builder.h \
- /usr/local/include/arrow/util/type_fwd.h \
- /usr/local/include/arrow/ipc/type_fwd.h \
- /usr/local/include/arrow/util/compression.h \
- /usr/local/include/arrow/result.h \
- /usr/local/include/arrow/util/aligned_storage.h \
- /usr/local/include/arrow/util/launder.h \
- /usr/local/include/arrow/ipc/reader.h \
- /usr/local/include/arrow/ipc/message.h \
- /usr/local/include/arrow/record_batch.h \
- /usr/local/include/arrow/compare.h /usr/local/include/arrow/device.h \
- /usr/local/include/arrow/util/iterator.h \
- /usr/local/include/arrow/util/functional.h \
- /usr/local/include/arrow/util/async_generator.h \
- /usr/local/include/arrow/util/async_generator_fwd.h \
- /usr/local/include/arrow/util/async_util.h \
- /usr/local/include/arrow/util/future.h \
- /usr/local/include/arrow/type_traits.h /usr/local/include/arrow/type.h \
- /usr/include/c++/11/climits /usr/local/include/arrow/util/checked_cast.h \
- /usr/local/include/arrow/util/endian.h \
- /usr/local/include/arrow/util/type_traits.h \
- /usr/local/include/arrow/util/ubsan.h /usr/local/include/arrow/visitor.h \
- /usr/local/include/arrow/util/bit_util.h \
- /usr/local/include/arrow/util/config.h \
- /usr/local/include/arrow/util/tracing.h \
- /usr/local/include/arrow/util/mutex.h \
- /usr/local/include/arrow/util/thread_pool.h \
- /usr/local/include/arrow/util/io_util.h /usr/include/c++/11/csignal \
- /usr/include/signal.h /usr/include/bits/signum-generic.h \
- /usr/include/bits/signum-arch.h /usr/include/bits/types/sig_atomic_t.h \
+ /usr/local/include/aws/core/NoResult.h /usr/include/c++/11/optional \
+ /usr/include/arrow/flight/client.h /usr/include/c++/11/variant \
+ /usr/include/arrow/ipc/options.h /usr/include/arrow/io/caching.h \
+ /usr/include/arrow/io/interfaces.h /usr/include/arrow/io/type_fwd.h \
+ /usr/include/arrow/type_fwd.h /usr/include/arrow/util/macros.h \
+ /usr/include/arrow/util/visibility.h /usr/include/arrow/util/cancel.h \
+ /usr/include/arrow/status.h /usr/include/arrow/util/compare.h \
+ /usr/include/arrow/util/string_builder.h \
+ /usr/include/arrow/util/type_fwd.h /usr/include/arrow/ipc/type_fwd.h \
+ /usr/include/arrow/util/compression.h /usr/include/arrow/result.h \
+ /usr/include/arrow/util/aligned_storage.h \
+ /usr/include/arrow/util/launder.h /usr/include/arrow/ipc/reader.h \
+ /usr/include/arrow/ipc/message.h /usr/include/arrow/record_batch.h \
+ /usr/include/arrow/compare.h /usr/include/arrow/device.h \
+ /usr/include/arrow/util/iterator.h /usr/include/arrow/util/functional.h \
+ /usr/include/arrow/util/async_generator.h \
+ /usr/include/arrow/util/async_generator_fwd.h \
+ /usr/include/arrow/util/async_util.h /usr/include/arrow/util/future.h \
+ /usr/include/arrow/type_traits.h /usr/include/arrow/type.h \
+ /usr/include/c++/11/climits /usr/include/arrow/util/checked_cast.h \
+ /usr/include/arrow/util/endian.h /usr/include/arrow/util/type_traits.h \
+ /usr/include/arrow/util/ubsan.h /usr/include/arrow/visitor.h \
+ /usr/include/arrow/util/bit_util.h /usr/include/arrow/util/config.h \
+ /usr/include/arrow/util/tracing.h /usr/include/arrow/util/mutex.h \
+ /usr/include/arrow/util/thread_pool.h /usr/include/arrow/util/io_util.h \
+ /usr/include/c++/11/csignal /usr/include/signal.h \
+ /usr/include/bits/signum-generic.h /usr/include/bits/signum-arch.h \
+ /usr/include/bits/types/sig_atomic_t.h \
  /usr/include/bits/types/siginfo_t.h /usr/include/bits/types/__sigval_t.h \
  /usr/include/bits/siginfo-arch.h /usr/include/bits/siginfo-consts.h \
  /usr/include/bits/siginfo-consts-arch.h \
@@ -720,16 +685,12 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
  /usr/include/linux/close_range.h /usr/include/bits/ss_flags.h \
  /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
- /usr/include/bits/signal_ext.h \
- /usr/local/include/arrow/util/windows_fixup.h \
- /usr/local/include/arrow/util/queue.h \
- /usr/local/include/arrow/vendored/ProducerConsumerQueue.h \
- /usr/local/include/arrow/ipc/writer.h \
- /usr/local/include/arrow/ipc/dictionary.h \
- /usr/local/include/arrow/flight/type_fwd.h \
- /usr/local/include/arrow/flight/types.h \
- /usr/local/include/arrow/buffer.h /usr/local/include/arrow/util/span.h \
- /usr/local/include/arrow/flight/visibility.h \
+ /usr/include/bits/signal_ext.h /usr/include/arrow/util/windows_fixup.h \
+ /usr/include/arrow/util/queue.h \
+ /usr/include/arrow/vendored/ProducerConsumerQueue.h \
+ /usr/include/arrow/ipc/writer.h /usr/include/arrow/ipc/dictionary.h \
+ /usr/include/arrow/flight/type_fwd.h /usr/include/arrow/flight/types.h \
+ /usr/include/arrow/flight/visibility.h \
  /usr/local/include/aws/s3/model/GetObjectRequest.h \
  /usr/local/include/aws/s3/model/RequestPayer.h \
  /usr/local/include/aws/s3/model/ChecksumMode.h \
@@ -740,6 +701,21 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/s3/model/JSONInput.h \
  /usr/local/include/aws/s3/model/JSONType.h \
  /usr/local/include/aws/s3/model/ParquetInput.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_utils.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_bits.h \
+ /usr/include/byteswap.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_config.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_base.h \
+ /usr/include/c++/11/shared_mutex \
  /usr/local/include/aws/s3/model/SelectObjectContentRequest.h \
  /usr/local/include/aws/s3/model/SelectObjectContentHandler.h \
  /usr/local/include/aws/core/utils/HashingUtils.h \
@@ -762,4 +738,48 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/s3/model/CSVOutput.h \
  /usr/local/include/aws/s3/model/QuoteFields.h \
  /usr/local/include/aws/s3/model/JSONOutput.h \
- /usr/local/include/aws/s3/model/ScanRange.h
+ /usr/local/include/aws/s3/model/ScanRange.h /usr/include/arrow/api.h \
+ /usr/include/arrow/array.h /usr/include/arrow/array/array_base.h \
+ /usr/include/arrow/array/data.h /usr/include/arrow/buffer.h \
+ /usr/include/arrow/util/span.h /usr/include/arrow/array/array_binary.h \
+ /usr/include/arrow/stl_iterator.h /usr/include/arrow/chunked_array.h \
+ /usr/include/arrow/chunk_resolver.h \
+ /usr/include/arrow/array/array_decimal.h \
+ /usr/include/arrow/array/array_dict.h \
+ /usr/include/arrow/array/array_nested.h \
+ /usr/include/arrow/array/array_primitive.h \
+ /usr/include/arrow/array/array_run_end.h /usr/include/arrow/array/util.h \
+ /usr/include/arrow/array/concatenate.h /usr/include/arrow/builder.h \
+ /usr/include/arrow/array/builder_adaptive.h \
+ /usr/include/arrow/array/builder_base.h \
+ /usr/include/arrow/buffer_builder.h \
+ /usr/include/arrow/util/bitmap_generate.h \
+ /usr/include/arrow/memory_pool.h /usr/include/arrow/util/bitmap_ops.h \
+ /usr/include/arrow/array/builder_binary.h /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h \
+ /usr/include/arrow/util/binary_view_util.h \
+ /usr/include/arrow/array/builder_decimal.h \
+ /usr/include/arrow/array/builder_dict.h \
+ /usr/include/arrow/array/builder_primitive.h /usr/include/arrow/scalar.h \
+ /usr/include/arrow/extension_type.h /usr/include/arrow/util/decimal.h \
+ /usr/include/arrow/util/basic_decimal.h \
+ /usr/include/arrow/visit_type_inline.h \
+ /usr/include/arrow/visitor_generate.h \
+ /usr/include/arrow/util/bit_block_counter.h \
+ /usr/include/arrow/array/builder_nested.h \
+ /usr/include/arrow/array/builder_run_end.h \
+ /usr/include/arrow/array/builder_time.h \
+ /usr/include/arrow/array/builder_union.h /usr/include/arrow/config.h \
+ /usr/include/arrow/datum.h /usr/include/arrow/pretty_print.h \
+ /usr/include/arrow/table.h /usr/include/arrow/table_builder.h \
+ /usr/include/arrow/tensor.h /usr/include/arrow/util/key_value_metadata.h \
+ /usr/include/arrow/visit_array_inline.h \
+ /usr/include/arrow/visit_scalar_inline.h /usr/include/arrow/io/api.h \
+ /usr/include/arrow/io/buffered.h /usr/include/arrow/io/concurrency.h \
+ /usr/include/arrow/io/compressed.h /usr/include/arrow/io/file.h \
+ /usr/include/arrow/io/hdfs.h /usr/include/arrow/io/memory.h \
+ /usr/include/arrow/csv/api.h /usr/include/arrow/csv/options.h \
+ /usr/include/arrow/csv/invalid_row.h /usr/include/arrow/csv/type_fwd.h \
+ /usr/include/arrow/csv/reader.h /usr/include/arrow/csv/writer.h \
+ /home/ec2-user/s3/S3C++/ArrowInputStream/ArrowInputStream.h

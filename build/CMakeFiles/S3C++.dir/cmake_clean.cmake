@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/S3C++.dir/ArrowInputStream/ArrowInputStream.cpp.o"
+  "CMakeFiles/S3C++.dir/ArrowInputStream/ArrowInputStream.cpp.o.d"
   "CMakeFiles/S3C++.dir/algorithm/merge.cpp.o"
   "CMakeFiles/S3C++.dir/algorithm/merge.cpp.o.d"
   "CMakeFiles/S3C++.dir/main.cpp.o"

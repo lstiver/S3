@@ -108,10 +108,14 @@ leveldb/CMakeFiles/leveldb_tests.dir/util/logging_test.cc.o: \
  /usr/include/strings.h \
  /home/ec2-user/s3/S3C++/leveldb/./port/port_stdcxx.h \
  /home/ec2-user/s3/S3C++/build/leveldb/include/port/port_config.h \
- /usr/include/c++/11/cassert /usr/include/assert.h \
- /usr/include/c++/11/condition_variable /usr/include/c++/11/chrono \
- /usr/include/c++/11/ratio /usr/include/c++/11/limits \
- /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
+ /usr/include/snappy.h /usr/include/c++/11/cstddef \
+ /usr/include/snappy-stubs-public.h /usr/include/sys/uio.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/bits/uio_lim.h \
+ /usr/include/bits/uio-ext.h /usr/include/c++/11/cassert \
+ /usr/include/assert.h /usr/include/c++/11/condition_variable \
+ /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
+ /usr/include/c++/11/limits /usr/include/c++/11/ctime \
+ /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h /usr/include/c++/11/system_error \
  /usr/include/c++/11/x86_64-amazon-linux/bits/error_constants.h \
  /usr/include/c++/11/stdexcept /usr/include/c++/11/exception \
@@ -127,8 +131,7 @@ leveldb/CMakeFiles/leveldb_tests.dir/util/logging_test.cc.o: \
  /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/tuple \
  /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/ext/concurrence.h /usr/include/c++/11/cstddef \
- /usr/include/c++/11/mutex \
+ /usr/include/c++/11/ext/concurrence.h /usr/include/c++/11/mutex \
  /home/ec2-user/s3/S3C++/leveldb/./port/thread_annotations.h \
  /home/ec2-user/s3/S3C++/leveldb/third_party/googletest/googletest/include/gtest/gtest.h \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_uninitialized.h \

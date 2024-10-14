@@ -30,7 +30,7 @@ BENCHMARK_CXX_FLAGS_COVERAGE:STRING=-g
 BENCHMARK_DOWNLOAD_DEPENDENCIES:BOOL=OFF
 
 //Enable building and running the assembly tests
-BENCHMARK_ENABLE_ASSEMBLY_TESTS:BOOL=OFF
+BENCHMARK_ENABLE_ASSEMBLY_TESTS:BOOL=ON
 
 //Build documentation with Doxygen.
 BENCHMARK_ENABLE_DOXYGEN:BOOL=OFF
@@ -86,8 +86,9 @@ CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//No help, variable specified on the command line.
-CMAKE_BUILD_TYPE:STRING=Debug
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel ...
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -162,8 +163,8 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//No help, variable specified on the command line.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
+//Enable/Disable output of compile commands during generation.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //User executables (bin)
 CMAKE_INSTALL_BINDIR:PATH=bin
@@ -356,8 +357,8 @@ LEVELDB_BUILD_TESTS:BOOL=ON
 //Install LevelDB's header and library
 LEVELDB_INSTALL:BOOL=ON
 
-//Path to a program.
-LLVM_FILECHECK_EXE:FILEPATH=LLVM_FILECHECK_EXE-NOTFOUND
+//llvm filecheck
+LLVM_FILECHECK_EXE:PATH=/usr/bin/FileCheck
 
 //Path to a library.
 OPENSSL_CRYPTO_LIBRARY:FILEPATH=/usr/lib64/libcrypto.so
@@ -492,6 +493,9 @@ leveldb_BINARY_DIR:STATIC=/home/ec2-user/s3/S3C++/build/leveldb
 //Value Computed by CMake
 leveldb_IS_TOP_LEVEL:STATIC=OFF
 
+//Dependencies for the target
+leveldb_LIB_DEPENDS:STATIC=general;snappy;
+
 //Value Computed by CMake
 leveldb_SOURCE_DIR:STATIC=/home/ec2-user/s3/S3C++/leveldb
 
@@ -503,6 +507,9 @@ phmap_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 phmap_SOURCE_DIR:STATIC=/home/ec2-user/s3/S3C++/parallel-hashmap
+
+//Path to a library.
+pkgcfg_lib_ARROW_CSV_arrow:FILEPATH=/usr/local/lib64/libarrow.so
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib64/libcrypto.so
@@ -518,6 +525,41 @@ spdlog_DIR:PATH=/usr/local/lib64/cmake/spdlog
 # INTERNAL cache entries
 ########################
 
+ARROW_CSV_CFLAGS:INTERNAL=-I/usr/local/include
+ARROW_CSV_CFLAGS_I:INTERNAL=
+ARROW_CSV_CFLAGS_OTHER:INTERNAL=
+ARROW_CSV_FOUND:INTERNAL=1
+ARROW_CSV_INCLUDEDIR:INTERNAL=/usr/include
+ARROW_CSV_INCLUDE_DIRS:INTERNAL=/usr/local/include
+ARROW_CSV_LDFLAGS:INTERNAL=-L/usr/local/lib64;-larrow
+ARROW_CSV_LDFLAGS_OTHER:INTERNAL=
+ARROW_CSV_LIBDIR:INTERNAL=/usr/lib64
+ARROW_CSV_LIBRARIES:INTERNAL=arrow
+ARROW_CSV_LIBRARY_DIRS:INTERNAL=/usr/local/lib64
+ARROW_CSV_LIBS:INTERNAL=
+ARROW_CSV_LIBS_L:INTERNAL=
+ARROW_CSV_LIBS_OTHER:INTERNAL=
+ARROW_CSV_LIBS_PATHS:INTERNAL=
+ARROW_CSV_MODULE_NAME:INTERNAL=arrow-csv
+ARROW_CSV_PREFIX:INTERNAL=/usr
+ARROW_CSV_STATIC_CFLAGS:INTERNAL=-I/usr/local/include;-DARROW_STATIC
+ARROW_CSV_STATIC_CFLAGS_I:INTERNAL=
+ARROW_CSV_STATIC_CFLAGS_OTHER:INTERNAL=-DARROW_STATIC
+ARROW_CSV_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include
+ARROW_CSV_STATIC_LDFLAGS:INTERNAL=-L/usr/local/lib64;-larrow;-larrow_bundled_dependencies;-ldl;-L/usr/lib64;-L/usr/lib64;-lz
+ARROW_CSV_STATIC_LDFLAGS_OTHER:INTERNAL=
+ARROW_CSV_STATIC_LIBDIR:INTERNAL=
+ARROW_CSV_STATIC_LIBRARIES:INTERNAL=arrow;arrow_bundled_dependencies;dl;z
+ARROW_CSV_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/lib64;/usr/lib64;/usr/lib64
+ARROW_CSV_STATIC_LIBS:INTERNAL=
+ARROW_CSV_STATIC_LIBS_L:INTERNAL=
+ARROW_CSV_STATIC_LIBS_OTHER:INTERNAL=
+ARROW_CSV_STATIC_LIBS_PATHS:INTERNAL=
+ARROW_CSV_VERSION:INTERNAL=17.0.0
+ARROW_CSV_arrow-csv_INCLUDEDIR:INTERNAL=
+ARROW_CSV_arrow-csv_LIBDIR:INTERNAL=
+ARROW_CSV_arrow-csv_PREFIX:INTERNAL=
+ARROW_CSV_arrow-csv_VERSION:INTERNAL=
 //ADVANCED property for variable: BENCHMARK_CXX_FLAGS_COVERAGE
 BENCHMARK_CXX_FLAGS_COVERAGE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BENCHMARK_EXE_LINKER_FLAGS_COVERAGE
@@ -592,6 +634,8 @@ CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
+CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
@@ -717,6 +761,8 @@ COMPILE_HAVE_STEADY_CLOCK:INTERNAL=TRUE
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v2.40.1()]
 //Details about finding OpenSSL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib64/libcrypto.so][/usr/include][c ][v3.0.8()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.0()]
 //Details about finding Python
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/usr/bin/python3.9][cfound components: Interpreter ][v3.9.16()]
 //Details about finding Python3
@@ -778,7 +824,7 @@ HAVE_LIB_RT:INTERNAL=1
 //Have symbol O_CLOEXEC
 HAVE_O_CLOEXEC:INTERNAL=1
 //Have library snappy
-HAVE_SNAPPY:INTERNAL=
+HAVE_SNAPPY:INTERNAL=1
 //Have library sqlite3
 HAVE_SQLITE3:INTERNAL=
 //Have library tcmalloc
@@ -866,7 +912,9 @@ _Python_EXECUTABLE:INTERNAL=/usr/bin/python3.9
 //Python Properties
 _Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;9;16;64;;cpython-39-x86_64-linux-gnu;/usr/lib64/python3.9;/usr/lib64/python3.9;/usr/lib/python3.9/site-packages;/usr/lib64/python3.9/site-packages
 _Python_INTERPRETER_SIGNATURE:INTERNAL=0820be857fee647b3d54576d0160a80e
+__pkg_config_arguments_ARROW_CSV:INTERNAL=REQUIRED;arrow-csv
 __pkg_config_arguments__OPENSSL:INTERNAL=QUIET;openssl
+__pkg_config_checked_ARROW_CSV:INTERNAL=1
 __pkg_config_checked__OPENSSL:INTERNAL=1
 cmake_package_name:INTERNAL=GTest
 generated_dir:INTERNAL=/home/ec2-user/s3/S3C++/build/leveldb/third_party/googletest/googletest/generated
@@ -882,6 +930,8 @@ gtest_disable_pthreads-ADVANCED:INTERNAL=1
 gtest_force_shared_crt-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gtest_hide_internal_symbols
 gtest_hide_internal_symbols-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ARROW_CSV_arrow
+pkgcfg_lib_ARROW_CSV_arrow-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib__OPENSSL_crypto
 pkgcfg_lib__OPENSSL_crypto-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib__OPENSSL_ssl

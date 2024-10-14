@@ -250,16 +250,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_base.h \
  /usr/include/c++/11/shared_mutex /usr/include/c++/11/optional \
  /home/ec2-user/s3/S3C++/queryMethod/query.h \
- /home/ec2-user/s3/S3C++/algorithm/merge.h \
- /home/ec2-user/s3/S3C++/algorithm/BloomFilter.h \
- /home/ec2-user/s3/S3C++/translate/ThreadPool.h \
- /usr/local/include/aws/core/utils/stream/ResponseStream.h \
- /usr/local/include/aws/core/Core_EXPORTS.h \
- /usr/local/include/aws/core/SDKConfig.h \
- /usr/local/include/aws/core/utils/memory/AWSMemory.h \
- /usr/local/include/aws/core/utils/UnreferencedParam.h \
- /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
- /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
  /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
  /usr/local/include/spdlog/details/null_mutex.h \
  /usr/local/include/spdlog/tweakme.h /usr/local/include/spdlog/fmt/fmt.h \
@@ -280,8 +270,13 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /home/ec2-user/s3/S3C++/fpdb-aws/include/fpdb/aws/S3ClientType.h \
  /usr/local/include/aws/core/Aws.h \
  /usr/local/include/aws/core/utils/logging/LogLevel.h \
+ /usr/local/include/aws/core/Core_EXPORTS.h \
+ /usr/local/include/aws/core/SDKConfig.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSString.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSAllocator.h \
+ /usr/local/include/aws/core/utils/memory/AWSMemory.h \
+ /usr/local/include/aws/core/utils/UnreferencedParam.h \
+ /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
  /usr/local/include/aws/crt/StlAllocator.h \
  /usr/local/include/aws/crt/Allocator.h \
  /usr/local/include/aws/common/common.h \
@@ -352,6 +347,7 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /usr/local/include/aws/core/http/HttpTypes.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSList.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSMap.h \
+ /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
  /usr/local/include/aws/core/monitoring/MonitoringManager.h \
  /usr/local/include/aws/core/client/AWSClient.h \
  /usr/local/include/aws/core/client/CoreErrors.h \
@@ -396,6 +392,7 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /usr/local/include/aws/core/http/HttpRequest.h \
  /usr/local/include/aws/core/http/URI.h \
  /usr/local/include/aws/core/utils/StringUtils.h \
+ /usr/local/include/aws/core/utils/stream/ResponseStream.h \
  /usr/local/include/aws/core/utils/UUID.h \
  /usr/local/include/aws/core/monitoring/HttpClientMetrics.h \
  /usr/local/include/aws/core/endpoint/internal/AWSEndpointAttribute.h \
@@ -696,46 +693,33 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /usr/local/include/aws/core/AmazonStreamingWebServiceRequest.h \
  /usr/local/include/aws/s3/model/ListBucketsRequest.h \
  /usr/local/include/aws/core/NoResult.h \
- /usr/local/include/arrow/flight/client.h /usr/include/c++/11/variant \
- /usr/local/include/arrow/ipc/options.h \
- /usr/local/include/arrow/io/caching.h \
- /usr/local/include/arrow/io/interfaces.h \
- /usr/local/include/arrow/io/type_fwd.h \
- /usr/local/include/arrow/type_fwd.h \
- /usr/local/include/arrow/util/macros.h \
- /usr/local/include/arrow/util/visibility.h \
- /usr/local/include/arrow/util/cancel.h /usr/local/include/arrow/status.h \
- /usr/local/include/arrow/util/compare.h \
- /usr/local/include/arrow/util/string_builder.h \
- /usr/local/include/arrow/util/type_fwd.h \
- /usr/local/include/arrow/ipc/type_fwd.h \
- /usr/local/include/arrow/util/compression.h \
- /usr/local/include/arrow/result.h \
- /usr/local/include/arrow/util/aligned_storage.h \
- /usr/local/include/arrow/util/launder.h \
- /usr/local/include/arrow/ipc/reader.h \
- /usr/local/include/arrow/ipc/message.h \
- /usr/local/include/arrow/record_batch.h \
- /usr/local/include/arrow/compare.h /usr/local/include/arrow/device.h \
- /usr/local/include/arrow/util/iterator.h \
- /usr/local/include/arrow/util/functional.h \
- /usr/local/include/arrow/util/async_generator.h \
- /usr/local/include/arrow/util/async_generator_fwd.h \
- /usr/local/include/arrow/util/async_util.h \
- /usr/local/include/arrow/util/future.h \
- /usr/local/include/arrow/type_traits.h /usr/local/include/arrow/type.h \
- /usr/include/c++/11/climits /usr/local/include/arrow/util/checked_cast.h \
- /usr/local/include/arrow/util/endian.h \
- /usr/local/include/arrow/util/type_traits.h \
- /usr/local/include/arrow/util/ubsan.h /usr/local/include/arrow/visitor.h \
- /usr/local/include/arrow/util/bit_util.h \
- /usr/local/include/arrow/util/config.h \
- /usr/local/include/arrow/util/tracing.h \
- /usr/local/include/arrow/util/mutex.h \
- /usr/local/include/arrow/util/thread_pool.h \
- /usr/local/include/arrow/util/io_util.h /usr/include/c++/11/csignal \
- /usr/include/signal.h /usr/include/bits/signum-generic.h \
- /usr/include/bits/signum-arch.h /usr/include/bits/types/sig_atomic_t.h \
+ /usr/include/arrow/flight/client.h /usr/include/c++/11/variant \
+ /usr/include/arrow/ipc/options.h /usr/include/arrow/io/caching.h \
+ /usr/include/arrow/io/interfaces.h /usr/include/arrow/io/type_fwd.h \
+ /usr/include/arrow/type_fwd.h /usr/include/arrow/util/macros.h \
+ /usr/include/arrow/util/visibility.h /usr/include/arrow/util/cancel.h \
+ /usr/include/arrow/status.h /usr/include/arrow/util/compare.h \
+ /usr/include/arrow/util/string_builder.h \
+ /usr/include/arrow/util/type_fwd.h /usr/include/arrow/ipc/type_fwd.h \
+ /usr/include/arrow/util/compression.h /usr/include/arrow/result.h \
+ /usr/include/arrow/util/aligned_storage.h \
+ /usr/include/arrow/util/launder.h /usr/include/arrow/ipc/reader.h \
+ /usr/include/arrow/ipc/message.h /usr/include/arrow/record_batch.h \
+ /usr/include/arrow/compare.h /usr/include/arrow/device.h \
+ /usr/include/arrow/util/iterator.h /usr/include/arrow/util/functional.h \
+ /usr/include/arrow/util/async_generator.h \
+ /usr/include/arrow/util/async_generator_fwd.h \
+ /usr/include/arrow/util/async_util.h /usr/include/arrow/util/future.h \
+ /usr/include/arrow/type_traits.h /usr/include/arrow/type.h \
+ /usr/include/c++/11/climits /usr/include/arrow/util/checked_cast.h \
+ /usr/include/arrow/util/endian.h /usr/include/arrow/util/type_traits.h \
+ /usr/include/arrow/util/ubsan.h /usr/include/arrow/visitor.h \
+ /usr/include/arrow/util/bit_util.h /usr/include/arrow/util/config.h \
+ /usr/include/arrow/util/tracing.h /usr/include/arrow/util/mutex.h \
+ /usr/include/arrow/util/thread_pool.h /usr/include/arrow/util/io_util.h \
+ /usr/include/c++/11/csignal /usr/include/signal.h \
+ /usr/include/bits/signum-generic.h /usr/include/bits/signum-arch.h \
+ /usr/include/bits/types/sig_atomic_t.h \
  /usr/include/bits/types/siginfo_t.h /usr/include/bits/types/__sigval_t.h \
  /usr/include/bits/siginfo-arch.h /usr/include/bits/siginfo-consts.h \
  /usr/include/bits/siginfo-consts-arch.h \
@@ -749,16 +733,12 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
  /usr/include/linux/close_range.h /usr/include/bits/ss_flags.h \
  /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
- /usr/include/bits/signal_ext.h \
- /usr/local/include/arrow/util/windows_fixup.h \
- /usr/local/include/arrow/util/queue.h \
- /usr/local/include/arrow/vendored/ProducerConsumerQueue.h \
- /usr/local/include/arrow/ipc/writer.h \
- /usr/local/include/arrow/ipc/dictionary.h \
- /usr/local/include/arrow/flight/type_fwd.h \
- /usr/local/include/arrow/flight/types.h \
- /usr/local/include/arrow/buffer.h /usr/local/include/arrow/util/span.h \
- /usr/local/include/arrow/flight/visibility.h \
+ /usr/include/bits/signal_ext.h /usr/include/arrow/util/windows_fixup.h \
+ /usr/include/arrow/util/queue.h \
+ /usr/include/arrow/vendored/ProducerConsumerQueue.h \
+ /usr/include/arrow/ipc/writer.h /usr/include/arrow/ipc/dictionary.h \
+ /usr/include/arrow/flight/type_fwd.h /usr/include/arrow/flight/types.h \
+ /usr/include/arrow/flight/visibility.h \
  /usr/local/include/aws/s3/model/GetObjectRequest.h \
  /usr/local/include/aws/s3/model/RequestPayer.h \
  /usr/local/include/aws/s3/model/ChecksumMode.h \

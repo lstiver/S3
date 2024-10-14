@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/ec2-user/s3/S3C++/build/leveldb/include -I/home/ec2-user/s3/S3C++/leveldb/. -I/home/ec2-user/s3/S3C++/leveldb/include
 
-CXX_FLAGS =  -fno-exceptions -fno-rtti -g -std=gnu++17
+CXX_FLAGS =  -fno-exceptions -fno-rtti -std=gnu++17
 

@@ -39,7 +39,7 @@ public:
 };
 
 int main() {
-  const string query_name = "c2";
+  const string query_name = "S5";
   const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
   const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
   const string bucket = "watdiv100mconvert";
@@ -110,8 +110,8 @@ int main() {
         // string object = it.object;
         string subject = query_result[index_][0];
         string object = query_result[index_][2];
-        // cout<<subject<<endl;
-        // cout<<object<<endl;
+        cout<<subject<<endl;
+        cout<<object<<endl;
 
         vector<int>col(4,-1);
         if(tag.find(subject)!=tag.end()){
@@ -123,7 +123,7 @@ int main() {
           col[3]=1;
         }
         
-        int method = it.method;
+        int method = 1;
         string keyName;
         switch(method){
           //getObject
@@ -133,11 +133,11 @@ int main() {
             keyName = query_result[index_][1]+".csv"; //排序后这里要修改
             cout<<"第"<<index_+1<<"个查询"<<keyName<<endl;
             auto retrievedFile = getObject(bucket, keyName, awsClient, col);
-            cout<<"AAA"<<endl;
+            cout<<col[0]<<" "<<col[1]<<" "<<col[2]<<" "<<col[3]<<endl;
             if(index_ == 0){
-              processData(result, retrievedFile, col);
+              // processData(result, retrievedFile, col);
             } else {
-              result = merge(result, retrievedFile, col, true);
+              // result = merge(result, retrievedFile, col, true);
             }
           high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
           milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);

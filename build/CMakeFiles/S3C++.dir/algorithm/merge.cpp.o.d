@@ -228,4 +228,107 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: \
  /usr/local/include/aws/core/utils/memory/AWSMemory.h \
  /usr/local/include/aws/core/utils/UnreferencedParam.h \
  /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
- /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h
+ /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
+ /usr/include/arrow/array.h /usr/include/arrow/array/array_base.h \
+ /usr/include/arrow/array/data.h /usr/include/arrow/buffer.h \
+ /usr/include/arrow/device.h /usr/include/arrow/io/type_fwd.h \
+ /usr/include/arrow/type_fwd.h /usr/include/arrow/util/macros.h \
+ /usr/include/arrow/util/visibility.h /usr/include/arrow/result.h \
+ /usr/include/arrow/status.h /usr/include/arrow/util/compare.h \
+ /usr/include/arrow/util/string_builder.h \
+ /usr/include/arrow/util/aligned_storage.h \
+ /usr/include/arrow/util/launder.h /usr/include/arrow/util/span.h \
+ /usr/include/arrow/type.h /usr/include/c++/11/climits \
+ /usr/include/c++/11/variant /usr/include/arrow/util/checked_cast.h \
+ /usr/include/arrow/util/endian.h /usr/include/arrow/util/type_traits.h \
+ /usr/include/arrow/util/ubsan.h /usr/include/arrow/visitor.h \
+ /usr/include/arrow/util/bit_util.h /usr/include/arrow/compare.h \
+ /usr/include/arrow/array/array_binary.h \
+ /usr/include/arrow/stl_iterator.h /usr/include/arrow/chunked_array.h \
+ /usr/include/arrow/chunk_resolver.h /usr/include/arrow/type_traits.h \
+ /usr/include/arrow/array/array_decimal.h \
+ /usr/include/arrow/array/array_dict.h \
+ /usr/include/arrow/array/array_nested.h \
+ /usr/include/arrow/array/array_primitive.h \
+ /usr/include/arrow/array/array_run_end.h /usr/include/arrow/array/util.h \
+ /usr/include/arrow/builder.h /usr/include/arrow/array/builder_adaptive.h \
+ /usr/include/arrow/array/builder_base.h \
+ /usr/include/arrow/buffer_builder.h \
+ /usr/include/arrow/util/bitmap_generate.h \
+ /usr/include/arrow/memory_pool.h /usr/include/arrow/util/bitmap_ops.h \
+ /usr/include/arrow/array/builder_binary.h /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h \
+ /usr/include/arrow/util/binary_view_util.h \
+ /usr/include/arrow/array/builder_decimal.h \
+ /usr/include/arrow/array/builder_dict.h \
+ /usr/include/arrow/array/builder_primitive.h /usr/include/arrow/scalar.h \
+ /usr/include/arrow/extension_type.h /usr/include/arrow/util/decimal.h \
+ /usr/include/arrow/util/basic_decimal.h \
+ /usr/include/arrow/visit_type_inline.h \
+ /usr/include/arrow/visitor_generate.h \
+ /usr/include/arrow/util/bit_block_counter.h \
+ /usr/include/arrow/array/builder_nested.h \
+ /usr/include/arrow/array/builder_run_end.h \
+ /usr/include/arrow/array/builder_time.h \
+ /usr/include/arrow/array/builder_union.h \
+ /usr/include/arrow/acero/exec_plan.h /usr/include/arrow/acero/type_fwd.h \
+ /usr/include/arrow/compute/type_fwd.h \
+ /usr/include/arrow/acero/visibility.h \
+ /usr/include/arrow/compute/api_vector.h \
+ /usr/include/arrow/compute/function_options.h \
+ /usr/include/arrow/compute/ordering.h /usr/include/arrow/compute/exec.h \
+ /usr/include/arrow/compute/expression.h /usr/include/arrow/datum.h \
+ /usr/include/arrow/util/small_vector.h \
+ /usr/include/arrow/util/type_fwd.h /usr/include/arrow/util/future.h \
+ /usr/include/arrow/util/config.h /usr/include/arrow/util/functional.h \
+ /usr/include/arrow/util/tracing.h /usr/include/arrow/acero/options.h \
+ /usr/include/arrow/compute/api_aggregate.h \
+ /usr/include/arrow/record_batch.h /usr/include/arrow/util/iterator.h \
+ /usr/include/arrow/util/async_generator.h \
+ /usr/include/arrow/util/async_generator_fwd.h \
+ /usr/include/arrow/util/async_util.h /usr/include/c++/11/list \
+ /usr/include/c++/11/bits/stl_list.h /usr/include/c++/11/bits/list.tcc \
+ /usr/include/arrow/util/cancel.h /usr/include/arrow/util/mutex.h \
+ /usr/include/arrow/util/thread_pool.h /usr/include/c++/11/unordered_set \
+ /usr/include/c++/11/bits/unordered_set.h \
+ /usr/include/arrow/util/io_util.h /usr/include/c++/11/csignal \
+ /usr/include/signal.h /usr/include/bits/signum-generic.h \
+ /usr/include/bits/signum-arch.h /usr/include/bits/types/sig_atomic_t.h \
+ /usr/include/bits/types/siginfo_t.h /usr/include/bits/types/__sigval_t.h \
+ /usr/include/bits/siginfo-arch.h /usr/include/bits/siginfo-consts.h \
+ /usr/include/bits/siginfo-consts-arch.h \
+ /usr/include/bits/types/sigval_t.h /usr/include/bits/types/sigevent_t.h \
+ /usr/include/bits/sigevent-consts.h /usr/include/bits/sigaction.h \
+ /usr/include/bits/sigcontext.h /usr/include/bits/types/stack_t.h \
+ /usr/include/sys/ucontext.h /usr/include/bits/sigstack.h \
+ /usr/include/bits/sigstksz.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
+ /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/include/bits/ss_flags.h \
+ /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
+ /usr/include/bits/signal_ext.h /usr/include/arrow/util/windows_fixup.h \
+ /usr/include/arrow/util/queue.h \
+ /usr/include/arrow/vendored/ProducerConsumerQueue.h \
+ /usr/include/arrow/compute/api.h /usr/include/arrow/compute/api_scalar.h \
+ /usr/include/arrow/compute/cast.h /usr/include/arrow/compute/function.h \
+ /usr/include/arrow/compute/kernel.h \
+ /usr/include/arrow/compute/registry.h \
+ /usr/include/arrow/compute/row/grouper.h /usr/include/arrow/csv/api.h \
+ /usr/include/arrow/csv/options.h /usr/include/arrow/csv/invalid_row.h \
+ /usr/include/arrow/csv/type_fwd.h /usr/include/arrow/io/interfaces.h \
+ /usr/include/arrow/csv/reader.h /usr/include/arrow/csv/writer.h \
+ /usr/include/arrow/ipc/type_fwd.h /usr/include/arrow/table.h \
+ /usr/include/arrow/io/memory.h /usr/include/arrow/io/concurrency.h \
+ /usr/include/arrow/ipc/api.h /usr/include/arrow/ipc/dictionary.h \
+ /usr/include/arrow/ipc/feather.h /usr/include/arrow/ipc/options.h \
+ /usr/include/arrow/io/caching.h /usr/include/arrow/util/compression.h \
+ /usr/include/arrow/ipc/json_simple.h /usr/include/arrow/ipc/message.h \
+ /usr/include/arrow/ipc/reader.h /usr/include/arrow/ipc/writer.h \
+ /usr/include/arrow/util/range.h /usr/include/arrow/util/vector.h \
+ /usr/include/arrow/util/algorithm.h /usr/include/arrow/util/logging.h \
+ /usr/include/arrow/dataset/dataset.h \
+ /usr/include/arrow/dataset/type_fwd.h \
+ /usr/include/arrow/dataset/visibility.h \
+ /usr/include/arrow/filesystem/type_fwd.h

@@ -112,6 +112,9 @@ leveldb/CMakeFiles/leveldb.dir/util/cache.cc.o: \
  /home/ec2-user/s3/S3C++/leveldb/./port/port.h \
  /home/ec2-user/s3/S3C++/leveldb/./port/port_stdcxx.h \
  /home/ec2-user/s3/S3C++/build/leveldb/include/port/port_config.h \
+ /usr/include/snappy.h /usr/include/snappy-stubs-public.h \
+ /usr/include/sys/uio.h /usr/include/bits/types/struct_iovec.h \
+ /usr/include/bits/uio_lim.h /usr/include/bits/uio-ext.h \
  /usr/include/c++/11/condition_variable /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/limits \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
