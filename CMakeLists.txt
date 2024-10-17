@@ -16,6 +16,7 @@ if (NOT Python3_FOUND)
 endif()
 
 find_package(Arrow REQUIRED)
+find_package(ArrowAcero REQUIRED)
 add_subdirectory(leveldb)
 add_subdirectory(parallel-hashmap)
 add_subdirectory(fpdb-aws) 
@@ -50,10 +51,10 @@ add_executable(${PROJECT_NAME}
     ArrowInputStream/ArrowInputStream.cpp
 )
 
-target_link_libraries(${PROJECT_NAME} PUBLIC arrow_static Arrow::arrow_shared)
+# target_link_libraries(${PROJECT_NAME} PUBLIC Arrow::arrow_shared)
 
 # 链接 Python3 库
-target_link_libraries(${PROJECT_NAME} PUBLIC  Python3::Python)
+# target_link_libraries(${PROJECT_NAME} PUBLIC  Python3::Python)
 # 链接 parallel_hashmap 库
 target_include_directories(${PROJECT_NAME} PUBLIC  parallel_hashmap)
 # 链接 leveldb 库
@@ -66,7 +67,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC fpdb-util)
 target_link_libraries(${PROJECT_NAME} PUBLIC pthread -lm -ldl)
 target_link_libraries(${PROJECT_NAME} 
     PUBLIC 
-    arrow_static 
-    Arrow::arrow_shared 
+    Arrow::arrow_shared
+    ArrowAcero::arrow_acero_shared
     ${ARROW_CSV_LIBRARIES}  # 添加 csv 相关的库
 )

@@ -461,10 +461,10 @@ leveldb/leveldb_tests: leveldb/CMakeFiles/leveldb_tests.dir/util/hash_test.cc.o
 leveldb/leveldb_tests: leveldb/CMakeFiles/leveldb_tests.dir/util/logging_test.cc.o
 leveldb/leveldb_tests: leveldb/CMakeFiles/leveldb_tests.dir/build.make
 leveldb/leveldb_tests: leveldb/libleveldb.a
-leveldb/leveldb_tests: lib/libgmock.a
-leveldb/leveldb_tests: lib/libgtest.a
-leveldb/leveldb_tests: lib/libgtest_main.a
-leveldb/leveldb_tests: lib/libgtest.a
+leveldb/leveldb_tests: lib/libgmockd.a
+leveldb/leveldb_tests: lib/libgtestd.a
+leveldb/leveldb_tests: lib/libgtest_maind.a
+leveldb/leveldb_tests: lib/libgtestd.a
 leveldb/leveldb_tests: leveldb/CMakeFiles/leveldb_tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ec2-user/s3/S3C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable leveldb_tests"
 	cd /home/ec2-user/s3/S3C++/build/leveldb && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/leveldb_tests.dir/link.txt --verbose=$(VERBOSE)

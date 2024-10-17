@@ -19,16 +19,15 @@
 #include <iostream>
 #include <memory>
 
-
 shared_ptr<arrow::Table> getObject(
     const string &bucket, 
     const string &key, 
     shared_ptr<fpdb::aws::AWSClient> awsClient,
-    const vector<int>& keyColumnIndex) 
+    const vector<string> & col) 
 {
     Aws::S3::Model::GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(Aws::String(bucket));
-    getObjectRequest.SetKey(Aws::String(key));
+    getObjectRequest.SetBucket(bucket);
+    getObjectRequest.SetKey(key);
 
     // 发起请求
     Aws::S3::Model::GetObjectOutcome getObjectOutcome = awsClient->getS3Client()->GetObject(getObjectRequest);
@@ -44,45 +43,39 @@ shared_ptr<arrow::Table> getObject(
          // 将 S3 的 Body (stream) 转换为 Arrow 的输入流
         Aws::IOStream &retrievedFile = getResult.GetBody(); 
         shared_ptr<arrow::io::InputStream> inputStream = make_shared<ArrowInputStream>(retrievedFile);
-
-        vector<string> column_names = {"subject","object"};
+ 
         auto read_options = arrow::csv::ReadOptions::Defaults();
-        // read_options.autogenerate_column_names = true; 
-        read_options.column_names = column_names;
+         read_options.column_names = col; //设置列名
+        read_options.skip_rows = 1; // 跳过表头
+        auto convert_options = arrow::csv::ConvertOptions::Defaults();
+        for (const auto& column_name : col) {
+            convert_options.column_types[column_name] = arrow::int32();  // 将列设置为 int32 类型
+        }
         // 自动利用 Arrow 并发进行 CSV 读取
         auto csv_reader = arrow::csv::TableReader::Make(
             arrow::io::default_io_context(), inputStream,
             read_options,
             arrow::csv::ParseOptions::Defaults(),
-            arrow::csv::ConvertOptions::Defaults());
+            convert_options);
         if (!csv_reader.ok()) {
             spdlog::error("Failed to create CSV TableReader");
-            exit(1);
+            return nullptr;
         }
         shared_ptr<arrow::csv::TableReader> reader = *csv_reader;
 
         // Read table from CSV file
         auto table = reader->Read();
         if(table.ok()) {
-            // 定义输出文件路径
-            // 打印表的行数
-            cout << "Table has " << table.ValueOrDie()->num_rows() << " rows." << endl;
-            // 获取表的模式（schema）并打印列名
-    shared_ptr<arrow::Schema> schema = table.ValueOrDie()->schema();
-    cout << "Table columns: " << endl;
-    for (int i = 0; i < schema->num_fields(); ++i) {
-        cout << "Column " << i + 1 << ": " << schema->field(i)->name() << endl;
-    }
             return table.ValueOrDie();
         } else {
-            spdlog::error("转化结果为arrow表格失败");
-            exit(1);
+            spdlog::error("转化结果为arrow表格失败: {}", table.status().ToString());
+            return nullptr;
         }
     } else {
         // 请求失败，输出错误信息
         const auto& err = getObjectOutcome.GetError();
         cerr << "Error occurred while fetching object: " << err.GetMessage() << endl;
-        exit(0);  // 根据需要处理错误，退出或其他操作
+        return nullptr;
     }
 }
 

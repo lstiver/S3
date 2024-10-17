@@ -6,5 +6,5 @@ CXX_DEFINES = -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_
 
 CXX_INCLUDES = -I/home/ec2-user/s3/S3C++/build/leveldb/include -I/home/ec2-user/s3/S3C++/leveldb/. -I/home/ec2-user/s3/S3C++/leveldb/third_party/benchmark/include -I/home/ec2-user/s3/S3C++/leveldb/third_party/benchmark/src
 
-CXX_FLAGS =  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing -fvisibility=hidden -fvisibility-inlines-hidden -std=c++11
+CXX_FLAGS =  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing -g -fvisibility=hidden -fvisibility-inlines-hidden -std=c++11
 

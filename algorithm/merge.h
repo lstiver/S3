@@ -62,7 +62,7 @@ struct BatchesWithSchema {
   }
 };
 
-shared_ptr<arrow::Table> merge(shared_ptr<arrow::Table> dataA, shared_ptr<arrow::Table> dataB, const vector<int>& keyColumnIndex);
+shared_ptr<arrow::Table> merge(shared_ptr<arrow::Table> dataA, shared_ptr<arrow::Table> dataB, const vector<string>& col1,const std::vector<string>& col2);
 vector<string> split(const string& str, char delimiter);
 void processData(flat_hash_map<pair<int,int>, vector<vector<int>>>&dataMap,istringstream& input, const vector<int>& keyColumnIndex);
 void processData(flat_hash_map<pair<int, int>, vector<vector<int>>> &dataMap, const char* input, const vector<int>& keyColumnIndex);

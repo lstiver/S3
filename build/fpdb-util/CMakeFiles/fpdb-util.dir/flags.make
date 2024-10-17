@@ -6,5 +6,5 @@ CXX_DEFINES = -DSPDLOG_COMPILED_LIB
 
 CXX_INCLUDES = -I/home/ec2-user/s3/S3C++/fpdb-util/include
 
-CXX_FLAGS = -fPIC -std=gnu++17
+CXX_FLAGS = -g -fPIC -std=gnu++17
 

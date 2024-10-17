@@ -25,27 +25,14 @@ using namespace Aws::S3;
 using namespace Aws::S3::Model;
 using namespace std;
 using phmap::flat_hash_map;
-static flat_hash_map<string,int> tag;
+
 // 全局线程池，初始化时指定线程数
-ThreadPool pool(2);  // 使用2个线程
+// ThreadPool pool(2);  // 使用2个线程
 int index_ = 0;
-
-class MyObject {
-public:
-    int value;
-    map<string, int> arry;
-
-    MyObject(int val, map<string, int> arr) : value(val), arry(move(arr)) {}
-};
+void test(string query_name, shared_ptr<fpdb::aws::AWSClient> awsClient);
 
 int main() {
-  const string query_name = "S5";
-  const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
-  const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
-  const string bucket = "watdiv100mconvert";
-  int totalTime = 458700;  // 最大时间
-  high_resolution_clock::time_point beginTime = high_resolution_clock::now();
-
+  string str;
   // 从配置文件中解析配置并创建 AWSConfig 对象
   auto awsConfig = fpdb::aws::AWSConfig::parseAWSConfig();
   // 创建 AWSClient 对象，并将 awsConfig 传递进去
@@ -53,6 +40,70 @@ int main() {
 
   // 初始化 AWS 客户端
   awsClient->init();
+  while(true){
+    cout<<"请输入查询名称(输入exit结束程序):"<<endl;
+    cin>>str;
+    if(str == "exit") {
+      awsClient->shutdown();
+      spdlog::info("S3 Client连接断开,结束程序");
+      return 0;
+    }
+    test(str, awsClient);
+  }
+
+  // // LevelDB 存储位置
+  // string dbPath = "/home/ec2-user/s3/S3C++/index";
+
+  // // 打开levedb
+  // leveldb::DB* db;
+  // leveldb::Options options;
+  // options.create_if_missing = false;
+  // leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
+
+  // if (!status.ok()) {
+  //     cerr << "Unable to open database: " << dbPath << endl;
+  //     cerr << status.ToString() << endl;
+  //     return -1;
+  // }
+
+  // // Prepare the output CSV file
+  // ofstream csvFile(written_path);
+  // if (!csvFile.is_open()) {
+  //     cerr << "Unable to open CSV file for writing." << endl;
+  //     delete db;
+  //     return -1;
+  // }
+
+  // ThreadPool threadPool(4);  // 创建线程池，线程数为 4
+
+  // vector<future<void>> futures;
+  // for (const auto& entry : result) {
+  //   // 对每个批次分配线程池任务
+  //   futures.push_back(threadPool.enqueue([&db, &csvFile, batch = entry.second] {
+  //       processBatch(db, csvFile, batch);
+  //   }));
+  // }
+
+  // // 等待所有线程完成任务
+  // for (auto& future : futures) {
+  //   future.get();
+  // }
+  
+  // // Clean up
+  // csvFile.close();
+  // delete db;
+
+  // cout << "Data has been written to" << written_path << endl;
+
+  return 0;
+}
+
+void test(string query_name, shared_ptr<fpdb::aws::AWSClient> awsClient){
+  const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
+  const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
+  const string bucket = "watdiv100mconvert";
+  int totalTime = 458700;  // 最大时间
+  high_resolution_clock::time_point beginTime = high_resolution_clock::now();
 
   //获得分解后的子查询
   auto query_result = get_query(file_path); 
@@ -93,10 +144,11 @@ int main() {
     }
   }
   sort(min->begin(), min->end(), compareByTime);
-
-  flat_hash_map<pair<int,int>,vector<vector<int>>> result;
-  vector<string> result_tag;
-  int colindex = 0;
+  
+  shared_ptr<arrow::Table> result;
+  vector<string>col1;
+  vector<string>col2;
+  set<string> tag;
   if (timeflag) {
     index_ = 0;
     if (min != nullptr) {
@@ -110,19 +162,21 @@ int main() {
         // string object = it.object;
         string subject = query_result[index_][0];
         string object = query_result[index_][2];
-        cout<<subject<<endl;
-        cout<<object<<endl;
 
-        vector<int>col(4,-1);
-        if(tag.find(subject)!=tag.end()){
-          col[0]=tag[subject];
-          col[2]=0;
+        if(subject.find("?") != string::npos && tag.count(subject) > 0){
+            col1.emplace_back(subject);
+            col2.emplace_back("subject");
+        } else {
+            col2.emplace_back(subject);
         }
-        if(tag.find(object)!=tag.end()){
-          col[1]=tag[object];
-          col[3]=1;
+          
+        if(object.find("?") != string::npos && tag.count(object) > 0){
+            col1.emplace_back(object);
+            col2.emplace_back("object");
+        } else {
+          col2.emplace_back(object);
         }
-        
+                
         int method = 1;
         string keyName;
         switch(method){
@@ -132,17 +186,14 @@ int main() {
             // keyName = it.keyName + ".csv"; 
             keyName = query_result[index_][1]+".csv"; //排序后这里要修改
             cout<<"第"<<index_+1<<"个查询"<<keyName<<endl;
-            auto retrievedFile = getObject(bucket, keyName, awsClient, col);
-            cout<<col[0]<<" "<<col[1]<<" "<<col[2]<<" "<<col[3]<<endl;
             if(index_ == 0){
-              // processData(result, retrievedFile, col);
+              result = getObject(bucket, keyName, awsClient, col2);
             } else {
-              // result = merge(result, retrievedFile, col, true);
+              result = merge(result, getObject(bucket, keyName, awsClient,col2), col1,col2);
             }
           high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
           milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
           cout<<"getObject总耗时："<<overallTime.count()<<"ms"<<endl;
-          // writtein("/home/ec2-user/s3/S3C++/res/"+to_string(index_),result);
           break;  
           }
           case 2://s3SelectIndex
@@ -155,17 +206,15 @@ int main() {
             cout<<"query"<<index<<"Error!";
         }
         index_++;
-        if(subject.find("?") != string::npos && tag.find(subject)==tag.end()){
-          tag[subject] = colindex;
-          colindex++;
-          result_tag.emplace_back(subject);
+        if(subject.find("?") != string::npos && tag.count(subject) == 0){
+          tag.insert(subject);
         }
-        if(object.find("?") != string::npos && tag.find(object)==tag.end()){
-          tag[object] = colindex;
-          colindex++;
-          result_tag.emplace_back(object);
+        if(object.find("?") != string::npos && tag.count(object)==0){
+          tag.insert(object);
         }
         cout<<endl;
+        col1.clear();
+        col2.clear();
       }
     }
   } else {
@@ -175,76 +224,4 @@ int main() {
   high_resolution_clock::time_point endTime = high_resolution_clock::now();
   milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - beginTime);
   cout<<"总耗时："<<timeInterval.count()<<"ms"<<endl;
-
-  // LevelDB 存储位置
-  string dbPath = "/home/ec2-user/s3/S3C++/index";
-
-  // 打开levedb
-  leveldb::DB* db;
-  leveldb::Options options;
-  options.create_if_missing = false;
-  leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
-
-  if (!status.ok()) {
-      cerr << "Unable to open database: " << dbPath << endl;
-      cerr << status.ToString() << endl;
-      return -1;
-  }
-
-  // Prepare the output CSV file
-  ofstream csvFile(written_path);
-  if (!csvFile.is_open()) {
-      cerr << "Unable to open CSV file for writing." << endl;
-      delete db;
-      return -1;
-  }
-
-  ThreadPool threadPool(4);  // 创建线程池，线程数为 4
-
-  vector<future<void>> futures;
-  for (const auto& entry : result) {
-    // 对每个批次分配线程池任务
-    futures.push_back(threadPool.enqueue([&db, &csvFile, batch = entry.second] {
-        processBatch(db, csvFile, batch);
-    }));
-  }
-
-  // 等待所有线程完成任务
-  for (auto& future : futures) {
-    future.get();
-  }
-  
-  // Clean up
-  csvFile.close();
-  delete db;
-
-  cout << "Data has been written to" << written_path << endl;
-
-  return 0;
 }
-// // 从配置文件中解析配置并创建 AWSConfig 对象
-//     auto awsConfig = fpdb::aws::AWSConfig::parseAWSConfig();
-//     // 创建 AWSClient 对象，并将 awsConfig 传递进去
-//     AWSClient awsClient(awsConfig);
-
-//     // 初始化 AWS 客户端
-//     awsClient.init();
-//     // 获取 S3 客户端
-//     auto s3Client = awsClient.getS3Client();
-
-//     // // 示例：列出 S3 存储桶中的对象
-//     // Aws::S3::Model::ListObjectsRequest request;
-//     // request.SetBucket("your-bucket-name");
-
-//     // auto outcome = s3Client->ListObjects(request);
-
-//     // if (outcome.IsSuccess()) {
-//     //     const auto& result = outcome.GetResult();
-//     //     for (const auto& object : result.GetContents()) {
-//     //         std::cout << "Object: " << object.GetKey() << std::endl;
-//     //     }
-//     // } else {
-//     //     std::cerr << "Failed to list objects: " << outcome.GetError().GetMessage() << std::endl;
-//     // }
-
-//     return 0;

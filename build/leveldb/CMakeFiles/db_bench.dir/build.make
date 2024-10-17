@@ -125,8 +125,8 @@ leveldb/db_bench: leveldb/CMakeFiles/db_bench.dir/util/testutil.cc.o
 leveldb/db_bench: leveldb/CMakeFiles/db_bench.dir/benchmarks/db_bench.cc.o
 leveldb/db_bench: leveldb/CMakeFiles/db_bench.dir/build.make
 leveldb/db_bench: leveldb/libleveldb.a
-leveldb/db_bench: lib/libgmock.a
-leveldb/db_bench: lib/libgtest.a
+leveldb/db_bench: lib/libgmockd.a
+leveldb/db_bench: lib/libgtestd.a
 leveldb/db_bench: leveldb/third_party/benchmark/src/libbenchmark.a
 leveldb/db_bench: leveldb/CMakeFiles/db_bench.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ec2-user/s3/S3C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable db_bench"

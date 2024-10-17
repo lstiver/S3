@@ -1,66 +1,140 @@
 #include "merge.h"
+#include <arrow/array.h>
+#include <arrow/builder.h>
+
+#include <arrow/acero/exec_plan.h>
+#include <arrow/compute/api.h>
+#include <arrow/compute/api_vector.h>
+#include <arrow/compute/cast.h>
+#include <arrow/compute/expression.h>
+
+#include <arrow/csv/api.h>
+
+#include <arrow/dataset/dataset.h>
+#include <arrow/dataset/file_base.h>
+#include <arrow/dataset/file_parquet.h>
+#include <arrow/dataset/plan.h>
+#include <arrow/dataset/scanner.h>
+
+#include <arrow/io/interfaces.h>
+#include <arrow/io/memory.h>
+
+#include <arrow/result.h>
+#include <arrow/status.h>
+#include <arrow/table.h>
+
+#include <arrow/ipc/api.h>
+
+#include <arrow/util/future.h>
+#include <arrow/util/range.h>
+#include <arrow/util/thread_pool.h>
+#include <arrow/util/vector.h>
+
+#include <iostream>
+#include <memory>
+#include <utility>
+
 mutex result_mutex; // 互斥锁，用于保护结果集
 mutex dataA_mutex;      // 互斥锁，用于保护 dataA 访问
 mutex bloomFilter_mutex;// 互斥锁，用于保护布隆过滤器访问
 extern int index_;
 
-template <typename TYPE,
-          typename = typename std::enable_if<arrow::is_number_type<TYPE>::value |
-                                             arrow::is_boolean_type<TYPE>::value |
-                                             arrow::is_temporal_type<TYPE>::value>::type>
-
-BatchesWithSchema MakeGroupableBatches(std::shared_ptr<arrow::Table> data, int multiplicity = 1) {
-  BatchesWithSchema out;
-
-  size_t batch_count = out.batches.size();
-  for (int repeat = 1; repeat < multiplicity; ++repeat) {
-    for (size_t i = 0; i < batch_count; ++i) {
-      out.batches.push_back(out.batches[i]);
-    }
-  }
-
-  out.schema = data->schema();
-  return out;
-}
-
-// 添加模板声明到函数定义中
-template <typename TYPE>
-arrow::Result<std::shared_ptr<arrow::Array>> GetArrayDataSample(
-    const std::vector<typename arrow::TypeTraits<TYPE>::CType>& values) {
-  using ArrowBuilderType = typename arrow::TypeTraits<TYPE>::BuilderType;
-  ArrowBuilderType builder;
-  ARROW_RETURN_NOT_OK(builder.Reserve(values.size()));
-  ARROW_RETURN_NOT_OK(builder.AppendValues(values));
-  return builder.Finish();
-}
-
 std::shared_ptr<arrow::Table> merge(
     std::shared_ptr<arrow::Table> dataA,
     std::shared_ptr<arrow::Table> dataB,
-    const std::vector<int>& col) 
+    const std::vector<std::string>& col1,
+    const std::vector<std::string>& col2) 
 {
-    // ARROW_ASSIGN_OR_RAISE(auto table, GetTable());
-
     arrow::AsyncGenerator<std::optional<cp::ExecBatch>> sink_gen;
-    int max_batch_size = 2;
-    auto table_source_right = ac::TableSourceNodeOptions{dataA, max_batch_size};
-    auto table_source_left = ac::TableSourceNodeOptions{dataA, max_batch_size};
+    // 检查输入表
+    if (!dataA || !dataB) {
+        std::cerr << "One or both input tables are null." << std::endl;
+        return nullptr;
+    }
 
+    std::cout << "dataA schema: " << dataA->schema()->ToString() << std::endl;
+    std::cout << "dataB schema: " << dataB->schema()->ToString() << std::endl;
+    std::cout << "dataA num_rows: " << dataA->num_rows() << std::endl;
+    std::cout << "dataB num_rows: " << dataB->num_rows() << std::endl;
+    std::vector<arrow::FieldRef> last_left_refs;
+    for (int i = 0; i < dataA->schema()->num_fields(); ++i) {
+        std::string column_name = dataA->schema()->field(i)->name();
+        last_left_refs.emplace_back(arrow::FieldRef(column_name));
+    }
 
-    ac::Declaration right{"table_source", std::move(table_source_right)};
-    ac::Declaration left{"table_source", std::move(table_source_left)};
-    // 使用 HashJoinNodeOptions (如果有替代，可能需要用 ExecNodeOptions)
+    int max_batch_size = 20000;
+    if (max_batch_size <= 0) {
+        std::cerr << "max_batch_size must be greater than 0." << std::endl;
+        return nullptr;
+    }
+
+    auto table_source_left = arrow::acero::TableSourceNodeOptions{dataA, max_batch_size};
+    auto table_source_right = arrow::acero::TableSourceNodeOptions{dataB, max_batch_size};
+    std::cout << "Created table source options successfully." << std::endl;
+
+    arrow::acero::Declaration left{"table_source", std::move(table_source_left)};
+    arrow::acero::Declaration right{"table_source", std::move(table_source_right)};
+    std::cout << "Created left and right table declarations successfully." << std::endl;
+
+    std::vector<arrow::FieldRef> left_refs;
+    std::vector<arrow::FieldRef> right_refs;
+    arrow::compute::Expression filter_condition = arrow::compute::literal(true);
+    for (const auto& col_name : col1) {
+        left_refs.emplace_back(arrow::FieldRef(col_name));
+        std::cout << "Left column: " << col_name << std::endl;
+    }
+    std::vector<arrow::FieldRef> last_right_refs;
+    for (const auto& col_name : col2) {
+        if(col_name == "object" || col_name == "subject") {
+            right_refs.emplace_back(arrow::FieldRef(col_name));
+            std::cout << "Right column: " << col_name << std::endl;
+            continue;
+        } else if(col_name.find("?") == string::npos) {
+            filter_condition = arrow::compute::equal(
+            arrow::compute::field_ref(col_name),
+            arrow::compute::literal(std::stoi(col_name))
+            );
+        } else {
+            last_right_refs.emplace_back(arrow::FieldRef(col_name));
+        }
+    }
+    
+    // 使用 HashJoinNodeOptions 
     arrow::acero::HashJoinNodeOptions join_opts{
-        arrow::acero::JoinType::INNER, {"subject"}, {"subject"}
+        arrow::acero::JoinType::INNER, 
+        left_refs, 
+        right_refs,
+        last_left_refs,
+        last_right_refs,
+        // /*filter*/ arrow::compute::literal(true),
+        filter_condition,
+        /*output_suffix_for_left*/ "_l",
+        /*output_suffix_for_right*/ "_r",
     };
+
     arrow::acero::Declaration hashjoin{
-        "hashjoin", {std::move(left), std::move(right)}, std::make_shared<arrow::acero::ExecNodeOptions>(std::move(join_opts))
-    };
-    std::shared_ptr<arrow::Table> response_table;
-    // ARROW_ASSIGN_OR_RAISE(response_table, ac::DeclarationToTable(std::move(hashjoin)));
-    std::cout << "Results : " << response_table->ToString() << std::endl;
-    exit(0);
+        "hashjoin", {std::move(left), std::move(right)}, std::move(join_opts)};
+    std::cout << "Hash join declaration: " << std::endl;
+
+    if (!hashjoin.IsValid()) {
+        std::cerr << "hashjoin is null before move." << std::endl;
+    }
+
+    // 收集结果到一个 Table
+    arrow::Result<std::shared_ptr<arrow::Table>> result = arrow::acero::DeclarationToTable(std::move(hashjoin));
+    // 检查是否成功
+    if (!result.ok()) {
+        std::cerr << "Error during hash join: " << result.status().ToString() << std::endl;
+        exit(0);
+    }
+
+    std::shared_ptr<arrow::Table> response_table = result.ValueOrDie();
+    std::cout << "Number of rows: " << response_table->num_rows() << std::endl;
+    std::cout << "result schema: " << response_table->schema()->ToString() << std::endl;
+    return response_table;
 }
+
+
 
 // inline int fastAtoi(const string& str) {
 //     int num = 0;
