@@ -38,7 +38,7 @@ shared_ptr<arrow::Table> getObject(
         int64_t resultSize = getResult.GetContentLength();
         
         // 获取响应体（Body）
-        cout << "getObject size: " << resultSize << endl;
+        spdlog::info("getObject size: {}", resultSize);
         
          // 将 S3 的 Body (stream) 转换为 Arrow 的输入流
         Aws::IOStream &retrievedFile = getResult.GetBody(); 
@@ -74,7 +74,7 @@ shared_ptr<arrow::Table> getObject(
     } else {
         // 请求失败，输出错误信息
         const auto& err = getObjectOutcome.GetError();
-        cerr << "Error occurred while fetching object: " << err.GetMessage() << endl;
+        spdlog::error("Error occurred while fetching object: {}", err.GetMessage());
         return nullptr;
     }
 }

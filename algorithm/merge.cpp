@@ -104,18 +104,18 @@ std::shared_ptr<arrow::Table> merge(
 
     arrow::acero::Declaration hashjoin{
         "hashjoin", {std::move(left), std::move(right)}, std::move(join_opts)};
-    std::cout << "Hash join declaration: " << std::endl;
+    spdlog::info("Hash join declaration.");
 
     // 收集结果到一个 Table
     arrow::Result<std::shared_ptr<arrow::Table>> result = arrow::acero::DeclarationToTable(std::move(hashjoin));
     // 检查是否成功
     if (!result.ok()) {
-        spdlog::error("Error during hash join: ", result.status().ToString());
+        spdlog::error("Error during hash join: {}", result.status().ToString());
         exit(0);
     }
 
     std::shared_ptr<arrow::Table> response_table = result.ValueOrDie();
-    spdlog::info("Number of rows: ",  response_table->num_rows());
+    spdlog::info("Number of rows: {}", response_table->num_rows());
     // std::cout << "result schema: " << response_table->schema()->ToString() << std::endl;
     return response_table;
 }
