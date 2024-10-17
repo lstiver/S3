@@ -607,35 +607,25 @@ fpdb-aws/CMakeFiles/fpdb-aws.dir/src/AWSClient.cpp.o: \
  /usr/local/include/aws/core/AmazonStreamingWebServiceRequest.h \
  /usr/local/include/aws/s3/model/ListBucketsRequest.h \
  /usr/local/include/aws/core/NoResult.h /usr/include/c++/11/optional \
- /usr/local/include/arrow/flight/client.h /usr/include/c++/11/variant \
- /usr/local/include/arrow/ipc/options.h \
- /usr/local/include/arrow/io/caching.h \
- /usr/local/include/arrow/io/interfaces.h \
- /usr/local/include/arrow/io/type_fwd.h \
- /usr/local/include/arrow/type_fwd.h \
- /usr/local/include/arrow/util/macros.h \
- /usr/local/include/arrow/util/visibility.h \
- /usr/local/include/arrow/util/cancel.h /usr/local/include/arrow/status.h \
- /usr/local/include/arrow/util/compare.h \
- /usr/local/include/arrow/util/string_builder.h \
- /usr/local/include/arrow/util/type_fwd.h \
- /usr/local/include/arrow/ipc/type_fwd.h \
- /usr/local/include/arrow/util/compression.h \
- /usr/local/include/arrow/result.h \
- /usr/local/include/arrow/util/aligned_storage.h \
- /usr/local/include/arrow/util/launder.h \
- /usr/local/include/arrow/ipc/reader.h \
- /usr/local/include/arrow/ipc/message.h \
- /usr/local/include/arrow/record_batch.h \
- /usr/local/include/arrow/compare.h /usr/local/include/arrow/device.h \
- /usr/local/include/arrow/util/iterator.h \
- /usr/local/include/arrow/util/functional.h \
- /usr/local/include/arrow/util/async_generator.h \
- /usr/local/include/arrow/util/async_generator_fwd.h \
- /usr/local/include/arrow/util/async_util.h \
- /usr/local/include/arrow/util/future.h /usr/include/c++/11/cmath \
- /usr/include/math.h /usr/include/bits/math-vector.h \
- /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/arrow/flight/client.h /usr/include/c++/11/variant \
+ /usr/include/arrow/ipc/options.h /usr/include/arrow/io/caching.h \
+ /usr/include/arrow/io/interfaces.h /usr/include/arrow/io/type_fwd.h \
+ /usr/include/arrow/type_fwd.h /usr/include/arrow/util/macros.h \
+ /usr/include/arrow/util/visibility.h /usr/include/arrow/util/cancel.h \
+ /usr/include/arrow/status.h /usr/include/arrow/util/compare.h \
+ /usr/include/arrow/util/string_builder.h \
+ /usr/include/arrow/util/type_fwd.h /usr/include/arrow/ipc/type_fwd.h \
+ /usr/include/arrow/util/compression.h /usr/include/arrow/result.h \
+ /usr/include/arrow/util/aligned_storage.h \
+ /usr/include/arrow/util/launder.h /usr/include/arrow/ipc/reader.h \
+ /usr/include/arrow/ipc/message.h /usr/include/arrow/record_batch.h \
+ /usr/include/arrow/compare.h /usr/include/arrow/device.h \
+ /usr/include/arrow/util/iterator.h /usr/include/arrow/util/functional.h \
+ /usr/include/arrow/util/async_generator.h \
+ /usr/include/arrow/util/async_generator_fwd.h \
+ /usr/include/arrow/util/async_util.h /usr/include/arrow/util/future.h \
+ /usr/include/c++/11/cmath /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
  /usr/include/bits/fp-fast.h \
  /usr/include/bits/mathcalls-helper-functions.h \
@@ -653,19 +643,16 @@ fpdb-aws/CMakeFiles/fpdb-aws.dir/src/AWSClient.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /usr/local/include/arrow/type_traits.h /usr/local/include/arrow/type.h \
- /usr/include/c++/11/climits /usr/local/include/arrow/util/checked_cast.h \
- /usr/local/include/arrow/util/endian.h \
- /usr/local/include/arrow/util/type_traits.h \
- /usr/local/include/arrow/util/ubsan.h /usr/local/include/arrow/visitor.h \
- /usr/local/include/arrow/util/bit_util.h \
- /usr/local/include/arrow/util/config.h \
- /usr/local/include/arrow/util/tracing.h \
- /usr/local/include/arrow/util/mutex.h \
- /usr/local/include/arrow/util/thread_pool.h \
- /usr/local/include/arrow/util/io_util.h /usr/include/c++/11/csignal \
- /usr/include/signal.h /usr/include/bits/signum-generic.h \
- /usr/include/bits/signum-arch.h /usr/include/bits/types/sig_atomic_t.h \
+ /usr/include/arrow/type_traits.h /usr/include/arrow/type.h \
+ /usr/include/c++/11/climits /usr/include/arrow/util/checked_cast.h \
+ /usr/include/arrow/util/endian.h /usr/include/arrow/util/type_traits.h \
+ /usr/include/arrow/util/ubsan.h /usr/include/arrow/visitor.h \
+ /usr/include/arrow/util/bit_util.h /usr/include/arrow/util/config.h \
+ /usr/include/arrow/util/tracing.h /usr/include/arrow/util/mutex.h \
+ /usr/include/arrow/util/thread_pool.h /usr/include/arrow/util/io_util.h \
+ /usr/include/c++/11/csignal /usr/include/signal.h \
+ /usr/include/bits/signum-generic.h /usr/include/bits/signum-arch.h \
+ /usr/include/bits/types/sig_atomic_t.h \
  /usr/include/bits/types/siginfo_t.h /usr/include/bits/types/__sigval_t.h \
  /usr/include/bits/siginfo-arch.h /usr/include/bits/siginfo-consts.h \
  /usr/include/bits/siginfo-consts-arch.h \
@@ -679,16 +666,12 @@ fpdb-aws/CMakeFiles/fpdb-aws.dir/src/AWSClient.cpp.o: \
  /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
  /usr/include/linux/close_range.h /usr/include/bits/ss_flags.h \
  /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
- /usr/include/bits/signal_ext.h \
- /usr/local/include/arrow/util/windows_fixup.h \
- /usr/local/include/arrow/util/queue.h \
- /usr/local/include/arrow/vendored/ProducerConsumerQueue.h \
- /usr/local/include/arrow/ipc/writer.h \
- /usr/local/include/arrow/ipc/dictionary.h \
- /usr/local/include/arrow/flight/type_fwd.h \
- /usr/local/include/arrow/flight/types.h \
- /usr/local/include/arrow/buffer.h /usr/local/include/arrow/util/span.h \
- /usr/local/include/arrow/flight/visibility.h \
+ /usr/include/bits/signal_ext.h /usr/include/arrow/util/windows_fixup.h \
+ /usr/include/arrow/util/queue.h \
+ /usr/include/arrow/vendored/ProducerConsumerQueue.h \
+ /usr/include/arrow/ipc/writer.h /usr/include/arrow/ipc/dictionary.h \
+ /usr/include/arrow/flight/type_fwd.h /usr/include/arrow/flight/types.h \
+ /usr/include/arrow/flight/visibility.h \
  /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
  /usr/local/include/spdlog/details/null_mutex.h \
  /usr/local/include/spdlog/tweakme.h /usr/local/include/spdlog/fmt/fmt.h \
@@ -716,6 +699,6 @@ fpdb-aws/CMakeFiles/fpdb-aws.dir/src/AWSClient.cpp.o: \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
  /home/ec2-user/s3/S3C++/fpdb-aws/include/fpdb/aws/ProfileAWSCredentialsProviderChain.h \
  /home/ec2-user/s3/S3C++/fpdb-aws/include/fpdb/aws/AirMettleClientAuthHandler.hpp \
- /usr/local/include/arrow/flight/client_auth.h \
+ /usr/include/arrow/flight/client_auth.h \
  /home/ec2-user/s3/S3C++/fpdb-util/include/fpdb/util/Util.h \
  /usr/local/include/tl/expected.hpp

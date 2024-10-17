@@ -369,6 +369,30 @@ fpdb-util-test/fast:
 	$(MAKE) $(MAKESILENT) -f fpdb-util/CMakeFiles/fpdb-util-test.dir/build.make fpdb-util/CMakeFiles/fpdb-util-test.dir/build
 .PHONY : fpdb-util-test/fast
 
+ArrowInputStream/ArrowInputStream.o: ArrowInputStream/ArrowInputStream.cpp.o
+.PHONY : ArrowInputStream/ArrowInputStream.o
+
+# target to build an object file
+ArrowInputStream/ArrowInputStream.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S3C++.dir/build.make CMakeFiles/S3C++.dir/ArrowInputStream/ArrowInputStream.cpp.o
+.PHONY : ArrowInputStream/ArrowInputStream.cpp.o
+
+ArrowInputStream/ArrowInputStream.i: ArrowInputStream/ArrowInputStream.cpp.i
+.PHONY : ArrowInputStream/ArrowInputStream.i
+
+# target to preprocess a source file
+ArrowInputStream/ArrowInputStream.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S3C++.dir/build.make CMakeFiles/S3C++.dir/ArrowInputStream/ArrowInputStream.cpp.i
+.PHONY : ArrowInputStream/ArrowInputStream.cpp.i
+
+ArrowInputStream/ArrowInputStream.s: ArrowInputStream/ArrowInputStream.cpp.s
+.PHONY : ArrowInputStream/ArrowInputStream.s
+
+# target to generate assembly for a file
+ArrowInputStream/ArrowInputStream.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S3C++.dir/build.make CMakeFiles/S3C++.dir/ArrowInputStream/ArrowInputStream.cpp.s
+.PHONY : ArrowInputStream/ArrowInputStream.cpp.s
+
 algorithm/merge.o: algorithm/merge.cpp.o
 .PHONY : algorithm/merge.o
 
@@ -517,6 +541,9 @@ help:
 	@echo "... leveldb"
 	@echo "... leveldb_tests"
 	@echo "... leveldbutil"
+	@echo "... ArrowInputStream/ArrowInputStream.o"
+	@echo "... ArrowInputStream/ArrowInputStream.i"
+	@echo "... ArrowInputStream/ArrowInputStream.s"
 	@echo "... algorithm/merge.o"
 	@echo "... algorithm/merge.i"
 	@echo "... algorithm/merge.s"

@@ -8,12 +8,9 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include "BloomFilter.h"
-#include "ThreadPool.h" 
+#include <spdlog/spdlog.h>
 #include <parallel_hashmap/phmap.h>
 #include <aws/core/utils/stream/ResponseStream.h>
-#include <arrow/array.h>
-#include <arrow/builder.h>
 #include <arrow/acero/exec_plan.h>
 #include <arrow/acero/options.h>
 #include <arrow/compute/api.h>
@@ -43,8 +40,6 @@ namespace cp = ::arrow::compute;
 namespace ac = ::arrow::acero;
 
 constexpr char kSep[] = "******";
-
-extern ThreadPool pool;
 
 // (Doc section: BatchesWithSchema Definition)
 struct BatchesWithSchema {

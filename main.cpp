@@ -29,6 +29,8 @@ using phmap::flat_hash_map;
 // 全局线程池，初始化时指定线程数
 // ThreadPool pool(2);  // 使用2个线程
 int index_ = 0;
+vector<string>col1;
+vector<string>col2;
 void test(string query_name, shared_ptr<fpdb::aws::AWSClient> awsClient);
 
 int main() {
@@ -146,8 +148,6 @@ void test(string query_name, shared_ptr<fpdb::aws::AWSClient> awsClient){
   sort(min->begin(), min->end(), compareByTime);
   
   shared_ptr<arrow::Table> result;
-  vector<string>col1;
-  vector<string>col2;
   set<string> tag;
   if (timeflag) {
     index_ = 0;
@@ -203,7 +203,7 @@ void test(string query_name, shared_ptr<fpdb::aws::AWSClient> awsClient){
           case 4://getObjectByIndex
             break;
           default:
-            cout<<"query"<<index<<"Error!";
+            spdlog::error("query",index,"Error!");
         }
         index_++;
         if(subject.find("?") != string::npos && tag.count(subject) == 0){

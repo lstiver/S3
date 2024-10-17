@@ -556,38 +556,24 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  ../algorithm/BloomFilter.h \
-  /usr/include/c++/11/bitset \
-  ../translate/ThreadPool.h \
-  /usr/include/c++/11/thread \
-  /usr/include/c++/11/bits/std_thread.h \
-  /usr/include/c++/11/tuple \
+  /usr/local/include/spdlog/spdlog.h \
+  /usr/local/include/spdlog/common.h \
+  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/c++/11/atomic \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
+  /usr/local/include/spdlog/tweakme.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/tuple \
   /usr/include/c++/11/array \
   /usr/include/c++/11/bits/uses_allocator.h \
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/refwrap.h \
-  /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/c++/11/bits/this_thread_sleep.h \
-  /usr/include/c++/11/mutex \
-  /usr/include/c++/11/bits/std_mutex.h \
-  /usr/include/c++/11/bits/unique_lock.h \
-  /usr/include/c++/11/queue \
-  /usr/include/c++/11/deque \
-  /usr/include/c++/11/bits/stl_deque.h \
-  /usr/include/c++/11/bits/deque.tcc \
-  /usr/include/c++/11/bits/stl_heap.h \
-  /usr/include/c++/11/bits/stl_queue.h \
-  /usr/include/c++/11/condition_variable \
-  /usr/include/c++/11/bits/shared_ptr.h \
-  /usr/include/c++/11/bits/shared_ptr_base.h \
-  /usr/include/c++/11/bits/allocated_ptr.h \
-  /usr/include/c++/11/ext/aligned_buffer.h \
-  /usr/include/c++/11/ext/concurrence.h \
-  /usr/include/c++/11/functional \
   /usr/include/c++/11/bits/std_function.h \
   /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/enable_special_members.h \
@@ -596,17 +582,31 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/c++/11/bits/erase_if.h \
   /usr/include/c++/11/bits/stl_algo.h \
   /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /usr/include/c++/11/future \
-  /usr/include/c++/11/atomic \
-  /usr/include/c++/11/bits/atomic_base.h \
-  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/11/bits/atomic_futex.h \
-  ../parallel-hashmap/parallel_hashmap/phmap.h \
-  /usr/include/c++/11/algorithm \
-  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
+  /usr/local/include/spdlog/fmt/fmt.h \
+  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/include/c++/11/cstddef \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/11/iterator \
+  /usr/include/c++/11/bits/stream_iterator.h \
+  /usr/local/include/spdlog/fmt/bundled/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/bits/math-vector.h \
@@ -631,20 +631,28 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/include/c++/11/cstring \
-  /usr/include/string.h \
-  /usr/include/strings.h \
-  /usr/include/c++/11/iterator \
-  /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/c++/11/memory \
-  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/11/bits/align.h \
-  /usr/include/c++/11/bit \
-  /usr/include/c++/11/bits/shared_ptr_atomic.h \
-  /usr/include/c++/11/backward/auto_ptr.h \
-  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/local/include/spdlog/details/registry.h \
+  /usr/local/include/spdlog/details/periodic_worker.h \
+  /usr/include/c++/11/condition_variable \
+  /usr/include/c++/11/bits/std_mutex.h \
+  /usr/include/c++/11/bits/unique_lock.h \
+  /usr/include/c++/11/mutex \
+  /usr/include/c++/11/thread \
+  /usr/include/c++/11/bits/std_thread.h \
+  /usr/include/c++/11/bits/this_thread_sleep.h \
+  /usr/local/include/spdlog/details/synchronous_factory.h \
+  /usr/local/include/spdlog/logger.h \
+  /usr/local/include/spdlog/details/backtracer.h \
+  /usr/local/include/spdlog/details/circular_q.h \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
+  /usr/local/include/spdlog/details/log_msg_buffer.h \
+  /usr/local/include/spdlog/details/log_msg.h \
+  /usr/local/include/spdlog/version.h \
+  ../parallel-hashmap/parallel_hashmap/phmap.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   ../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
   ../parallel-hashmap/parallel_hashmap/phmap_utils.h \
   ../parallel-hashmap/parallel_hashmap/phmap_bits.h \
@@ -659,7 +667,6 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/bits/posix2_lim.h \
   /usr/include/bits/xopen_lim.h \
   /usr/include/bits/uio_lim.h \
-  /usr/include/c++/11/cstddef \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
@@ -678,22 +685,22 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/local/include/aws/core/utils/UnreferencedParam.h \
   /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
   /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
-  /usr/include/arrow/array.h \
-  /usr/include/arrow/array/array_base.h \
-  /usr/include/arrow/array/data.h \
-  /usr/include/arrow/buffer.h \
-  /usr/include/arrow/device.h \
-  /usr/include/arrow/io/type_fwd.h \
-  /usr/include/arrow/type_fwd.h \
-  /usr/include/arrow/util/macros.h \
+  /usr/include/arrow/acero/exec_plan.h \
+  /usr/include/arrow/acero/type_fwd.h \
+  /usr/include/arrow/compute/type_fwd.h \
   /usr/include/arrow/util/visibility.h \
+  /usr/include/arrow/acero/visibility.h \
+  /usr/include/arrow/compute/api_vector.h \
+  /usr/include/arrow/compute/function_options.h \
   /usr/include/arrow/result.h \
   /usr/include/arrow/status.h \
   /usr/include/arrow/util/compare.h \
+  /usr/include/arrow/util/macros.h \
   /usr/include/arrow/util/string_builder.h \
   /usr/include/arrow/util/aligned_storage.h \
   /usr/include/arrow/util/launder.h \
-  /usr/include/arrow/util/span.h \
+  /usr/include/arrow/type_fwd.h \
+  /usr/include/arrow/compute/ordering.h \
   /usr/include/arrow/type.h \
   /usr/include/c++/11/climits \
   /usr/include/c++/11/variant \
@@ -702,55 +709,24 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/arrow/util/type_traits.h \
   /usr/include/arrow/util/ubsan.h \
   /usr/include/arrow/visitor.h \
+  /usr/include/arrow/compute/exec.h \
+  /usr/include/arrow/array/data.h \
+  /usr/include/arrow/buffer.h \
+  /usr/include/arrow/device.h \
+  /usr/include/arrow/io/type_fwd.h \
+  /usr/include/arrow/util/span.h \
   /usr/include/arrow/util/bit_util.h \
-  /usr/include/arrow/compare.h \
-  /usr/include/arrow/array/array_binary.h \
-  /usr/include/arrow/stl_iterator.h \
-  /usr/include/arrow/chunked_array.h \
-  /usr/include/arrow/chunk_resolver.h \
-  /usr/include/arrow/type_traits.h \
-  /usr/include/arrow/array/array_decimal.h \
-  /usr/include/arrow/array/array_dict.h \
-  /usr/include/arrow/array/array_nested.h \
-  /usr/include/arrow/array/array_primitive.h \
-  /usr/include/arrow/array/array_run_end.h \
-  /usr/include/arrow/array/util.h \
-  /usr/include/arrow/builder.h \
-  /usr/include/arrow/array/builder_adaptive.h \
-  /usr/include/arrow/array/builder_base.h \
-  /usr/include/arrow/buffer_builder.h \
-  /usr/include/arrow/util/bitmap_generate.h \
-  /usr/include/arrow/memory_pool.h \
-  /usr/include/arrow/util/bitmap_ops.h \
-  /usr/include/arrow/array/builder_binary.h \
-  /usr/include/c++/11/numeric \
-  /usr/include/c++/11/bits/stl_numeric.h \
-  /usr/include/c++/11/pstl/glue_numeric_defs.h \
-  /usr/include/arrow/util/binary_view_util.h \
-  /usr/include/arrow/array/builder_decimal.h \
-  /usr/include/arrow/array/builder_dict.h \
-  /usr/include/arrow/array/builder_primitive.h \
+  /usr/include/arrow/compute/expression.h \
+  /usr/include/arrow/datum.h \
   /usr/include/arrow/scalar.h \
+  /usr/include/arrow/compare.h \
   /usr/include/arrow/extension_type.h \
+  /usr/include/arrow/array/array_base.h \
+  /usr/include/arrow/type_traits.h \
   /usr/include/arrow/util/decimal.h \
   /usr/include/arrow/util/basic_decimal.h \
   /usr/include/arrow/visit_type_inline.h \
   /usr/include/arrow/visitor_generate.h \
-  /usr/include/arrow/util/bit_block_counter.h \
-  /usr/include/arrow/array/builder_nested.h \
-  /usr/include/arrow/array/builder_run_end.h \
-  /usr/include/arrow/array/builder_time.h \
-  /usr/include/arrow/array/builder_union.h \
-  /usr/include/arrow/acero/exec_plan.h \
-  /usr/include/arrow/acero/type_fwd.h \
-  /usr/include/arrow/compute/type_fwd.h \
-  /usr/include/arrow/acero/visibility.h \
-  /usr/include/arrow/compute/api_vector.h \
-  /usr/include/arrow/compute/function_options.h \
-  /usr/include/arrow/compute/ordering.h \
-  /usr/include/arrow/compute/exec.h \
-  /usr/include/arrow/compute/expression.h \
-  /usr/include/arrow/datum.h \
   /usr/include/arrow/util/small_vector.h \
   /usr/include/arrow/util/type_fwd.h \
   /usr/include/arrow/util/future.h \
@@ -762,6 +738,11 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/arrow/record_batch.h \
   /usr/include/arrow/util/iterator.h \
   /usr/include/arrow/util/async_generator.h \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/arrow/util/async_generator_fwd.h \
   /usr/include/arrow/util/async_util.h \
   /usr/include/c++/11/list \
@@ -812,6 +793,7 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/arrow/compute/cast.h \
   /usr/include/arrow/compute/function.h \
   /usr/include/arrow/compute/kernel.h \
+  /usr/include/arrow/memory_pool.h \
   /usr/include/arrow/compute/registry.h \
   /usr/include/arrow/compute/row/grouper.h \
   /usr/include/arrow/csv/api.h \
@@ -823,6 +805,8 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/arrow/csv/writer.h \
   /usr/include/arrow/ipc/type_fwd.h \
   /usr/include/arrow/table.h \
+  /usr/include/arrow/chunked_array.h \
+  /usr/include/arrow/chunk_resolver.h \
   /usr/include/arrow/io/memory.h \
   /usr/include/arrow/io/concurrency.h \
   /usr/include/arrow/ipc/api.h \
@@ -836,6 +820,9 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/arrow/ipc/reader.h \
   /usr/include/arrow/ipc/writer.h \
   /usr/include/arrow/util/range.h \
+  /usr/include/c++/11/numeric \
+  /usr/include/c++/11/bits/stl_numeric.h \
+  /usr/include/c++/11/pstl/glue_numeric_defs.h \
   /usr/include/arrow/util/vector.h \
   /usr/include/arrow/util/algorithm.h \
   /usr/include/arrow/util/logging.h \
@@ -843,15 +830,31 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/arrow/dataset/type_fwd.h \
   /usr/include/arrow/dataset/visibility.h \
   /usr/include/arrow/filesystem/type_fwd.h \
-  /usr/include/arrow/dataset/file_base.h \
-  /usr/include/arrow/dataset/partition.h \
-  /usr/include/arrow/dataset/scanner.h \
-  /usr/include/arrow/dataset/projector.h \
-  /usr/include/arrow/filesystem/filesystem.h \
-  /usr/include/arrow/io/file.h \
-  /usr/include/arrow/dataset/file_parquet.h \
-  /usr/include/arrow/dataset/discovery.h \
-  /usr/include/arrow/dataset/plan.h
+  /usr/include/arrow/array.h \
+  /usr/include/arrow/array/array_binary.h \
+  /usr/include/arrow/stl_iterator.h \
+  /usr/include/arrow/array/array_decimal.h \
+  /usr/include/arrow/array/array_dict.h \
+  /usr/include/arrow/array/array_nested.h \
+  /usr/include/arrow/array/array_primitive.h \
+  /usr/include/arrow/array/array_run_end.h \
+  /usr/include/arrow/array/util.h \
+  /usr/include/arrow/builder.h \
+  /usr/include/arrow/array/builder_adaptive.h \
+  /usr/include/arrow/array/builder_base.h \
+  /usr/include/arrow/buffer_builder.h \
+  /usr/include/arrow/util/bitmap_generate.h \
+  /usr/include/arrow/util/bitmap_ops.h \
+  /usr/include/arrow/array/builder_binary.h \
+  /usr/include/arrow/util/binary_view_util.h \
+  /usr/include/arrow/array/builder_decimal.h \
+  /usr/include/arrow/array/builder_dict.h \
+  /usr/include/arrow/array/builder_primitive.h \
+  /usr/include/arrow/util/bit_block_counter.h \
+  /usr/include/arrow/array/builder_nested.h \
+  /usr/include/arrow/array/builder_run_end.h \
+  /usr/include/arrow/array/builder_time.h \
+  /usr/include/arrow/array/builder_union.h
 
 CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/stdc-predef.h \
@@ -1753,49 +1756,6 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/local/include/aws/s3/model/ParquetInput.h \
   ../sort/sort.h \
   ../algorithm/merge.h \
-  ../algorithm/BloomFilter.h \
-  ../translate/ThreadPool.h \
-  /usr/include/arrow/array.h \
-  /usr/include/arrow/array/array_base.h \
-  /usr/include/arrow/array/data.h \
-  /usr/include/arrow/buffer.h \
-  /usr/include/arrow/util/span.h \
-  /usr/include/arrow/array/array_binary.h \
-  /usr/include/arrow/stl_iterator.h \
-  /usr/include/arrow/chunked_array.h \
-  /usr/include/arrow/chunk_resolver.h \
-  /usr/include/arrow/array/array_decimal.h \
-  /usr/include/arrow/array/array_dict.h \
-  /usr/include/arrow/array/array_nested.h \
-  /usr/include/arrow/array/array_primitive.h \
-  /usr/include/arrow/array/array_run_end.h \
-  /usr/include/arrow/array/util.h \
-  /usr/include/arrow/builder.h \
-  /usr/include/arrow/array/builder_adaptive.h \
-  /usr/include/arrow/array/builder_base.h \
-  /usr/include/arrow/buffer_builder.h \
-  /usr/include/arrow/util/bitmap_generate.h \
-  /usr/include/arrow/memory_pool.h \
-  /usr/include/arrow/util/bitmap_ops.h \
-  /usr/include/arrow/array/builder_binary.h \
-  /usr/include/c++/11/numeric \
-  /usr/include/c++/11/bits/stl_numeric.h \
-  /usr/include/c++/11/pstl/glue_numeric_defs.h \
-  /usr/include/arrow/util/binary_view_util.h \
-  /usr/include/arrow/array/builder_decimal.h \
-  /usr/include/arrow/array/builder_dict.h \
-  /usr/include/arrow/array/builder_primitive.h \
-  /usr/include/arrow/scalar.h \
-  /usr/include/arrow/extension_type.h \
-  /usr/include/arrow/util/decimal.h \
-  /usr/include/arrow/util/basic_decimal.h \
-  /usr/include/arrow/visit_type_inline.h \
-  /usr/include/arrow/visitor_generate.h \
-  /usr/include/arrow/util/bit_block_counter.h \
-  /usr/include/arrow/array/builder_nested.h \
-  /usr/include/arrow/array/builder_run_end.h \
-  /usr/include/arrow/array/builder_time.h \
-  /usr/include/arrow/array/builder_union.h \
   /usr/include/arrow/acero/exec_plan.h \
   /usr/include/arrow/acero/type_fwd.h \
   /usr/include/arrow/compute/type_fwd.h \
@@ -1804,8 +1764,18 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/compute/function_options.h \
   /usr/include/arrow/compute/ordering.h \
   /usr/include/arrow/compute/exec.h \
+  /usr/include/arrow/array/data.h \
+  /usr/include/arrow/buffer.h \
+  /usr/include/arrow/util/span.h \
   /usr/include/arrow/compute/expression.h \
   /usr/include/arrow/datum.h \
+  /usr/include/arrow/scalar.h \
+  /usr/include/arrow/extension_type.h \
+  /usr/include/arrow/array/array_base.h \
+  /usr/include/arrow/util/decimal.h \
+  /usr/include/arrow/util/basic_decimal.h \
+  /usr/include/arrow/visit_type_inline.h \
+  /usr/include/arrow/visitor_generate.h \
   /usr/include/arrow/util/small_vector.h \
   /usr/include/arrow/acero/options.h \
   /usr/include/arrow/compute/api_aggregate.h \
@@ -1814,6 +1784,7 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/compute/cast.h \
   /usr/include/arrow/compute/function.h \
   /usr/include/arrow/compute/kernel.h \
+  /usr/include/arrow/memory_pool.h \
   /usr/include/arrow/compute/registry.h \
   /usr/include/arrow/compute/row/grouper.h \
   /usr/include/arrow/csv/api.h \
@@ -1823,19 +1794,25 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/csv/reader.h \
   /usr/include/arrow/csv/writer.h \
   /usr/include/arrow/table.h \
+  /usr/include/arrow/chunked_array.h \
+  /usr/include/arrow/chunk_resolver.h \
   /usr/include/arrow/io/memory.h \
   /usr/include/arrow/io/concurrency.h \
   /usr/include/arrow/ipc/api.h \
   /usr/include/arrow/ipc/feather.h \
   /usr/include/arrow/ipc/json_simple.h \
   /usr/include/arrow/util/range.h \
+  /usr/include/c++/11/numeric \
+  /usr/include/c++/11/bits/stl_numeric.h \
+  /usr/include/c++/11/pstl/glue_numeric_defs.h \
   /usr/include/arrow/util/vector.h \
   /usr/include/arrow/util/algorithm.h \
   /usr/include/arrow/util/logging.h \
   /usr/include/arrow/dataset/dataset.h \
   /usr/include/arrow/dataset/type_fwd.h \
   /usr/include/arrow/dataset/visibility.h \
-  /usr/include/arrow/filesystem/type_fwd.h
+  /usr/include/arrow/filesystem/type_fwd.h \
+  ../translate/ThreadPool.h
 
 CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: ../queryMethod/query.cpp \
   /usr/include/stdc-predef.h \
@@ -4590,6 +4567,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
   /usr/local/include/aws/s3/model/ParquetInput.h
 
 
+/usr/include/arrow/io/file.h:
+
 /usr/local/include/aws/s3/model/CSVOutput.h:
 
 /usr/local/include/aws/core/utils/event/EventStreamDecoder.h:
@@ -4609,6 +4588,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/core/utils/event/EventStreamHandler.h:
 
 ../queryMethod/query.cpp:
+
+../translate/ThreadPool.h:
 
 ../sort/sort.h:
 
@@ -4697,6 +4678,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/s3/model/BucketVersioningStatus.h:
 
 /usr/local/include/aws/s3/model/Payer.h:
+
+/usr/local/include/aws/s3/model/DeleteMarkerReplicationStatus.h:
 
 /usr/local/include/aws/s3/model/MetricsStatus.h:
 
@@ -4837,6 +4820,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/core/client/AsyncCallerContext.h:
 
 /usr/local/include/aws/crt/Variant.h:
+
+/usr/local/include/smithy/identity/identity/AwsIdentity.h:
 
 /usr/local/include/aws/core/utils/Cache.h:
 
@@ -5158,27 +5143,13 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 ../fpdb-aws/include/fpdb/aws/AWSClient.h:
 
-/usr/local/include/spdlog/details/log_msg_buffer.h:
-
-/usr/local/include/spdlog/details/circular_q.h:
-
-/usr/local/include/spdlog/details/backtracer.h:
-
-/usr/local/include/spdlog/logger.h:
-
-/usr/local/include/aws/s3/model/Owner.h:
-
-/usr/local/include/spdlog/details/periodic_worker.h:
-
-/usr/local/include/spdlog/fmt/bundled/format.h:
-
-/usr/local/include/spdlog/fmt/bundled/core.h:
-
-/usr/local/include/spdlog/fmt/fmt.h:
-
-/usr/local/include/spdlog/tweakme.h:
-
 ../queryMethod/query.h:
+
+/usr/include/c++/11/future:
+
+/usr/include/c++/11/bits/regex_executor.tcc:
+
+/usr/include/c++/11/bits/regex.tcc:
 
 /usr/local/include/aws/s3/model/StorageClassAnalysis.h:
 
@@ -5213,6 +5184,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/c++/11/cwctype:
 
 /usr/include/arrow/util/span.h:
+
+/usr/local/include/spdlog/fmt/bundled/core.h:
 
 /usr/include/c++/11/bits/locale_facets.h:
 
@@ -5271,8 +5244,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/core/endpoint/DefaultEndpointProvider.h:
 
 /usr/include/bits/types/sigval_t.h:
-
-/usr/include/arrow/io/file.h:
 
 /usr/local/include/aws/core/config/AWSProfileConfig.h:
 
@@ -5408,6 +5379,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/arrow/util/checked_cast.h:
 
+/usr/local/include/spdlog/details/backtracer.h:
+
 /usr/include/c++/11/clocale:
 
 /usr/include/bits/socket_type.h:
@@ -5415,6 +5388,14 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/c++/11/x86_64-amazon-linux/bits/c++locale.h:
 
 /usr/include/asm-generic/errno-base.h:
+
+/usr/local/include/aws/core/endpoint/BuiltInParameters.h:
+
+/usr/include/c++/11/bits/atomic_futex.h:
+
+/usr/include/c++/11/cstring:
+
+/usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h:
 
 /usr/local/include/aws/s3/model/ChecksumAlgorithm.h:
 
@@ -5434,14 +5415,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/arrow/array.h:
 
-/usr/local/include/aws/core/endpoint/BuiltInParameters.h:
-
-/usr/include/c++/11/cstring:
-
-/usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h:
-
-/usr/include/c++/11/bits/atomic_futex.h:
-
 /usr/local/include/smithy/identity/resolver/AwsIdentityResolverBase.h:
 
 /usr/include/math.h:
@@ -5459,6 +5432,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/s3/model/Tag.h:
 
 /usr/include/c++/11/vector:
+
+/usr/local/include/spdlog/tweakme.h:
 
 /usr/include/arrow/compute/cast.h:
 
@@ -5513,10 +5488,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/arrow/compute/row/grouper.h:
 
 /usr/include/c++/11/x86_64-amazon-linux/bits/error_constants.h:
-
-/usr/local/include/smithy/identity/identity/AwsIdentity.h:
-
-/usr/include/arrow/dataset/file_parquet.h:
 
 /usr/include/c++/11/bits/regex_compiler.h:
 
@@ -5613,12 +5584,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/s3/model/MFADeleteStatus.h:
 
 /usr/include/c++/11/bits/concept_check.h:
-
-/usr/local/include/aws/s3/model/IntelligentTieringAccessTier.h:
-
-/usr/local/include/spdlog/details/synchronous_factory.h:
-
-/usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
 /usr/local/include/aws/common/atomics_gnu.inl:
 
@@ -5854,16 +5819,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/bits/types/clockid_t.h:
 
-/usr/local/include/aws/mqtt/mqtt.h:
-
-/usr/local/include/spdlog/details/log_msg.h:
-
-/usr/include/arrow/ipc/type_fwd.h:
-
-/usr/local/include/spdlog/details/registry.h:
-
-/usr/include/c++/11/bits/locale_facets_nonio.h:
-
 /usr/include/c++/11/new:
 
 /usr/include/c++/11/climits:
@@ -5897,6 +5852,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/c++/11/bits/cxxabi_forced.h:
 
 /usr/include/arrow/util/future.h:
+
+/usr/local/include/spdlog/fmt/fmt.h:
 
 /usr/local/include/aws/s3/S3Request.h:
 
@@ -5934,17 +5891,9 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/arrow/memory_pool.h:
 
-/usr/local/include/spdlog/version.h:
-
-/usr/include/bits/types/__fpos_t.h:
-
 /usr/include/bits/cpu-set.h:
 
 /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h:
-
-/usr/local/include/spdlog/spdlog.h:
-
-/usr/include/bits/types/sig_atomic_t.h:
 
 /usr/include/bits/types/clock_t.h:
 
@@ -5960,7 +5909,9 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/ext/aligned_buffer.h:
 
-/usr/include/c++/11/future:
+/usr/local/include/aws/s3/model/SelectObjectContentHandler.h:
+
+/usr/include/arrow/ipc/dictionary.h:
 
 /usr/local/include/aws/s3/model/Protocol.h:
 
@@ -6068,15 +6019,17 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/time.h:
 
-/usr/include/c++/11/ratio:
+/usr/local/include/spdlog/logger.h:
 
-/usr/include/c++/11/thread:
+/usr/include/c++/11/ratio:
 
 /usr/local/include/aws/s3/model/AnalyticsConfiguration.h:
 
 /usr/include/c++/11/optional:
 
 /usr/include/c++/11/condition_variable:
+
+/usr/include/c++/11/thread:
 
 /usr/include/arrow/csv/writer.h:
 
@@ -6087,6 +6040,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/bits/types/__mbstate_t.h:
 
 /usr/include/c++/11/regex:
+
+/usr/local/include/spdlog/fmt/bundled/format.h:
 
 /usr/include/bits/types/FILE.h:
 
@@ -6174,6 +6129,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/tr1/poly_laguerre.tcc:
 
+/usr/include/c++/11/bits/std_mutex.h:
+
 /usr/local/include/aws/s3/model/IntelligentTieringStatus.h:
 
 /usr/local/include/aws/common/string.h:
@@ -6212,6 +6169,10 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/arrow/api.h:
 
+/usr/local/include/aws/s3/model/Owner.h:
+
+/usr/local/include/spdlog/details/periodic_worker.h:
+
 /usr/local/include/aws/s3/model/DeleteMarkerEntry.h:
 
 /usr/local/include/aws/s3/model/ReplicaModifications.h:
@@ -6243,6 +6204,10 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/arrow/chunk_resolver.h:
 
 /usr/include/arrow/array/array_decimal.h:
+
+/usr/include/bits/types/__fpos_t.h:
+
+/usr/local/include/spdlog/version.h:
 
 /usr/include/c++/11/variant:
 
@@ -6292,6 +6257,10 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/arrow/compute/api_scalar.h:
 
+/usr/include/sched.h:
+
+/usr/include/arrow/util/bitmap_ops.h:
+
 /usr/include/c++/11/bits/locale_conv.h:
 
 /usr/include/arrow/util/decimal.h:
@@ -6311,10 +6280,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/bits/types/struct_timeval.h:
 
 /usr/include/arrow/array/builder_primitive.h:
-
-/usr/local/include/aws/s3/model/DeleteMarkerReplicationStatus.h:
-
-/usr/include/arrow/dataset/scanner.h:
 
 /usr/include/arrow/scalar.h:
 
@@ -6384,41 +6349,49 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/chrono:
 
+/usr/include/c++/11/ctime:
+
 /usr/local/include/aws/s3/model/RecordsEvent.h:
 
 /usr/local/include/aws/s3/model/ObjectLockLegalHoldStatus.h:
 
 /usr/local/include/aws/io/channel_bootstrap.h:
 
-/usr/include/arrow/dataset/file_base.h:
-
 /usr/include/c++/11/sstream:
 
-/usr/include/sched.h:
+/usr/include/bits/types/sig_atomic_t.h:
 
-/usr/include/arrow/util/bitmap_ops.h:
+/usr/local/include/spdlog/spdlog.h:
 
-../algorithm/BloomFilter.h:
+/usr/include/c++/11/bits/locale_facets_nonio.h:
 
-/usr/include/c++/11/bitset:
+/usr/local/include/spdlog/details/registry.h:
 
-/usr/include/bits/posix_opt.h:
+/usr/include/arrow/array/array_nested.h:
 
-../translate/ThreadPool.h:
+/usr/include/c++/11/atomic:
 
-/usr/local/include/aws/s3/model/DeleteMarkerReplication.h:
-
-/usr/include/c++/11/deque:
+/usr/include/c++/11/bits/regex_error.h:
 
 /usr/local/include/aws/s3/model/SelectObjectContentRequest.h:
 
 /usr/include/c++/11/mutex:
 
-/usr/include/c++/11/bits/stl_deque.h:
+/usr/local/include/aws/s3/model/IntelligentTieringAccessTier.h:
 
-/usr/include/c++/11/bits/deque.tcc:
+/usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
-/usr/include/c++/11/bits/stl_queue.h:
+/usr/local/include/spdlog/details/synchronous_factory.h:
+
+/usr/local/include/aws/mqtt/mqtt.h:
+
+/usr/include/arrow/ipc/type_fwd.h:
+
+/usr/local/include/spdlog/details/log_msg.h:
+
+/usr/local/include/spdlog/details/circular_q.h:
+
+/usr/local/include/spdlog/details/log_msg_buffer.h:
 
 ../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h:
 
@@ -6439,6 +6412,10 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h:
 
 /usr/include/c++/11/stdlib.h:
+
+/usr/include/c++/11/bits/regex_executor.h:
+
+/usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h:
 
 /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h:
 
@@ -6475,6 +6452,16 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/core/monitoring/MonitoringManager.h:
 
 /usr/include/arrow/acero/options.h:
+
+/usr/local/include/aws/s3/model/DeleteMarkerReplication.h:
+
+/usr/include/c++/11/deque:
+
+/usr/include/c++/11/bits/stl_deque.h:
+
+/usr/include/c++/11/bits/deque.tcc:
+
+/usr/include/c++/11/bits/stl_queue.h:
 
 /usr/local/include/aws/core/utils/memory/stl/AWSList.h:
 
@@ -6528,6 +6515,10 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/bits/sigstksz.h:
 
+/usr/include/bits/posix_opt.h:
+
+/usr/include/c++/11/bitset:
+
 /usr/include/c++/11/bits/stl_numeric.h:
 
 /usr/include/linux/close_range.h:
@@ -6578,24 +6569,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/arrow/dataset/visibility.h:
 
-/usr/include/c++/11/ctime:
-
-/usr/include/arrow/dataset/partition.h:
-
-/usr/include/c++/11/bits/std_mutex.h:
-
-/usr/include/arrow/dataset/projector.h:
-
-/usr/include/arrow/filesystem/filesystem.h:
-
-/usr/local/include/aws/s3/model/SelectObjectContentHandler.h:
-
-/usr/include/arrow/ipc/dictionary.h:
-
-/usr/include/arrow/dataset/discovery.h:
-
-/usr/include/arrow/dataset/plan.h:
-
 /usr/include/c++/11/set:
 
 /usr/include/c++/11/bits/stl_tree.h:
@@ -6614,8 +6587,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/x86_64-amazon-linux/bits/messages_members.h:
 
-/usr/include/c++/11/bits/regex_executor.tcc:
-
 /usr/include/c++/11/bits/locale_facets_nonio.tcc:
 
 /usr/include/c++/11/stack:
@@ -6632,12 +6603,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/bits/stl_map.h:
 
-/usr/include/arrow/array/array_nested.h:
-
-/usr/include/c++/11/atomic:
-
-/usr/include/c++/11/bits/regex_error.h:
-
 /usr/local/include/aws/s3/model/GetBucketOwnershipControlsResult.h:
 
 /usr/local/include/aws/core/client/GenericClientConfiguration.h:
@@ -6649,9 +6614,3 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/c++/11/bits/stream_iterator.h:
 
 /usr/include/c++/11/bits/regex_scanner.tcc:
-
-/usr/include/c++/11/bits/regex.tcc:
-
-/usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h:
-
-/usr/include/c++/11/bits/regex_executor.h:
