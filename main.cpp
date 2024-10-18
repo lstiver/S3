@@ -15,12 +15,17 @@
 #include "ThreadPool.h"
 #include <chrono>
 #include <memory>
-#include "fpdb/aws/AWSClient.h" // 包含 AWSClient 的头文件
-#include "fpdb/aws/AWSConfig.h"  // 包含 AWSConfig 的头文件
-#include "fpdb/aws/S3ClientType.h"
+// #include "fpdb/aws/AWSClient.h" // 包含 AWSClient 的头文件
+// #include "fpdb/aws/AWSConfig.h"  // 包含 AWSConfig 的头文件
+// #include "fpdb/aws/S3ClientType.h"
+#include <aws/core/Aws.h>
+#include <aws/s3/S3Client.h>
+#include <aws/s3/model/PutObjectRequest.h>
+#include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/DeleteObjectRequest.h>
+
 using chrono::high_resolution_clock;
 using chrono::milliseconds;
-using namespace fpdb::aws;
 using namespace Aws::S3;
 using namespace Aws::S3::Model;
 using namespace std;
@@ -31,26 +36,28 @@ using phmap::flat_hash_map;
 int index_ = 0;
 vector<string>col1;
 vector<string>col2;
-void test(string query_name, shared_ptr<fpdb::aws::AWSClient> awsClient);
+void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient);
 
 int main() {
   string str;
-  // 从配置文件中解析配置并创建 AWSConfig 对象
-  auto awsConfig = fpdb::aws::AWSConfig::parseAWSConfig();
-  // 创建 AWSClient 对象，并将 awsConfig 传递进去
-  auto awsClient = std::make_shared<fpdb::aws::AWSClient>(awsConfig);
-
-  // 初始化 AWS 客户端
-  awsClient->init();
-  while(true){
-    cout<<"请输入查询名称(输入exit结束程序):"<<endl;
-    cin>>str;
-    if(str == "exit") {
-      awsClient->shutdown();
-      spdlog::info("S3 Client连接断开,结束程序");
-      return 0;
-    }
-    test(str, awsClient);
+  Aws::SDKOptions options;
+  Aws::InitAPI(options);
+  Aws::S3::S3ClientConfiguration clientConfig;
+  clientConfig.maxConnections = 2000;
+  clientConfig.useUSEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
+  clientConfig.useVirtualAddressing = true;
+  auto s3Client = std::make_shared<Aws::S3::S3Client>(clientConfig);
+  {
+    while(true){
+      cout<<"请输入查询名称(输入exit结束程序):"<<endl;
+      cin>>str;
+      if(str == "exit") {
+        break;
+      }
+      test(str, s3Client);
+   }
+   Aws::ShutdownAPI(options);
+   spdlog::info("S3 Client连接断开,结束程序");
   }
 
   // // LevelDB 存储位置
@@ -100,7 +107,7 @@ int main() {
   return 0;
 }
 
-void test(string query_name, shared_ptr<fpdb::aws::AWSClient> awsClient){
+void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
   const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
   const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
   const string bucket = "watdiv100mconvert";

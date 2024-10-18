@@ -89,8 +89,11 @@ vector<vector<string>> get_query(string file_path){
   }
 }
 
-pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const vector<string> & row, int index, std::shared_ptr<fpdb::aws::AWSClient> awsClient){
-  auto[size,start,end]=getRange(bucket,row[1],row[3],awsClient);
+pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, 
+                                           const vector<string> & row, 
+                                           int index, 
+                                           std::shared_ptr<Aws::S3::S3Client> awsClient){
+  auto[size,start,end] = getRange(bucket,row[1],row[3],awsClient);
   int total=0; //用来记录查询totallength
   vector<QueryInfo>time_and_cost;
   // 根据获得的size，start，end来估算cost和time
@@ -188,29 +191,3 @@ void processBatch(leveldb::DB* db, ofstream &csvFile, const vector<vector<int>>&
         csvFile << buffer.str();  // 写入文件
     }
 }
-
-// Function to process a batch of data and write it to CSV
-// void processBatch(leveldb::DB* db, ofstream &csvFile, const vector<vector<int>>& batch) {
-//     for (const auto& vec : batch) {
-//         vector<string> resultVector;  // 用于存储从 LevelDB 获取到的字符串值
-//         for (int key : vec) {
-//             string keyStr = to_string(key);
-//             string value;
-//             leveldb::Status s = db->Get(leveldb::ReadOptions(), keyStr, &value);
-//             if (s.ok()) {
-//                 // 输出调试信息：输出键值对
-//                 // cout << "Key: " << keyStr << ", Value: " << value << endl;            
-//                 // 直接将字符串 value 存储到 resultVector 中
-//                 resultVector.push_back(value);
-//             } else {
-//                 cerr << "Key not found: " << keyStr << endl;
-//             }
-//         }
-
-//         // 写入CSV文件（受mutex保护）
-//         {
-//             lock_guard<mutex> guard(writeMutex);
-//             writeVectorToCSV(csvFile, resultVector);
-//         }
-//     }
-// }

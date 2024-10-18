@@ -34,7 +34,10 @@ struct QueryInfo {
 
 bool compareByTime(const QueryInfo& a, const QueryInfo& b);
 vector<vector<string>> get_query(string file_path);
-pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, const vector<string> &row, int index, std::shared_ptr<fpdb::aws::AWSClient> awsClient);
+pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, 
+                                            const vector<string> &row, 
+                                            int index, 
+                                            std::shared_ptr<Aws::S3::S3Client> awsClient);
 void writeVectorToCSV(ofstream &csvFile, const vector<int>& vec);
 void processBatch(leveldb::DB* db, ofstream &csvFile, const vector<vector<int>>& batch);
 // void processBatch(leveldb::DB* db, ofstream &csvFile, const flat_hash_map<pair<int,int>,vector<vector<int>>>& batch) 

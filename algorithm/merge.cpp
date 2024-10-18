@@ -35,6 +35,7 @@ std::shared_ptr<arrow::Table> merge(
     const std::vector<std::string>& col1,
     const std::vector<std::string>& col2) 
 {
+    auto start_time = std::chrono::high_resolution_clock::now();
     // std::cout << "dataA schema: " << dataA->schema()->ToString() << std::endl;
     // std::cout << "dataB schema: " << dataB->schema()->ToString() << std::endl;
     // std::cout << "dataA num_rows: " << dataA->num_rows() << std::endl;
@@ -111,11 +112,14 @@ std::shared_ptr<arrow::Table> merge(
     // 检查是否成功
     if (!result.ok()) {
         spdlog::error("Error during hash join: {}", result.status().ToString());
-        exit(0);
+        return nullptr;
     }
 
     std::shared_ptr<arrow::Table> response_table = result.ValueOrDie();
     spdlog::info("Number of rows: {}", response_table->num_rows());
     // std::cout << "result schema: " << response_table->schema()->ToString() << std::endl;
+    auto end_time = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+    spdlog::info("merge用时 {} ms", duration.count());
     return response_table;
 }
