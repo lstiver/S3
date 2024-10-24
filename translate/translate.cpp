@@ -7,7 +7,7 @@ bool compareByTime(const QueryInfo& a, const QueryInfo& b) {
 }
 
 vector<vector<string>> get_query(string file_path){
-  string dbPath = "/home/ec2-user/s3/S3C++/index";
+  string dbPath = "/data/watdiv1B/index";
 
   // 打开levedb
   leveldb::DB* db;
@@ -57,8 +57,15 @@ vector<vector<string>> get_query(string file_path){
           if (status.ok()) {
             word = t;
           } else {
-            cerr << "Key:" << word <<" not found." << endl;
-            exit(0);
+            word = "<"+word+">";
+            status = db->Get(leveldb::ReadOptions(), word, &t); 
+            if (status.ok()) {
+              word = t;
+            } else {
+              cerr << "Key:" << word <<" not found." << endl;
+              exit(1);
+            }
+            
           }
         }
         tmp.push_back(word);//存的顺序是subject，predicate，object
@@ -85,7 +92,7 @@ vector<vector<string>> get_query(string file_path){
   } else {
     delete db;
     perror("打开文件失败");
-    exit(0);
+    exit(1);
   }
 }
 

@@ -15,9 +15,6 @@
 #include "ThreadPool.h"
 #include <chrono>
 #include <memory>
-// #include "fpdb/aws/AWSClient.h" // 包含 AWSClient 的头文件
-// #include "fpdb/aws/AWSConfig.h"  // 包含 AWSConfig 的头文件
-// #include "fpdb/aws/S3ClientType.h"
 #include <aws/core/Aws.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
@@ -31,12 +28,12 @@ using namespace Aws::S3::Model;
 using namespace std;
 using phmap::flat_hash_map;
 
-// 全局线程池，初始化时指定线程数
-// ThreadPool pool(2);  // 使用2个线程
+void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient);
 int index_ = 0;
 vector<string>col1;
 vector<string>col2;
-void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient);
+const string bucket = "watdiv1b";
+int totalTime = 458700;  // 最大时间
 
 int main() {
   string str;
@@ -109,9 +106,7 @@ int main() {
 
 void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
   const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
-  const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
-  const string bucket = "watdiv100mconvert";
-  int totalTime = 458700;  // 最大时间
+  // const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
   high_resolution_clock::time_point beginTime = high_resolution_clock::now();
 
   //获得分解后的子查询
@@ -161,15 +156,15 @@ void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
     if (min != nullptr) {
       for (const auto& it : *min){
         cout<<"==================================query"<<index_<<"=================================="<<endl;
-        cout<<"index:"<<it.index<<endl;
-        cout<<"func:"<<it.method<<endl;
-        cout<<"time:"<<it.time<<endl;
-        cout<<"cost:"<<it.cost<<endl;
+        // cout<<"index:"<<it.index<<endl;
+        // cout<<"func:"<<it.method<<endl;
+        // cout<<"time:"<<it.time<<endl;
+        // cout<<"cost:"<<it.cost<<endl;
         string subject = it.subject;
         string object = it.object;
-        cout<<subject<<endl;
-        cout<<object<<endl;
-        cout<<it.size<<endl;
+        // cout<<subject<<endl;
+        // cout<<object<<endl;
+        // cout<<it.size<<endl;
 
         if(subject.find("?") != string::npos && tag.count(subject) > 0){
             col1.emplace_back(subject);
@@ -191,7 +186,6 @@ void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
           //getObject
           case 1:{
             high_resolution_clock::time_point begin = high_resolution_clock::now();
-            // keyName = it.keyName + ".csv"; 
             keyName = it.keyName +".csv"; //排序后这里要修改
             cout<<"第"<<index_+1<<"个查询"<<keyName<<endl;
             auto temp = getObject(bucket, keyName, awsClient, col2, it.size);

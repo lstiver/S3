@@ -7,18 +7,18 @@ using namespace std;
 
 int main() {
     // 打开 CSV 文件
-    std::ifstream file("/home/ec2-user/s3/s3DemoService/index.csv");
+    std::ifstream file("/data/watdiv1B/conversion_index.csv");
     if (!file.is_open()) {
         std::cerr << "无法打开文件!" << std::endl;
         return -1;
     }
 
-    string dbPath = "/home/ec2-user/s3/S3C++/index";
+    string dbPath = "/data/watdiv1B/index";
 
     // 打开levedb
     leveldb::DB* db;
     leveldb::Options options;
-    options.create_if_missing = false;
+    options.create_if_missing = true;
     leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
     
     if (!status.ok()) {
@@ -36,19 +36,27 @@ int main() {
         std::getline(ss, value, ',');  // 第一列：int，存储为值
         std::getline(ss, key, ',');        // 第二列：string，存储为键
 
+        // 去除 key 和 value 的前后空白字符
+        key.erase(0, key.find_first_not_of(" \t\n\r"));
+        key.erase(key.find_last_not_of(" \t\n\r") + 1);
+        value.erase(0, value.find_first_not_of(" \t\n\r"));
+        value.erase(value.find_last_not_of(" \t\n\r") + 1);
+
         // 将键值对写入 LevelDB
         status = db->Put(leveldb::WriteOptions(), key, value);
 
         if (!status.ok()) {
             std::cerr << "无法写入数据到 LevelDB: " << status.ToString() << std::endl;
+            file.close();
+            delete db;
+            exit(1);
         } else {
-            std::cout << "写入成功: " << key << " => " << value << std::endl;
+            // std::cout << "写入成功: " << key << " => " << value << std::endl;
         }
     }
-
-    // 关闭文件和数据库
     file.close();
     delete db;
-
+    
+    std::cout << "写入成功!" << endl;
     return 0;
 }
