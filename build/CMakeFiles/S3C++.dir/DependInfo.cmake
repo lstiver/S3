@@ -19,8 +19,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/ec2-user/s3/S3C++/build/leveldb/CMakeFiles/leveldb.dir/DependInfo.cmake"
-  "/home/ec2-user/s3/S3C++/build/fpdb-aws/CMakeFiles/fpdb-aws.dir/DependInfo.cmake"
-  "/home/ec2-user/s3/S3C++/build/fpdb-util/CMakeFiles/fpdb-util.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

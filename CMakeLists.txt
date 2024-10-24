@@ -4,6 +4,8 @@ project(S3C++)
 # 设置 C++ 标准
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_BUILD_TYPE Debug)
+
 # # 添加 parallel_hashmap 目录
 # add_subdirectory(parallel_hashmap)
 
@@ -25,6 +27,8 @@ add_subdirectory(fpdb-util)
 # 查找并添加 arrow-csv
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(ARROW_CSV REQUIRED arrow-csv)
+# 查找 AWS SDK
+# find_package(AWSSDK REQUIRED COMPONENTS s3 transfer)
 
 message(STATUS "C++ Compiler: ${CMAKE_CXX_COMPILER}")
 message(STATUS "C++ Standard: ${CMAKE_CXX_STANDARD}")
@@ -37,8 +41,8 @@ include_directories(${Python3_INCLUDE_DIRS}
                     ${PROJECT_SOURCE_DIR}/queryMethod
                     ${PROJECT_SOURCE_DIR}/algorithm
                     ${PROJECT_SOURCE_DIR}/leveldb
-                    ${PROJECT_SOURCE_DIR}/fpdb-aws/include
-                    ${PROJECT_SOURCE_DIR}/fpdb-util/include
+                    # ${PROJECT_SOURCE_DIR}/fpdb-aws/include
+                    # ${PROJECT_SOURCE_DIR}/fpdb-util/include
                     ${PROJECT_SOURCE_DIR}/ArrowInputStream)
 
 # 添加可执行文件
@@ -60,14 +64,17 @@ target_include_directories(${PROJECT_NAME} PUBLIC  parallel_hashmap)
 # 链接 leveldb 库
 target_link_libraries(${PROJECT_NAME} PUBLIC leveldb)
 target_link_libraries(${PROJECT_NAME} PUBLIC pthread -lm -ldl)
-# 链接 fpdb-aws 库及其依赖库
-target_link_libraries(${PROJECT_NAME} PUBLIC fpdb-aws)
-target_link_libraries(${PROJECT_NAME} PUBLIC pthread -lm -ldl)
-target_link_libraries(${PROJECT_NAME} PUBLIC fpdb-util)
-target_link_libraries(${PROJECT_NAME} PUBLIC pthread -lm -ldl)
+# # 链接 fpdb-aws 库及其依赖库
+# target_link_libraries(${PROJECT_NAME} PUBLIC fpdb-aws)
+# target_link_libraries(${PROJECT_NAME} PUBLIC pthread -lm -ldl)
+# target_link_libraries(${PROJECT_NAME} PUBLIC fpdb-util)
+# target_link_libraries(${PROJECT_NAME} PUBLIC pthread -lm -ldl)
 target_link_libraries(${PROJECT_NAME} 
     PUBLIC 
     Arrow::arrow_shared
     ArrowAcero::arrow_acero_shared
     ${ARROW_CSV_LIBRARIES}  # 添加 csv 相关的库
 )
+target_link_libraries(${PROJECT_NAME} PUBLIC aws-cpp-sdk-core)
+target_link_libraries(${PROJECT_NAME} PUBLIC aws-cpp-sdk-s3)
+target_link_libraries(${PROJECT_NAME} PUBLIC aws-cpp-sdk-transfer)

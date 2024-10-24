@@ -24,6 +24,7 @@ struct QueryInfo {
     double cost;
     int index;
     int method; 
+    size_t size;
     string keyName;
     string object;
     string subject;

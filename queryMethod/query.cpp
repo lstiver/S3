@@ -1,4 +1,13 @@
 #include "query.h" 
+#include <aws/core/Aws.h>
+#include <aws/transfer/TransferManager.h>
+#include <aws/transfer/TransferHandle.h>
+#include <aws/s3/S3Client.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/stream/PreallocatedStreamBuf.h>
+#include <aws/core/utils/Array.h>
+using namespace Aws::Utils;
+using namespace Aws::Transfer;
 
 
 void getObjectByIndex(const string &bucket, const string &key, const string &query);
@@ -31,77 +40,169 @@ Aws::S3::Model::OutputSerialization getOutputSerialization() {
 }
 
 
+class MyUnderlyingStream : public Aws::IOStream
+{
+    public:
+        using Base = Aws::IOStream;
+        // Provide a customer-controlled streambuf to hold data from the bucket.
+        explicit MyUnderlyingStream(std::streambuf* buf)
+            : Base(buf)
+        {}
+
+        ~MyUnderlyingStream() override = default;
+};
+
 shared_ptr<arrow::Table> getObject(
     const string &bucket, 
     const string &key, 
     shared_ptr<Aws::S3::S3Client> awsClient,
-    const vector<string> & col)
+    const vector<string> & col,
+    size_t length)
 {
-    auto start_time = std::chrono::high_resolution_clock::now();
-    Aws::S3::Model::GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(bucket);
-    getObjectRequest.SetKey(key);
+    // auto start_time = std::chrono::high_resolution_clock::now();
+    // Aws::S3::Model::GetObjectRequest getObjectRequest;
+    // getObjectRequest.SetBucket(bucket);
+    // getObjectRequest.SetKey(key);
 
-    // 发起请求
-    Aws::S3::Model::GetObjectOutcome getObjectOutcome = awsClient->GetObject(getObjectRequest);
+    // // 发起请求
+    // Aws::S3::Model::GetObjectOutcome getObjectOutcome = awsClient->GetObject(getObjectRequest);
 
-    // 检查请求是否成功
-    if (getObjectOutcome.IsSuccess()) {
-        auto getResult = getObjectOutcome.GetResultWithOwnership();
-        auto end = std::chrono::high_resolution_clock::now();
-        auto dura = std::chrono::duration_cast<std::chrono::milliseconds>(end - start_time);
-        spdlog::info("请求成功用时 {} ms", dura.count());
-        int64_t resultSize = getResult.GetContentLength();
-        spdlog::info("getObject size: {}", resultSize);
+    // // 检查请求是否成功
+    // if (getObjectOutcome.IsSuccess()) {
+    //     auto getResult = getObjectOutcome.GetResultWithOwnership();
+    //     auto end = std::chrono::high_resolution_clock::now();
+    //     auto dura = std::chrono::duration_cast<std::chrono::milliseconds>(end - start_time);
+    //     spdlog::info("请求成功用时 {} ms", dura.count());
+    //     int64_t resultSize = getResult.GetContentLength();
+    //     spdlog::info("getObject size: {}", resultSize);
         
-        // 获取响应体（Body）
-        Aws::IOStream &retrievedFile = getResult.GetBody(); 
-        auto end_time = std::chrono::high_resolution_clock::now();
-        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-        spdlog::info("获取响应体用时 {} ms", duration.count());
-        // 将 S3 的 Body (stream) 转换为 Arrow 的输入流
-        shared_ptr<arrow::io::InputStream> inputStream = make_shared<ArrowInputStream>(retrievedFile);
-        auto end_time1 = std::chrono::high_resolution_clock::now();
-        auto duration1 = std::chrono::duration_cast<std::chrono::milliseconds>(end_time1 - end_time);
-        spdlog::info("转换为 Arrow 的输入流用时 {} ms", duration1.count());
+    //     // 获取响应体（Body）
+    //     Aws::IOStream &retrievedFile = getResult.GetBody(); 
+    //     auto end_time = std::chrono::high_resolution_clock::now();
+    //     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+    //     spdlog::info("获取响应体用时 {} ms", duration.count());
+    //     // 将 S3 的 Body (stream) 转换为 Arrow 的输入流
+    //     shared_ptr<arrow::io::InputStream> inputStream = make_shared<ArrowInputStream>(retrievedFile);
+    //     auto end_time1 = std::chrono::high_resolution_clock::now();
+    //     auto duration1 = std::chrono::duration_cast<std::chrono::milliseconds>(end_time1 - end_time);
+    //     spdlog::info("转换为 Arrow 的输入流用时 {} ms", duration1.count());
 
+    //     auto read_options = arrow::csv::ReadOptions::Defaults();
+    //     read_options.column_names = col; //设置列名
+    //     read_options.skip_rows = 1; // 跳过表头
+    //     auto convert_options = arrow::csv::ConvertOptions::Defaults();
+    //     for (const auto& column_name : col) {
+    //         convert_options.column_types[column_name] = arrow::int32();  // 将列设置为 int32 类型
+    //     }
+    //     // 自动利用 Arrow 并发进行 CSV 读取
+    //     auto csv_reader = arrow::csv::TableReader::Make(
+    //         arrow::io::default_io_context(), inputStream,
+    //         read_options,
+    //         arrow::csv::ParseOptions::Defaults(),
+    //         convert_options);
+    //     if (!csv_reader.ok()) {
+    //         spdlog::error("Failed to create CSV TableReader");
+    //         return nullptr;
+    //     }
+    //     shared_ptr<arrow::csv::TableReader> reader = *csv_reader;
+
+    //     // Read table from CSV file
+    //     auto table = reader->Read();
+    //     if(table.ok()) {
+    //         auto end_time2 = std::chrono::high_resolution_clock::now();
+    //         auto duration2 = std::chrono::duration_cast<std::chrono::milliseconds>(end_time2 - end_time1);
+    //         spdlog::info("转换为 Arrow 的输入流用时 {} ms", duration2.count());
+    //         return table.ValueOrDie();
+    //     } else {
+    //         spdlog::error("转化结果为arrow表格失败: {}", table.status().ToString());
+    //         return nullptr;
+    //     }
+    // } else {
+    //     // 请求失败，输出错误信息
+    //     const auto& err = getObjectOutcome.GetError();
+    //     spdlog::error("Error occurred while fetching object: {}", err.GetMessage());
+    //     return nullptr;
+    // }
+    auto start_time = std::chrono::high_resolution_clock::now();
+    // Aws::S3::Model::GetObjectRequest getObjectRequest;
+    // getObjectRequest.SetBucket(bucket);
+    // getObjectRequest.SetKey(key);
+
+    // // 发起请求
+    // Aws::S3::Model::GetObjectOutcome getObjectOutcome = awsClient->GetObject(getObjectRequest);
+
+    // // 检查请求是否成功
+    // if (getObjectOutcome.IsSuccess()) {
+    //     auto getResult = getObjectOutcome.GetResultWithOwnership();
+    //     int64_t resultSize = getResult.GetContentLength();
+    //     spdlog::info("getObject size: {}", resultSize);
+    // }
+    auto executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>("executor", std::thread::hardware_concurrency() - 1);
+    Aws::Transfer::TransferManagerConfiguration transfer_config(executor.get());
+    transfer_config.s3Client = awsClient;
+
+    // Create buffer to hold data received by the data stream.
+    Aws::Utils::Array<unsigned char> buffer(length);
+    Aws::Utils::Stream::PreallocatedStreamBuf streamBuffer(buffer.GetUnderlyingData(), buffer.GetLength());
+
+    auto transfer_manager = TransferManager::Create(transfer_config);
+    auto downloadHandle = transfer_manager->DownloadFile(bucket, key, [&]() {
+        return Aws::New<MyUnderlyingStream>("TestTag", &streamBuffer);
+    });
+
+    downloadHandle->WaitUntilFinished();
+    if (downloadHandle->GetStatus() != Aws::Transfer::TransferStatus::COMPLETED) {
+        auto err = downloadHandle->GetLastError();
+        std::cout << "File download failed: " << err.GetMessage() << std::endl;
+        cout<<downloadHandle->GetStatus()<<endl;
+        // exit(0);
+        // return nullptr;
+    } else {
+        // 将 buffer 转化为 Arrow 的 Buffer
+        shared_ptr<arrow::Buffer> arrowBuffer = std::make_shared<arrow::Buffer>(
+        buffer.GetUnderlyingData(), buffer.GetLength());
+
+        // 使用 BufferReader 来创建 Arrow 的 InputStream
+        shared_ptr<arrow::io::InputStream> inputStream = std::make_shared<arrow::io::BufferReader>(arrowBuffer);
+        std::cout << "File download to memory finished." << std::endl;
+
+        // 读取 CSV 文件
         auto read_options = arrow::csv::ReadOptions::Defaults();
         read_options.column_names = col; //设置列名
         read_options.skip_rows = 1; // 跳过表头
+        
         auto convert_options = arrow::csv::ConvertOptions::Defaults();
         for (const auto& column_name : col) {
             convert_options.column_types[column_name] = arrow::int32();  // 将列设置为 int32 类型
         }
+        
         // 自动利用 Arrow 并发进行 CSV 读取
         auto csv_reader = arrow::csv::TableReader::Make(
             arrow::io::default_io_context(), inputStream,
             read_options,
             arrow::csv::ParseOptions::Defaults(),
             convert_options);
+        
         if (!csv_reader.ok()) {
             spdlog::error("Failed to create CSV TableReader");
             return nullptr;
         }
-        shared_ptr<arrow::csv::TableReader> reader = *csv_reader;
 
-        // Read table from CSV file
+        shared_ptr<arrow::csv::TableReader> reader = *csv_reader;
         auto table = reader->Read();
-        if(table.ok()) {
+        
+        if (table.ok()) {
             auto end_time2 = std::chrono::high_resolution_clock::now();
-            auto duration2 = std::chrono::duration_cast<std::chrono::milliseconds>(end_time2 - end_time1);
+            auto duration2 = std::chrono::duration_cast<std::chrono::milliseconds>(end_time2 - start_time);
             spdlog::info("转换为 Arrow 的输入流用时 {} ms", duration2.count());
             return table.ValueOrDie();
         } else {
             spdlog::error("转化结果为arrow表格失败: {}", table.status().ToString());
             return nullptr;
         }
-    } else {
-        // 请求失败，输出错误信息
-        const auto& err = getObjectOutcome.GetError();
-        spdlog::error("Error occurred while fetching object: {}", err.GetMessage());
-        return nullptr;
     }
-}
+    return nullptr;
+} 
 
 
 array<int, 3> getRange(const string &bucket, 

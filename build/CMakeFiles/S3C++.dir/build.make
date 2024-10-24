@@ -173,18 +173,7 @@ S3C++: CMakeFiles/S3C++.dir/algorithm/merge.cpp.o
 S3C++: CMakeFiles/S3C++.dir/ArrowInputStream/ArrowInputStream.cpp.o
 S3C++: CMakeFiles/S3C++.dir/build.make
 S3C++: leveldb/libleveldb.a
-S3C++: fpdb-aws/libfpdb-aws.a
-S3C++: fpdb-util/libfpdb-util.a
 S3C++: /usr/lib64/libarrow_acero.so.1700.0.0
-S3C++: /usr/local/lib64/libfmt.a
-S3C++: /usr/local/lib64/libspdlog.a
-S3C++: /usr/local/lib64/libarrow_flight.a
-S3C++: /usr/local/lib64/libarrow.a
-S3C++: /usr/local/lib64/libarrow_bundled_dependencies.a
-S3C++: /usr/lib64/libssl.so
-S3C++: /usr/lib64/libcrypto.so
-S3C++: /usr/lib64/libz.so
-S3C++: /usr/local/lib64/libspdlog.a
 S3C++: /usr/local/lib64/libarrow.so.1800.0.0
 S3C++: CMakeFiles/S3C++.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ec2-user/s3/S3C++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable S3C++"

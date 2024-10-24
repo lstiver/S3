@@ -188,6 +188,24 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/format-inl.h \
+ /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/11/climits \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/c++/11/locale \
+ /usr/include/c++/11/bits/locale_facets_nonio.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/time_members.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/11/bits/codecvt.h \
+ /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/11/bits/locale_conv.h \
+ /usr/local/include/spdlog/fmt/bundled/format.h \
+ /usr/local/include/spdlog/common-inl.h \
  /usr/local/include/spdlog/details/registry.h \
  /usr/local/include/spdlog/details/periodic_worker.h \
  /usr/include/c++/11/condition_variable \
@@ -195,14 +213,53 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/mutex \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h \
- /usr/local/include/spdlog/details/synchronous_factory.h \
+ /usr/local/include/spdlog/details/periodic_worker-inl.h \
+ /usr/local/include/spdlog/details/registry-inl.h \
  /usr/local/include/spdlog/logger.h \
  /usr/local/include/spdlog/details/backtracer.h \
  /usr/local/include/spdlog/details/circular_q.h \
  /usr/include/c++/11/cassert /usr/include/assert.h \
  /usr/local/include/spdlog/details/log_msg_buffer.h \
  /usr/local/include/spdlog/details/log_msg.h \
+ /usr/local/include/spdlog/details/log_msg-inl.h \
+ /usr/local/include/spdlog/details/os.h \
+ /usr/local/include/spdlog/details/os-inl.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h /usr/include/bits/struct_stat.h \
+ /usr/include/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/linux/types.h /usr/include/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/linux/posix_types.h /usr/include/linux/stddef.h \
+ /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h /usr/include/bits/statx-generic.h \
+ /usr/include/bits/types/struct_statx_timestamp.h \
+ /usr/include/bits/types/struct_statx.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl-linux.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/linux/falloc.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/environments.h /usr/include/bits/confname.h \
+ /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
+ /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h \
+ /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
+ /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
+ /usr/local/include/spdlog/details/log_msg_buffer-inl.h \
+ /usr/local/include/spdlog/details/backtracer-inl.h \
+ /usr/local/include/spdlog/logger-inl.h \
+ /usr/local/include/spdlog/pattern_formatter.h \
+ /usr/local/include/spdlog/formatter.h \
+ /usr/local/include/spdlog/pattern_formatter-inl.h \
+ /usr/local/include/spdlog/details/fmt_helper.h \
+ /usr/local/include/spdlog/mdc.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/local/include/spdlog/sinks/sink.h \
+ /usr/local/include/spdlog/sinks/sink-inl.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink.h \
+ /usr/local/include/spdlog/details/console_globals.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink-inl.h \
+ /usr/local/include/spdlog/details/synchronous_factory.h \
  /usr/local/include/spdlog/version.h \
+ /usr/local/include/spdlog/spdlog-inl.h \
  /usr/local/include/aws/core/auth/AWSAuthSigner.h \
  /usr/local/include/aws/core/auth/signer/AWSAuthSignerBase.h \
  /usr/local/include/aws/core/Core_EXPORTS.h \
@@ -213,8 +270,6 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/core/utils/memory/AWSMemory.h \
  /usr/local/include/aws/core/utils/UnreferencedParam.h \
  /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
- /usr/include/c++/11/algorithm \
- /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/local/include/aws/crt/StlAllocator.h \
  /usr/local/include/aws/crt/Allocator.h \
  /usr/local/include/aws/common/common.h \
@@ -246,9 +301,6 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
  /usr/include/c++/11/bits/list.tcc \
  /usr/local/include/aws/core/utils/memory/stl/AWSMap.h \
- /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
- /usr/include/c++/11/bits/stl_map.h \
- /usr/include/c++/11/bits/stl_multimap.h \
  /usr/local/include/aws/core/auth/signer/AWSAuthV4Signer.h \
  /usr/local/include/aws/core/utils/Array.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSVector.h \
@@ -259,24 +311,15 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/io/io.h /usr/local/include/aws/common/byte_buf.h \
  /usr/local/include/aws/common/array_list.h \
  /usr/local/include/aws/common/math.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /usr/local/include/aws/common/math.inl \
+ /usr/local/include/aws/common/math.inl \
  /usr/local/include/aws/common/math.gcc_x64_asm.inl \
  /usr/local/include/aws/common/math.gcc_builtin.inl \
  /usr/local/include/aws/common/array_list.inl \
  /usr/local/include/aws/common/byte_order.h \
  /usr/local/include/aws/common/byte_order.inl /usr/include/netinet/in.h \
- /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
- /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
- /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
- /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
- /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/sys/socket.h /usr/include/bits/socket.h \
+ /usr/include/bits/socket_type.h /usr/include/bits/sockaddr.h \
+ /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
  /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
  /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
  /usr/local/include/aws/common/linked_list.h \
@@ -667,12 +710,11 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/include/arrow/util/string_builder.h \
  /usr/include/arrow/util/aligned_storage.h \
  /usr/include/arrow/util/launder.h /usr/include/arrow/util/span.h \
- /usr/include/arrow/type.h /usr/include/c++/11/climits \
- /usr/include/c++/11/variant /usr/include/arrow/util/checked_cast.h \
- /usr/include/arrow/util/endian.h /usr/include/arrow/util/type_traits.h \
- /usr/include/arrow/util/ubsan.h /usr/include/arrow/visitor.h \
- /usr/include/arrow/util/bit_util.h /usr/include/arrow/compare.h \
- /usr/include/arrow/array/array_binary.h \
+ /usr/include/arrow/type.h /usr/include/c++/11/variant \
+ /usr/include/arrow/util/checked_cast.h /usr/include/arrow/util/endian.h \
+ /usr/include/arrow/util/type_traits.h /usr/include/arrow/util/ubsan.h \
+ /usr/include/arrow/visitor.h /usr/include/arrow/util/bit_util.h \
+ /usr/include/arrow/compare.h /usr/include/arrow/array/array_binary.h \
  /usr/include/arrow/stl_iterator.h /usr/include/arrow/chunked_array.h \
  /usr/include/arrow/chunk_resolver.h /usr/include/arrow/type_traits.h \
  /usr/include/arrow/array/array_decimal.h \
@@ -722,4 +764,34 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /home/ec2-user/s3/S3C++/ArrowInputStream/ArrowInputStream.h \
  /usr/include/arrow/ipc/writer.h /usr/include/arrow/ipc/dictionary.h \
  /usr/include/arrow/ipc/message.h /usr/include/arrow/ipc/options.h \
- /usr/include/arrow/io/caching.h /usr/include/arrow/util/compression.h
+ /usr/include/arrow/io/caching.h /usr/include/arrow/util/compression.h \
+ /usr/local/include/aws/core/Aws.h \
+ /usr/local/include/aws/core/utils/logging/CRTLogSystem.h \
+ /usr/local/include/aws/core/utils/logging/DefaultCRTLogSystem.h \
+ /usr/local/include/aws/core/utils/crypto/Factories.h \
+ /usr/local/include/aws/core/http/HttpClientFactory.h \
+ /usr/local/include/aws/core/monitoring/MonitoringManager.h \
+ /usr/local/include/aws/core/monitoring/CoreMetrics.h \
+ /usr/local/include/aws/core/VersionConfig.h \
+ /usr/local/include/aws/crt/io/Bootstrap.h \
+ /usr/local/include/aws/crt/io/EventLoopGroup.h \
+ /usr/local/include/aws/io/event_loop.h \
+ /usr/local/include/aws/common/hash_table.h \
+ /usr/local/include/aws/common/ref_count.h \
+ /usr/local/include/aws/crt/io/HostResolver.h \
+ /usr/local/include/aws/io/host_resolver.h \
+ /usr/local/include/aws/io/channel_bootstrap.h \
+ /usr/local/include/aws/crt/io/TlsOptions.h \
+ /usr/local/include/aws/crt/io/ChannelHandler.h \
+ /usr/local/include/aws/io/tls_channel_handler.h \
+ /usr/local/include/aws/transfer/TransferManager.h \
+ /usr/local/include/aws/transfer/TransferHandle.h \
+ /usr/local/include/aws/transfer/Transfer_EXPORTS.h \
+ /usr/local/include/aws/s3/model/PutObjectRequest.h \
+ /usr/local/include/aws/s3/model/ObjectCannedACL.h \
+ /usr/local/include/aws/s3/model/HeadObjectRequest.h \
+ /usr/local/include/aws/s3/model/CreateMultipartUploadRequest.h \
+ /usr/local/include/aws/s3/model/UploadPartRequest.h \
+ /usr/local/include/aws/s3/model/CompletedPart.h \
+ /usr/local/include/aws/core/utils/ResourceManager.h \
+ /usr/local/include/aws/core/utils/stream/PreallocatedStreamBuf.h

@@ -14,6 +14,15 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a file.
+AWSSDK_CORE_HEADER_FILE:FILEPATH=/usr/local/include/aws/core/Aws.h
+
+//Path to a library.
+AWSSDK_CORE_LIB_FILE:FILEPATH=/usr/local/lib64/libaws-cpp-sdk-core.so
+
+//The directory containing a CMake configuration file for AWSSDK.
+AWSSDK_DIR:PATH=/usr/local/lib64/cmake/AWSSDK
+
 //The directory containing a CMake configuration file for ArrowAcero.
 ArrowAcero_DIR:PATH=/usr/lib64/cmake/ArrowAcero
 
@@ -341,6 +350,10 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Flag to upgrade the C++ standard used. The default is 11. The
+// minimum is 11.
+CPP_STANDARD:STRING=11
+
 //OFF
 CXXFEATURECHECK_DEBUG:BOOL=OFF
 
@@ -408,6 +421,51 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib64/libz.so
 
+//The directory containing a CMake configuration file for aws-c-auth.
+aws-c-auth_DIR:PATH=/usr/local/lib64/aws-c-auth/cmake
+
+//The directory containing a CMake configuration file for aws-c-cal.
+aws-c-cal_DIR:PATH=/usr/local/lib64/aws-c-cal/cmake
+
+//The directory containing a CMake configuration file for aws-c-common.
+aws-c-common_DIR:PATH=/usr/local/lib64/aws-c-common/cmake
+
+//The directory containing a CMake configuration file for aws-c-compression.
+aws-c-compression_DIR:PATH=/usr/local/lib64/aws-c-compression/cmake
+
+//The directory containing a CMake configuration file for aws-c-event-stream.
+aws-c-event-stream_DIR:PATH=/usr/local/lib64/aws-c-event-stream/cmake
+
+//The directory containing a CMake configuration file for aws-c-http.
+aws-c-http_DIR:PATH=/usr/local/lib64/aws-c-http/cmake
+
+//The directory containing a CMake configuration file for aws-c-io.
+aws-c-io_DIR:PATH=/usr/local/lib64/aws-c-io/cmake
+
+//The directory containing a CMake configuration file for aws-c-mqtt.
+aws-c-mqtt_DIR:PATH=/usr/local/lib64/aws-c-mqtt/cmake
+
+//The directory containing a CMake configuration file for aws-c-s3.
+aws-c-s3_DIR:PATH=/usr/local/lib64/aws-c-s3/cmake
+
+//The directory containing a CMake configuration file for aws-c-sdkutils.
+aws-c-sdkutils_DIR:PATH=/usr/local/lib64/aws-c-sdkutils/cmake
+
+//The directory containing a CMake configuration file for aws-checksums.
+aws-checksums_DIR:PATH=/usr/local/lib64/aws-checksums/cmake
+
+//The directory containing a CMake configuration file for aws-cpp-sdk-core.
+aws-cpp-sdk-core_DIR:PATH=/usr/local/lib64/cmake/aws-cpp-sdk-core
+
+//The directory containing a CMake configuration file for aws-cpp-sdk-s3.
+aws-cpp-sdk-s3_DIR:PATH=/usr/local/lib64/cmake/aws-cpp-sdk-s3
+
+//The directory containing a CMake configuration file for aws-cpp-sdk-transfer.
+aws-cpp-sdk-transfer_DIR:PATH=/usr/local/lib64/cmake/aws-cpp-sdk-transfer
+
+//The directory containing a CMake configuration file for aws-crt-cpp.
+aws-crt-cpp_DIR:PATH=/usr/local/lib64/aws-crt-cpp/cmake
+
 //Value Computed by CMake
 benchmark_BINARY_DIR:STATIC=/home/ec2-user/s3/S3C++/leveldb/third_party/benchmark
 
@@ -416,6 +474,15 @@ benchmark_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 benchmark_SOURCE_DIR:STATIC=/home/ec2-user/s3/S3C++/leveldb/third_party/benchmark
+
+//Path to a file.
+crypto_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+crypto_SHARED_LIBRARY:FILEPATH=/usr/lib64/libcrypto.so
+
+//Path to a library.
+crypto_STATIC_LIBRARY:FILEPATH=crypto_STATIC_LIBRARY-NOTFOUND
 
 //The directory containing a CMake configuration file for doctest.
 doctest_DIR:PATH=/usr/local/lib64/cmake/doctest
@@ -522,6 +589,9 @@ pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib64/libcrypto.so
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib64/libssl.so
+
+//The directory containing a CMake configuration file for s2n.
+s2n_DIR:PATH=/usr/local/lib64/s2n/cmake
 
 //The directory containing a CMake configuration file for spdlog.
 spdlog_DIR:PATH=/usr/local/lib64/cmake/spdlog
@@ -777,6 +847,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/usr/bin/python3.9][/usr/include/
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding ZLIB
 FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib64/libz.so][/usr/include][v1.2.11()]
+//Details about finding crypto
+FIND_PACKAGE_MESSAGE_DETAILS_crypto:INTERNAL=[/usr/lib64/libcrypto.so][/usr/include][v()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Test HAVE_CLANG_THREAD_SAFETY
@@ -841,6 +913,12 @@ HAVE_UNISTD_H:INTERNAL=1
 HAVE_ZSTD:INTERNAL=
 //Test LEVELDB_HAVE_NO_MISSING_FIELD_INITIALIZERS
 LEVELDB_HAVE_NO_MISSING_FIELD_INITIALIZERS:INTERNAL=1
+//The OpenSSL include directory
+LibCrypto_INCLUDE_DIR:INTERNAL=/usr/include
+//The OpenSSL crypto shared library
+LibCrypto_SHARED_LIBRARY:INTERNAL=/usr/lib64/libcrypto.so
+//The OpenSSL crypto static library
+LibCrypto_STATIC_LIBRARY:INTERNAL=/usr/lib64/libcrypto.so
 //ADVANCED property for variable: OPENSSL_CRYPTO_LIBRARY
 OPENSSL_CRYPTO_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENSSL_INCLUDE_DIR
@@ -923,6 +1001,12 @@ __pkg_config_arguments__OPENSSL:INTERNAL=QUIET;openssl
 __pkg_config_checked_ARROW_CSV:INTERNAL=1
 __pkg_config_checked__OPENSSL:INTERNAL=1
 cmake_package_name:INTERNAL=GTest
+//ADVANCED property for variable: crypto_INCLUDE_DIR
+crypto_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: crypto_SHARED_LIBRARY
+crypto_SHARED_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: crypto_STATIC_LIBRARY
+crypto_STATIC_LIBRARY-ADVANCED:INTERNAL=1
 generated_dir:INTERNAL=/home/ec2-user/s3/S3C++/leveldb/third_party/googletest/googletest/generated
 //ADVANCED property for variable: gmock_build_tests
 gmock_build_tests-ADVANCED:INTERNAL=1

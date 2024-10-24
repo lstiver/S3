@@ -109,6 +109,7 @@ pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket,
   query1.subject = row[0];
   query1.object = row[2];
   query1.keyName = row[1];
+  query1.size = size;
    
   query1.method= 1;  // Using integer values for keys to represent "getObject"
   query1.time = size * 0.00121138;

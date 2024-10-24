@@ -47,7 +47,8 @@ shared_ptr<arrow::Table> getObject(
     const string &bucket, 
     const string &key, 
     shared_ptr<Aws::S3::S3Client> awsClient,
-    const vector<string> & col);
+    const vector<string> & col,
+    size_t length);
     
 array<int, 3> getRange(const string &bucket, 
                        const string &key,

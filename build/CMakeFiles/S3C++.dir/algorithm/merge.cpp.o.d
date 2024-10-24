@@ -193,6 +193,23 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/format-inl.h \
+ /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/11/climits \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/c++/11/locale \
+ /usr/include/c++/11/bits/locale_facets_nonio.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/time_members.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/11/bits/locale_conv.h \
+ /usr/local/include/spdlog/fmt/bundled/format.h \
+ /usr/local/include/spdlog/common-inl.h \
  /usr/local/include/spdlog/details/registry.h \
  /usr/local/include/spdlog/details/periodic_worker.h \
  /usr/include/c++/11/condition_variable \
@@ -200,28 +217,59 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: \
  /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/mutex \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h \
- /usr/local/include/spdlog/details/synchronous_factory.h \
+ /usr/local/include/spdlog/details/periodic_worker-inl.h \
+ /usr/local/include/spdlog/details/registry-inl.h \
  /usr/local/include/spdlog/logger.h \
  /usr/local/include/spdlog/details/backtracer.h \
  /usr/local/include/spdlog/details/circular_q.h \
  /usr/include/c++/11/cassert /usr/include/assert.h \
  /usr/local/include/spdlog/details/log_msg_buffer.h \
  /usr/local/include/spdlog/details/log_msg.h \
+ /usr/local/include/spdlog/details/log_msg-inl.h \
+ /usr/local/include/spdlog/details/os.h \
+ /usr/local/include/spdlog/details/os-inl.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h /usr/include/bits/struct_stat.h \
+ /usr/include/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/linux/types.h /usr/include/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/linux/posix_types.h /usr/include/linux/stddef.h \
+ /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h /usr/include/bits/statx-generic.h \
+ /usr/include/bits/types/struct_statx_timestamp.h \
+ /usr/include/bits/types/struct_statx.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl-linux.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/linux/falloc.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/environments.h /usr/include/bits/confname.h \
+ /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
+ /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h \
+ /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
+ /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
+ /usr/local/include/spdlog/details/log_msg_buffer-inl.h \
+ /usr/local/include/spdlog/details/backtracer-inl.h \
+ /usr/local/include/spdlog/logger-inl.h \
+ /usr/local/include/spdlog/pattern_formatter.h \
+ /usr/local/include/spdlog/formatter.h \
+ /usr/local/include/spdlog/pattern_formatter-inl.h \
+ /usr/local/include/spdlog/details/fmt_helper.h \
+ /usr/local/include/spdlog/mdc.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/local/include/spdlog/sinks/sink.h \
+ /usr/local/include/spdlog/sinks/sink-inl.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink.h \
+ /usr/local/include/spdlog/details/console_globals.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink-inl.h \
+ /usr/local/include/spdlog/details/synchronous_factory.h \
  /usr/local/include/spdlog/version.h \
+ /usr/local/include/spdlog/spdlog-inl.h \
  /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap.h \
- /usr/include/c++/11/algorithm \
- /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
  /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_utils.h \
  /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_bits.h \
  /usr/include/byteswap.h \
  /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_config.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
@@ -251,13 +299,13 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: \
  /usr/include/arrow/util/aligned_storage.h \
  /usr/include/arrow/util/launder.h /usr/include/arrow/type_fwd.h \
  /usr/include/arrow/compute/ordering.h /usr/include/arrow/type.h \
- /usr/include/c++/11/climits /usr/include/c++/11/variant \
- /usr/include/arrow/util/checked_cast.h /usr/include/arrow/util/endian.h \
- /usr/include/arrow/util/type_traits.h /usr/include/arrow/util/ubsan.h \
- /usr/include/arrow/visitor.h /usr/include/arrow/compute/exec.h \
- /usr/include/arrow/array/data.h /usr/include/arrow/buffer.h \
- /usr/include/arrow/device.h /usr/include/arrow/io/type_fwd.h \
- /usr/include/arrow/util/span.h /usr/include/arrow/util/bit_util.h \
+ /usr/include/c++/11/variant /usr/include/arrow/util/checked_cast.h \
+ /usr/include/arrow/util/endian.h /usr/include/arrow/util/type_traits.h \
+ /usr/include/arrow/util/ubsan.h /usr/include/arrow/visitor.h \
+ /usr/include/arrow/compute/exec.h /usr/include/arrow/array/data.h \
+ /usr/include/arrow/buffer.h /usr/include/arrow/device.h \
+ /usr/include/arrow/io/type_fwd.h /usr/include/arrow/util/span.h \
+ /usr/include/arrow/util/bit_util.h \
  /usr/include/arrow/compute/expression.h /usr/include/arrow/datum.h \
  /usr/include/arrow/scalar.h /usr/include/arrow/compare.h \
  /usr/include/arrow/extension_type.h \
@@ -291,11 +339,7 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: \
  /usr/include/bits/sigevent-consts.h /usr/include/bits/sigaction.h \
  /usr/include/bits/sigcontext.h /usr/include/bits/types/stack_t.h \
  /usr/include/sys/ucontext.h /usr/include/bits/sigstack.h \
- /usr/include/bits/sigstksz.h /usr/include/unistd.h \
- /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
- /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
- /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
- /usr/include/linux/close_range.h /usr/include/bits/ss_flags.h \
+ /usr/include/bits/sigstksz.h /usr/include/bits/ss_flags.h \
  /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
  /usr/include/bits/signal_ext.h /usr/include/arrow/util/windows_fixup.h \
  /usr/include/arrow/util/queue.h \

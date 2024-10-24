@@ -152,7 +152,7 @@ void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
       }
     }
   }
-  sort(min->begin(), min->end(), compareByTime);
+  // sort(min->begin(), min->end(), compareByTime);
   
   shared_ptr<arrow::Table> result;
   set<string> tag;
@@ -161,14 +161,15 @@ void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
     if (min != nullptr) {
       for (const auto& it : *min){
         cout<<"==================================query"<<index_<<"=================================="<<endl;
-        // cout<<"index:"<<it.index<<endl;
-        // cout<<"func:"<<it.method<<endl;
-        // cout<<"time:"<<it.time<<endl;
-        // cout<<"cost:"<<it.cost<<endl;
-        // string subject = it.subject;
-        // string object = it.object;
-        string subject = query_result[index_][0];
-        string object = query_result[index_][2];
+        cout<<"index:"<<it.index<<endl;
+        cout<<"func:"<<it.method<<endl;
+        cout<<"time:"<<it.time<<endl;
+        cout<<"cost:"<<it.cost<<endl;
+        string subject = it.subject;
+        string object = it.object;
+        cout<<subject<<endl;
+        cout<<object<<endl;
+        cout<<it.size<<endl;
 
         if(subject.find("?") != string::npos && tag.count(subject) > 0){
             col1.emplace_back(subject);
@@ -191,12 +192,13 @@ void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
           case 1:{
             high_resolution_clock::time_point begin = high_resolution_clock::now();
             // keyName = it.keyName + ".csv"; 
-            keyName = query_result[index_][1]+".csv"; //排序后这里要修改
+            keyName = it.keyName +".csv"; //排序后这里要修改
             cout<<"第"<<index_+1<<"个查询"<<keyName<<endl;
+            auto temp = getObject(bucket, keyName, awsClient, col2, it.size);
             if(index_ == 0){
-              result = getObject(bucket, keyName, awsClient, col2);
+              result = temp;
             } else {
-              result = merge(result, getObject(bucket, keyName, awsClient,col2), col1,col2);
+              result = merge(result, temp, col1,col2);
             }
           high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
           milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);

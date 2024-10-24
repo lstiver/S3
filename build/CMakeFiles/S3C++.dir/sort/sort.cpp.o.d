@@ -256,15 +256,55 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/spdlog/fmt/bundled/core.h \
  /usr/local/include/spdlog/fmt/bundled/format.h \
  /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/format-inl.h \
+ /usr/include/c++/11/climits \
+ /usr/local/include/spdlog/fmt/bundled/format.h \
+ /usr/local/include/spdlog/common-inl.h \
  /usr/local/include/spdlog/details/registry.h \
  /usr/local/include/spdlog/details/periodic_worker.h \
- /usr/local/include/spdlog/details/synchronous_factory.h \
+ /usr/local/include/spdlog/details/periodic_worker-inl.h \
+ /usr/local/include/spdlog/details/registry-inl.h \
  /usr/local/include/spdlog/logger.h \
  /usr/local/include/spdlog/details/backtracer.h \
  /usr/local/include/spdlog/details/circular_q.h \
  /usr/local/include/spdlog/details/log_msg_buffer.h \
  /usr/local/include/spdlog/details/log_msg.h \
+ /usr/local/include/spdlog/details/log_msg-inl.h \
+ /usr/local/include/spdlog/details/os.h \
+ /usr/local/include/spdlog/details/os-inl.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h /usr/include/bits/struct_stat.h \
+ /usr/include/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/linux/types.h /usr/include/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/linux/posix_types.h /usr/include/linux/stddef.h \
+ /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h /usr/include/bits/statx-generic.h \
+ /usr/include/bits/types/struct_statx_timestamp.h \
+ /usr/include/bits/types/struct_statx.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl-linux.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/linux/falloc.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/environments.h /usr/include/bits/confname.h \
+ /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
+ /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h \
+ /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
+ /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
+ /usr/local/include/spdlog/details/log_msg_buffer-inl.h \
+ /usr/local/include/spdlog/details/backtracer-inl.h \
+ /usr/local/include/spdlog/logger-inl.h \
+ /usr/local/include/spdlog/pattern_formatter.h \
+ /usr/local/include/spdlog/formatter.h \
+ /usr/local/include/spdlog/pattern_formatter-inl.h \
+ /usr/local/include/spdlog/details/fmt_helper.h \
+ /usr/local/include/spdlog/mdc.h /usr/local/include/spdlog/sinks/sink.h \
+ /usr/local/include/spdlog/sinks/sink-inl.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink.h \
+ /usr/local/include/spdlog/details/console_globals.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink-inl.h \
+ /usr/local/include/spdlog/details/synchronous_factory.h \
  /usr/local/include/spdlog/version.h \
+ /usr/local/include/spdlog/spdlog-inl.h \
  /usr/local/include/aws/core/auth/AWSAuthSigner.h \
  /usr/local/include/aws/core/auth/signer/AWSAuthSignerBase.h \
  /usr/local/include/aws/core/Core_EXPORTS.h \
@@ -321,13 +361,9 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/aws/common/array_list.inl \
  /usr/local/include/aws/common/byte_order.h \
  /usr/local/include/aws/common/byte_order.inl /usr/include/netinet/in.h \
- /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
- /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
- /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
- /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
- /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/sys/socket.h /usr/include/bits/socket.h \
+ /usr/include/bits/socket_type.h /usr/include/bits/sockaddr.h \
+ /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
  /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
  /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
  /usr/local/include/aws/common/linked_list.h \
@@ -699,12 +735,11 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/include/arrow/util/string_builder.h \
  /usr/include/arrow/util/aligned_storage.h \
  /usr/include/arrow/util/launder.h /usr/include/arrow/util/span.h \
- /usr/include/arrow/type.h /usr/include/c++/11/climits \
- /usr/include/c++/11/variant /usr/include/arrow/util/checked_cast.h \
- /usr/include/arrow/util/endian.h /usr/include/arrow/util/type_traits.h \
- /usr/include/arrow/util/ubsan.h /usr/include/arrow/visitor.h \
- /usr/include/arrow/util/bit_util.h /usr/include/arrow/compare.h \
- /usr/include/arrow/array/array_binary.h \
+ /usr/include/arrow/type.h /usr/include/c++/11/variant \
+ /usr/include/arrow/util/checked_cast.h /usr/include/arrow/util/endian.h \
+ /usr/include/arrow/util/type_traits.h /usr/include/arrow/util/ubsan.h \
+ /usr/include/arrow/visitor.h /usr/include/arrow/util/bit_util.h \
+ /usr/include/arrow/compare.h /usr/include/arrow/array/array_binary.h \
  /usr/include/arrow/stl_iterator.h /usr/include/arrow/chunked_array.h \
  /usr/include/arrow/chunk_resolver.h /usr/include/arrow/type_traits.h \
  /usr/include/arrow/array/array_decimal.h \
