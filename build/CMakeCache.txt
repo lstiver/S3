@@ -17,8 +17,8 @@
 //The directory containing a CMake configuration file for ArrowAcero.
 ArrowAcero_DIR:PATH=/usr/lib64/cmake/ArrowAcero
 
-//The directory containing a CMake configuration file for ArrowFlight.
-ArrowFlight_DIR:PATH=/usr/local/lib64/cmake/ArrowFlight
+//The directory containing a CMake configuration file for ArrowDataset.
+ArrowDataset_DIR:PATH=/usr/lib64/cmake/ArrowDataset
 
 //The directory containing a CMake configuration file for Arrow.
 Arrow_DIR:PATH=/usr/local/lib64/cmake/Arrow
@@ -89,8 +89,9 @@ CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//No help, variable specified on the command line.
-CMAKE_BUILD_TYPE:STRING=Debug
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel ...
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -165,8 +166,8 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//No help, variable specified on the command line.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
+//Enable/Disable output of compile commands during generation.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //User executables (bin)
 CMAKE_INSTALL_BINDIR:PATH=bin
@@ -416,27 +417,6 @@ benchmark_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 benchmark_SOURCE_DIR:STATIC=/home/ec2-user/s3/S3C++/leveldb/third_party/benchmark
 
-//The directory containing a CMake configuration file for doctest.
-doctest_DIR:PATH=/usr/local/lib64/cmake/doctest
-
-//The directory containing a CMake configuration file for fmt.
-fmt_DIR:PATH=/usr/local/lib64/cmake/fmt
-
-//Value Computed by CMake
-fpdb-aws_BINARY_DIR:STATIC=/home/ec2-user/s3/S3C++/build/fpdb-aws
-
-//Value Computed by CMake
-fpdb-aws_IS_TOP_LEVEL:STATIC=OFF
-
-//Dependencies for the target
-fpdb-aws_LIB_DEPENDS:STATIC=general;arrow_flight_static;general;fpdb-util;general;spdlog::spdlog;general;aws-cpp-sdk-core;general;aws-cpp-sdk-s3;
-
-//Value Computed by CMake
-fpdb-aws_SOURCE_DIR:STATIC=/home/ec2-user/s3/S3C++/fpdb-aws
-
-//Dependencies for the target
-fpdb-util_LIB_DEPENDS:STATIC=general;fmt::fmt;general;spdlog::spdlog;
-
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/ec2-user/s3/S3C++/build/leveldb/third_party/googletest/googlemock
 
@@ -521,9 +501,6 @@ pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib64/libcrypto.so
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib64/libssl.so
-
-//The directory containing a CMake configuration file for spdlog.
-spdlog_DIR:PATH=/usr/local/lib64/cmake/spdlog
 
 
 ########################
@@ -639,6 +616,8 @@ CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
+CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
@@ -707,7 +686,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

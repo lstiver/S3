@@ -9,13 +9,6 @@
 using namespace Aws::Utils;
 using namespace Aws::Transfer;
 
-
-void getObjectByIndex(const string &bucket, const string &key, const string &query);
-array<int, 3> getRange(const string &bucket, 
-                       const string &key,
-                       const string &parsed_conditions,
-                       shared_ptr<Aws::S3::S3Client> awsClient);
-
 Aws::S3::Model::InputSerialization getInputSerialization() {
     Aws::S3::Model::InputSerialization inputSerialization;
     Aws::S3::Model::CSVInput csvInput;
@@ -127,15 +120,15 @@ shared_ptr<arrow::Table> getObject(
 } 
 
 
-array<int, 3> getRange(const string &bucket, 
+array<size_t, 3> getRange(const string &bucket, 
                        const string &key,
                        const string &parsed_conditions,
                        shared_ptr<Aws::S3::S3Client> awsClient)
 {
     string key_ = key + "_index.csv";
-    int start = 0;
-    int end = 0;
-    int size = 0;
+    size_t start = 0;
+    size_t end = 0;
+    size_t size = 0;
     string sql;
 
     // 如果 parsed_conditions 为空字符串或 "None"，返回默认查询
@@ -183,9 +176,17 @@ array<int, 3> getRange(const string &bucket,
 
     selectObjectContentRequest.SetEventStreamHandler(handler);
 
-    auto selectObjectOutcome = awsClient->SelectObjectContent(selectObjectContentRequest);
-    if (!selectObjectOutcome.IsSuccess()) {
-        cerr << "S3 Select query failed: " << selectObjectOutcome.GetError().GetMessage() << "\n";
+    try {
+        auto selectObjectOutcome = awsClient->SelectObjectContent(selectObjectContentRequest);
+        if (!selectObjectOutcome.IsSuccess()) {
+            cerr << "S3 Select query failed: " << selectObjectOutcome.GetError().GetMessage() << "\n";
+            return {};
+        }
+    } catch (const Aws::Client::AWSError<Aws::S3::S3Errors>& e) {
+        cerr << "AWS SDK error: " << e.GetMessage() << "\n";
+        return {};
+    } catch (const std::exception& e) {
+        cerr << "Unexpected error: " << e.what() << "\n";
         return {};
     }
 
@@ -194,22 +195,34 @@ array<int, 3> getRange(const string &bucket,
         this_thread::sleep_for(chrono::milliseconds(100));
     }
 
-    string str(s3Result_.begin(), s3Result_.end());
-    stringstream ss(str);
-    string line;
-    while (getline(ss, line)) {
-        stringstream lineStream(line);
-        string token;
-        getline(lineStream, token, ',');
-        if(token == "size"){
+    try {
+        string str(s3Result_.begin(), s3Result_.end());
+        stringstream ss(str);
+        string line;
+        while (getline(ss, line)) {
+            stringstream lineStream(line);
+            string token;
             getline(lineStream, token, ',');
-            size = stoi(token);
-        } else {
-            getline(lineStream, token, ',');
-            start = stoi(token);
-            getline(lineStream, token, ',');
-            end = stoi(token);
+            if(token == "size") {
+                getline(lineStream, token, ',');
+                size = std::stoull(token); // 这里可能抛出异常
+            } else {
+                getline(lineStream, token, ',');
+                start = std::stoull(token); // 这里可能抛出异常
+                getline(lineStream, token, ',');
+                end = std::stoull(token); // 这里可能抛出异常
+            }
         }
+    } catch (const std::invalid_argument& e) {
+        cerr << "Invalid argument: " << e.what() << "\n";
+        return {};
+    } catch (const std::out_of_range& e) {
+        cerr << "Out of range: " << e.what() << "\n";
+        return {};
+    } catch (const std::exception& e) {
+        cerr << "Unexpected error: " << e.what() << "\n";
+        return {};
     }
-    return {size,start,end};
+
+    return {size, start, end};
 }

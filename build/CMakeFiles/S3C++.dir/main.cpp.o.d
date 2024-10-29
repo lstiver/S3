@@ -154,30 +154,25 @@ CMakeFiles/S3C++.dir/main.cpp.o: /home/ec2-user/s3/S3C++/main.cpp \
  /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/iterator \
  /usr/include/c++/11/bits/stream_iterator.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap.h \
- /usr/include/c++/11/cmath /usr/include/math.h \
- /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h /usr/include/c++/11/bits/specfun.h \
- /usr/include/c++/11/limits /usr/include/c++/11/tr1/gamma.tcc \
- /usr/include/c++/11/tr1/special_function_util.h \
- /usr/include/c++/11/tr1/bessel_function.tcc \
- /usr/include/c++/11/tr1/beta_function.tcc \
- /usr/include/c++/11/tr1/ell_integral.tcc \
- /usr/include/c++/11/tr1/exp_integral.tcc \
- /usr/include/c++/11/tr1/hypergeometric.tcc \
- /usr/include/c++/11/tr1/legendre_function.tcc \
- /usr/include/c++/11/tr1/modified_bessel_func.tcc \
- /usr/include/c++/11/tr1/poly_hermite.tcc \
- /usr/include/c++/11/tr1/poly_laguerre.tcc \
- /usr/include/c++/11/tr1/riemann_zeta.tcc /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h /usr/include/c++/11/memory \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/db.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/export.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/iterator.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/slice.h \
+ /usr/include/c++/11/cassert /usr/include/assert.h \
+ /usr/include/c++/11/cstddef /usr/include/c++/11/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/status.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/options.h \
+ /home/ec2-user/s3/S3C++/translate/translate.h /usr/include/c++/11/regex \
+ /usr/include/c++/11/bitset /usr/include/c++/11/locale \
+ /usr/include/c++/11/bits/locale_facets_nonio.h /usr/include/c++/11/ctime \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/time_members.h \
+ /usr/include/c++/11/x86_64-amazon-linux/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/11/bits/locale_conv.h \
+ /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/unique_ptr.h \
  /usr/include/c++/11/bits/shared_ptr.h \
  /usr/include/c++/11/bits/shared_ptr_base.h \
  /usr/include/c++/11/bits/allocated_ptr.h \
@@ -186,47 +181,7 @@ CMakeFiles/S3C++.dir/main.cpp.o: /home/ec2-user/s3/S3C++/main.cpp \
  /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11/backward/auto_ptr.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/c++/11/cassert \
- /usr/include/assert.h /usr/include/c++/11/atomic \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
- /usr/include/c++/11/mutex /usr/include/c++/11/chrono \
- /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
- /usr/include/c++/11/bits/parse_numbers.h \
- /usr/include/c++/11/bits/std_mutex.h \
- /usr/include/c++/11/bits/unique_lock.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_utils.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_bits.h \
- /usr/include/byteswap.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_config.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /usr/include/c++/11/cstddef \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
- /usr/include/c++/11/stdlib.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_base.h \
- /usr/include/c++/11/shared_mutex /usr/include/c++/11/optional \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/db.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/export.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/iterator.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/slice.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/status.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/options.h \
- /home/ec2-user/s3/S3C++/translate/translate.h /usr/include/c++/11/regex \
- /usr/include/c++/11/bitset /usr/include/c++/11/locale \
- /usr/include/c++/11/bits/locale_facets_nonio.h \
- /usr/include/c++/11/x86_64-amazon-linux/bits/time_members.h \
- /usr/include/c++/11/x86_64-amazon-linux/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/11/bits/locale_facets_nonio.tcc \
- /usr/include/c++/11/bits/locale_conv.h /usr/include/c++/11/sstream \
+ /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/c++/11/sstream \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/stack \
  /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
  /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_stack.h \
@@ -244,19 +199,48 @@ CMakeFiles/S3C++.dir/main.cpp.o: /home/ec2-user/s3/S3C++/main.cpp \
  /usr/include/c++/11/bits/regex_executor.h \
  /usr/include/c++/11/bits/regex_executor.tcc /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/queue \
+ /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/limits \
+ /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/mutex \
+ /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/queue \
  /usr/include/c++/11/bits/stl_queue.h /usr/include/c++/11/future \
- /usr/include/c++/11/condition_variable \
+ /usr/include/c++/11/condition_variable /usr/include/c++/11/atomic \
  /usr/include/c++/11/bits/atomic_futex.h \
  /home/ec2-user/s3/S3C++/queryMethod/query.h \
  /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
  /usr/local/include/spdlog/details/null_mutex.h \
  /usr/local/include/spdlog/tweakme.h /usr/local/include/spdlog/fmt/fmt.h \
  /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/local/include/spdlog/fmt/bundled/format.h \
+ /usr/local/include/spdlog/fmt/bundled/format.h /usr/include/c++/11/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/11/bits/specfun.h \
+ /usr/include/c++/11/tr1/gamma.tcc \
+ /usr/include/c++/11/tr1/special_function_util.h \
+ /usr/include/c++/11/tr1/bessel_function.tcc \
+ /usr/include/c++/11/tr1/beta_function.tcc \
+ /usr/include/c++/11/tr1/ell_integral.tcc \
+ /usr/include/c++/11/tr1/exp_integral.tcc \
+ /usr/include/c++/11/tr1/hypergeometric.tcc \
+ /usr/include/c++/11/tr1/legendre_function.tcc \
+ /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/11/tr1/poly_hermite.tcc \
+ /usr/include/c++/11/tr1/poly_laguerre.tcc \
+ /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /usr/local/include/spdlog/fmt/bundled/core.h \
  /usr/local/include/spdlog/fmt/bundled/format-inl.h \
  /usr/include/c++/11/climits \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h \
  /usr/local/include/spdlog/fmt/bundled/format.h \
  /usr/local/include/spdlog/common-inl.h \
  /usr/local/include/spdlog/details/registry.h \
@@ -324,7 +308,7 @@ CMakeFiles/S3C++.dir/main.cpp.o: /home/ec2-user/s3/S3C++/main.cpp \
  /usr/local/include/aws/common/stdbool.h \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/stdbool.h \
  /usr/local/include/aws/common/stdint.h \
- /usr/local/include/aws/common/assert.h \
+ /usr/local/include/aws/common/assert.h /usr/include/c++/11/stdlib.h \
  /usr/local/include/aws/common/error.h \
  /usr/local/include/aws/common/package.h \
  /usr/local/include/aws/common/error.inl \
@@ -725,10 +709,11 @@ CMakeFiles/S3C++.dir/main.cpp.o: /home/ec2-user/s3/S3C++/main.cpp \
  /usr/local/include/aws/s3/model/ScanRange.h /usr/include/arrow/api.h \
  /usr/include/arrow/array.h /usr/include/arrow/array/array_base.h \
  /usr/include/arrow/array/data.h /usr/include/arrow/buffer.h \
- /usr/include/arrow/device.h /usr/include/arrow/io/type_fwd.h \
- /usr/include/arrow/type_fwd.h /usr/include/arrow/util/macros.h \
- /usr/include/arrow/util/visibility.h /usr/include/arrow/result.h \
- /usr/include/arrow/status.h /usr/include/arrow/util/compare.h \
+ /usr/include/c++/11/optional /usr/include/arrow/device.h \
+ /usr/include/arrow/io/type_fwd.h /usr/include/arrow/type_fwd.h \
+ /usr/include/arrow/util/macros.h /usr/include/arrow/util/visibility.h \
+ /usr/include/arrow/result.h /usr/include/arrow/status.h \
+ /usr/include/arrow/util/compare.h \
  /usr/include/arrow/util/string_builder.h \
  /usr/include/arrow/util/aligned_storage.h \
  /usr/include/arrow/util/launder.h /usr/include/arrow/util/span.h \
@@ -789,7 +774,22 @@ CMakeFiles/S3C++.dir/main.cpp.o: /home/ec2-user/s3/S3C++/main.cpp \
  /usr/include/arrow/io/caching.h /usr/include/arrow/util/compression.h \
  /home/ec2-user/s3/S3C++/sort/sort.h \
  /home/ec2-user/s3/S3C++/algorithm/merge.h \
- /usr/include/arrow/acero/exec_plan.h /usr/include/arrow/acero/type_fwd.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_utils.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_bits.h \
+ /usr/include/byteswap.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_config.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
+ /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
+ /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_base.h \
+ /usr/include/c++/11/shared_mutex /usr/include/arrow/acero/exec_plan.h \
+ /usr/include/arrow/acero/type_fwd.h \
  /usr/include/arrow/compute/type_fwd.h \
  /usr/include/arrow/acero/visibility.h \
  /usr/include/arrow/compute/api_vector.h \
@@ -829,7 +829,19 @@ CMakeFiles/S3C++.dir/main.cpp.o: /home/ec2-user/s3/S3C++/main.cpp \
  /usr/include/arrow/dataset/type_fwd.h \
  /usr/include/arrow/dataset/visibility.h \
  /usr/include/arrow/filesystem/type_fwd.h \
- /home/ec2-user/s3/S3C++/translate/ThreadPool.h \
+ /usr/include/arrow/dataset/api.h /usr/include/arrow/dataset/discovery.h \
+ /usr/include/arrow/dataset/partition.h \
+ /usr/include/arrow/dataset/file_base.h \
+ /usr/include/arrow/dataset/scanner.h \
+ /usr/include/arrow/dataset/projector.h \
+ /usr/include/arrow/filesystem/filesystem.h \
+ /usr/include/arrow/dataset/file_csv.h \
+ /usr/include/arrow/dataset/file_json.h /usr/include/arrow/json/options.h \
+ /usr/include/arrow/json/type_fwd.h /usr/include/arrow/dataset/file_ipc.h \
+ /usr/include/arrow/dataset/file_orc.h \
+ /usr/include/arrow/dataset/file_parquet.h \
+ /usr/include/arrow/dataset/plan.h \
+ /home/ec2-user/s3/S3C++/algorithm/order.h \
  /usr/local/include/aws/core/Aws.h \
  /usr/local/include/aws/core/utils/logging/CRTLogSystem.h \
  /usr/local/include/aws/core/utils/logging/DefaultCRTLogSystem.h \

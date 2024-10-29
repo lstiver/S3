@@ -14,10 +14,8 @@
 #include <future>
 #include <regex>
 #include <leveldb/db.h>
-#include <parallel_hashmap/phmap.h>
 #include "query.h"
 using namespace std;
-using phmap::flat_hash_map;
 
 struct QueryInfo {
     double time;
@@ -35,7 +33,7 @@ struct QueryInfo {
 
 bool compareByTime(const QueryInfo& a, const QueryInfo& b);
 vector<vector<string>> get_query(string file_path);
-pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, 
+vector<QueryInfo> getTimeAndCost(const string &bucket, 
                                             const vector<string> &row, 
                                             int index, 
                                             std::shared_ptr<Aws::S3::S3Client> awsClient);

@@ -434,16 +434,16 @@
 			"value" : "/usr/lib64/cmake/ArrowAcero"
 		},
 		{
-			"name" : "ArrowFlight_DIR",
+			"name" : "ArrowDataset_DIR",
 			"properties" : 
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for ArrowFlight."
+					"value" : "The directory containing a CMake configuration file for ArrowDataset."
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/local/lib64/cmake/ArrowFlight"
+			"value" : "/usr/lib64/cmake/ArrowDataset"
 		},
 		{
 			"name" : "Arrow_DIR",
@@ -735,11 +735,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
 				}
 			],
 			"type" : "STRING",
-			"value" : "Debug"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -1222,12 +1222,16 @@
 			"properties" : 
 			[
 				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Enable/Disable output of compile commands during generation."
 				}
 			],
 			"type" : "BOOL",
-			"value" : "TRUE"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -1743,7 +1747,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "10"
+			"value" : "8"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -3678,90 +3682,6 @@
 			"value" : "GTest"
 		},
 		{
-			"name" : "doctest_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for doctest."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib64/cmake/doctest"
-		},
-		{
-			"name" : "fmt_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for fmt."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib64/cmake/fmt"
-		},
-		{
-			"name" : "fpdb-aws_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/ec2-user/s3/S3C++/build/fpdb-aws"
-		},
-		{
-			"name" : "fpdb-aws_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "OFF"
-		},
-		{
-			"name" : "fpdb-aws_LIB_DEPENDS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Dependencies for the target"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "general;arrow_flight_static;general;fpdb-util;general;spdlog::spdlog;general;aws-cpp-sdk-core;general;aws-cpp-sdk-s3;"
-		},
-		{
-			"name" : "fpdb-aws_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/ec2-user/s3/S3C++/fpdb-aws"
-		},
-		{
-			"name" : "fpdb-util_LIB_DEPENDS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Dependencies for the target"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "general;fmt::fmt;general;spdlog::spdlog;"
-		},
-		{
 			"name" : "generated_dir",
 			"properties" : 
 			[
@@ -4156,18 +4076,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "/usr/lib64"
-		},
-		{
-			"name" : "spdlog_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for spdlog."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/local/lib64/cmake/spdlog"
 		},
 		{
 			"name" : "targets_export_name",

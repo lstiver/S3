@@ -208,9 +208,14 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /usr/include/c++/11/cstddef \
  /home/ec2-user/s3/S3C++/leveldb/include/leveldb/status.h \
  /home/ec2-user/s3/S3C++/leveldb/include/leveldb/options.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap.h \
- /usr/include/c++/11/cmath /usr/include/math.h \
- /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
+ /home/ec2-user/s3/S3C++/queryMethod/query.h \
+ /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
+ /usr/local/include/spdlog/details/null_mutex.h \
+ /usr/local/include/spdlog/tweakme.h /usr/local/include/spdlog/fmt/fmt.h \
+ /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/format.h /usr/include/c++/11/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
  /usr/include/bits/fp-fast.h \
  /usr/include/bits/mathcalls-helper-functions.h \
@@ -228,36 +233,15 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_utils.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_bits.h \
- /usr/include/byteswap.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_config.h \
+ /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/format-inl.h \
+ /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/bits/uio_lim.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
- /usr/include/c++/11/stdlib.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_base.h \
- /usr/include/c++/11/shared_mutex /usr/include/c++/11/optional \
- /home/ec2-user/s3/S3C++/queryMethod/query.h \
- /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
- /usr/local/include/spdlog/details/null_mutex.h \
- /usr/local/include/spdlog/tweakme.h /usr/local/include/spdlog/fmt/fmt.h \
- /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/local/include/spdlog/fmt/bundled/format.h \
- /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/local/include/spdlog/fmt/bundled/format-inl.h \
- /usr/include/c++/11/climits \
  /usr/local/include/spdlog/fmt/bundled/format.h \
  /usr/local/include/spdlog/common-inl.h \
  /usr/local/include/spdlog/details/registry.h \
@@ -325,7 +309,7 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /usr/local/include/aws/common/stdbool.h \
  /usr/lib/gcc/x86_64-amazon-linux/11/include/stdbool.h \
  /usr/local/include/aws/common/stdint.h \
- /usr/local/include/aws/common/assert.h \
+ /usr/local/include/aws/common/assert.h /usr/include/c++/11/stdlib.h \
  /usr/local/include/aws/common/error.h \
  /usr/local/include/aws/common/package.h \
  /usr/local/include/aws/common/error.inl \
@@ -728,10 +712,11 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: \
  /usr/local/include/aws/s3/model/ScanRange.h /usr/include/arrow/api.h \
  /usr/include/arrow/array.h /usr/include/arrow/array/array_base.h \
  /usr/include/arrow/array/data.h /usr/include/arrow/buffer.h \
- /usr/include/arrow/device.h /usr/include/arrow/io/type_fwd.h \
- /usr/include/arrow/type_fwd.h /usr/include/arrow/util/macros.h \
- /usr/include/arrow/util/visibility.h /usr/include/arrow/result.h \
- /usr/include/arrow/status.h /usr/include/arrow/util/compare.h \
+ /usr/include/c++/11/optional /usr/include/arrow/device.h \
+ /usr/include/arrow/io/type_fwd.h /usr/include/arrow/type_fwd.h \
+ /usr/include/arrow/util/macros.h /usr/include/arrow/util/visibility.h \
+ /usr/include/arrow/result.h /usr/include/arrow/status.h \
+ /usr/include/arrow/util/compare.h \
  /usr/include/arrow/util/string_builder.h \
  /usr/include/arrow/util/aligned_storage.h \
  /usr/include/arrow/util/launder.h /usr/include/arrow/util/span.h \

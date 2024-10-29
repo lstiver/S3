@@ -330,45 +330,6 @@ benchmark_main/fast:
 	$(MAKE) $(MAKESILENT) -f leveldb/third_party/benchmark/src/CMakeFiles/benchmark_main.dir/build.make leveldb/third_party/benchmark/src/CMakeFiles/benchmark_main.dir/build
 .PHONY : benchmark_main/fast
 
-#=============================================================================
-# Target rules for targets named fpdb-aws
-
-# Build rule for target.
-fpdb-aws: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fpdb-aws
-.PHONY : fpdb-aws
-
-# fast build rule for target.
-fpdb-aws/fast:
-	$(MAKE) $(MAKESILENT) -f fpdb-aws/CMakeFiles/fpdb-aws.dir/build.make fpdb-aws/CMakeFiles/fpdb-aws.dir/build
-.PHONY : fpdb-aws/fast
-
-#=============================================================================
-# Target rules for targets named fpdb-util
-
-# Build rule for target.
-fpdb-util: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fpdb-util
-.PHONY : fpdb-util
-
-# fast build rule for target.
-fpdb-util/fast:
-	$(MAKE) $(MAKESILENT) -f fpdb-util/CMakeFiles/fpdb-util.dir/build.make fpdb-util/CMakeFiles/fpdb-util.dir/build
-.PHONY : fpdb-util/fast
-
-#=============================================================================
-# Target rules for targets named fpdb-util-test
-
-# Build rule for target.
-fpdb-util-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fpdb-util-test
-.PHONY : fpdb-util-test
-
-# fast build rule for target.
-fpdb-util-test/fast:
-	$(MAKE) $(MAKESILENT) -f fpdb-util/CMakeFiles/fpdb-util-test.dir/build.make fpdb-util/CMakeFiles/fpdb-util-test.dir/build
-.PHONY : fpdb-util-test/fast
-
 ArrowInputStream/ArrowInputStream.o: ArrowInputStream/ArrowInputStream.cpp.o
 .PHONY : ArrowInputStream/ArrowInputStream.o
 
@@ -531,9 +492,6 @@ help:
 	@echo "... c_test"
 	@echo "... db_bench"
 	@echo "... env_posix_test"
-	@echo "... fpdb-aws"
-	@echo "... fpdb-util"
-	@echo "... fpdb-util-test"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"

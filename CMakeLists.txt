@@ -19,10 +19,10 @@ endif()
 
 find_package(Arrow REQUIRED)
 find_package(ArrowAcero REQUIRED)
+find_package(ArrowDataset REQUIRED)
+#include <arrow/compute/api.h>
 add_subdirectory(leveldb)
 add_subdirectory(parallel-hashmap)
-add_subdirectory(fpdb-aws) 
-add_subdirectory(fpdb-util) 
 
 # 查找并添加 arrow-csv
 find_package(PkgConfig REQUIRED)
@@ -41,8 +41,6 @@ include_directories(${Python3_INCLUDE_DIRS}
                     ${PROJECT_SOURCE_DIR}/queryMethod
                     ${PROJECT_SOURCE_DIR}/algorithm
                     ${PROJECT_SOURCE_DIR}/leveldb
-                    # ${PROJECT_SOURCE_DIR}/fpdb-aws/include
-                    # ${PROJECT_SOURCE_DIR}/fpdb-util/include
                     ${PROJECT_SOURCE_DIR}/ArrowInputStream)
 
 # 添加可执行文件
@@ -64,15 +62,11 @@ target_include_directories(${PROJECT_NAME} PUBLIC  parallel_hashmap)
 # 链接 leveldb 库
 target_link_libraries(${PROJECT_NAME} PUBLIC leveldb)
 target_link_libraries(${PROJECT_NAME} PUBLIC pthread -lm -ldl)
-# # 链接 fpdb-aws 库及其依赖库
-# target_link_libraries(${PROJECT_NAME} PUBLIC fpdb-aws)
-# target_link_libraries(${PROJECT_NAME} PUBLIC pthread -lm -ldl)
-# target_link_libraries(${PROJECT_NAME} PUBLIC fpdb-util)
-# target_link_libraries(${PROJECT_NAME} PUBLIC pthread -lm -ldl)
 target_link_libraries(${PROJECT_NAME} 
     PUBLIC 
     Arrow::arrow_shared
     ArrowAcero::arrow_acero_shared
+    ArrowDataset::arrow_dataset_shared
     ${ARROW_CSV_LIBRARIES}  # 添加 csv 相关的库
 )
 target_link_libraries(${PROJECT_NAME} PUBLIC aws-cpp-sdk-core)

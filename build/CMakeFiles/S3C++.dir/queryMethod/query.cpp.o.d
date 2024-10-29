@@ -663,21 +663,6 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/s3/model/JSONInput.h \
  /usr/local/include/aws/s3/model/JSONType.h \
  /usr/local/include/aws/s3/model/ParquetInput.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_utils.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_bits.h \
- /usr/include/byteswap.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_config.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
- /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
- /home/ec2-user/s3/S3C++/parallel-hashmap/parallel_hashmap/phmap_base.h \
- /usr/include/c++/11/shared_mutex /usr/include/c++/11/optional \
  /usr/local/include/aws/s3/model/SelectObjectContentRequest.h \
  /usr/local/include/aws/s3/model/SelectObjectContentHandler.h \
  /usr/local/include/aws/core/utils/HashingUtils.h \
@@ -703,10 +688,11 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: \
  /usr/local/include/aws/s3/model/ScanRange.h /usr/include/arrow/api.h \
  /usr/include/arrow/array.h /usr/include/arrow/array/array_base.h \
  /usr/include/arrow/array/data.h /usr/include/arrow/buffer.h \
- /usr/include/arrow/device.h /usr/include/arrow/io/type_fwd.h \
- /usr/include/arrow/type_fwd.h /usr/include/arrow/util/macros.h \
- /usr/include/arrow/util/visibility.h /usr/include/arrow/result.h \
- /usr/include/arrow/status.h /usr/include/arrow/util/compare.h \
+ /usr/include/c++/11/optional /usr/include/arrow/device.h \
+ /usr/include/arrow/io/type_fwd.h /usr/include/arrow/type_fwd.h \
+ /usr/include/arrow/util/macros.h /usr/include/arrow/util/visibility.h \
+ /usr/include/arrow/result.h /usr/include/arrow/status.h \
+ /usr/include/arrow/util/compare.h \
  /usr/include/arrow/util/string_builder.h \
  /usr/include/arrow/util/aligned_storage.h \
  /usr/include/arrow/util/launder.h /usr/include/arrow/util/span.h \

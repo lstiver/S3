@@ -13,7 +13,6 @@
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/InputSerialization.h>
-#include <parallel_hashmap/phmap.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/SelectObjectContentRequest.h>
 #include <aws/s3/model/CSVInput.h>
@@ -39,7 +38,6 @@ using std::chrono::milliseconds;
 using namespace Aws::S3;
 using namespace Aws::S3::Model;
 using namespace std;
-using phmap::flat_hash_map;
 
 void s3Select(const string &bucket, const string &key, const string &query);
 void s3SelectIndex(const string &bucket, const string &key, const string &query);
@@ -50,7 +48,7 @@ shared_ptr<arrow::Table> getObject(
     const vector<string> & col,
     size_t length);
     
-array<int, 3> getRange(const string &bucket, 
+array<size_t, 3> getRange(const string &bucket, 
                        const string &key,
                        const string &parsed_conditions,
                        shared_ptr<Aws::S3::S3Client> awsClient);

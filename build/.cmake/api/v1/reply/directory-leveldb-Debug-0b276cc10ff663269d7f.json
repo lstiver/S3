@@ -51,7 +51,7 @@
 				"leveldb/libleveldb.a"
 			],
 			"targetId" : "leveldb::@fd116fd6900a2752e96d",
-			"targetIndex" : 13,
+			"targetIndex" : 10,
 			"type" : "target"
 		},
 		{
@@ -87,7 +87,7 @@
 			[
 				{
 					"id" : "leveldb::@fd116fd6900a2752e96d",
-					"index" : 13
+					"index" : 10
 				}
 			],
 			"paths" : 

@@ -1031,6 +1031,358 @@
 			"path" : "/usr/lib64/cmake/ArrowAcero/ArrowAceroTargets-release.cmake"
 		},
 		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/ArrowDataset/ArrowDatasetConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/ArrowDataset/ArrowDatasetConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowOptions.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/FindOpenSSLAlt.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindZLIB.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/ArrowAcero/ArrowAceroConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/ArrowAcero/ArrowAceroConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowOptions.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/FindOpenSSLAlt.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindZLIB.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/Parquet/ParquetConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/Parquet/ParquetConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowOptions.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/FindOpenSSLAlt.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindZLIB.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/Parquet/ParquetTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/ArrowAcero/ArrowAceroTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/Parquet/ParquetConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/Parquet/ParquetConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowOptions.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/FindOpenSSLAlt.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindZLIB.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib64/cmake/Arrow/ArrowTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/Parquet/ParquetTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/ArrowDataset/ArrowDatasetTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib64/cmake/ArrowDataset/ArrowDatasetTargets-release.cmake"
+		},
+		{
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/usr/share/cmake/Modules/FindPkgConfig.cmake"
@@ -1465,293 +1817,6 @@
 		},
 		{
 			"path" : "parallel-hashmap/cmake/helpers.cmake"
-		},
-		{
-			"path" : "fpdb-aws/CMakeLists.txt"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/spdlog/spdlogConfigVersion.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/spdlog/spdlogConfig.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindThreads.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckLibraryExists.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckIncludeFile.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/spdlog/spdlogConfigTargets.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/spdlog/spdlogConfigTargets-release.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfigVersion.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfig.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/ArrowOptions.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindThreads.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckLibraryExists.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckIncludeFile.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/FindOpenSSLAlt.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindZLIB.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/ArrowTargets.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/ArrowFlight/ArrowFlightConfigVersion.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/ArrowFlight/ArrowFlightConfig.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfigVersion.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/ArrowConfig.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/ArrowOptions.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindThreads.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckLibraryExists.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckIncludeFile.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/FindOpenSSLAlt.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindZLIB.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/Arrow/ArrowTargets.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/ArrowFlight/ArrowFlightTargets.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/ArrowFlight/ArrowFlightTargets-release.cmake"
-		},
-		{
-			"path" : "fpdb-util/CMakeLists.txt"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/fmt/fmt-config-version.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/fmt/fmt-config.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/fmt/fmt-targets.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/fmt/fmt-targets-release.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/spdlog/spdlogConfigVersion.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/spdlog/spdlogConfig.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindThreads.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckLibraryExists.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckIncludeFile.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/spdlog/spdlogConfigTargets.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/spdlog/spdlogConfigTargets-release.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/doctest/doctestConfigVersion.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/doctest/doctestConfig.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/local/lib64/cmake/doctest/doctestTargets.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",

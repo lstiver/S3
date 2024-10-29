@@ -7,7 +7,7 @@ bool compareByTime(const QueryInfo& a, const QueryInfo& b) {
 }
 
 vector<vector<string>> get_query(string file_path){
-  string dbPath = "/data/watdiv1B/index";
+  string dbPath = "/data/dbpedia1B/index";
 
   // 打开levedb
   leveldb::DB* db;
@@ -22,11 +22,12 @@ vector<vector<string>> get_query(string file_path){
   if (file.is_open()) {
     /*这段代码是取出查询列名的*/
     getline(file,line);
+    cout<<line<<endl;
     istringstream stream(line);
     string word;
     if (stream >> word) {// 跳过第一个单词
       while (stream >> word) {// 开始读取剩下的单词
-        column.push_back(word);
+        column.emplace_back(word);
       }
     }
     getline(file, line);
@@ -68,23 +69,23 @@ vector<vector<string>> get_query(string file_path){
             
           }
         }
-        tmp.push_back(word);//存的顺序是subject，predicate，object
+        tmp.emplace_back(word);//存的顺序是subject，predicate，object
         i++;
       }
       string sql;
       if(flag1&&flag2){
         sql = "SELECT * FROM s3object s";
-        tmp.push_back(string());
+        tmp.emplace_back(string());
       } else if(flag1){
         sql = "SELECT s.subject FROM s3object s WHERE s.object = '" + tmp[2] + "'";
-        tmp.push_back(tmp[2]);
+        tmp.emplace_back(tmp[2]);
       } else {
         sql = "SELECT s.subject FROM s3object s WHERE s.subject = '" + tmp[0] + "'";
-        tmp.push_back(tmp[0]);
+        tmp.emplace_back(tmp[0]);
       }
-      tmp.push_back(sql);
+      tmp.emplace_back(sql);
       //存入sql子查询
-      query_result.push_back(tmp);
+      query_result.emplace_back(tmp);
     }
     file.close(); //关闭文件
     delete db;
@@ -96,12 +97,12 @@ vector<vector<string>> get_query(string file_path){
   }
 }
 
-pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket, 
+vector<QueryInfo> getTimeAndCost(const string &bucket, 
                                            const vector<string> & row, 
                                            int index, 
                                            std::shared_ptr<Aws::S3::S3Client> awsClient){
   auto[size,start,end] = getRange(bucket,row[1],row[3],awsClient);
-  int total=0; //用来记录查询totallength
+  size_t total=0; //用来记录查询totallength
   vector<QueryInfo>time_and_cost;
   // 根据获得的size，start，end来估算cost和time
   if(end == 0){
@@ -109,7 +110,6 @@ pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket,
   } else {
     total = end -start;
   }
-  cout<< "totallength" << total <<endl;
   double totallength = static_cast<float>(total)/1024/1024/1024;
 
   QueryInfo query1;
@@ -122,31 +122,31 @@ pair<vector<QueryInfo>, int> getTimeAndCost(const string &bucket,
   query1.time = size * 0.00121138;
   query1.cost = 0;
   query1.index = index;
-  time_and_cost.push_back(query1);
+  time_and_cost.emplace_back(query1);
 
   query1.method= 2;  // Using integer values for keys to represent "s3SelectIndex"
   query1.time = total * 0.00002788;
   query1.cost = totallength * (0.002 + 0.0007) + 0.002 * totallength;
   if (end > 0) {
-      time_and_cost.push_back(query1);
+      time_and_cost.emplace_back(query1);
   }
 
   query1.method= 3;  // Using integer values for keys to represent "s3Select"
   query1.time = size * 0.00005986;
   query1.cost = totallength * 0.0007 + 0.002 * (size / 1024 / 1024 / 1024);
-  time_and_cost.push_back(query1);
+  time_and_cost.emplace_back(query1);
 
   query1.method= 4;  // Using integer values for keys to represent "getObjectByIndex"
   query1.time = total * 0.10003814;
   query1.cost = 0;
   if (end > 0) {
-      time_and_cost.push_back(query1);
+      time_and_cost.emplace_back(query1);
   }
    for (const auto& query : time_and_cost) {
         cout << "key: " << query.method << ", time: " << query.time << ", cost: " << query.cost << ", index: " << query.index << endl;
     }
     cout << "Total: " << total << endl;
-  return make_pair(time_and_cost, total);;
+  return time_and_cost;;
 }
 
 // Function to write a vector of integers to a CSV file

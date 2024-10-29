@@ -891,6 +891,22 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/include/arrow/dataset/type_fwd.h \
   /usr/include/arrow/dataset/visibility.h \
   /usr/include/arrow/filesystem/type_fwd.h \
+  /usr/include/arrow/dataset/api.h \
+  /usr/include/arrow/dataset/discovery.h \
+  /usr/include/arrow/dataset/partition.h \
+  /usr/include/arrow/dataset/file_base.h \
+  /usr/include/arrow/dataset/scanner.h \
+  /usr/include/arrow/dataset/projector.h \
+  /usr/include/arrow/filesystem/filesystem.h \
+  /usr/include/arrow/io/file.h \
+  /usr/include/arrow/dataset/file_csv.h \
+  /usr/include/arrow/dataset/file_json.h \
+  /usr/include/arrow/json/options.h \
+  /usr/include/arrow/json/type_fwd.h \
+  /usr/include/arrow/dataset/file_ipc.h \
+  /usr/include/arrow/dataset/file_orc.h \
+  /usr/include/arrow/dataset/file_parquet.h \
+  /usr/include/arrow/dataset/plan.h \
   /usr/include/arrow/array.h \
   /usr/include/arrow/array/array_binary.h \
   /usr/include/arrow/stl_iterator.h \
@@ -1137,40 +1153,34 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/pstl/execution_defs.h \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  ../parallel-hashmap/parallel_hashmap/phmap.h \
-  /usr/include/c++/11/cmath \
-  /usr/include/math.h \
-  /usr/include/bits/math-vector.h \
-  /usr/include/bits/libm-simd-decl-stubs.h \
-  /usr/include/bits/flt-eval-method.h \
-  /usr/include/bits/fp-logb.h \
-  /usr/include/bits/fp-fast.h \
-  /usr/include/bits/mathcalls-helper-functions.h \
-  /usr/include/bits/mathcalls.h \
-  /usr/include/bits/mathcalls-narrow.h \
-  /usr/include/bits/iscanonical.h \
-  /usr/include/c++/11/bits/specfun.h \
-  /usr/include/c++/11/limits \
-  /usr/include/c++/11/tr1/gamma.tcc \
-  /usr/include/c++/11/tr1/special_function_util.h \
-  /usr/include/c++/11/tr1/bessel_function.tcc \
-  /usr/include/c++/11/tr1/beta_function.tcc \
-  /usr/include/c++/11/tr1/ell_integral.tcc \
-  /usr/include/c++/11/tr1/exp_integral.tcc \
-  /usr/include/c++/11/tr1/hypergeometric.tcc \
-  /usr/include/c++/11/tr1/legendre_function.tcc \
-  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
-  /usr/include/c++/11/tr1/poly_hermite.tcc \
-  /usr/include/c++/11/tr1/poly_laguerre.tcc \
-  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../leveldb/include/leveldb/db.h \
+  ../leveldb/include/leveldb/export.h \
+  ../leveldb/include/leveldb/iterator.h \
+  ../leveldb/include/leveldb/slice.h \
+  /usr/include/c++/11/cassert \
+  /usr/include/assert.h \
+  /usr/include/c++/11/cstddef \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
+  ../leveldb/include/leveldb/status.h \
+  ../leveldb/include/leveldb/options.h \
+  ../translate/translate.h \
+  /usr/include/c++/11/regex \
+  /usr/include/c++/11/bitset \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/c++/11/ctime \
+  /usr/include/c++/11/x86_64-amazon-linux/bits/time_members.h \
+  /usr/include/c++/11/x86_64-amazon-linux/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
   /usr/include/c++/11/bits/align.h \
   /usr/include/c++/11/bit \
-  /usr/include/c++/11/bits/unique_ptr.h \
   /usr/include/c++/11/bits/shared_ptr.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -1180,58 +1190,6 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
-  /usr/include/c++/11/cassert \
-  /usr/include/assert.h \
-  /usr/include/c++/11/atomic \
-  ../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
-  /usr/include/c++/11/mutex \
-  /usr/include/c++/11/chrono \
-  /usr/include/c++/11/ratio \
-  /usr/include/c++/11/ctime \
-  /usr/include/c++/11/bits/parse_numbers.h \
-  /usr/include/c++/11/bits/std_mutex.h \
-  /usr/include/c++/11/bits/unique_lock.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_utils.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_bits.h \
-  /usr/include/byteswap.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_config.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
-  /usr/include/limits.h \
-  /usr/include/bits/posix1_lim.h \
-  /usr/include/bits/local_lim.h \
-  /usr/include/linux/limits.h \
-  /usr/include/bits/posix2_lim.h \
-  /usr/include/bits/xopen_lim.h \
-  /usr/include/bits/uio_lim.h \
-  /usr/include/c++/11/cstddef \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
-  /usr/include/c++/11/stdlib.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_base.h \
-  /usr/include/c++/11/shared_mutex \
-  /usr/include/c++/11/optional \
-  ../leveldb/include/leveldb/db.h \
-  ../leveldb/include/leveldb/export.h \
-  ../leveldb/include/leveldb/iterator.h \
-  ../leveldb/include/leveldb/slice.h \
-  ../leveldb/include/leveldb/status.h \
-  ../leveldb/include/leveldb/options.h \
-  ../translate/translate.h \
-  /usr/include/c++/11/regex \
-  /usr/include/c++/11/bitset \
-  /usr/include/c++/11/locale \
-  /usr/include/c++/11/bits/locale_facets_nonio.h \
-  /usr/include/c++/11/x86_64-amazon-linux/bits/time_members.h \
-  /usr/include/c++/11/x86_64-amazon-linux/bits/messages_members.h \
-  /usr/include/libintl.h \
-  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
-  /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
   /usr/include/c++/11/stack \
@@ -1257,10 +1215,18 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/thread \
   /usr/include/c++/11/bits/std_thread.h \
   /usr/include/c++/11/bits/this_thread_sleep.h \
+  /usr/include/c++/11/chrono \
+  /usr/include/c++/11/ratio \
+  /usr/include/c++/11/limits \
+  /usr/include/c++/11/bits/parse_numbers.h \
+  /usr/include/c++/11/mutex \
+  /usr/include/c++/11/bits/std_mutex.h \
+  /usr/include/c++/11/bits/unique_lock.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/future \
   /usr/include/c++/11/condition_variable \
+  /usr/include/c++/11/atomic \
   /usr/include/c++/11/bits/atomic_futex.h \
   ../queryMethod/query.h \
   /usr/local/include/spdlog/spdlog.h \
@@ -1270,9 +1236,42 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/local/include/spdlog/fmt/fmt.h \
   /usr/local/include/spdlog/fmt/bundled/core.h \
   /usr/local/include/spdlog/fmt/bundled/format.h \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-logb.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/mathcalls-narrow.h \
+  /usr/include/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
   /usr/local/include/spdlog/fmt/bundled/core.h \
   /usr/local/include/spdlog/fmt/bundled/format-inl.h \
   /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
+  /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h \
+  /usr/include/bits/uio_lim.h \
   /usr/local/include/spdlog/fmt/bundled/format.h \
   /usr/local/include/spdlog/common-inl.h \
   /usr/local/include/spdlog/details/registry.h \
@@ -1360,6 +1359,7 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/stdbool.h \
   /usr/local/include/aws/common/stdint.h \
   /usr/local/include/aws/common/assert.h \
+  /usr/include/c++/11/stdlib.h \
   /usr/local/include/aws/common/error.h \
   /usr/local/include/aws/common/package.h \
   /usr/local/include/aws/common/error.inl \
@@ -1775,6 +1775,7 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/array/array_base.h \
   /usr/include/arrow/array/data.h \
   /usr/include/arrow/buffer.h \
+  /usr/include/c++/11/optional \
   /usr/include/arrow/device.h \
   /usr/include/arrow/io/type_fwd.h \
   /usr/include/arrow/type_fwd.h \
@@ -1876,6 +1877,21 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/util/compression.h \
   ../sort/sort.h \
   ../algorithm/merge.h \
+  ../parallel-hashmap/parallel_hashmap/phmap.h \
+  ../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
+  ../parallel-hashmap/parallel_hashmap/phmap_utils.h \
+  ../parallel-hashmap/parallel_hashmap/phmap_bits.h \
+  /usr/include/byteswap.h \
+  ../parallel-hashmap/parallel_hashmap/phmap_config.h \
+  /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
+  /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
+  /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
+  /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
+  /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
+  /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
+  /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
+  ../parallel-hashmap/parallel_hashmap/phmap_base.h \
+  /usr/include/c++/11/shared_mutex \
   /usr/include/arrow/acero/exec_plan.h \
   /usr/include/arrow/acero/type_fwd.h \
   /usr/include/arrow/compute/type_fwd.h \
@@ -1938,7 +1954,22 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/dataset/type_fwd.h \
   /usr/include/arrow/dataset/visibility.h \
   /usr/include/arrow/filesystem/type_fwd.h \
-  ../translate/ThreadPool.h \
+  /usr/include/arrow/dataset/api.h \
+  /usr/include/arrow/dataset/discovery.h \
+  /usr/include/arrow/dataset/partition.h \
+  /usr/include/arrow/dataset/file_base.h \
+  /usr/include/arrow/dataset/scanner.h \
+  /usr/include/arrow/dataset/projector.h \
+  /usr/include/arrow/filesystem/filesystem.h \
+  /usr/include/arrow/dataset/file_csv.h \
+  /usr/include/arrow/dataset/file_json.h \
+  /usr/include/arrow/json/options.h \
+  /usr/include/arrow/json/type_fwd.h \
+  /usr/include/arrow/dataset/file_ipc.h \
+  /usr/include/arrow/dataset/file_orc.h \
+  /usr/include/arrow/dataset/file_parquet.h \
+  /usr/include/arrow/dataset/plan.h \
+  ../algorithm/order.h \
   /usr/local/include/aws/core/Aws.h \
   /usr/local/include/aws/core/utils/logging/CRTLogSystem.h \
   /usr/local/include/aws/core/utils/logging/DefaultCRTLogSystem.h \
@@ -2749,22 +2780,6 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: ../queryMethod/query.cpp \
   /usr/local/include/aws/s3/model/JSONInput.h \
   /usr/local/include/aws/s3/model/JSONType.h \
   /usr/local/include/aws/s3/model/ParquetInput.h \
-  ../parallel-hashmap/parallel_hashmap/phmap.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_utils.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_bits.h \
-  /usr/include/byteswap.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_config.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_base.h \
-  /usr/include/c++/11/shared_mutex \
-  /usr/include/c++/11/optional \
   /usr/local/include/aws/s3/model/SelectObjectContentRequest.h \
   /usr/local/include/aws/s3/model/SelectObjectContentHandler.h \
   /usr/local/include/aws/core/utils/HashingUtils.h \
@@ -2793,6 +2808,7 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: ../queryMethod/query.cpp \
   /usr/include/arrow/array/array_base.h \
   /usr/include/arrow/array/data.h \
   /usr/include/arrow/buffer.h \
+  /usr/include/c++/11/optional \
   /usr/include/arrow/device.h \
   /usr/include/arrow/io/type_fwd.h \
   /usr/include/arrow/type_fwd.h \
@@ -3216,7 +3232,14 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: ../sort/sort.cpp \
   /usr/include/c++/11/cstddef \
   ../leveldb/include/leveldb/status.h \
   ../leveldb/include/leveldb/options.h \
-  ../parallel-hashmap/parallel_hashmap/phmap.h \
+  ../queryMethod/query.h \
+  /usr/local/include/spdlog/spdlog.h \
+  /usr/local/include/spdlog/common.h \
+  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/local/include/spdlog/tweakme.h \
+  /usr/local/include/spdlog/fmt/fmt.h \
+  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/local/include/spdlog/fmt/bundled/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/bits/math-vector.h \
@@ -3241,11 +3264,9 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: ../sort/sort.cpp \
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  ../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_utils.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_bits.h \
-  /usr/include/byteswap.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_config.h \
+  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/local/include/spdlog/fmt/bundled/format-inl.h \
+  /usr/include/c++/11/climits \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -3255,28 +3276,6 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: ../sort/sort.cpp \
   /usr/include/bits/posix2_lim.h \
   /usr/include/bits/xopen_lim.h \
   /usr/include/bits/uio_lim.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
-  /usr/include/c++/11/stdlib.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_base.h \
-  /usr/include/c++/11/shared_mutex \
-  /usr/include/c++/11/optional \
-  ../queryMethod/query.h \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format-inl.h \
-  /usr/include/c++/11/climits \
   /usr/local/include/spdlog/fmt/bundled/format.h \
   /usr/local/include/spdlog/common-inl.h \
   /usr/local/include/spdlog/details/registry.h \
@@ -3364,6 +3363,7 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: ../sort/sort.cpp \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/stdbool.h \
   /usr/local/include/aws/common/stdint.h \
   /usr/local/include/aws/common/assert.h \
+  /usr/include/c++/11/stdlib.h \
   /usr/local/include/aws/common/error.h \
   /usr/local/include/aws/common/package.h \
   /usr/local/include/aws/common/error.inl \
@@ -3782,6 +3782,7 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: ../sort/sort.cpp \
   /usr/include/arrow/array/array_base.h \
   /usr/include/arrow/array/data.h \
   /usr/include/arrow/buffer.h \
+  /usr/include/c++/11/optional \
   /usr/include/arrow/device.h \
   /usr/include/arrow/io/type_fwd.h \
   /usr/include/arrow/type_fwd.h \
@@ -4174,7 +4175,14 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
   /usr/include/c++/11/cstddef \
   ../leveldb/include/leveldb/status.h \
   ../leveldb/include/leveldb/options.h \
-  ../parallel-hashmap/parallel_hashmap/phmap.h \
+  ../queryMethod/query.h \
+  /usr/local/include/spdlog/spdlog.h \
+  /usr/local/include/spdlog/common.h \
+  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/local/include/spdlog/tweakme.h \
+  /usr/local/include/spdlog/fmt/fmt.h \
+  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/local/include/spdlog/fmt/bundled/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/bits/math-vector.h \
@@ -4199,11 +4207,9 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  ../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_utils.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_bits.h \
-  /usr/include/byteswap.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_config.h \
+  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/local/include/spdlog/fmt/bundled/format-inl.h \
+  /usr/include/c++/11/climits \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/limits.h \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -4213,28 +4219,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
   /usr/include/bits/posix2_lim.h \
   /usr/include/bits/xopen_lim.h \
   /usr/include/bits/uio_lim.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
-  /usr/include/c++/11/stdlib.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_base.h \
-  /usr/include/c++/11/shared_mutex \
-  /usr/include/c++/11/optional \
-  ../queryMethod/query.h \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format-inl.h \
-  /usr/include/c++/11/climits \
   /usr/local/include/spdlog/fmt/bundled/format.h \
   /usr/local/include/spdlog/common-inl.h \
   /usr/local/include/spdlog/details/registry.h \
@@ -4322,6 +4306,7 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
   /usr/lib/gcc/x86_64-amazon-linux/11/include/stdbool.h \
   /usr/local/include/aws/common/stdint.h \
   /usr/local/include/aws/common/assert.h \
+  /usr/include/c++/11/stdlib.h \
   /usr/local/include/aws/common/error.h \
   /usr/local/include/aws/common/package.h \
   /usr/local/include/aws/common/error.inl \
@@ -4740,6 +4725,7 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
   /usr/include/arrow/array/array_base.h \
   /usr/include/arrow/array/data.h \
   /usr/include/arrow/buffer.h \
+  /usr/include/c++/11/optional \
   /usr/include/arrow/device.h \
   /usr/include/arrow/io/type_fwd.h \
   /usr/include/arrow/type_fwd.h \
@@ -4861,11 +4847,7 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/local/include/aws/core/Aws.h:
 
-../translate/ThreadPool.h:
-
 ../sort/sort.h:
-
-/usr/include/arrow/io/file.h:
 
 /usr/local/include/aws/s3/model/CSVOutput.h:
 
@@ -4892,6 +4874,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/s3/model/FileHeaderInfo.h:
 
 /usr/local/include/aws/s3/model/CSVInput.h:
+
+../algorithm/order.h:
 
 /usr/local/include/aws/s3/model/InputSerialization.h:
 
@@ -4973,8 +4957,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/local/include/aws/s3/model/Payer.h:
 
-/usr/local/include/aws/s3/model/DeleteMarkerReplicationStatus.h:
-
 /usr/local/include/aws/s3/model/MetricsStatus.h:
 
 /usr/local/include/aws/s3/model/Metrics.h:
@@ -5029,8 +5011,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/local/include/aws/s3/model/TargetObjectKeyFormat.h:
 
-/usr/local/include/aws/s3/model/GetBucketLoggingResult.h:
-
 /usr/local/include/aws/s3/model/GetBucketLocationResult.h:
 
 /usr/local/include/aws/s3/model/NoncurrentVersionTransition.h:
@@ -5058,8 +5038,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/s3/model/GetBucketIntelligentTieringConfigurationResult.h:
 
 /usr/local/include/aws/s3/model/ServerSideEncryptionByDefault.h:
-
-/usr/local/include/aws/s3/model/ServerSideEncryptionConfiguration.h:
 
 /usr/local/include/aws/s3/model/GetBucketEncryptionResult.h:
 
@@ -5118,8 +5096,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/core/client/AsyncCallerContext.h:
 
 /usr/local/include/aws/crt/Variant.h:
-
-/usr/local/include/smithy/identity/identity/AwsIdentity.h:
 
 /usr/local/include/aws/core/utils/Cache.h:
 
@@ -5417,6 +5393,32 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 ../main.cpp:
 
+/usr/include/arrow/dataset/plan.h:
+
+/usr/local/include/smithy/identity/identity/AwsIdentity.h:
+
+/usr/include/arrow/dataset/file_parquet.h:
+
+/usr/local/include/aws/s3/model/GetBucketLoggingResult.h:
+
+/usr/include/arrow/dataset/file_orc.h:
+
+/usr/local/include/aws/s3/model/ServerSideEncryptionConfiguration.h:
+
+/usr/include/arrow/json/options.h:
+
+/usr/include/arrow/dataset/file_json.h:
+
+/usr/include/arrow/dataset/file_csv.h:
+
+/usr/include/arrow/io/file.h:
+
+/usr/include/arrow/filesystem/filesystem.h:
+
+/usr/local/include/aws/s3/model/DeleteMarkerReplicationStatus.h:
+
+/usr/include/arrow/dataset/scanner.h:
+
 /usr/local/include/aws/s3/model/Redirect.h:
 
 /usr/include/arrow/filesystem/type_fwd.h:
@@ -5453,6 +5455,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/local/include/aws/s3/model/SelectObjectContentHandler.h:
 
+/usr/include/arrow/dataset/discovery.h:
+
 /usr/include/arrow/ipc/dictionary.h:
 
 /usr/include/c++/11/bits/regex_scanner.h:
@@ -5466,6 +5470,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/arrow/io/memory.h:
 
 /usr/include/arrow/csv/writer.h:
+
+/usr/include/arrow/dataset/file_ipc.h:
 
 /usr/include/arrow/csv/invalid_row.h:
 
@@ -5657,6 +5663,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/local/include/aws/s3/model/DeleteObjectResult.h:
 
+/usr/include/arrow/json/type_fwd.h:
+
 /usr/include/c++/11/ext/concurrence.h:
 
 /usr/local/include/aws/s3/model/ListBucketsRequest.h:
@@ -5800,6 +5808,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/c++/11/bits/uses_allocator.h:
 
 /usr/include/arrow/io/interfaces.h:
+
+/usr/include/arrow/dataset/api.h:
 
 /usr/include/c++/11/bits/unique_lock.h:
 
@@ -6471,6 +6481,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/tr1/poly_laguerre.tcc:
 
+/usr/include/arrow/dataset/projector.h:
+
 /usr/include/c++/11/bits/std_mutex.h:
 
 /usr/local/include/aws/s3/model/IntelligentTieringStatus.h:
@@ -6711,6 +6723,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/chrono:
 
+/usr/include/arrow/dataset/partition.h:
+
 /usr/include/c++/11/ctime:
 
 /usr/local/include/aws/io/channel_bootstrap.h:
@@ -6718,6 +6732,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/s3/model/RecordsEvent.h:
 
 /usr/local/include/aws/s3/model/ObjectLockLegalHoldStatus.h:
+
+/usr/include/arrow/dataset/file_base.h:
 
 /usr/include/c++/11/sstream:
 

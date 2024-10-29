@@ -6,13 +6,12 @@
 #include <algorithm>
 #include <iterator>
 #include <functional>
-#include <parallel_hashmap/phmap.h>
 #include <leveldb/db.h>
 #include "translate.h"
 #include "sort.h"
 #include "query.h"
 #include "merge.h"
-#include "ThreadPool.h"
+#include "order.h"
 #include <chrono>
 #include <memory>
 #include <aws/core/Aws.h>
@@ -26,14 +25,13 @@ using chrono::milliseconds;
 using namespace Aws::S3;
 using namespace Aws::S3::Model;
 using namespace std;
-using phmap::flat_hash_map;
 
-void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient);
+void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient);
 int index_ = 0;
 vector<string>col1;
 vector<string>col2;
-const string bucket = "watdiv1b";
-int totalTime = 458700;  // 最大时间
+const string bucket = "dbpedia1000";
+int totalTime = 45870000;  // 最大时间
 
 int main() {
   string str;
@@ -51,7 +49,7 @@ int main() {
       if(str == "exit") {
         break;
       }
-      test(str, s3Client);
+      ExeQuery(str, s3Client);
    }
    Aws::ShutdownAPI(options);
    spdlog::info("S3 Client连接断开,结束程序");
@@ -104,8 +102,8 @@ int main() {
   return 0;
 }
 
-void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
-  const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".txt";
+void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
+  const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".rq";
   // const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
   high_resolution_clock::time_point beginTime = high_resolution_clock::now();
 
@@ -114,17 +112,17 @@ void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
   int index = 0;
   vector<vector<QueryInfo>>selectQuery;
   for (const auto& row : query_result) {
-    auto[timeAndCost,tmp] = getTimeAndCost(bucket, row, index,awsClient);
-    selectQuery.push_back(timeAndCost);
+    auto timeAndCost = getTimeAndCost(bucket, row, index,awsClient);
+    selectQuery.emplace_back(std::move(timeAndCost));
     index++;
     cout <<"第"<<index<<"个子查询"<<endl;
   }
   //计算排列组合所有的可能情况
-  auto perms = Descarte(selectQuery);
+  auto perms = Descarte(std::move(selectQuery));
 
   double Cost = numeric_limits<double>::infinity();
   bool timeflag = false;
-  vector<QueryInfo>* min = nullptr;
+  unique_ptr<vector<QueryInfo>> min = nullptr;
   // 计算每种组合的总时间和总成本，选择小于totaltime的组合中cost最少的组合
   for (auto& perm : perms) {
     double queryTime = 0;
@@ -143,28 +141,23 @@ void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
       timeflag = true;
       if(queryCost <= Cost){
         Cost = queryCost;
-        min = &perm;
+        min = make_unique<vector<QueryInfo>>(std::move(perm));
       }
     }
   }
-  // sort(min->begin(), min->end(), compareByTime);
+  sort(min->begin(), min->end(), compareByTime);
+  getOrder(min);
   
   shared_ptr<arrow::Table> result;
   set<string> tag;
+  string subject,object;
   if (timeflag) {
     index_ = 0;
     if (min != nullptr) {
       for (const auto& it : *min){
         cout<<"==================================query"<<index_<<"=================================="<<endl;
-        // cout<<"index:"<<it.index<<endl;
-        // cout<<"func:"<<it.method<<endl;
-        // cout<<"time:"<<it.time<<endl;
-        // cout<<"cost:"<<it.cost<<endl;
-        string subject = it.subject;
-        string object = it.object;
-        // cout<<subject<<endl;
-        // cout<<object<<endl;
-        // cout<<it.size<<endl;
+        subject = it.subject;
+        object = it.object;
 
         if(subject.find("?") != string::npos && tag.count(subject) > 0){
             col1.emplace_back(subject);
@@ -211,6 +204,7 @@ void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
         index_++;
         if(subject.find("?") != string::npos && tag.count(subject) == 0){
           tag.insert(subject);
+          
         }
         if(object.find("?") != string::npos && tag.count(object)==0){
           tag.insert(object);
@@ -224,6 +218,14 @@ void test(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
       cout << "No valid combinations found" << endl;
   }
 
+  if(index_ == 1) {
+    if(subject.find("?") == string::npos) {
+      result = filter(result,subject,object);
+    } else if(object.find("?") == string::npos){
+      result = filter(result,object,subject);
+    }
+  }
+  spdlog::info("Numbers of result: {}", result->num_rows());
   high_resolution_clock::time_point endTime = high_resolution_clock::now();
   milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - beginTime);
   cout<<"总耗时："<<timeInterval.count()<<"ms"<<endl;

@@ -29,7 +29,12 @@
 #include <arrow/util/thread_pool.h>
 #include <arrow/util/vector.h>
 #include <arrow/dataset/dataset.h>
+#include <arrow/dataset/api.h>
+#include <arrow/dataset/plan.h>
+#include <arrow/dataset/scanner.h>
+#include <arrow/dataset/file_base.h>
 #include <arrow/result.h>
+#include <arrow/dataset/scanner.h>
 #include <memory>
 #include <utility>
 using namespace std;
@@ -45,4 +50,7 @@ shared_ptr<arrow::Table> merge(shared_ptr<arrow::Table> dataA,
                                const vector<string>& col1,
                                const std::vector<string>& col2);
 
+shared_ptr<arrow::Table> filter(shared_ptr<arrow::Table> table, 
+                                string col1,
+                                string col2);
 #endif

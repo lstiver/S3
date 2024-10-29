@@ -367,7 +367,19 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: \
  /usr/include/arrow/util/logging.h /usr/include/arrow/dataset/dataset.h \
  /usr/include/arrow/dataset/type_fwd.h \
  /usr/include/arrow/dataset/visibility.h \
- /usr/include/arrow/filesystem/type_fwd.h /usr/include/arrow/array.h \
+ /usr/include/arrow/filesystem/type_fwd.h \
+ /usr/include/arrow/dataset/api.h /usr/include/arrow/dataset/discovery.h \
+ /usr/include/arrow/dataset/partition.h \
+ /usr/include/arrow/dataset/file_base.h \
+ /usr/include/arrow/dataset/scanner.h \
+ /usr/include/arrow/dataset/projector.h \
+ /usr/include/arrow/filesystem/filesystem.h /usr/include/arrow/io/file.h \
+ /usr/include/arrow/dataset/file_csv.h \
+ /usr/include/arrow/dataset/file_json.h /usr/include/arrow/json/options.h \
+ /usr/include/arrow/json/type_fwd.h /usr/include/arrow/dataset/file_ipc.h \
+ /usr/include/arrow/dataset/file_orc.h \
+ /usr/include/arrow/dataset/file_parquet.h \
+ /usr/include/arrow/dataset/plan.h /usr/include/arrow/array.h \
  /usr/include/arrow/array/array_binary.h \
  /usr/include/arrow/stl_iterator.h \
  /usr/include/arrow/array/array_decimal.h \

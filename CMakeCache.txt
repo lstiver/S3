@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//No help, variable specified on the command line.
+ARROW_ACERO:UNINITIALIZED=ON
+
+//No help, variable specified on the command line.
+ARROW_DATASET:UNINITIALIZED=ON
+
 //Path to a file.
 AWSSDK_CORE_HEADER_FILE:FILEPATH=/usr/local/include/aws/core/Aws.h
 
@@ -25,6 +31,9 @@ AWSSDK_DIR:PATH=/usr/local/lib64/cmake/AWSSDK
 
 //The directory containing a CMake configuration file for ArrowAcero.
 ArrowAcero_DIR:PATH=/usr/lib64/cmake/ArrowAcero
+
+//The directory containing a CMake configuration file for ArrowDataset.
+ArrowDataset_DIR:PATH=/usr/lib64/cmake/ArrowDataset
 
 //The directory containing a CMake configuration file for ArrowFlight.
 ArrowFlight_DIR:PATH=/usr/local/lib64/cmake/ArrowFlight
@@ -780,7 +789,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -7,13 +7,13 @@ using namespace std;
 
 int main() {
     // 打开 CSV 文件
-    std::ifstream file("/data/watdiv1B/conversion_index.csv");
+    std::ifstream file("/data/dbpedia1B/conversion_index.csv");
     if (!file.is_open()) {
         std::cerr << "无法打开文件!" << std::endl;
         return -1;
     }
 
-    string dbPath = "/data/watdiv1B/index";
+    string dbPath = "/data/dbpedia1B/index";
 
     // 打开levedb
     leveldb::DB* db;

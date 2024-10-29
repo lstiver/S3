@@ -36,10 +36,6 @@ std::shared_ptr<arrow::Table> merge(
     const std::vector<std::string>& col2) 
 {
     auto start_time = std::chrono::high_resolution_clock::now();
-    // std::cout << "dataA schema: " << dataA->schema()->ToString() << std::endl;
-    // std::cout << "dataB schema: " << dataB->schema()->ToString() << std::endl;
-    // std::cout << "dataA num_rows: " << dataA->num_rows() << std::endl;
-    // std::cout << "dataB num_rows: " << dataB->num_rows() << std::endl;
     std::vector<arrow::FieldRef> last_left_refs;
     arrow::compute::Expression filter_condition = arrow::compute::literal(true);
     for (int i = 0; i < dataA->schema()->num_fields(); ++i) {
@@ -47,7 +43,7 @@ std::shared_ptr<arrow::Table> merge(
         if(col_name.find("?") == string::npos) {
             filter_condition = arrow::compute::equal(
             arrow::compute::field_ref(col_name),
-            arrow::compute::literal(std::stoi(col_name))
+            arrow::compute::literal((static_cast<size_t>(std::stoull(col_name))))
             );
         } else {
             last_left_refs.emplace_back(arrow::FieldRef(col_name));
@@ -81,10 +77,17 @@ std::shared_ptr<arrow::Table> merge(
             // std::cout << "Right column: " << col_name << std::endl;
             continue;
         } else if(col_name.find("?") == string::npos) {
-            filter_condition = arrow::compute::equal(
-            arrow::compute::field_ref(col_name),
-            arrow::compute::literal(std::stoi(col_name))
+            // 创建新的条件
+            auto new_condition = arrow::compute::equal(
+                arrow::compute::field_ref(col_name),
+                arrow::compute::literal(static_cast<size_t>(std::stoull(col_name)))
             );
+            // 判断 `filter_condition` 是否为初始的 `true`，然后直接设置或合并
+            if (filter_condition.Equals(arrow::compute::literal(true))) {
+                filter_condition = new_condition;
+            } else {
+                filter_condition = arrow::compute::and_(filter_condition, new_condition);
+            }
         } else {
             last_right_refs.emplace_back(arrow::FieldRef(col_name));
         }
@@ -121,5 +124,36 @@ std::shared_ptr<arrow::Table> merge(
     auto end_time = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
     spdlog::info("merge用时 {} ms", duration.count());
+    return response_table;
+}
+shared_ptr<arrow::Table> filter(shared_ptr<arrow::Table> table, 
+                                string col1,
+                                string col2)
+{
+    arrow::dataset::internal::Initialize();
+    auto dataset = std::make_shared<arrow::dataset::InMemoryDataset>(table);
+    auto options = std::make_shared<arrow::dataset::ScanOptions>();
+    cp::Expression filter_expr = arrow::compute::equal(
+                arrow::compute::field_ref(col1),
+                arrow::compute::literal(static_cast<size_t>(std::stoull(col1)))
+            );
+    options->filter = filter_expr;
+    options->projection = cp::project({arrow::compute::field_ref(col2)}, {col2});
+    auto scan_node_options = arrow::dataset::ScanNodeOptions{dataset, options};
+    arrow::acero::Declaration scan{"scan", std::move(scan_node_options)};
+    spdlog::info("scan declaration.");
+
+    ac::Declaration filter{
+      "filter", {std::move(scan)}, ac::FilterNodeOptions(std::move(filter_expr))};
+
+    arrow::Result<std::shared_ptr<arrow::Table>> status = arrow::acero::DeclarationToTable(std::move(filter));
+    // 检查是否成功
+    if (!status.ok()) {
+        spdlog::error("Error during filter: {}", status.status().ToString());
+        return nullptr;
+    }
+    std::shared_ptr<arrow::Table> response_table = status.ValueOrDie();
+    spdlog::info("Number of rows: {}", response_table->num_rows());
+    // std::cout << "result schema: " << response_table->schema()->ToString() << std::endl;
     return response_table;
 }

@@ -46,8 +46,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ec2-user/s3/S3C++/build/leveldb/cmake_install.cmake")
   include("/home/ec2-user/s3/S3C++/build/parallel-hashmap/cmake_install.cmake")
-  include("/home/ec2-user/s3/S3C++/build/fpdb-aws/cmake_install.cmake")
-  include("/home/ec2-user/s3/S3C++/build/fpdb-util/cmake_install.cmake")
 
 endif()
 
