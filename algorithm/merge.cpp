@@ -35,6 +35,15 @@ std::shared_ptr<arrow::Table> merge(
     const std::vector<std::string>& col1,
     const std::vector<std::string>& col2) 
 {
+    std::cout << "dataA address: " << dataA.get() << std::endl;
+std::cout << "dataB address: " << dataB.get() << std::endl;
+
+    if(!dataA || !dataB) {
+        spdlog::debug("结果为空");
+        return nullptr;
+    }
+    // std::cout << "last schema: " << dataA->schema()->ToString() << std::endl;
+    // std::cout << "new schema: " << dataB->schema()->ToString() << std::endl;
     auto start_time = std::chrono::high_resolution_clock::now();
     std::vector<arrow::FieldRef> last_left_refs;
     arrow::compute::Expression filter_condition = arrow::compute::literal(true);
@@ -47,6 +56,7 @@ std::shared_ptr<arrow::Table> merge(
             );
         } else {
             last_left_refs.emplace_back(arrow::FieldRef(col_name));
+            // cout<<"last_col:"<<col_name<<endl;
         }
     }
 
@@ -90,6 +100,7 @@ std::shared_ptr<arrow::Table> merge(
             }
         } else {
             last_right_refs.emplace_back(arrow::FieldRef(col_name));
+            // cout<<"last_col:"<<col_name<<endl;
         }
     }
     

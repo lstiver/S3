@@ -7,13 +7,17 @@ bool compareByTime(const QueryInfo& a, const QueryInfo& b) {
 }
 
 vector<vector<string>> get_query(string file_path){
-  string dbPath = "/data/dbpedia1B/index";
+  string dbPath = "/data/watdiv1B/index";
 
   // 打开levedb
   leveldb::DB* db;
   leveldb::Options options;
   options.create_if_missing = false;
   leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
+  if (db == nullptr) {
+    spdlog::error("Database object is null.");
+    exit(1);
+}
   ifstream file(file_path);
   string line;
   vector<string> column;
@@ -22,7 +26,6 @@ vector<vector<string>> get_query(string file_path){
   if (file.is_open()) {
     /*这段代码是取出查询列名的*/
     getline(file,line);
-    cout<<line<<endl;
     istringstream stream(line);
     string word;
     if (stream >> word) {// 跳过第一个单词

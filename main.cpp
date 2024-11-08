@@ -30,7 +30,7 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient);
 int index_ = 0;
 vector<string>col1;
 vector<string>col2;
-const string bucket = "dbpedia1000";
+const string bucket = "watdiv1b";
 int totalTime = 45870000;  // 最大时间
 
 int main() {
@@ -102,8 +102,28 @@ int main() {
   return 0;
 }
 
+arrow::Status WriteTableToCSV(const std::shared_ptr<arrow::Table>& table, const std::string& file_path) {
+    // 创建输出文件流
+    auto output_file = arrow::io::FileOutputStream::Open(file_path);
+    if (!output_file.ok()) {
+        return output_file.status();
+    }
+
+    // 创建 CSV Writer
+    auto write_options = arrow::csv::WriteOptions::Defaults();
+    ARROW_ASSIGN_OR_RAISE(auto writer,
+                          arrow::csv::MakeCSVWriter(*output_file, table->schema(), write_options));
+
+    // 写入 Table 数据到 CSV
+    ARROW_RETURN_NOT_OK(writer->WriteTable(*table));
+    ARROW_RETURN_NOT_OK(writer->Close());
+    ARROW_RETURN_NOT_OK(output_file.ValueOrDie()->Close());
+
+    return arrow::Status::OK();
+}
+
 void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
-  const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".rq";
+  const string file_path = "/home/ec2-user/s3/S3C++/queries/new_query/" + query_name + ".txt";
   // const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
   high_resolution_clock::time_point beginTime = high_resolution_clock::now();
 
@@ -151,6 +171,7 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
   shared_ptr<arrow::Table> result;
   set<string> tag;
   string subject,object;
+  bool flag = false;
   if (timeflag) {
     index_ = 0;
     if (min != nullptr) {
@@ -184,9 +205,11 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
             auto temp = getObject(bucket, keyName, awsClient, col2, it.size);
             if(index_ == 0){
               result = temp;
+              flag = true;
             } else {
               result = merge(result, temp, col1,col2);
             }
+            spdlog::info("Numbers of result: {}", result->num_rows());
           high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
           milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
           cout<<"getObject总耗时："<<overallTime.count()<<"ms"<<endl;
@@ -194,13 +217,34 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
           }
           case 2://s3SelectIndex
             break;
-          case 3://s3Select
+          //s3Select
+          case 3:{
+            // high_resolution_clock::time_point begin = high_resolution_clock::now();
+            keyName = it.keyName +".csv"; //排序后这里要修改
+            cout<<"第"<<index_+1<<"个查询"<<keyName<<endl;
+            auto temp = s3Select(bucket, keyName, awsClient, col2);
+            // 使用迭代器循环删除不包含'?'的元素
+            if(index_ == 0){
+              result = temp;
+            } else {
+              for (auto it = col2.begin(); it != col2.end();) {
+                 if (*it != "subject" && *it != "object" && it->find("?") == std::string::npos) {
+                  it = col2.erase(it);  // 删除元素并更新迭代器
+                } else {
+                  ++it;  // 如果符合条件移动到下一个元素
+                }
+              }
+              result = merge(result, temp, col1,col2);
+            }
             break;
+          }
           case 4://getObjectByIndex
             break;
           default:
             spdlog::error("query",index,"Error!");
         }
+        string write_path = "../res/"+ to_string(index_) + ".csv";
+        // auto status = WriteTableToCSV(result, write_path);
         index_++;
         if(subject.find("?") != string::npos && tag.count(subject) == 0){
           tag.insert(subject);
@@ -218,14 +262,18 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
       cout << "No valid combinations found" << endl;
   }
 
-  if(index_ == 1) {
+  if(index_ == 1 && flag) {
     if(subject.find("?") == string::npos) {
       result = filter(result,subject,object);
     } else if(object.find("?") == string::npos){
       result = filter(result,object,subject);
     }
   }
-  spdlog::info("Numbers of result: {}", result->num_rows());
+  int number = 0;
+  if(result != nullptr) {
+    number = result->num_rows();
+  }
+  spdlog::info("Numbers of result: {}", number);
   high_resolution_clock::time_point endTime = high_resolution_clock::now();
   milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - beginTime);
   cout<<"总耗时："<<timeInterval.count()<<"ms"<<endl;

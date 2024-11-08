@@ -39,8 +39,8 @@ using namespace Aws::S3;
 using namespace Aws::S3::Model;
 using namespace std;
 
-void s3Select(const string &bucket, const string &key, const string &query);
-void s3SelectIndex(const string &bucket, const string &key, const string &query);
+static const int CSV_READER_BUFFER_SIZE = 128 * 1024;
+
 shared_ptr<arrow::Table> getObject(
     const string &bucket, 
     const string &key, 
@@ -48,6 +48,12 @@ shared_ptr<arrow::Table> getObject(
     const vector<string> & col,
     size_t length);
     
+shared_ptr<arrow::Table> s3Select(
+    const string &bucket, 
+    const string &key, 
+    shared_ptr<Aws::S3::S3Client> awsClient,
+    const vector<string> & col);
+
 array<size_t, 3> getRange(const string &bucket, 
                        const string &key,
                        const string &parsed_conditions,
