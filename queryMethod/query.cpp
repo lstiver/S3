@@ -1,13 +1,4 @@
 #include "query.h" 
-#include <aws/core/Aws.h>
-#include <aws/transfer/TransferManager.h>
-#include <aws/transfer/TransferHandle.h>
-#include <aws/s3/S3Client.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/stream/PreallocatedStreamBuf.h>
-#include <aws/core/utils/Array.h>
-using namespace Aws::Utils;
-using namespace Aws::Transfer;
 
 Aws::S3::Model::InputSerialization getInputSerialization() {
     Aws::S3::Model::InputSerialization inputSerialization;
@@ -96,6 +87,7 @@ shared_ptr<arrow::Table> parseCompletePayload (const Aws::Vector<unsigned char>:
     auto table = tableReader->Read();
     if(table.ok()){
         cout<<table.ValueOrDie()->schema()->ToString()<<endl;
+        cout<<table.ValueOrDie()->num_rows()<<endl;
         return table.ValueOrDie();
     } else {
         spdlog::error("读取失败！错误信息: {}", table.status().message());
@@ -124,12 +116,14 @@ shared_ptr<arrow::Table> getObject(
     size_t length)
 {
     auto start_time = std::chrono::high_resolution_clock::now();
-    auto executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>("executor", std::thread::hardware_concurrency() - 1);
+    auto executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>("executor", 1);
     Aws::Transfer::TransferManagerConfiguration transfer_config(executor.get());
     transfer_config.s3Client = awsClient;
 
     // Create buffer to hold data received by the data stream.
     Aws::Utils::Array<unsigned char> buffer(length);
+    cout<<"key:"<<key<<endl;
+    cout<<"length:"<<length<<endl;
     Aws::Utils::Stream::PreallocatedStreamBuf streamBuffer(buffer.GetUnderlyingData(), buffer.GetLength());
 
     auto transfer_manager = TransferManager::Create(transfer_config);
@@ -190,6 +184,170 @@ shared_ptr<arrow::Table> getObject(
     }
 } 
 
+shared_ptr<arrow::Table> getObjectbyIndex(
+    const string &bucket, 
+    const string &key, 
+    shared_ptr<Aws::S3::S3Client> awsClient,
+    const vector<string> & col,
+    size_t start,
+    size_t end)
+{
+    auto start_time = std::chrono::high_resolution_clock::now();
+    auto executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>("executor", std::thread::hardware_concurrency() - 1);
+    Aws::Transfer::TransferManagerConfiguration transfer_config(executor.get());
+    transfer_config.s3Client = awsClient;
+
+    size_t length = end - start;
+    // Create buffer to hold data received by the data stream.
+    Aws::Utils::Array<unsigned char> buffer(length);
+    Aws::Utils::Stream::PreallocatedStreamBuf streamBuffer(buffer.GetUnderlyingData(), buffer.GetLength());
+
+    auto transfer_manager = TransferManager::Create(transfer_config);
+    auto downloadHandle = transfer_manager->DownloadFile(bucket, key, start, length, [&]() {
+        return Aws::New<MyUnderlyingStream>("TestTag", &streamBuffer);
+    });
+
+    downloadHandle->WaitUntilFinished();
+    if (downloadHandle->GetStatus() != Aws::Transfer::TransferStatus::COMPLETED) {
+        auto err = downloadHandle->GetLastError();
+        spdlog::error("File download failed: {}", err.GetMessage());
+        return nullptr;
+    } else {
+        // 将 buffer 转化为 Arrow 的 Buffer
+        shared_ptr<arrow::Buffer> arrowBuffer = std::make_shared<arrow::Buffer>(
+        buffer.GetUnderlyingData(), buffer.GetLength());
+
+        // 使用 BufferReader 来创建 Arrow 的 InputStream
+        shared_ptr<arrow::io::InputStream> inputStream = std::make_shared<arrow::io::BufferReader>(arrowBuffer);
+        auto end_time = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+        spdlog::info("转换为 Arrow 的输入流用时 {} ms", duration.count());
+
+        // 读取 CSV 文件
+        auto read_options = arrow::csv::ReadOptions::Defaults();
+        read_options.column_names = col; //设置列名
+        read_options.skip_rows = 1; // 跳过表头
+        
+        auto convert_options = arrow::csv::ConvertOptions::Defaults();
+        for (const auto& column_name : col) {
+            convert_options.column_types[column_name] = arrow::int32();  // 将列设置为 int32 类型
+        }
+        
+        // 自动利用 Arrow 并发进行 CSV 读取
+        auto csv_reader = arrow::csv::TableReader::Make(
+            arrow::io::default_io_context(), inputStream,
+            read_options,
+            arrow::csv::ParseOptions::Defaults(),
+            convert_options);
+        
+        if (!csv_reader.ok()) {
+            spdlog::error("Failed to create CSV TableReader");
+            return nullptr;
+        }
+
+        shared_ptr<arrow::csv::TableReader> reader = *csv_reader;
+        auto table = reader->Read();
+        
+        if (table.ok()) {
+            auto end_time2 = std::chrono::high_resolution_clock::now();
+            auto duration2 = std::chrono::duration_cast<std::chrono::milliseconds>(end_time2 - end_time);
+            spdlog::info("转换为table用时 {} ms", duration2.count());
+            return table.ValueOrDie();
+        } else {
+            spdlog::error("转化结果为arrow表格失败: {}", table.status().ToString());
+            return nullptr;
+        }
+    }
+} 
+
+shared_ptr<arrow::Table> s3SelectbyIndex(
+    const string &bucket, 
+    const string &key, 
+    shared_ptr<Aws::S3::S3Client> awsClient,
+    const vector<string> & col,
+    size_t start,
+    size_t end)
+{
+    const string& subject = col[0];
+    const string& object = col[1];
+    vector<string>new_col;
+    string sql;
+    if(subject.find("?") == string::npos && subject != "subject") {
+        sql = "SELECT s.object FROM s3object s WHERE s.subject = '" + subject + "'";
+        new_col.emplace_back(object);
+    } else if(object.find("?") == string::npos && object != "object") {
+        sql = "SELECT s.subject FROM s3object s WHERE s.object = '" + object + "'";
+        new_col.emplace_back(subject);
+    } else {
+        sql = "SELECT * FROM s3object s";
+        new_col.emplace_back(subject);
+        new_col.emplace_back(object);
+    }
+    Aws::S3::Model::SelectObjectContentRequest selectObjectContentRequest;
+    Aws::S3::Model::ScanRange scanRange;
+    // 设置范围
+    scanRange.WithStart(start).WithEnd(end);
+    // 将范围添加到请求中
+    selectObjectContentRequest.SetScanRange(scanRange);
+    selectObjectContentRequest.SetBucket(bucket);
+    selectObjectContentRequest.SetKey(key);
+    // selectObjectContentRequest.SetScanRange;
+    selectObjectContentRequest.SetExpressionType(Aws::S3::Model::ExpressionType::SQL);
+    selectObjectContentRequest.SetExpression(sql);
+
+    // Input and Output serialization
+    selectObjectContentRequest.SetInputSerialization(getInputSerialization());
+    selectObjectContentRequest.SetOutputSerialization(getOutputSerialization());
+
+    // Handler to process the response
+    Aws::S3::Model::SelectObjectContentHandler handler;
+    vector<unsigned char> s3Result_;                         
+    bool hasEndEvent = false;
+
+    // Records event callback
+    handler.SetRecordsEventCallback([&](const Aws::S3::Model::RecordsEvent &recordsEvent) {
+        // cerr << "Record received\n";
+        auto payload = recordsEvent.GetPayload();
+        if (!payload.empty()) {
+            s3Result_.insert(s3Result_.end(), payload.begin(), payload.end());
+        }
+    });
+
+    // End event callback
+    handler.SetEndEventCallback([&]() {
+        cerr << "End of the query\n";
+        hasEndEvent = true;
+    });
+
+    // Stats event callback (optional)
+    handler.SetStatsEventCallback([](const Aws::S3::Model::StatsEvent &statsEvent) {
+        cerr << "Bytes scanned: " << statsEvent.GetDetails().GetBytesScanned() << "\n";
+        cerr << "Bytes processed: " << statsEvent.GetDetails().GetBytesProcessed() << "\n";
+    });
+
+    selectObjectContentRequest.SetEventStreamHandler(handler);
+
+    try {
+        auto selectObjectOutcome = awsClient->SelectObjectContent(selectObjectContentRequest);
+        if (!selectObjectOutcome.IsSuccess()) {
+            cerr << "S3 Select query failed: " << selectObjectOutcome.GetError().GetMessage() << "\n";
+            return {};
+        }
+    } catch (const Aws::Client::AWSError<Aws::S3::S3Errors>& e) {
+        cerr << "AWS SDK error: " << e.GetMessage() << "\n";
+        return {};
+    } catch (const std::exception& e) {
+        cerr << "Unexpected error: " << e.what() << "\n";
+        return {};
+    }
+
+    // Wait for the end event
+    while (!hasEndEvent) {
+        this_thread::sleep_for(chrono::milliseconds(100));
+    }
+
+    return parseCompletePayload(s3Result_.begin(), s3Result_.end(), new_col);
+}
 
 shared_ptr<arrow::Table> s3Select(
     const string &bucket, 
@@ -197,6 +355,7 @@ shared_ptr<arrow::Table> s3Select(
     shared_ptr<Aws::S3::S3Client> awsClient,
     const vector<string> & col)
 {
+    high_resolution_clock::time_point begin = high_resolution_clock::now();
     const string& subject = col[0];
     const string& object = col[1];
     vector<string>new_col;
@@ -270,6 +429,9 @@ shared_ptr<arrow::Table> s3Select(
         this_thread::sleep_for(chrono::milliseconds(100));
     }
 
+    high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
+    milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
+    cout<<"s3select耗时："<<overallTime.count()<<"ms"<<endl;
     return parseCompletePayload(s3Result_.begin(), s3Result_.end(), new_col);
 }
 

@@ -7,7 +7,9 @@ bool compareByTime(const QueryInfo& a, const QueryInfo& b) {
 }
 
 vector<vector<string>> get_query(string file_path){
-  string dbPath = "/data/watdiv1B/index";
+  // string dbPath = "/data/dbpedia1B/index";
+  string dbPath = "/data/wikidata/index";
+  // string dbPath = "/home/ec2-user/s3/S3C++/index";
 
   // 打开levedb
   leveldb::DB* db;
@@ -120,6 +122,8 @@ vector<QueryInfo> getTimeAndCost(const string &bucket,
   query1.object = row[2];
   query1.keyName = row[1];
   query1.size = size;
+  query1.start = start;
+  query1.end = end;
    
   query1.method= 1;  // Using integer values for keys to represent "getObject"
   query1.time = size * 0.00121138;
@@ -160,45 +164,63 @@ void writeVectorToCSV(ofstream &csvFile, const vector<string>& resultVector) {
     csvFile << "\n";
 }
 
+void printResult(const std::shared_ptr<arrow::Table> table) {
+  int64_t num_columns = table->num_columns();
+int64_t num_rows = table->num_rows();
+// string dbPath = "/home/ec2-user/s3/S3C++/index";
+string dbPath = "/data/watdiv500m/result_index";
 
-// 从 LevelDB 获取值并写入 CSV 文件
-void processBatch(leveldb::DB* db, ofstream &csvFile, const vector<vector<int>>& batch) {
-  string keyStr;
-  string value;
-  stringstream buffer;  // 用于批量写入 CSV 的缓冲区
-  const size_t bufferSizeLimit = 4096;  // 定义缓冲区的大小限制，单位是字节（根据需要调整）
+  // 打开levedb
+  leveldb::DB* db;
+  leveldb::Options options;
+  options.create_if_missing = true;
+  leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
+  if (!status.ok()) {
+    spdlog::error("Failed to open LevelDB: {}", status.ToString());
+    exit(1);
+}
+  if (db == nullptr) {
+    spdlog::error("Database object is null.");
+    exit(1);
+}
+for (int64_t i = 0; i < num_columns; ++i){
+  auto column_name = table->field(i)->name();
+  cout<<column_name<<" ";
+}
+cout<<endl;
+// 遍历每一行
+for (int64_t row = 0; row < num_rows; ++row) {
+    for (int64_t i = 0; i < num_columns; ++i) {
+        // 获取每一列
+        auto column = table->column(i);
+        
+        // 确定 row 所在的 chunk
+        int64_t row_in_chunk = row;
+        for (int64_t chunk_index = 0; chunk_index < column->num_chunks(); ++chunk_index) {
+            auto chunked_array = column->chunk(chunk_index);
 
-  for (const auto& vec : batch) {
-    bool first = true;
-      for (int key : vec) {
-        keyStr = to_string(key);
-        leveldb::Status s = db->Get(leveldb::ReadOptions(), keyStr, &value);
-        if (s.ok()) {
-          if (!first) {
-            // 输出调试信息：输出键值对
-            // cout << "Key: " << keyStr << ", Value: " << value << endl;   
-            buffer << ",";  // 在每个值之间添加逗号分隔
-          }
-          buffer << value;
-          first = false;
-        } else {
-          cerr << "Key not found: " << keyStr << endl;
-          }
-      }
-      buffer << endl;
-
-      // 如果缓冲区达到限制，先写入文件并清空缓冲区
-      if (buffer.tellp() >= bufferSizeLimit) {
-        lock_guard<mutex> guard(writeMutex);  // 加锁写入文件
-        csvFile << buffer.str();  // 写入文件
-        buffer.str("");  // 清空缓冲区
-        buffer.clear();  // 重置缓冲区状态
-      }
+            // 检查 row_in_chunk 是否在当前 chunk 的范围内
+            if (row_in_chunk < chunked_array->length()) {
+                // 获取标量值
+                auto result = chunked_array->GetScalar(row_in_chunk);
+                
+                if (result.ok()) {
+                    auto scalar = result.ValueOrDie();
+                    string t;
+                    auto status = db->Get(leveldb::ReadOptions(), scalar->ToString(), &t); 
+                    // 打印列名和该行值
+                    std::cout << t << " ";
+                } else {
+                    std::cerr << "Error: " << result.status().ToString() << std::endl;
+                }
+                break;  // 找到对应 chunk，跳出循环
+            } else {
+                // row_in_chunk 不在当前 chunk 中，减去当前 chunk 的长度，继续查找
+                row_in_chunk -= chunked_array->length();
+            }
+        }
     }
-
-    // 写入剩余的内容
-    if (buffer.tellp() > 0) {
-        lock_guard<mutex> guard(writeMutex);  // 加锁写入文件
-        csvFile << buffer.str();  // 写入文件
-    }
+    cout<<endl;
+  }
+  delete db;
 }

@@ -8,12 +8,14 @@
 #include <vector>
 #include <string>
 #include <sstream>
-#include <thread>
 #include <mutex>
 #include <queue>
-#include <future>
-#include <regex>
+#include <memory>
+#include <atomic>
+#include <thread>
+#include <spdlog/spdlog.h>
 #include <leveldb/db.h>
+#include <arrow/array.h>
 #include "query.h"
 using namespace std;
 
@@ -22,6 +24,8 @@ struct QueryInfo {
     double cost;
     int index;
     int method; 
+    size_t start;
+    size_t end;
     size_t size;
     string keyName;
     string object;
@@ -38,7 +42,6 @@ vector<QueryInfo> getTimeAndCost(const string &bucket,
                                             int index, 
                                             std::shared_ptr<Aws::S3::S3Client> awsClient);
 void writeVectorToCSV(ofstream &csvFile, const vector<int>& vec);
-void processBatch(leveldb::DB* db, ofstream &csvFile, const vector<vector<int>>& batch);
-// void processBatch(leveldb::DB* db, ofstream &csvFile, const flat_hash_map<pair<int,int>,vector<vector<int>>>& batch) 
+void printResult(shared_ptr<arrow::Table> result);
 
 #endif 

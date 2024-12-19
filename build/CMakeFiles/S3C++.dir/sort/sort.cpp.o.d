@@ -190,29 +190,18 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/include/c++/11/bits/regex_executor.tcc /usr/include/c++/11/fstream \
  /usr/include/c++/11/x86_64-amazon-linux/bits/basic_file.h \
  /usr/include/c++/11/x86_64-amazon-linux/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/thread \
- /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/chrono \
- /usr/include/c++/11/ratio /usr/include/c++/11/limits \
- /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/mutex \
+ /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/mutex \
+ /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
+ /usr/include/c++/11/limits /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/queue \
- /usr/include/c++/11/bits/stl_queue.h /usr/include/c++/11/future \
- /usr/include/c++/11/condition_variable /usr/include/c++/11/atomic \
- /usr/include/c++/11/bits/atomic_futex.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/db.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/export.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/iterator.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/slice.h \
- /usr/include/c++/11/cassert /usr/include/assert.h \
- /usr/include/c++/11/cstddef \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/status.h \
- /home/ec2-user/s3/S3C++/leveldb/include/leveldb/options.h \
- /home/ec2-user/s3/S3C++/queryMethod/query.h \
+ /usr/include/c++/11/bits/stl_queue.h /usr/include/c++/11/atomic \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h \
  /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
  /usr/local/include/spdlog/details/null_mutex.h \
  /usr/local/include/spdlog/tweakme.h /usr/local/include/spdlog/fmt/fmt.h \
- /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/core.h /usr/include/c++/11/cstddef \
  /usr/local/include/spdlog/fmt/bundled/format.h /usr/include/c++/11/cmath \
  /usr/include/math.h /usr/include/bits/math-vector.h \
  /usr/include/bits/libm-simd-decl-stubs.h \
@@ -246,11 +235,13 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/spdlog/common-inl.h \
  /usr/local/include/spdlog/details/registry.h \
  /usr/local/include/spdlog/details/periodic_worker.h \
+ /usr/include/c++/11/condition_variable \
  /usr/local/include/spdlog/details/periodic_worker-inl.h \
  /usr/local/include/spdlog/details/registry-inl.h \
  /usr/local/include/spdlog/logger.h \
  /usr/local/include/spdlog/details/backtracer.h \
  /usr/local/include/spdlog/details/circular_q.h \
+ /usr/include/c++/11/cassert /usr/include/assert.h \
  /usr/local/include/spdlog/details/log_msg_buffer.h \
  /usr/local/include/spdlog/details/log_msg.h \
  /usr/local/include/spdlog/details/log_msg-inl.h \
@@ -289,11 +280,39 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/spdlog/details/synchronous_factory.h \
  /usr/local/include/spdlog/version.h \
  /usr/local/include/spdlog/spdlog-inl.h \
- /usr/local/include/aws/core/auth/AWSAuthSigner.h \
- /usr/local/include/aws/core/auth/signer/AWSAuthSignerBase.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/db.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/export.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/iterator.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/slice.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/status.h \
+ /home/ec2-user/s3/S3C++/leveldb/include/leveldb/options.h \
+ /usr/include/arrow/array.h /usr/include/arrow/array/array_base.h \
+ /usr/include/arrow/array/data.h /usr/include/arrow/buffer.h \
+ /usr/include/c++/11/optional /usr/include/arrow/device.h \
+ /usr/include/arrow/io/type_fwd.h /usr/include/arrow/type_fwd.h \
+ /usr/include/arrow/util/macros.h /usr/include/arrow/util/visibility.h \
+ /usr/include/arrow/result.h /usr/include/arrow/status.h \
+ /usr/include/arrow/util/compare.h \
+ /usr/include/arrow/util/string_builder.h \
+ /usr/include/arrow/util/aligned_storage.h \
+ /usr/include/arrow/util/launder.h /usr/include/arrow/util/span.h \
+ /usr/include/arrow/type.h /usr/include/c++/11/variant \
+ /usr/include/arrow/util/checked_cast.h /usr/include/arrow/util/endian.h \
+ /usr/include/arrow/util/type_traits.h /usr/include/arrow/util/ubsan.h \
+ /usr/include/arrow/visitor.h /usr/include/arrow/util/bit_util.h \
+ /usr/include/arrow/compare.h /usr/include/arrow/array/array_binary.h \
+ /usr/include/arrow/stl_iterator.h /usr/include/arrow/chunked_array.h \
+ /usr/include/arrow/chunk_resolver.h /usr/include/arrow/type_traits.h \
+ /usr/include/arrow/array/array_decimal.h \
+ /usr/include/arrow/array/array_dict.h \
+ /usr/include/arrow/array/array_nested.h \
+ /usr/include/arrow/array/array_primitive.h \
+ /usr/include/arrow/array/array_run_end.h /usr/include/arrow/array/util.h \
+ /home/ec2-user/s3/S3C++/queryMethod/query.h \
+ /usr/local/include/aws/core/Aws.h \
+ /usr/local/include/aws/core/utils/logging/LogLevel.h \
  /usr/local/include/aws/core/Core_EXPORTS.h \
  /usr/local/include/aws/core/SDKConfig.h \
- /usr/local/include/aws/core/utils/DateTime.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSString.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSAllocator.h \
  /usr/local/include/aws/core/utils/memory/AWSMemory.h \
@@ -318,25 +337,16 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/aws/common/zero.h \
  /usr/local/include/aws/common/zero.inl \
  /usr/local/include/aws/crt/Exports.h \
- /usr/local/include/aws/core/utils/logging/LogMacros.h \
- /usr/local/include/aws/core/utils/logging/LogLevel.h \
- /usr/local/include/aws/core/utils/logging/AWSLogging.h \
  /usr/local/include/aws/core/utils/logging/LogSystemInterface.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSStringStream.h \
- /usr/local/include/aws/core/auth/signer/AWSAuthSignerCommon.h \
- /usr/local/include/aws/core/http/HttpTypes.h \
- /usr/local/include/aws/core/utils/memory/stl/AWSList.h \
- /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
- /usr/include/c++/11/bits/list.tcc \
- /usr/local/include/aws/core/utils/memory/stl/AWSMap.h \
- /usr/local/include/aws/core/auth/signer/AWSAuthV4Signer.h \
- /usr/local/include/aws/core/utils/Array.h \
- /usr/local/include/aws/core/utils/memory/stl/AWSVector.h \
- /usr/local/include/aws/crt/Types.h /usr/local/include/aws/crt/Optional.h \
- /usr/local/include/aws/crt/Utility.h \
- /usr/local/include/aws/crt/StringView.h \
- /usr/local/include/aws/io/socket.h /usr/local/include/aws/io/channel.h \
- /usr/local/include/aws/io/io.h /usr/local/include/aws/common/byte_buf.h \
+ /usr/local/include/aws/core/utils/logging/CRTLogSystem.h \
+ /usr/local/include/aws/common/logging.h \
+ /usr/local/include/aws/common/atomics.h \
+ /usr/local/include/aws/common/atomics.inl \
+ /usr/local/include/aws/common/atomics_gnu.inl \
+ /usr/local/include/aws/common/atomics_fallback.inl \
+ /usr/local/include/aws/common/thread.h \
+ /usr/local/include/aws/common/byte_buf.h \
  /usr/local/include/aws/common/array_list.h \
  /usr/local/include/aws/common/math.h \
  /usr/local/include/aws/common/math.inl \
@@ -350,71 +360,39 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
  /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
  /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
+ /usr/local/include/aws/common/string.h \
+ /usr/local/include/aws/common/string.inl \
+ /usr/local/include/aws/core/utils/logging/DefaultCRTLogSystem.h \
+ /usr/local/include/aws/core/utils/crypto/Factories.h \
+ /usr/local/include/aws/core/utils/Array.h \
+ /usr/local/include/aws/core/utils/memory/stl/AWSVector.h \
+ /usr/local/include/aws/crt/Types.h /usr/local/include/aws/crt/Optional.h \
+ /usr/local/include/aws/crt/Utility.h \
+ /usr/local/include/aws/crt/StringView.h \
+ /usr/local/include/aws/io/socket.h /usr/local/include/aws/io/channel.h \
+ /usr/local/include/aws/io/io.h \
  /usr/local/include/aws/common/linked_list.h \
  /usr/local/include/aws/common/linked_list.inl \
  /usr/local/include/aws/io/exports.h \
  /usr/local/include/aws/common/statistics.h \
  /usr/local/include/aws/common/task_scheduler.h \
  /usr/local/include/aws/common/priority_queue.h /usr/include/sys/un.h \
- /usr/local/include/aws/mqtt/mqtt.h \
- /usr/local/include/aws/common/logging.h \
- /usr/local/include/aws/common/atomics.h \
- /usr/local/include/aws/common/atomics.inl \
- /usr/local/include/aws/common/atomics_gnu.inl \
- /usr/local/include/aws/common/atomics_fallback.inl \
- /usr/local/include/aws/common/thread.h \
- /usr/local/include/aws/common/string.h \
- /usr/local/include/aws/common/string.inl \
- /usr/local/include/aws/mqtt/exports.h \
- /usr/local/include/aws/core/utils/memory/stl/AWSSet.h \
- /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
- /usr/include/c++/11/bits/stl_multiset.h \
- /usr/include/c++/11/unordered_set \
- /usr/include/c++/11/bits/unordered_set.h \
- /usr/local/include/aws/core/utils/threading/ReaderWriterLock.h \
- /usr/local/include/aws/core/utils/threading/Semaphore.h \
- /usr/local/include/aws/core/utils/crypto/Sha256.h \
- /usr/local/include/aws/core/utils/crypto/Hash.h \
- /usr/local/include/aws/core/utils/crypto/HashResult.h \
+ /usr/local/include/aws/mqtt/mqtt.h /usr/local/include/aws/mqtt/exports.h \
+ /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
+ /usr/include/c++/11/bits/list.tcc \
+ /usr/local/include/aws/core/http/HttpClientFactory.h \
+ /usr/local/include/aws/core/http/HttpTypes.h \
+ /usr/local/include/aws/core/utils/memory/stl/AWSList.h \
+ /usr/local/include/aws/core/utils/memory/stl/AWSMap.h \
  /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
- /usr/local/include/aws/core/utils/crypto/Sha256HMAC.h \
- /usr/local/include/aws/core/utils/crypto/HMAC.h \
- /usr/local/include/aws/core/http/HttpRequest.h \
- /usr/local/include/aws/core/http/URI.h \
- /usr/local/include/aws/core/http/Scheme.h \
- /usr/local/include/aws/core/utils/StringUtils.h \
- /usr/local/include/aws/core/utils/stream/ResponseStream.h \
- /usr/local/include/aws/core/utils/UUID.h \
- /usr/local/include/aws/core/monitoring/HttpClientMetrics.h \
- /usr/local/include/aws/core/endpoint/internal/AWSEndpointAttribute.h \
- /usr/local/include/aws/core/client/AWSError.h \
- /usr/local/include/aws/core/http/HttpResponse.h \
+ /usr/local/include/aws/core/monitoring/MonitoringManager.h \
+ /usr/local/include/aws/core/client/AWSClient.h \
  /usr/local/include/aws/core/client/CoreErrors.h \
- /usr/local/include/aws/core/utils/xml/XmlSerializer.h \
- /usr/local/include/aws/core/utils/Outcome.h \
- /usr/local/include/aws/core/utils/json/JsonSerializer.h \
- /usr/local/include/aws/core/external/cjson/cJSON.h \
- /usr/local/include/aws/crt/auth/Sigv4Signing.h \
- /usr/local/include/aws/crt/DateTime.h \
- /usr/local/include/aws/common/date_time.h \
- /usr/local/include/aws/crt/auth/Signing.h \
- /usr/local/include/aws/auth/signing_config.h \
- /usr/local/include/aws/auth/auth.h /usr/local/include/aws/auth/exports.h \
- /usr/local/include/aws/io/logging.h \
- /usr/local/include/aws/sdkutils/sdkutils.h \
- /usr/local/include/aws/sdkutils/exports.h \
- /usr/local/include/aws/core/auth/signer/AWSAuthEventStreamV4Signer.h \
- /usr/local/include/aws/core/auth/signer/AWSNullSigner.h \
- /usr/local/include/aws/core/utils/ratelimiter/DefaultRateLimiter.h \
- /usr/local/include/aws/core/utils/ratelimiter/RateLimiterInterface.h \
- /usr/local/include/aws/s3/model/GetObjectRequest.h \
- /usr/local/include/aws/s3/S3_EXPORTS.h \
- /usr/local/include/aws/s3/S3Request.h \
- /usr/local/include/aws/core/endpoint/AWSEndpoint.h \
- /usr/local/include/aws/core/AmazonSerializableWebServiceRequest.h \
+ /usr/local/include/aws/core/client/AWSUrlPresigner.h \
  /usr/local/include/aws/core/AmazonWebServiceRequest.h \
  /usr/local/include/aws/core/client/RequestCompression.h \
  /usr/local/include/aws/core/client/ClientConfiguration.h \
+ /usr/local/include/aws/core/http/Scheme.h \
  /usr/local/include/aws/core/http/Version.h \
  /usr/local/include/aws/core/Region.h \
  /usr/local/include/smithy/tracing/TelemetryProvider.h \
@@ -428,19 +406,78 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/smithy/tracing/MonotonicCounter.h \
  /usr/local/include/smithy/tracing/UpDownCounter.h \
  /usr/local/include/smithy/tracing/Histogram.h \
+ /usr/local/include/aws/core/utils/Outcome.h \
+ /usr/local/include/aws/core/auth/AWSAuthSigner.h \
+ /usr/local/include/aws/core/auth/signer/AWSAuthSignerBase.h \
+ /usr/local/include/aws/core/utils/DateTime.h \
+ /usr/local/include/aws/core/utils/logging/LogMacros.h \
+ /usr/local/include/aws/core/utils/logging/AWSLogging.h \
+ /usr/local/include/aws/core/auth/signer/AWSAuthSignerCommon.h \
+ /usr/local/include/aws/core/auth/signer/AWSAuthV4Signer.h \
+ /usr/local/include/aws/core/utils/memory/stl/AWSSet.h \
+ /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/stl_multiset.h \
+ /usr/include/c++/11/unordered_set \
+ /usr/include/c++/11/bits/unordered_set.h \
+ /usr/local/include/aws/core/utils/threading/ReaderWriterLock.h \
+ /usr/local/include/aws/core/utils/threading/Semaphore.h \
+ /usr/local/include/aws/core/utils/crypto/Sha256.h \
+ /usr/local/include/aws/core/utils/crypto/Hash.h \
+ /usr/local/include/aws/core/utils/crypto/HashResult.h \
+ /usr/local/include/aws/core/utils/crypto/Sha256HMAC.h \
+ /usr/local/include/aws/core/utils/crypto/HMAC.h \
+ /usr/local/include/aws/core/http/HttpRequest.h \
+ /usr/local/include/aws/core/http/URI.h \
+ /usr/local/include/aws/core/utils/StringUtils.h \
+ /usr/local/include/aws/core/utils/stream/ResponseStream.h \
+ /usr/local/include/aws/core/utils/UUID.h \
+ /usr/local/include/aws/core/monitoring/HttpClientMetrics.h \
+ /usr/local/include/aws/core/endpoint/internal/AWSEndpointAttribute.h \
+ /usr/local/include/aws/core/client/AWSError.h \
+ /usr/local/include/aws/core/http/HttpResponse.h \
+ /usr/local/include/aws/core/utils/xml/XmlSerializer.h \
+ /usr/local/include/aws/core/utils/json/JsonSerializer.h \
+ /usr/local/include/aws/core/external/cjson/cJSON.h \
+ /usr/local/include/aws/crt/auth/Sigv4Signing.h \
+ /usr/local/include/aws/crt/DateTime.h \
+ /usr/local/include/aws/common/date_time.h \
+ /usr/local/include/aws/crt/auth/Signing.h \
+ /usr/local/include/aws/auth/signing_config.h \
+ /usr/local/include/aws/auth/auth.h /usr/local/include/aws/auth/exports.h \
+ /usr/local/include/aws/io/logging.h \
+ /usr/local/include/aws/sdkutils/sdkutils.h \
+ /usr/local/include/aws/sdkutils/exports.h \
+ /usr/local/include/aws/core/auth/signer/AWSAuthEventStreamV4Signer.h \
+ /usr/local/include/aws/core/auth/signer/AWSNullSigner.h \
  /usr/local/include/aws/core/endpoint/EndpointParameter.h \
- /usr/local/include/aws/core/AmazonStreamingWebServiceRequest.h \
- /usr/local/include/aws/s3/model/RequestPayer.h \
- /usr/local/include/aws/s3/model/ChecksumMode.h \
- /usr/local/include/aws/s3/S3Client.h \
- /usr/local/include/aws/core/client/AWSClient.h \
- /usr/local/include/aws/core/client/AWSUrlPresigner.h \
+ /usr/local/include/aws/core/endpoint/AWSEndpoint.h \
  /usr/local/include/aws/core/AmazonWebServiceResult.h \
  /usr/local/include/aws/core/auth/AWSAuthSignerProvider.h \
  /usr/local/include/aws/core/auth/signer-provider/AWSAuthSignerProviderBase.h \
  /usr/local/include/aws/core/auth/signer-provider/DefaultAuthSignerProvider.h \
  /usr/local/include/aws/core/client/AWSJsonClient.h \
  /usr/local/include/aws/core/client/AWSXmlClient.h \
+ /usr/local/include/aws/core/monitoring/CoreMetrics.h \
+ /usr/local/include/aws/core/VersionConfig.h \
+ /usr/local/include/aws/crt/io/Bootstrap.h \
+ /usr/local/include/aws/crt/io/EventLoopGroup.h \
+ /usr/local/include/aws/io/event_loop.h \
+ /usr/local/include/aws/common/hash_table.h \
+ /usr/local/include/aws/common/ref_count.h \
+ /usr/local/include/aws/crt/io/HostResolver.h \
+ /usr/local/include/aws/io/host_resolver.h \
+ /usr/local/include/aws/io/channel_bootstrap.h /usr/include/c++/11/future \
+ /usr/include/c++/11/bits/atomic_futex.h \
+ /usr/local/include/aws/crt/io/TlsOptions.h \
+ /usr/local/include/aws/crt/io/ChannelHandler.h \
+ /usr/local/include/aws/io/tls_channel_handler.h \
+ /usr/local/include/aws/transfer/TransferManager.h \
+ /usr/local/include/aws/transfer/TransferHandle.h \
+ /usr/local/include/aws/transfer/Transfer_EXPORTS.h \
+ /usr/local/include/aws/core/client/AsyncCallerContext.h \
+ /usr/local/include/aws/s3/S3Errors.h \
+ /usr/local/include/aws/s3/S3_EXPORTS.h \
+ /usr/local/include/aws/s3/S3Client.h \
  /usr/local/include/aws/core/client/AWSClientAsyncCRTP.h \
  /usr/local/include/aws/core/client/AWSAsyncOperationTemplate.h \
  /usr/local/include/aws/core/utils/threading/Executor.h \
@@ -453,7 +490,6 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/aws/core/utils/component-registry/ComponentRegistry.h \
  /usr/local/include/aws/core/utils/DNS.h \
  /usr/local/include/aws/s3/S3ServiceClientModel.h \
- /usr/local/include/aws/s3/S3Errors.h \
  /usr/local/include/aws/s3/S3ClientConfiguration.h \
  /usr/local/include/aws/s3/S3ExpressIdentityProvider.h \
  /usr/local/include/aws/core/utils/ConcurrentCache.h \
@@ -465,7 +501,6 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/aws/crt/Variant.h \
  /usr/local/include/aws/core/utils/FutureOutcome.h \
  /usr/local/include/aws/core/client/GenericClientConfiguration.h \
- /usr/local/include/aws/core/client/AsyncCallerContext.h \
  /usr/local/include/aws/s3/S3EndpointProvider.h \
  /usr/local/include/aws/core/endpoint/DefaultEndpointProvider.h \
  /usr/local/include/aws/core/endpoint/AWSPartitions.h \
@@ -678,8 +713,24 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/aws/s3/model/UploadPartCopyResult.h \
  /usr/local/include/aws/s3/model/CopyPartResult.h \
  /usr/local/include/aws/s3/model/ListDirectoryBucketsRequest.h \
+ /usr/local/include/aws/s3/S3Request.h \
+ /usr/local/include/aws/core/AmazonSerializableWebServiceRequest.h \
+ /usr/local/include/aws/core/AmazonStreamingWebServiceRequest.h \
  /usr/local/include/aws/s3/model/ListBucketsRequest.h \
  /usr/local/include/aws/core/NoResult.h \
+ /usr/local/include/aws/s3/model/PutObjectRequest.h \
+ /usr/local/include/aws/s3/model/ObjectCannedACL.h \
+ /usr/local/include/aws/s3/model/RequestPayer.h \
+ /usr/local/include/aws/s3/model/GetObjectRequest.h \
+ /usr/local/include/aws/s3/model/ChecksumMode.h \
+ /usr/local/include/aws/s3/model/HeadObjectRequest.h \
+ /usr/local/include/aws/s3/model/CreateMultipartUploadRequest.h \
+ /usr/local/include/aws/s3/model/UploadPartRequest.h \
+ /usr/local/include/aws/s3/model/CompletedPart.h \
+ /usr/local/include/aws/core/utils/ResourceManager.h \
+ /usr/local/include/aws/core/utils/stream/PreallocatedStreamBuf.h \
+ /usr/local/include/aws/core/utils/ratelimiter/DefaultRateLimiter.h \
+ /usr/local/include/aws/core/utils/ratelimiter/RateLimiterInterface.h \
  /usr/local/include/aws/s3/model/InputSerialization.h \
  /usr/local/include/aws/s3/model/CSVInput.h \
  /usr/local/include/aws/s3/model/FileHeaderInfo.h \
@@ -710,28 +761,6 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: \
  /usr/local/include/aws/s3/model/QuoteFields.h \
  /usr/local/include/aws/s3/model/JSONOutput.h \
  /usr/local/include/aws/s3/model/ScanRange.h /usr/include/arrow/api.h \
- /usr/include/arrow/array.h /usr/include/arrow/array/array_base.h \
- /usr/include/arrow/array/data.h /usr/include/arrow/buffer.h \
- /usr/include/c++/11/optional /usr/include/arrow/device.h \
- /usr/include/arrow/io/type_fwd.h /usr/include/arrow/type_fwd.h \
- /usr/include/arrow/util/macros.h /usr/include/arrow/util/visibility.h \
- /usr/include/arrow/result.h /usr/include/arrow/status.h \
- /usr/include/arrow/util/compare.h \
- /usr/include/arrow/util/string_builder.h \
- /usr/include/arrow/util/aligned_storage.h \
- /usr/include/arrow/util/launder.h /usr/include/arrow/util/span.h \
- /usr/include/arrow/type.h /usr/include/c++/11/variant \
- /usr/include/arrow/util/checked_cast.h /usr/include/arrow/util/endian.h \
- /usr/include/arrow/util/type_traits.h /usr/include/arrow/util/ubsan.h \
- /usr/include/arrow/visitor.h /usr/include/arrow/util/bit_util.h \
- /usr/include/arrow/compare.h /usr/include/arrow/array/array_binary.h \
- /usr/include/arrow/stl_iterator.h /usr/include/arrow/chunked_array.h \
- /usr/include/arrow/chunk_resolver.h /usr/include/arrow/type_traits.h \
- /usr/include/arrow/array/array_decimal.h \
- /usr/include/arrow/array/array_dict.h \
- /usr/include/arrow/array/array_nested.h \
- /usr/include/arrow/array/array_primitive.h \
- /usr/include/arrow/array/array_run_end.h /usr/include/arrow/array/util.h \
  /usr/include/arrow/array/concatenate.h /usr/include/arrow/builder.h \
  /usr/include/arrow/array/builder_adaptive.h \
  /usr/include/arrow/array/builder_base.h \

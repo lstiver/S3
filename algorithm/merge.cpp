@@ -35,8 +35,8 @@ std::shared_ptr<arrow::Table> merge(
     const std::vector<std::string>& col1,
     const std::vector<std::string>& col2) 
 {
-    std::cout << "dataA address: " << dataA.get() << std::endl;
-std::cout << "dataB address: " << dataB.get() << std::endl;
+    // std ::cout << "dataA address: " << dataA.get() << std::endl;
+    // std::cout << "dataB address: " << dataB.get() << std::endl;
 
     if(!dataA || !dataB) {
         spdlog::debug("结果为空");
