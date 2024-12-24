@@ -88,6 +88,12 @@ shared_ptr<arrow::Table> parseCompletePayload (const Aws::Vector<unsigned char>:
     if(table.ok()){
         cout<<table.ValueOrDie()->schema()->ToString()<<endl;
         cout<<table.ValueOrDie()->num_rows()<<endl;
+    //     auto status = Write(table.ValueOrDie(),"../output.csv");
+    //     if (!status.ok()) {
+    // std::cerr << "Failed to write table to CSV: " << status.ToString() << std::endl;
+    // // 根据需要添加错误处理逻辑，例如返回 nullptr 或退出
+    // return nullptr;
+// }
         return table.ValueOrDie();
     } else {
         spdlog::error("读取失败！错误信息: {}", table.status().message());
@@ -268,6 +274,7 @@ shared_ptr<arrow::Table> s3SelectbyIndex(
     size_t start,
     size_t end)
 {
+    high_resolution_clock::time_point begin = high_resolution_clock::now();
     const string& subject = col[0];
     const string& object = col[1];
     vector<string>new_col;
@@ -283,6 +290,7 @@ shared_ptr<arrow::Table> s3SelectbyIndex(
         new_col.emplace_back(subject);
         new_col.emplace_back(object);
     }
+    cout<<sql<<endl;
     Aws::S3::Model::SelectObjectContentRequest selectObjectContentRequest;
     Aws::S3::Model::ScanRange scanRange;
     // 设置范围
@@ -346,6 +354,9 @@ shared_ptr<arrow::Table> s3SelectbyIndex(
         this_thread::sleep_for(chrono::milliseconds(100));
     }
 
+    high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
+    milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
+    cout<<"s3selectbyIndex耗时："<<overallTime.count()<<"ms"<<endl;
     return parseCompletePayload(s3Result_.begin(), s3Result_.end(), new_col);
 }
 

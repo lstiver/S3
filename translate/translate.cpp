@@ -126,25 +126,25 @@ vector<QueryInfo> getTimeAndCost(const string &bucket,
   query1.end = end;
    
   query1.method= 1;  // Using integer values for keys to represent "getObject"
-  query1.time = size * 0.00121138;
+  query1.time = size * 0.0000675351;
   query1.cost = 0;
   query1.index = index;
   time_and_cost.emplace_back(query1);
 
   query1.method= 2;  // Using integer values for keys to represent "s3SelectIndex"
-  query1.time = total * 0.00002788;
+  query1.time = total * 0.0000132183;
   query1.cost = totallength * (0.002 + 0.0007) + 0.002 * totallength;
   if (end > 0) {
       time_and_cost.emplace_back(query1);
   }
 
   query1.method= 3;  // Using integer values for keys to represent "s3Select"
-  query1.time = size * 0.00005986;
+  query1.time = size * 0.0000440919;
   query1.cost = totallength * 0.0007 + 0.002 * (size / 1024 / 1024 / 1024);
   time_and_cost.emplace_back(query1);
 
   query1.method= 4;  // Using integer values for keys to represent "getObjectByIndex"
-  query1.time = total * 0.10003814;
+  query1.time = total * 0.0000168287;
   query1.cost = 0;
   if (end > 0) {
       time_and_cost.emplace_back(query1);

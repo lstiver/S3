@@ -73,15 +73,17 @@ void test(shared_ptr<Aws::S3::S3Client> awsClient){
   string bucket = "wikidata0.98";
   string keyName = "27.csv";
   high_resolution_clock::time_point begin = high_resolution_clock::now();
-  auto result = getObject(bucket, keyName, awsClient, {"subject","object"}, 809716393);
-  vector<size_t>filter={1954};
+  auto result = getObjectbyIndex(bucket, keyName, awsClient, {"subject","object"}, 7084,771172222);
+  // auto result = getObject(bucket, keyName, awsClient, {"subject","object"}, 809716393);
+  vector<size_t>filter={648,2683028,13277,1954,12043};
   getobjectfilter(result,"object","subject",filter);
   high_resolution_clock::time_point End = high_resolution_clock::now();
   milliseconds Time = chrono::duration_cast<milliseconds>(End - begin);
-  cout<<"getObject总耗时："<<Time.count()<<"ms"<<endl;
-  vector<string>col2={"?v0","1954"};
-  s3Select(bucket, keyName, awsClient, col2);
-
+  // cout<<"getObjectb总耗时："<<Time.count()<<"ms"<<endl;
+  cout<<"getObjectbyIndex总耗时："<<Time.count()<<"ms"<<endl;
+  vector<string>col2={"?v0","2683028' OR s.object = '648' OR s.object = '13277' OR s.object = '1954' OR s.object = '12043"};
+  s3SelectbyIndex(bucket, keyName, awsClient, col2,7084,771172222);
+  // s3Select(bucket, keyName, awsClient, col2);
   // vector<size_t>filter={2683028};
   // getobjectfilter(result,"object","subject",filter);
   // high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
