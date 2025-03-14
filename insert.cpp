@@ -7,13 +7,13 @@ using namespace std;
 
 int main() {
     // 打开 CSV 文件
-    std::ifstream file("/home/ec2-user/watdiv500m/data24/zb/dataset/watdiv500M/conversion_index.csv");
+    std::ifstream file("/data/wikidata/conversion_index.csv");
     if (!file.is_open()) {
         std::cerr << "无法打开文件!" << std::endl;
         return -1;
     }
 
-    string dbPath = "/data/watdiv500m/result_index";
+    string dbPath = "/data/wikidata/result_index";
 
     // 打开levedb
     leveldb::DB* db;
@@ -51,7 +51,7 @@ int main() {
             delete db;
             exit(1);
         } else {
-            std::cout << "写入成功: " << key << " => " << value << std::endl;
+            // std::cout << "写入成功: " << key << " => " << value << std::endl;
         }
     }
     file.close();

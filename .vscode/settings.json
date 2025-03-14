@@ -85,6 +85,7 @@
     "ranges": "cpp",
     "typeindex": "cpp",
     "valarray": "cpp",
-    "*.ipp": "cpp"
+    "*.ipp": "cpp",
+    "coroutine": "cpp"
   }
 }

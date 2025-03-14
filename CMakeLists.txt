@@ -22,7 +22,6 @@ find_package(ArrowAcero REQUIRED)
 find_package(ArrowDataset REQUIRED)
 #include <arrow/compute/api.h>
 add_subdirectory(leveldb)
-add_subdirectory(parallel-hashmap)
 
 # 查找并添加 arrow-csv
 find_package(PkgConfig REQUIRED)
@@ -36,7 +35,6 @@ message(STATUS "C++ Standard: ${CMAKE_CXX_STANDARD}")
 include_directories(/usr/local/include/aws)
 include_directories(${Python3_INCLUDE_DIRS} 
                     ${PROJECT_SOURCE_DIR}/translate 
-                    ${PROJECT_SOURCE_DIR}/parallel-hashmap 
                     ${PROJECT_SOURCE_DIR}/sort
                     ${PROJECT_SOURCE_DIR}/queryMethod
                     ${PROJECT_SOURCE_DIR}/algorithm

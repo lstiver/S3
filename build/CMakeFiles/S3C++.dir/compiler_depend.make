@@ -731,23 +731,6 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/local/include/spdlog/details/synchronous_factory.h \
   /usr/local/include/spdlog/version.h \
   /usr/local/include/spdlog/spdlog-inl.h \
-  ../parallel-hashmap/parallel_hashmap/phmap.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_utils.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_bits.h \
-  /usr/include/byteswap.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_config.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
-  /usr/include/c++/11/stdlib.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_base.h \
-  /usr/include/c++/11/shared_mutex \
-  /usr/include/c++/11/optional \
   /usr/local/include/aws/core/utils/stream/ResponseStream.h \
   /usr/local/include/aws/core/Core_EXPORTS.h \
   /usr/local/include/aws/core/SDKConfig.h \
@@ -756,6 +739,7 @@ CMakeFiles/S3C++.dir/algorithm/merge.cpp.o: ../algorithm/merge.cpp \
   /usr/local/include/aws/core/utils/memory/MemorySystemInterface.h \
   /usr/local/include/aws/core/utils/memory/stl/AWSStreamFwd.h \
   /usr/include/arrow/acero/exec_plan.h \
+  /usr/include/c++/11/optional \
   /usr/include/arrow/acero/type_fwd.h \
   /usr/include/arrow/compute/type_fwd.h \
   /usr/include/arrow/util/visibility.h \
@@ -1905,35 +1889,10 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/ipc/options.h \
   /usr/include/arrow/io/caching.h \
   /usr/include/arrow/util/compression.h \
-  ../sort/sort.h \
-  ../algorithm/merge.h \
-  ../parallel-hashmap/parallel_hashmap/phmap.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_utils.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_bits.h \
-  /usr/include/byteswap.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_config.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h \
-  /usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h \
-  ../parallel-hashmap/parallel_hashmap/phmap_base.h \
-  /usr/include/c++/11/shared_mutex \
-  /usr/include/arrow/acero/exec_plan.h \
-  /usr/include/arrow/acero/type_fwd.h \
-  /usr/include/arrow/compute/type_fwd.h \
-  /usr/include/arrow/acero/visibility.h \
-  /usr/include/arrow/compute/api_vector.h \
-  /usr/include/arrow/compute/function_options.h \
-  /usr/include/arrow/compute/ordering.h \
-  /usr/include/arrow/compute/exec.h \
-  /usr/include/arrow/compute/expression.h \
-  /usr/include/arrow/util/small_vector.h \
-  /usr/include/arrow/acero/options.h \
-  /usr/include/arrow/compute/api_aggregate.h \
+  /usr/include/arrow/ipc/api.h \
+  /usr/include/arrow/ipc/feather.h \
+  /usr/include/arrow/ipc/json_simple.h \
+  /usr/include/arrow/ipc/reader.h \
   /usr/include/arrow/util/async_generator.h \
   /usr/include/arrow/util/async_generator_fwd.h \
   /usr/include/arrow/util/async_util.h \
@@ -1965,22 +1924,14 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/util/windows_fixup.h \
   /usr/include/arrow/util/queue.h \
   /usr/include/arrow/vendored/ProducerConsumerQueue.h \
-  /usr/include/arrow/compute/api.h \
-  /usr/include/arrow/compute/api_scalar.h \
-  /usr/include/arrow/compute/cast.h \
-  /usr/include/arrow/compute/function.h \
-  /usr/include/arrow/compute/kernel.h \
-  /usr/include/arrow/compute/registry.h \
-  /usr/include/arrow/compute/row/grouper.h \
-  /usr/include/arrow/ipc/api.h \
-  /usr/include/arrow/ipc/feather.h \
-  /usr/include/arrow/ipc/json_simple.h \
-  /usr/include/arrow/ipc/reader.h \
   /usr/include/arrow/util/range.h \
   /usr/include/arrow/util/vector.h \
   /usr/include/arrow/util/algorithm.h \
   /usr/include/arrow/util/logging.h \
   /usr/include/arrow/dataset/dataset.h \
+  /usr/include/arrow/compute/expression.h \
+  /usr/include/arrow/compute/type_fwd.h \
+  /usr/include/arrow/util/small_vector.h \
   /usr/include/arrow/dataset/type_fwd.h \
   /usr/include/arrow/dataset/visibility.h \
   /usr/include/arrow/filesystem/type_fwd.h \
@@ -1989,6 +1940,14 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/dataset/partition.h \
   /usr/include/arrow/dataset/file_base.h \
   /usr/include/arrow/dataset/scanner.h \
+  /usr/include/arrow/acero/options.h \
+  /usr/include/arrow/acero/type_fwd.h \
+  /usr/include/arrow/acero/visibility.h \
+  /usr/include/arrow/compute/api_aggregate.h \
+  /usr/include/arrow/compute/function_options.h \
+  /usr/include/arrow/compute/api_vector.h \
+  /usr/include/arrow/compute/ordering.h \
+  /usr/include/arrow/compute/exec.h \
   /usr/include/arrow/dataset/projector.h \
   /usr/include/arrow/filesystem/filesystem.h \
   /usr/include/arrow/dataset/file_csv.h \
@@ -1999,6 +1958,16 @@ CMakeFiles/S3C++.dir/main.cpp.o: ../main.cpp \
   /usr/include/arrow/dataset/file_orc.h \
   /usr/include/arrow/dataset/file_parquet.h \
   /usr/include/arrow/dataset/plan.h \
+  /usr/include/arrow/acero/exec_plan.h \
+  /usr/include/arrow/compute/api.h \
+  /usr/include/arrow/compute/api_scalar.h \
+  /usr/include/arrow/compute/cast.h \
+  /usr/include/arrow/compute/function.h \
+  /usr/include/arrow/compute/kernel.h \
+  /usr/include/arrow/compute/registry.h \
+  /usr/include/arrow/compute/row/grouper.h \
+  ../sort/sort.h \
+  ../algorithm/merge.h \
   ../algorithm/order.h
 
 CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: ../queryMethod/query.cpp \
@@ -2945,7 +2914,84 @@ CMakeFiles/S3C++.dir/queryMethod/query.cpp.o: ../queryMethod/query.cpp \
   /usr/include/arrow/ipc/message.h \
   /usr/include/arrow/ipc/options.h \
   /usr/include/arrow/io/caching.h \
-  /usr/include/arrow/util/compression.h
+  /usr/include/arrow/util/compression.h \
+  /usr/include/arrow/ipc/api.h \
+  /usr/include/arrow/ipc/feather.h \
+  /usr/include/arrow/ipc/json_simple.h \
+  /usr/include/arrow/ipc/reader.h \
+  /usr/include/arrow/util/async_generator.h \
+  /usr/include/arrow/util/async_generator_fwd.h \
+  /usr/include/arrow/util/async_util.h \
+  /usr/include/arrow/util/mutex.h \
+  /usr/include/arrow/util/io_util.h \
+  /usr/include/c++/11/csignal \
+  /usr/include/signal.h \
+  /usr/include/bits/signum-generic.h \
+  /usr/include/bits/signum-arch.h \
+  /usr/include/bits/types/sig_atomic_t.h \
+  /usr/include/bits/types/siginfo_t.h \
+  /usr/include/bits/types/__sigval_t.h \
+  /usr/include/bits/siginfo-arch.h \
+  /usr/include/bits/siginfo-consts.h \
+  /usr/include/bits/siginfo-consts-arch.h \
+  /usr/include/bits/types/sigval_t.h \
+  /usr/include/bits/types/sigevent_t.h \
+  /usr/include/bits/sigevent-consts.h \
+  /usr/include/bits/sigaction.h \
+  /usr/include/bits/sigcontext.h \
+  /usr/include/bits/types/stack_t.h \
+  /usr/include/sys/ucontext.h \
+  /usr/include/bits/sigstack.h \
+  /usr/include/bits/sigstksz.h \
+  /usr/include/bits/ss_flags.h \
+  /usr/include/bits/types/struct_sigstack.h \
+  /usr/include/bits/sigthread.h \
+  /usr/include/bits/signal_ext.h \
+  /usr/include/arrow/util/windows_fixup.h \
+  /usr/include/arrow/util/queue.h \
+  /usr/include/arrow/vendored/ProducerConsumerQueue.h \
+  /usr/include/arrow/util/range.h \
+  /usr/include/arrow/util/vector.h \
+  /usr/include/arrow/util/algorithm.h \
+  /usr/include/arrow/util/logging.h \
+  /usr/include/arrow/dataset/dataset.h \
+  /usr/include/arrow/compute/expression.h \
+  /usr/include/arrow/compute/type_fwd.h \
+  /usr/include/arrow/util/small_vector.h \
+  /usr/include/arrow/dataset/type_fwd.h \
+  /usr/include/arrow/dataset/visibility.h \
+  /usr/include/arrow/filesystem/type_fwd.h \
+  /usr/include/arrow/dataset/api.h \
+  /usr/include/arrow/dataset/discovery.h \
+  /usr/include/arrow/dataset/partition.h \
+  /usr/include/arrow/dataset/file_base.h \
+  /usr/include/arrow/dataset/scanner.h \
+  /usr/include/arrow/acero/options.h \
+  /usr/include/arrow/acero/type_fwd.h \
+  /usr/include/arrow/acero/visibility.h \
+  /usr/include/arrow/compute/api_aggregate.h \
+  /usr/include/arrow/compute/function_options.h \
+  /usr/include/arrow/compute/api_vector.h \
+  /usr/include/arrow/compute/ordering.h \
+  /usr/include/arrow/compute/exec.h \
+  /usr/include/arrow/dataset/projector.h \
+  /usr/include/arrow/filesystem/filesystem.h \
+  /usr/include/arrow/dataset/file_csv.h \
+  /usr/include/arrow/dataset/file_json.h \
+  /usr/include/arrow/json/options.h \
+  /usr/include/arrow/json/type_fwd.h \
+  /usr/include/arrow/dataset/file_ipc.h \
+  /usr/include/arrow/dataset/file_orc.h \
+  /usr/include/arrow/dataset/file_parquet.h \
+  /usr/include/arrow/dataset/plan.h \
+  /usr/include/arrow/acero/exec_plan.h \
+  /usr/include/arrow/compute/api.h \
+  /usr/include/arrow/compute/api_scalar.h \
+  /usr/include/arrow/compute/cast.h \
+  /usr/include/arrow/compute/function.h \
+  /usr/include/arrow/compute/kernel.h \
+  /usr/include/arrow/compute/registry.h \
+  /usr/include/arrow/compute/row/grouper.h
 
 CMakeFiles/S3C++.dir/sort/sort.cpp.o: ../sort/sort.cpp \
   /usr/include/stdc-predef.h \
@@ -3919,7 +3965,84 @@ CMakeFiles/S3C++.dir/sort/sort.cpp.o: ../sort/sort.cpp \
   /usr/include/arrow/ipc/message.h \
   /usr/include/arrow/ipc/options.h \
   /usr/include/arrow/io/caching.h \
-  /usr/include/arrow/util/compression.h
+  /usr/include/arrow/util/compression.h \
+  /usr/include/arrow/ipc/api.h \
+  /usr/include/arrow/ipc/feather.h \
+  /usr/include/arrow/ipc/json_simple.h \
+  /usr/include/arrow/ipc/reader.h \
+  /usr/include/arrow/util/async_generator.h \
+  /usr/include/arrow/util/async_generator_fwd.h \
+  /usr/include/arrow/util/async_util.h \
+  /usr/include/arrow/util/mutex.h \
+  /usr/include/arrow/util/io_util.h \
+  /usr/include/c++/11/csignal \
+  /usr/include/signal.h \
+  /usr/include/bits/signum-generic.h \
+  /usr/include/bits/signum-arch.h \
+  /usr/include/bits/types/sig_atomic_t.h \
+  /usr/include/bits/types/siginfo_t.h \
+  /usr/include/bits/types/__sigval_t.h \
+  /usr/include/bits/siginfo-arch.h \
+  /usr/include/bits/siginfo-consts.h \
+  /usr/include/bits/siginfo-consts-arch.h \
+  /usr/include/bits/types/sigval_t.h \
+  /usr/include/bits/types/sigevent_t.h \
+  /usr/include/bits/sigevent-consts.h \
+  /usr/include/bits/sigaction.h \
+  /usr/include/bits/sigcontext.h \
+  /usr/include/bits/types/stack_t.h \
+  /usr/include/sys/ucontext.h \
+  /usr/include/bits/sigstack.h \
+  /usr/include/bits/sigstksz.h \
+  /usr/include/bits/ss_flags.h \
+  /usr/include/bits/types/struct_sigstack.h \
+  /usr/include/bits/sigthread.h \
+  /usr/include/bits/signal_ext.h \
+  /usr/include/arrow/util/windows_fixup.h \
+  /usr/include/arrow/util/queue.h \
+  /usr/include/arrow/vendored/ProducerConsumerQueue.h \
+  /usr/include/arrow/util/range.h \
+  /usr/include/arrow/util/vector.h \
+  /usr/include/arrow/util/algorithm.h \
+  /usr/include/arrow/util/logging.h \
+  /usr/include/arrow/dataset/dataset.h \
+  /usr/include/arrow/compute/expression.h \
+  /usr/include/arrow/compute/type_fwd.h \
+  /usr/include/arrow/util/small_vector.h \
+  /usr/include/arrow/dataset/type_fwd.h \
+  /usr/include/arrow/dataset/visibility.h \
+  /usr/include/arrow/filesystem/type_fwd.h \
+  /usr/include/arrow/dataset/api.h \
+  /usr/include/arrow/dataset/discovery.h \
+  /usr/include/arrow/dataset/partition.h \
+  /usr/include/arrow/dataset/file_base.h \
+  /usr/include/arrow/dataset/scanner.h \
+  /usr/include/arrow/acero/options.h \
+  /usr/include/arrow/acero/type_fwd.h \
+  /usr/include/arrow/acero/visibility.h \
+  /usr/include/arrow/compute/api_aggregate.h \
+  /usr/include/arrow/compute/function_options.h \
+  /usr/include/arrow/compute/api_vector.h \
+  /usr/include/arrow/compute/ordering.h \
+  /usr/include/arrow/compute/exec.h \
+  /usr/include/arrow/dataset/projector.h \
+  /usr/include/arrow/filesystem/filesystem.h \
+  /usr/include/arrow/dataset/file_csv.h \
+  /usr/include/arrow/dataset/file_json.h \
+  /usr/include/arrow/json/options.h \
+  /usr/include/arrow/json/type_fwd.h \
+  /usr/include/arrow/dataset/file_ipc.h \
+  /usr/include/arrow/dataset/file_orc.h \
+  /usr/include/arrow/dataset/file_parquet.h \
+  /usr/include/arrow/dataset/plan.h \
+  /usr/include/arrow/acero/exec_plan.h \
+  /usr/include/arrow/compute/api.h \
+  /usr/include/arrow/compute/api_scalar.h \
+  /usr/include/arrow/compute/cast.h \
+  /usr/include/arrow/compute/function.h \
+  /usr/include/arrow/compute/kernel.h \
+  /usr/include/arrow/compute/registry.h \
+  /usr/include/arrow/compute/row/grouper.h
 
 CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
   /usr/include/stdc-predef.h \
@@ -4892,7 +5015,84 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
   /usr/include/arrow/ipc/message.h \
   /usr/include/arrow/ipc/options.h \
   /usr/include/arrow/io/caching.h \
-  /usr/include/arrow/util/compression.h
+  /usr/include/arrow/util/compression.h \
+  /usr/include/arrow/ipc/api.h \
+  /usr/include/arrow/ipc/feather.h \
+  /usr/include/arrow/ipc/json_simple.h \
+  /usr/include/arrow/ipc/reader.h \
+  /usr/include/arrow/util/async_generator.h \
+  /usr/include/arrow/util/async_generator_fwd.h \
+  /usr/include/arrow/util/async_util.h \
+  /usr/include/arrow/util/mutex.h \
+  /usr/include/arrow/util/io_util.h \
+  /usr/include/c++/11/csignal \
+  /usr/include/signal.h \
+  /usr/include/bits/signum-generic.h \
+  /usr/include/bits/signum-arch.h \
+  /usr/include/bits/types/sig_atomic_t.h \
+  /usr/include/bits/types/siginfo_t.h \
+  /usr/include/bits/types/__sigval_t.h \
+  /usr/include/bits/siginfo-arch.h \
+  /usr/include/bits/siginfo-consts.h \
+  /usr/include/bits/siginfo-consts-arch.h \
+  /usr/include/bits/types/sigval_t.h \
+  /usr/include/bits/types/sigevent_t.h \
+  /usr/include/bits/sigevent-consts.h \
+  /usr/include/bits/sigaction.h \
+  /usr/include/bits/sigcontext.h \
+  /usr/include/bits/types/stack_t.h \
+  /usr/include/sys/ucontext.h \
+  /usr/include/bits/sigstack.h \
+  /usr/include/bits/sigstksz.h \
+  /usr/include/bits/ss_flags.h \
+  /usr/include/bits/types/struct_sigstack.h \
+  /usr/include/bits/sigthread.h \
+  /usr/include/bits/signal_ext.h \
+  /usr/include/arrow/util/windows_fixup.h \
+  /usr/include/arrow/util/queue.h \
+  /usr/include/arrow/vendored/ProducerConsumerQueue.h \
+  /usr/include/arrow/util/range.h \
+  /usr/include/arrow/util/vector.h \
+  /usr/include/arrow/util/algorithm.h \
+  /usr/include/arrow/util/logging.h \
+  /usr/include/arrow/dataset/dataset.h \
+  /usr/include/arrow/compute/expression.h \
+  /usr/include/arrow/compute/type_fwd.h \
+  /usr/include/arrow/util/small_vector.h \
+  /usr/include/arrow/dataset/type_fwd.h \
+  /usr/include/arrow/dataset/visibility.h \
+  /usr/include/arrow/filesystem/type_fwd.h \
+  /usr/include/arrow/dataset/api.h \
+  /usr/include/arrow/dataset/discovery.h \
+  /usr/include/arrow/dataset/partition.h \
+  /usr/include/arrow/dataset/file_base.h \
+  /usr/include/arrow/dataset/scanner.h \
+  /usr/include/arrow/acero/options.h \
+  /usr/include/arrow/acero/type_fwd.h \
+  /usr/include/arrow/acero/visibility.h \
+  /usr/include/arrow/compute/api_aggregate.h \
+  /usr/include/arrow/compute/function_options.h \
+  /usr/include/arrow/compute/api_vector.h \
+  /usr/include/arrow/compute/ordering.h \
+  /usr/include/arrow/compute/exec.h \
+  /usr/include/arrow/dataset/projector.h \
+  /usr/include/arrow/filesystem/filesystem.h \
+  /usr/include/arrow/dataset/file_csv.h \
+  /usr/include/arrow/dataset/file_json.h \
+  /usr/include/arrow/json/options.h \
+  /usr/include/arrow/json/type_fwd.h \
+  /usr/include/arrow/dataset/file_ipc.h \
+  /usr/include/arrow/dataset/file_orc.h \
+  /usr/include/arrow/dataset/file_parquet.h \
+  /usr/include/arrow/dataset/plan.h \
+  /usr/include/arrow/acero/exec_plan.h \
+  /usr/include/arrow/compute/api.h \
+  /usr/include/arrow/compute/api_scalar.h \
+  /usr/include/arrow/compute/cast.h \
+  /usr/include/arrow/compute/function.h \
+  /usr/include/arrow/compute/kernel.h \
+  /usr/include/arrow/compute/registry.h \
+  /usr/include/arrow/compute/row/grouper.h
 
 
 ../queryMethod/query.cpp:
@@ -5421,6 +5621,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/bits/regex_executor.tcc:
 
+/usr/include/c++/11/bits/regex_executor.h:
+
 /usr/include/c++/11/bits/regex.tcc:
 
 /usr/include/c++/11/bits/regex_compiler.tcc:
@@ -5444,6 +5646,10 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/core/utils/threading/PooledThreadExecutor.h:
 
 ../leveldb/include/leveldb/iterator.h:
+
+/usr/local/include/aws/s3/model/GetBucketRequestPaymentResult.h:
+
+../leveldb/include/leveldb/export.h:
 
 /usr/local/include/aws/s3/model/BucketLocationConstraint.h:
 
@@ -5499,53 +5705,17 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/arrow/ipc/writer.h:
 
-/usr/include/arrow/ipc/reader.h:
-
-/usr/include/arrow/ipc/message.h:
-
-/usr/local/include/aws/core/client/AWSAsyncOperationTemplate.h:
-
-/usr/include/arrow/util/compression.h:
-
-/usr/include/arrow/io/caching.h:
-
-/usr/local/include/aws/s3/model/ObjectPart.h:
-
-/usr/local/include/aws/core/http/HttpTypes.h:
-
-/usr/include/arrow/ipc/options.h:
-
-/usr/include/netinet/in.h:
-
-/usr/include/arrow/ipc/feather.h:
-
-/usr/local/include/aws/s3/model/SelectObjectContentHandler.h:
-
-/usr/include/arrow/dataset/discovery.h:
-
-/usr/include/arrow/ipc/dictionary.h:
-
-/usr/include/c++/11/bits/regex_scanner.h:
-
-/usr/include/arrow/ipc/api.h:
-
-/usr/include/arrow/io/concurrency.h:
-
-/usr/local/include/aws/core/utils/memory/stl/AWSQueue.h:
-
-/usr/include/arrow/io/memory.h:
-
-/usr/include/arrow/csv/writer.h:
-
-/usr/include/arrow/dataset/file_ipc.h:
-
-/usr/include/arrow/csv/invalid_row.h:
-
 /usr/local/include/aws/s3/model/StorageClassAnalysis.h:
 
 /usr/include/bits/iscanonical.h:
 
 /usr/include/bits/uio_lim.h:
+
+/usr/local/include/aws/core/endpoint/BuiltInParameters.h:
+
+/usr/include/c++/11/bits/atomic_futex.h:
+
+/usr/include/c++/11/cstring:
 
 /usr/include/arrow/util/launder.h:
 
@@ -5623,10 +5793,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/bits/stl_algo.h:
 
-/usr/include/arrow/csv/reader.h:
-
-/usr/include/bits/time64.h:
-
 ../sort/sort.cpp:
 
 /usr/local/include/spdlog/common.h:
@@ -5650,6 +5816,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/bits/types/sigval_t.h:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
+
+/usr/include/arrow/ipc/reader.h:
 
 /usr/local/include/aws/s3/model/ObjectVersionStorageClass.h:
 
@@ -5720,10 +5888,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/core/utils/crypto/Sha256.h:
 
 /usr/include/arrow/compute/type_fwd.h:
-
-/usr/include/arrow/ipc/json_simple.h:
-
-/usr/include/bits/select.h:
 
 /usr/include/sys/select.h:
 
@@ -5799,14 +5963,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/local/include/aws/core/endpoint/BuiltInParameters.h:
-
-/usr/include/c++/11/bits/atomic_futex.h:
-
-/usr/include/c++/11/cstring:
-
-/usr/lib/gcc/x86_64-amazon-linux/11/include/tmmintrin.h:
-
 ../translate/translate.h:
 
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
@@ -5815,7 +5971,15 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/queue:
 
+/usr/include/arrow/io/concurrency.h:
+
 /usr/include/c++/11/bits/nested_exception.h:
+
+/usr/local/include/aws/s3/model/ObjectPart.h:
+
+/usr/local/include/aws/core/http/HttpTypes.h:
+
+/usr/include/arrow/ipc/options.h:
 
 /usr/include/c++/11/ext/string_conversions.h:
 
@@ -6161,6 +6325,10 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/local/include/spdlog/details/os-inl.h:
 
+/usr/include/c++/11/bits/regex_scanner.h:
+
+/usr/include/arrow/ipc/api.h:
+
 /usr/include/arrow/util/windows_fixup.h:
 
 /usr/include/c++/11/x86_64-amazon-linux/bits/atomic_word.h:
@@ -6219,11 +6387,15 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/bits/sstream.tcc:
 
-../parallel-hashmap/parallel_hashmap/phmap_bits.h:
-
 /usr/local/include/aws/core/utils/logging/LogLevel.h:
 
 /usr/include/c++/11/bits/stl_iterator.h:
+
+/usr/local/include/aws/core/endpoint/AWSPartitions.h:
+
+/usr/include/c++/11/x86_64-amazon-linux/bits/gthr.h:
+
+/usr/include/c++/11/string:
 
 /usr/include/c++/11/bits/shared_ptr.h:
 
@@ -6271,6 +6443,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/bits/flt-eval-method.h:
 
+/usr/include/linux/posix_types.h:
+
 /usr/include/arrow/csv/type_fwd.h:
 
 /usr/include/c++/11/bits/functional_hash.h:
@@ -6314,6 +6488,12 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/c++/11/ext/aligned_buffer.h:
 
 /usr/local/include/spdlog/common-inl.h:
+
+/usr/local/include/aws/s3/model/SelectObjectContentHandler.h:
+
+/usr/include/arrow/dataset/discovery.h:
+
+/usr/include/arrow/ipc/dictionary.h:
 
 /usr/local/include/aws/s3/model/Protocol.h:
 
@@ -6389,6 +6569,10 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/arrow/util/bit_util.h:
 
+/usr/local/include/aws/core/client/AWSAsyncOperationTemplate.h:
+
+/usr/include/arrow/util/compression.h:
+
 /usr/include/bits/types/locale_t.h:
 
 /usr/include/arrow/io/api.h:
@@ -6456,6 +6640,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/c++/11/condition_variable:
 
 /usr/include/c++/11/thread:
+
+/usr/include/arrow/csv/writer.h:
 
 /usr/include/gnu/stubs.h:
 
@@ -6567,6 +6753,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/bits/local_lim.h:
 
+/usr/include/c++/11/variant:
+
 /usr/include/c++/11/bits/parse_numbers.h:
 
 /usr/local/include/aws/crt/DateTime.h:
@@ -6584,6 +6772,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/local/include/aws/core/Core_EXPORTS.h:
 
 /usr/include/arrow/util/ubsan.h:
+
+/usr/include/arrow/ipc/message.h:
 
 /usr/include/c++/11/iterator:
 
@@ -6641,12 +6831,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/local/include/spdlog/version.h:
 
-/usr/include/c++/11/variant:
-
-/usr/lib/gcc/x86_64-amazon-linux/11/include/xmmintrin.h:
-
-/usr/include/c++/11/shared_mutex:
-
 /usr/include/bits/types/struct_tm.h:
 
 /usr/include/arrow/array/array_primitive.h:
@@ -6655,19 +6839,15 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/arrow/array/array_run_end.h:
 
-/usr/local/include/spdlog/details/os.h:
-
-/usr/include/c++/11/bits/stl_multimap.h:
-
 /usr/local/include/aws/s3/model/GetBucketInventoryConfigurationResult.h:
 
 /usr/include/c++/11/bits/stl_construct.h:
 
-../parallel-hashmap/parallel_hashmap/phmap.h:
-
 /usr/include/arrow/array/util.h:
 
-/usr/lib/gcc/x86_64-amazon-linux/11/include/mmintrin.h:
+/usr/local/include/spdlog/details/os.h:
+
+/usr/include/c++/11/bits/stl_multimap.h:
 
 /usr/include/bits/stat.h:
 
@@ -6724,14 +6904,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/arrow/scalar.h:
 
 /usr/include/arrow/util/basic_decimal.h:
-
-/usr/local/include/aws/core/endpoint/AWSPartitions.h:
-
-/usr/include/c++/11/x86_64-amazon-linux/bits/gthr.h:
-
-/usr/include/c++/11/string:
-
-/usr/include/byteswap.h:
 
 /usr/include/arrow/array/builder_run_end.h:
 
@@ -6803,15 +6975,13 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/c++/11/sstream:
 
-/usr/local/include/aws/s3/model/GetBucketRequestPaymentResult.h:
-
-../leveldb/include/leveldb/export.h:
-
-/usr/lib/gcc/x86_64-amazon-linux/11/include/mm_malloc.h:
-
 /usr/include/bits/types/sig_atomic_t.h:
 
 /usr/local/include/spdlog/spdlog.h:
+
+/usr/include/arrow/dataset/file_ipc.h:
+
+/usr/include/arrow/csv/invalid_row.h:
 
 /usr/include/c++/11/x86_64-amazon-linux/bits/time_members.h:
 
@@ -6851,6 +7021,10 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/local/include/spdlog/details/synchronous_factory.h:
 
+/usr/include/c++/11/stdlib.h:
+
+/usr/include/bits/struct_stat.h:
+
 /usr/include/bits/statx.h:
 
 /usr/include/c++/11/pstl/glue_memory_defs.h:
@@ -6872,8 +7046,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/bits/types/struct_statx_timestamp.h:
 
 /usr/include/bits/types/struct_statx.h:
-
-../parallel-hashmap/parallel_hashmap/phmap_config.h:
 
 /usr/include/arrow/util/io_util.h:
 
@@ -6914,28 +7086,6 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/c++/11/array:
 
 /usr/local/include/spdlog/spdlog-inl.h:
-
-../parallel-hashmap/parallel_hashmap/phmap_fwd_decl.h:
-
-/usr/include/bits/siginfo-consts-arch.h:
-
-../parallel-hashmap/parallel_hashmap/phmap_utils.h:
-
-/usr/include/linux/posix_types.h:
-
-/usr/lib/gcc/x86_64-amazon-linux/11/include/emmintrin.h:
-
-/usr/include/bits/struct_stat.h:
-
-/usr/include/c++/11/stdlib.h:
-
-/usr/include/c++/11/bits/regex_executor.h:
-
-/usr/lib/gcc/x86_64-amazon-linux/11/include/pmmintrin.h:
-
-/usr/lib/gcc/x86_64-amazon-linux/11/include/mwaitintrin.h:
-
-../parallel-hashmap/parallel_hashmap/phmap_base.h:
 
 /usr/include/asm/unistd.h:
 
@@ -7015,6 +7165,8 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 
 /usr/include/bits/siginfo-arch.h:
 
+/usr/include/bits/siginfo-consts-arch.h:
+
 /usr/include/c++/11/tr1/special_function_util.h:
 
 /usr/include/bits/sigstack.h:
@@ -7034,3 +7186,21 @@ CMakeFiles/S3C++.dir/translate/translate.cpp.o: ../translate/translate.cpp \
 /usr/include/arrow/compute/kernel.h:
 
 /usr/include/arrow/csv/options.h:
+
+/usr/include/bits/time64.h:
+
+/usr/include/arrow/csv/reader.h:
+
+/usr/local/include/aws/core/utils/memory/stl/AWSQueue.h:
+
+/usr/include/arrow/io/memory.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/arrow/ipc/feather.h:
+
+/usr/include/arrow/io/caching.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/arrow/ipc/json_simple.h:

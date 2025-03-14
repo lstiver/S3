@@ -27,98 +27,9 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient);
 int index_ = 0;
 vector<string>col1;
 vector<string>col2;
-const string bucket = "wikidata0.98";
+string bucket = "watdiv100mconvert";
 int totalTime = 45870000;  // 最大时间
 
-shared_ptr<arrow::Table> getobjectfilter(shared_ptr<arrow::Table> table, 
-                                string col1,
-                                string col2,
-                                vector<size_t> fil)
-{
-    arrow::dataset::internal::Initialize();
-    auto dataset = std::make_shared<arrow::dataset::InMemoryDataset>(table);
-    auto options = std::make_shared<arrow::dataset::ScanOptions>();
-    cp::Expression filter_expr = arrow::compute::literal(false);
-    for (const auto& f : fil) {
-        cp::Expression current_condition = arrow::compute::equal(
-            arrow::compute::field_ref(col1),
-            arrow::compute::literal(f)
-        ); 
-        // 将当前条件与已有条件进行 "and" 组合
-        filter_expr = arrow::compute::or_(filter_expr, current_condition);
-    }
-    // 输出最终的过滤表达式
-    std::cout << "Final filter expression: " << filter_expr.ToString() << std::endl;
-    options->filter = filter_expr;
-    options->projection = cp::project({arrow::compute::field_ref(col2)}, {col2});
-    auto scan_node_options = arrow::dataset::ScanNodeOptions{dataset, options};
-    arrow::acero::Declaration scan{"scan", std::move(scan_node_options)};
-    spdlog::info("scan declaration.");
-
-    ac::Declaration filter{
-      "filter", {std::move(scan)}, ac::FilterNodeOptions(std::move(filter_expr))};
-
-    arrow::Result<std::shared_ptr<arrow::Table>> status = arrow::acero::DeclarationToTable(std::move(filter));
-    // 检查是否成功
-    if (!status.ok()) {
-        spdlog::error("Error during filter: {}", status.status().ToString());
-        return nullptr;
-    }
-    std::shared_ptr<arrow::Table> response_table = status.ValueOrDie();
-    spdlog::info("Number of rows: {}", response_table->num_rows());
-    return response_table;
-}
-
-void test(shared_ptr<Aws::S3::S3Client> awsClient){
-  string bucket = "wikidata0.98";
-  string keyName = "27.csv";
-  high_resolution_clock::time_point begin = high_resolution_clock::now();
-  auto result = getObjectbyIndex(bucket, keyName, awsClient, {"subject","object"}, 7084,771172222);
-  // auto result = getObject(bucket, keyName, awsClient, {"subject","object"}, 809716393);
-  vector<size_t>filter={648,2683028,13277,1954,12043};
-  getobjectfilter(result,"object","subject",filter);
-  high_resolution_clock::time_point End = high_resolution_clock::now();
-  milliseconds Time = chrono::duration_cast<milliseconds>(End - begin);
-  // cout<<"getObjectb总耗时："<<Time.count()<<"ms"<<endl;
-  cout<<"getObjectbyIndex总耗时："<<Time.count()<<"ms"<<endl;
-  vector<string>col2={"?v0","2683028' OR s.object = '648' OR s.object = '13277' OR s.object = '1954' OR s.object = '12043"};
-  s3SelectbyIndex(bucket, keyName, awsClient, col2,7084,771172222);
-  // s3Select(bucket, keyName, awsClient, col2);
-  // vector<size_t>filter={2683028};
-  // getobjectfilter(result,"object","subject",filter);
-  // high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
-  // milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
-  // cout<<"getObject总耗时："<<overallTime.count()<<"ms"<<endl;
-  // vector<string>col2={"?v0","2683028' OR s.object = '648' OR s.object = '13277"};
-  // string temp;
-  // vector<string>col2={"?v0",temp};
-  // s3Select(bucket, keyName, awsClient, col2);
-}
-
-int main() {
-  string str;
-  Aws::SDKOptions options;
-  Aws::InitAPI(options);
-  Aws::S3::S3ClientConfiguration clientConfig;
-  clientConfig.maxConnections = 2000;
-  clientConfig.useUSEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
-  clientConfig.useVirtualAddressing = true;
-  auto s3Client = std::make_shared<Aws::S3::S3Client>(clientConfig);
-  {
-    while(true){
-      cout<<"请输入查询名称(输入exit结束程序):"<<endl;
-      cin>>str;
-      if(str == "exit") {
-        break;
-      }
-      // ExeQuery(str, s3Client);
-      test(s3Client);
-   }
-   Aws::ShutdownAPI(options);
-   spdlog::info("S3 Client连接断开,结束程序");
-  }
-  return 0;
-}
 
 arrow::Status WriteTableToCSV(const std::shared_ptr<arrow::Table>& table, const std::string& file_path) {
     // 创建输出文件流
@@ -140,9 +51,94 @@ arrow::Status WriteTableToCSV(const std::shared_ptr<arrow::Table>& table, const 
     return arrow::Status::OK();
 }
 
+void testindex(shared_ptr<Aws::S3::S3Client> awsClient){
+  string bucket = "wikidata0.98";
+  string keyName = "1992.csv";
+  string object = "1652989";
+  vector<size_t>filter={1652989};
+  high_resolution_clock::time_point begin = high_resolution_clock::now();
+  auto[size,start,end] = getRangebyget(bucket,"1992_index.csv",object,awsClient);
+  if(end == 0) end = size;
+  auto result = getObjectbyIndex(bucket, keyName, awsClient, {"subject","object"},start,end);
+  auto result_= getobjectfilter(result,"object","subject",filter);
+  spdlog::info("Number of rows: {}", result_->num_rows());
+  high_resolution_clock::time_point End = high_resolution_clock::now();
+  milliseconds Time = chrono::duration_cast<milliseconds>(End - begin);
+  cout<<"getObjectbyIndex1总耗时："<<Time.count()<<"ms"<<endl;
+  auto[size2,start2,end2] = getRangebyget(bucket,"1992_index.csv",object,awsClient);
+  if(end2 == 0) end2 = size2;
+  vector<string>col2={"?v0","1652989"};
+  s3SelectbyIndex(bucket, keyName, awsClient, col2,start2,end2);
+  high_resolution_clock::time_point EndS = high_resolution_clock::now();
+  milliseconds Times = chrono::duration_cast<milliseconds>(EndS - End);
+  cout<<"selectbyIndex1总耗时："<<Times.count()<<"ms"<<endl;
+  auto[size3,start3,end3] = getRange(bucket,"1992_index.csv",object,awsClient);
+  if(end3 == 0) end3 = size3;
+  result = getObjectbyIndex(bucket, keyName, awsClient, {"subject","object"},start3,end3);
+  result_= getobjectfilter(result,"object","subject",filter);
+  spdlog::info("Number of rows: {}", result_->num_rows());
+  high_resolution_clock::time_point End1 = high_resolution_clock::now();
+  milliseconds Time1 = chrono::duration_cast<milliseconds>(End1 - EndS);
+  cout<<"getObjectbyIndex2总耗时："<<Time1.count()<<"ms"<<endl;
+  auto[size4,start4,end4] = getRange(bucket,"1992_index.csv",object,awsClient);
+  if(end4 == 0) end4 = size4;
+  s3SelectbyIndex(bucket, keyName, awsClient, col2,start4,end4);
+  high_resolution_clock::time_point EndS1 = high_resolution_clock::now();
+  milliseconds Times1 = chrono::duration_cast<milliseconds>(EndS1 - End1);
+  cout<<"selectbyIndex2总耗时："<<Times1.count()<<"ms"<<endl;
+}
+void test(shared_ptr<Aws::S3::S3Client> awsClient){
+  string bucket = "wikidata0.98";
+  string keyName = "1992.csv";
+  string object = "1652989";
+  high_resolution_clock::time_point begin = high_resolution_clock::now();
+  vector<size_t>filter={1652989};
+  auto result = getObject(bucket, keyName, awsClient, {"subject","object"}, 2282446);
+  auto result_= getobjectfilter(result,"object","subject",filter);
+  high_resolution_clock::time_point End = high_resolution_clock::now();
+  milliseconds Time = chrono::duration_cast<milliseconds>(End - begin);
+  cout<<"getObjectb总耗时："<<Time.count()<<"ms"<<endl;
+  vector<string>col2={"?v0","1652989"};
+  s3Select(bucket, keyName, awsClient, col2);
+}
+
+int main() {
+  string str;
+    Aws::SDKOptions options;
+    Aws::InitAPI(options);
+    Aws::S3::S3ClientConfiguration clientConfig;
+    clientConfig.maxConnections = 2000;
+    clientConfig.useUSEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
+    clientConfig.useVirtualAddressing = true;
+    auto s3Client = std::make_shared<Aws::S3::S3Client>(clientConfig);
+  {
+    while(true){
+      cout<<"请输入查询数据集(输入exit结束程序):"<<endl;
+      cin>>str;
+      if(str == "exit") {
+        break;
+      } else {
+        bucket = str;
+      }
+      cout<<"请输入查询名称(输入exit结束程序):"<<endl;
+      cin>>str;
+      if(str == "exit") {
+        break;
+      }
+      // ExeQuery(str, s3Client);
+      testindex(s3Client);
+      test(s3Client);
+   }
+    Aws::ShutdownAPI(options);
+    spdlog::info("S3 Client连接断开,结束程序");
+  }
+    return 0;
+}
+
 void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
-  const string file_path = "/home/ec2-user/s3/S3C++/queries/wikidata/" + query_name + ".rq";
-  // const string written_path = "/home/ec2-user/s3/S3C++/res/" + query_name + ".csv";
+  // const string file_path = "/home/ec2-user/s3/S3C++/queries/wikidata/" + query_name + ".rq";
+  const string file_path = "/home/ec2-user/s3/S3C++/queries/new_query/" + query_name + ".txt";
+  // const string file_path = "/home/ec2-user/s3/S3C++/queries/" + query_name + ".rq";
   high_resolution_clock::time_point beginTime = high_resolution_clock::now();
 
   //获得分解后的子查询
@@ -186,7 +182,6 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
   sort(min->begin(), min->end(), compareByTime);
   getOrder(min);
   
-  high_resolution_clock::time_point begin = high_resolution_clock::now();
   shared_ptr<arrow::Table> result;
   set<string> tag;
   string subject,object;
@@ -213,10 +208,12 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
           col2.emplace_back(object);
         }
                 
-        int method = 1;
+        // int method = it.method;
+        int method =1;
         string keyName;
         keyName = it.keyName +".csv"; //排序后这里要修改
         cout<<"第"<<index_+1<<"个查询"<<keyName<<endl;
+        high_resolution_clock::time_point begin = high_resolution_clock::now();
         switch(method){
           //getObject
           case 1:{
@@ -234,7 +231,8 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
           break;  
           }
           //s3SelectIndex
-          case 2:{
+          case 2:
+          case 6:{
           auto temp = s3SelectbyIndex(bucket, keyName, awsClient, col2, it.start, it.end);
             // 使用迭代器循环删除不包含'?'的元素
             if(index_ == 0){
@@ -249,8 +247,11 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
               }
               result = merge(result, temp, col1,col2);
             }
-          }
+            high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
+            milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
+            cout<<"s3SelectbyIndex总耗时："<<overallTime.count()<<"ms"<<endl;
             break;
+          }
           //s3Select
           case 3:{
             // high_resolution_clock::time_point begin = high_resolution_clock::now();
@@ -268,10 +269,15 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
               }
               result = merge(result, temp, col1,col2);
             }
+            high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
+            milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
+            cout<<"s3Select总耗时："<<overallTime.count()<<"ms"<<endl;
             break;
           }
           //getObjectByIndex
-          case 4:{
+          case 4:
+          case 5:{
+            cout<<it.start<<" "<<it.end<<endl;
            auto temp = getObjectbyIndex(bucket, keyName, awsClient, col2, it.start, it.end);
             if(index_ == 0){
               result = temp;
@@ -289,7 +295,6 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
             spdlog::error("query",index,"Error!");
         }
         string write_path = "../res/"+ to_string(index_) + ".csv";
-        // auto status = WriteTableToCSV(result, write_path);
         index_++;
         if(subject.find("?") != string::npos && tag.count(subject) == 0){
           tag.insert(subject);
@@ -320,7 +325,7 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
   }
   spdlog::info("Numbers of result: {}", number);
   high_resolution_clock::time_point endTime = high_resolution_clock::now();
-  milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - begin);
+  milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - beginTime);
   // printResult(result);
   cout<<"总耗时："<<timeInterval.count()<<"ms"<<endl;
 }

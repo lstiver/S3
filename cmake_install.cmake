@@ -45,7 +45,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ec2-user/s3/S3C++/leveldb/cmake_install.cmake")
-  include("/home/ec2-user/s3/S3C++/parallel-hashmap/cmake_install.cmake")
 
 endif()
 

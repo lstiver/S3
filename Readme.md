@@ -36,3 +36,23 @@
   PyErr_Print(); 
   const char *result = PyUnicode_AsUTF8(pReturn);
   PyErr_Print(); 
+
+  arrow::Status WriteTableToCSV(const std::shared_ptr<arrow::Table>& table, const std::string& file_path) {
+    // 创建输出文件流
+    auto output_file = arrow::io::FileOutputStream::Open(file_path);
+    if (!output_file.ok()) {
+        return output_file.status();
+    }
+
+    // 创建 CSV Writer
+    auto write_options = arrow::csv::WriteOptions::Defaults();
+    ARROW_ASSIGN_OR_RAISE(auto writer,
+                          arrow::csv::MakeCSVWriter(*output_file, table->schema(), write_options));
+
+    // 写入 Table 数据到 CSV
+    ARROW_RETURN_NOT_OK(writer->WriteTable(*table));
+    ARROW_RETURN_NOT_OK(writer->Close());
+    ARROW_RETURN_NOT_OK(output_file.ValueOrDie()->Close());
+
+    return arrow::Status::OK();
+}

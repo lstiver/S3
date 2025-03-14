@@ -9,7 +9,6 @@
 #include <string>
 #include <vector>
 #include <spdlog/spdlog.h>
-#include <parallel_hashmap/phmap.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <arrow/acero/exec_plan.h>
 #include <arrow/acero/options.h>
@@ -40,7 +39,6 @@
 using namespace std;
 using std::chrono::high_resolution_clock;
 using std::chrono::milliseconds;
-using phmap::flat_hash_map;
 namespace cp = ::arrow::compute;
 namespace ac = ::arrow::acero;
 

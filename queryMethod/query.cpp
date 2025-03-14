@@ -86,14 +86,8 @@ shared_ptr<arrow::Table> parseCompletePayload (const Aws::Vector<unsigned char>:
     auto tableReader = *makeReaderResult;
     auto table = tableReader->Read();
     if(table.ok()){
-        cout<<table.ValueOrDie()->schema()->ToString()<<endl;
-        cout<<table.ValueOrDie()->num_rows()<<endl;
-    //     auto status = Write(table.ValueOrDie(),"../output.csv");
-    //     if (!status.ok()) {
-    // std::cerr << "Failed to write table to CSV: " << status.ToString() << std::endl;
-    // // 根据需要添加错误处理逻辑，例如返回 nullptr 或退出
-    // return nullptr;
-// }
+        // cout<<table.ValueOrDie()->schema()->ToString()<<endl;
+        // cout<<table.ValueOrDie()->num_rows()<<endl;
         return table.ValueOrDie();
     } else {
         spdlog::error("读取失败！错误信息: {}", table.status().message());
@@ -232,7 +226,9 @@ shared_ptr<arrow::Table> getObjectbyIndex(
         // 读取 CSV 文件
         auto read_options = arrow::csv::ReadOptions::Defaults();
         read_options.column_names = col; //设置列名
-        read_options.skip_rows = 1; // 跳过表头
+        if(start == 0){
+            read_options.skip_rows = 1; // 跳过表头
+        }
         
         auto convert_options = arrow::csv::ConvertOptions::Defaults();
         for (const auto& column_name : col) {
@@ -354,9 +350,9 @@ shared_ptr<arrow::Table> s3SelectbyIndex(
         this_thread::sleep_for(chrono::milliseconds(100));
     }
 
-    high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
-    milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
-    cout<<"s3selectbyIndex耗时："<<overallTime.count()<<"ms"<<endl;
+    // high_resolution_clock::time_point overallEnd = high_resolution_clock::now();
+    // milliseconds overallTime = chrono::duration_cast<milliseconds>(overallEnd - begin);
+    // cout<<"s3selectbyIndex耗时："<<overallTime.count()<<"ms"<<endl;
     return parseCompletePayload(s3Result_.begin(), s3Result_.end(), new_col);
 }
 
@@ -417,6 +413,7 @@ shared_ptr<arrow::Table> s3Select(
     handler.SetStatsEventCallback([](const Aws::S3::Model::StatsEvent &statsEvent) {
         cerr << "Bytes scanned: " << statsEvent.GetDetails().GetBytesScanned() << "\n";
         cerr << "Bytes processed: " << statsEvent.GetDetails().GetBytesProcessed() << "\n";
+        cerr << "Bytes returned: " << statsEvent.GetDetails().GetBytesReturned() << "\n";
     });
 
     selectObjectContentRequest.SetEventStreamHandler(handler);
@@ -452,7 +449,8 @@ array<size_t, 3> getRange(const string &bucket,
                        const string &parsed_conditions,
                        shared_ptr<Aws::S3::S3Client> awsClient)
 {
-    string key_ = key + "_index.csv";
+    // string key_ = key + "_index.csv";
+    // string key_ = key;
     size_t start = 0;
     size_t end = 0;
     size_t size = 0;
@@ -464,10 +462,10 @@ array<size_t, 3> getRange(const string &bucket,
     } else {
         sql = "SELECT * FROM s3object s WHERE s.object = '" + parsed_conditions + "' OR s.object = 'size'";
     }
-
+    cout<<sql<<endl;
     Aws::S3::Model::SelectObjectContentRequest selectObjectContentRequest;
     selectObjectContentRequest.SetBucket(bucket);
-    selectObjectContentRequest.SetKey(key_);
+    selectObjectContentRequest.SetKey(key);
     selectObjectContentRequest.SetExpressionType(Aws::S3::Model::ExpressionType::SQL);
     selectObjectContentRequest.SetExpression(sql);
 
@@ -552,4 +550,192 @@ array<size_t, 3> getRange(const string &bucket,
     }
 
     return {size, start, end};
+}
+
+array<size_t, 3> getRangebyget(const string &bucket, 
+                       const string &key,
+                       const string &parsed_conditions,
+                       shared_ptr<Aws::S3::S3Client> awsClient)
+{
+    // string key_ = key + "_index.csv";
+    size_t start = 0;
+    size_t end = 0;
+    size_t size = 0;
+    stringstream stream;
+    vector<string> fil;
+    fil.emplace_back("size");
+    
+    // 创建 GetObject 请求
+    Aws::S3::Model::GetObjectRequest getObjectRequest;
+    getObjectRequest.WithBucket(bucket).WithKey(key);
+
+    // 如果 parsed_conditions 为空字符串或 "None"，返回默认查询
+    if (!parsed_conditions.empty()) {
+        fil.emplace_back(parsed_conditions);
+    }
+    // 发送请求
+    auto getObjectOutcome = awsClient->GetObject(getObjectRequest);
+
+    if (getObjectOutcome.IsSuccess()){
+        Aws::IOStream& retrievedFile = getObjectOutcome.GetResult().GetBody();
+        shared_ptr<arrow::io::InputStream> inputStream = make_shared<ArrowInputStream>(retrievedFile);
+        auto read_options = arrow::csv::ReadOptions::Defaults();
+        read_options.column_names = {"object","start","end"}; //设置列名
+        read_options.skip_rows = 1; // 跳过表头
+        auto convert_options = arrow::csv::ConvertOptions::Defaults();
+        convert_options.column_types["object"] = arrow::utf8();
+        convert_options.column_types["start"] = arrow::utf8();
+        convert_options.column_types["end"] = arrow::utf8();
+        // 自动利用 Arrow 并发进行 CSV 读取
+        auto csv_reader = arrow::csv::TableReader::Make(
+            arrow::io::default_io_context(), inputStream,
+            read_options,
+            arrow::csv::ParseOptions::Defaults(),
+            convert_options);
+        if (!csv_reader.ok()) {
+            spdlog::error("Failed to create CSV TableReader");
+        }
+        shared_ptr<arrow::csv::TableReader> reader = *csv_reader;
+
+        // Read table from CSV file
+        auto table = reader->Read();
+        if(!table.ok()) {
+           spdlog::error("转化结果为arrow表格失败: {}", table.status().ToString());
+        }else {
+            arrow::dataset::internal::Initialize();
+            auto dataset = std::make_shared<arrow::dataset::InMemoryDataset>(table.ValueOrDie());
+            auto options = std::make_shared<arrow::dataset::ScanOptions>();
+            options->projection = arrow::compute::project({
+                // arrow::compute::field_ref("object"),
+                arrow::compute::field_ref("start"),
+                arrow::compute::field_ref("end")
+            }, {
+                // "Object",
+                "Start",
+                "End"
+            });
+            cp::Expression filter_expr = arrow::compute::literal(false);
+            for (const auto& f : fil) {
+                cp::Expression current_condition = arrow::compute::equal(
+                arrow::compute::field_ref("object"),
+                arrow::compute::literal(f)
+                ); 
+                // 将当前条件与已有条件进行 "or" 组合
+                filter_expr = arrow::compute::or_(filter_expr, current_condition);
+            }
+            // 输出最终的过滤表达式
+            std::cout << "Final filter expression: " << filter_expr.ToString() << std::endl;
+            options->filter = filter_expr;
+
+            auto scan_node_options = arrow::dataset::ScanNodeOptions{dataset, options};
+            arrow::acero::Declaration scan{"scan", std::move(scan_node_options)};
+            spdlog::info("scan declaration.");
+
+            ac::Declaration filter{
+              "filter", {std::move(scan)}, ac::FilterNodeOptions(std::move(filter_expr))};
+            arrow::Result<std::shared_ptr<arrow::Table>> status = arrow::acero::DeclarationToTable(std::move(filter));
+            // 检查是否成功
+            if (!status.ok()) {
+                spdlog::error("Error during filter: {}", status.status().ToString());
+            }
+            std::shared_ptr<arrow::Table> response_table = status.ValueOrDie();
+            spdlog::info("Number of rows: {}", response_table->num_rows());
+
+            cout<<response_table->schema()->ToString()<<endl;
+            cout<<response_table->num_columns()<<endl;
+            //  遍历每一行
+            for (int row = 0; row < response_table->num_rows(); ++row) {
+                for (int col = 0; col < 3; ++col) {
+                    auto column = response_table->column(col);
+                    int64_t row_in_chunk = row;
+                    for (int64_t chunk_index = 0; chunk_index < column->num_chunks(); ++chunk_index) {
+                        auto chunked_array = column->chunk(chunk_index);
+
+                        // 检查 row_in_chunk 是否在当前 chunk 的范围内
+                        if (row_in_chunk < chunked_array->length()) {
+                            // 获取标量值
+                            auto result = chunked_array->GetScalar(row_in_chunk);
+                            if (result.ok()) {
+                                auto scalar = result.ValueOrDie()->ToString();
+                                stream << scalar;
+                                stream << ",";
+                            }
+                        }
+                    }
+                }
+                stream << '\n';
+            }
+            cout<<stream.str()<<endl;
+        }
+        try {
+            string line;
+            while (getline(stream, line)) {
+                stringstream lineStream(line);
+                string token;
+                getline(lineStream, token, ',');
+                if(token == "size") {
+                    getline(lineStream, token, ',');
+                    size = std::stoull(token); // 这里可能抛出异常
+                } else {
+                    getline(lineStream, token, ',');
+                    start = std::stoull(token); // 这里可能抛出异常
+                    getline(lineStream, token, ',');
+                    end = std::stoull(token); // 这里可能抛出异常
+                }
+            }
+        } catch (const std::invalid_argument& e) {
+            cerr << "Invalid argument: " << e.what() << "\n";
+            return {};
+        } catch (const std::out_of_range& e) {
+            cerr << "Out of range: " << e.what() << "\n";
+            return {};
+        } catch (const std::exception& e) {
+            cerr << "Unexpected error: " << e.what() << "\n";
+            return {};
+        }
+    }else {
+           std::cerr << "获取对象失败: " << getObjectOutcome.GetError().GetMessage() << std::endl;
+    }                  
+
+    return {size, start, end};
+}
+
+shared_ptr<arrow::Table> getobjectfilter(shared_ptr<arrow::Table> table, 
+                                string col1,
+                                string col2,
+                                vector<size_t> fil)
+{
+    arrow::dataset::internal::Initialize();
+    auto dataset = std::make_shared<arrow::dataset::InMemoryDataset>(table);
+    auto options = std::make_shared<arrow::dataset::ScanOptions>();
+    cp::Expression filter_expr = arrow::compute::literal(false);
+    for (const auto& f : fil) {
+        cp::Expression current_condition = arrow::compute::equal(
+            arrow::compute::field_ref(col1),
+            arrow::compute::literal(f)
+        ); 
+        // 将当前条件与已有条件进行 "or" 组合
+        filter_expr = arrow::compute::or_(filter_expr, current_condition);
+    }
+    // 输出最终的过滤表达式
+    std::cout << "Final filter expression: " << filter_expr.ToString() << std::endl;
+    options->filter = filter_expr;
+    options->projection = cp::project({arrow::compute::field_ref(col2)}, {col2});
+    auto scan_node_options = arrow::dataset::ScanNodeOptions{dataset, options};
+    arrow::acero::Declaration scan{"scan", std::move(scan_node_options)};
+    spdlog::info("scan declaration.");
+
+    ac::Declaration filter{
+      "filter", {std::move(scan)}, ac::FilterNodeOptions(std::move(filter_expr))};
+
+    arrow::Result<std::shared_ptr<arrow::Table>> status = arrow::acero::DeclarationToTable(std::move(filter));
+    // 检查是否成功
+    if (!status.ok()) {
+        spdlog::error("Error during filter: {}", status.status().ToString());
+        return nullptr;
+    }
+    std::shared_ptr<arrow::Table> response_table = status.ValueOrDie();
+    spdlog::info("Number of rows: {}", response_table->num_rows());
+    // cout<<response_table->num_columns()<<endl;
+    return response_table;
 }

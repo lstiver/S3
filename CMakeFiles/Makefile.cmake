@@ -30,9 +30,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "leveldb/third_party/googletest/googletest/cmake/gtest.pc.in"
   "leveldb/third_party/googletest/googletest/cmake/gtest_main.pc.in"
   "leveldb/third_party/googletest/googletest/cmake/internal_utils.cmake"
-  "parallel-hashmap/CMakeLists.txt"
-  "parallel-hashmap/cmake/DetectVersion.cmake"
-  "parallel-hashmap/cmake/helpers.cmake"
   "/usr/lib64/cmake/ArrowAcero/ArrowAceroConfig.cmake"
   "/usr/lib64/cmake/ArrowAcero/ArrowAceroConfigVersion.cmake"
   "/usr/lib64/cmake/ArrowAcero/ArrowAceroTargets-release.cmake"
@@ -125,7 +122,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "leveldb/third_party/benchmark/benchmarkConfigVersion.cmake"
   "leveldb/third_party/benchmark/benchmark.pc"
   "leveldb/third_party/benchmark/src/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "parallel-hashmap/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

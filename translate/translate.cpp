@@ -1,4 +1,7 @@
 #include "translate.h"
+#include <aws/core/Aws.h>
+#include <aws/s3/S3Client.h>
+#include <aws/s3/model/HeadObjectRequest.h>
 
 mutex writeMutex;// 互斥锁，用于文件写入保护
 
@@ -9,6 +12,7 @@ bool compareByTime(const QueryInfo& a, const QueryInfo& b) {
 vector<vector<string>> get_query(string file_path){
   // string dbPath = "/data/dbpedia1B/index";
   string dbPath = "/data/wikidata/index";
+  // string dbPath = "/data/watdiv1000m/index";
   // string dbPath = "/home/ec2-user/s3/S3C++/index";
 
   // 打开levedb
@@ -106,7 +110,22 @@ vector<QueryInfo> getTimeAndCost(const string &bucket,
                                            const vector<string> & row, 
                                            int index, 
                                            std::shared_ptr<Aws::S3::S3Client> awsClient){
-  auto[size,start,end] = getRange(bucket,row[1],row[3],awsClient);
+  string key = row[1] + "_index.csv";
+  size_t index_size = 0;//index文件大小
+  Aws::S3::Model::HeadObjectRequest request;
+    request.SetBucket(bucket);
+    request.SetKey(key);
+
+    auto outcome = awsClient->HeadObject(request);
+
+  if (outcome.IsSuccess()) {
+      // 直接返回 Content-Length
+      index_size = outcome.GetResult().GetContentLength();
+      cout<<index_size<<endl;
+  } else {
+      std::cerr << "Error: " << outcome.GetError().GetMessage() << std::endl;
+  }
+  auto[size,start,end] = getRangebyget(bucket,key,row[3],awsClient);
   size_t total=0; //用来记录查询totallength
   vector<QueryInfo>time_and_cost;
   // 根据获得的size，start，end来估算cost和time
@@ -126,29 +145,45 @@ vector<QueryInfo> getTimeAndCost(const string &bucket,
   query1.end = end;
    
   query1.method= 1;  // Using integer values for keys to represent "getObject"
-  query1.time = size * 0.0000675351;
-  query1.cost = 0;
+  query1.time = size*0.0000130980;
+  query1.cost = size*0.0000130980*0.96/3600;
   query1.index = index;
   time_and_cost.emplace_back(query1);
 
-  query1.method= 2;  // Using integer values for keys to represent "s3SelectIndex"
-  query1.time = total * 0.0000132183;
-  query1.cost = totallength * (0.002 + 0.0007) + 0.002 * totallength;
+  // query1.method= 2;  // Using integer values for keys to represent "selectINDEX+selectDATA"
+  // query1.time = 0.0000092584*(index_size+total);
+  // // query1.cost = totallength * (0.002 + 0.0007) + 0.002 * totallength;
+  // query1.cost = 0.0000092584*(index_size+total)*0.96/3600+0.002*((index_size/1024/1024/1024)+totallength)+0.0007*totallength;
+  // if (end > 0) {
+  //     time_and_cost.emplace_back(query1);
+  // }
+
+  // query1.method= 3;  // Using integer values for keys to represent "s3Select"
+  // query1.time = size* 0.0000092584;
+  // // query1.cost = totallength * 0.0007 * 0.96/3600 + 0.002 * (size/1024/1024/1024);
+  // query1.cost = size* 0.0000092584*0.96/3600 + 0.002* (size/1024/1024/1024);
+  // time_and_cost.emplace_back(query1);
+
+  query1.method= 4;  // Using integer values for keys to represent "selectINDEX+getobjectDATA"
+  query1.time = 0.0000092584*index_size+0.0000130980*total;
+  query1.cost = (0.0000092584*index_size+0.0000130980*total)*0.96/3600+0.002*(index_size/1024/1024/1024);
   if (end > 0) {
       time_and_cost.emplace_back(query1);
   }
 
-  query1.method= 3;  // Using integer values for keys to represent "s3Select"
-  query1.time = size * 0.0000440919;
-  query1.cost = totallength * 0.0007 + 0.002 * (size / 1024 / 1024 / 1024);
-  time_and_cost.emplace_back(query1);
-
-  query1.method= 4;  // Using integer values for keys to represent "getObjectByIndex"
-  query1.time = total * 0.0000168287;
-  query1.cost = 0;
+  query1.method= 5;  // Using integer values for keys to represent "getobjectINDEX+getobjectDATA"
+  query1.time = 0.0000130980*(total+index_size);
+  query1.cost = 0.0000130980*(total+index_size)*0.96/3600;
   if (end > 0) {
       time_and_cost.emplace_back(query1);
   }
+
+  // query1.method= 6;  // Using integer values for keys to represent "getobjectINDEX+selectDATA"
+  // query1.time = 0.0000130980*index_size+0.0000092584*total;
+  // query1.cost = (0.0000130980*index_size+0.0000092584*total)*0.96/3600+(0.002+0.0007)*totallength;
+  // if (end > 0) {
+  //     time_and_cost.emplace_back(query1);
+  // }
    for (const auto& query : time_and_cost) {
         cout << "key: " << query.method << ", time: " << query.time << ", cost: " << query.cost << ", index: " << query.index << endl;
     }

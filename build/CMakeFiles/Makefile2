@@ -65,18 +65,15 @@ CMAKE_BINARY_DIR = /home/ec2-user/s3/S3C++/build
 # The main recursive "all" target.
 all: CMakeFiles/S3C++.dir/all
 all: leveldb/all
-all: parallel-hashmap/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: leveldb/preinstall
-preinstall: parallel-hashmap/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/S3C++.dir/clean
 clean: leveldb/clean
-clean: parallel-hashmap/clean
 .PHONY : clean
 
 #=============================================================================
@@ -191,21 +188,6 @@ leveldb/third_party/googletest/googletest/preinstall:
 leveldb/third_party/googletest/googletest/clean: leveldb/third_party/googletest/googletest/CMakeFiles/gtest.dir/clean
 leveldb/third_party/googletest/googletest/clean: leveldb/third_party/googletest/googletest/CMakeFiles/gtest_main.dir/clean
 .PHONY : leveldb/third_party/googletest/googletest/clean
-
-#=============================================================================
-# Directory level rules for directory parallel-hashmap
-
-# Recursive "all" directory target.
-parallel-hashmap/all:
-.PHONY : parallel-hashmap/all
-
-# Recursive "preinstall" directory target.
-parallel-hashmap/preinstall:
-.PHONY : parallel-hashmap/preinstall
-
-# Recursive "clean" directory target.
-parallel-hashmap/clean:
-.PHONY : parallel-hashmap/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/S3C++.dir
