@@ -30,78 +30,6 @@ vector<string>col2;
 string bucket = "watdiv100mconvert";
 int totalTime = 45870000;  // 最大时间
 
-
-arrow::Status WriteTableToCSV(const std::shared_ptr<arrow::Table>& table, const std::string& file_path) {
-    // 创建输出文件流
-    auto output_file = arrow::io::FileOutputStream::Open(file_path);
-    if (!output_file.ok()) {
-        return output_file.status();
-    }
-
-    // 创建 CSV Writer
-    auto write_options = arrow::csv::WriteOptions::Defaults();
-    ARROW_ASSIGN_OR_RAISE(auto writer,
-                          arrow::csv::MakeCSVWriter(*output_file, table->schema(), write_options));
-
-    // 写入 Table 数据到 CSV
-    ARROW_RETURN_NOT_OK(writer->WriteTable(*table));
-    ARROW_RETURN_NOT_OK(writer->Close());
-    ARROW_RETURN_NOT_OK(output_file.ValueOrDie()->Close());
-
-    return arrow::Status::OK();
-}
-
-void testindex(shared_ptr<Aws::S3::S3Client> awsClient){
-  string bucket = "wikidata0.98";
-  string keyName = "1992.csv";
-  string object = "1652989";
-  vector<size_t>filter={1652989};
-  high_resolution_clock::time_point begin = high_resolution_clock::now();
-  auto[size,start,end] = getRangebyget(bucket,"1992_index.csv",object,awsClient);
-  if(end == 0) end = size;
-  auto result = getObjectbyIndex(bucket, keyName, awsClient, {"subject","object"},start,end);
-  auto result_= getobjectfilter(result,"object","subject",filter);
-  spdlog::info("Number of rows: {}", result_->num_rows());
-  high_resolution_clock::time_point End = high_resolution_clock::now();
-  milliseconds Time = chrono::duration_cast<milliseconds>(End - begin);
-  cout<<"getObjectbyIndex1总耗时："<<Time.count()<<"ms"<<endl;
-  auto[size2,start2,end2] = getRangebyget(bucket,"1992_index.csv",object,awsClient);
-  if(end2 == 0) end2 = size2;
-  vector<string>col2={"?v0","1652989"};
-  s3SelectbyIndex(bucket, keyName, awsClient, col2,start2,end2);
-  high_resolution_clock::time_point EndS = high_resolution_clock::now();
-  milliseconds Times = chrono::duration_cast<milliseconds>(EndS - End);
-  cout<<"selectbyIndex1总耗时："<<Times.count()<<"ms"<<endl;
-  auto[size3,start3,end3] = getRange(bucket,"1992_index.csv",object,awsClient);
-  if(end3 == 0) end3 = size3;
-  result = getObjectbyIndex(bucket, keyName, awsClient, {"subject","object"},start3,end3);
-  result_= getobjectfilter(result,"object","subject",filter);
-  spdlog::info("Number of rows: {}", result_->num_rows());
-  high_resolution_clock::time_point End1 = high_resolution_clock::now();
-  milliseconds Time1 = chrono::duration_cast<milliseconds>(End1 - EndS);
-  cout<<"getObjectbyIndex2总耗时："<<Time1.count()<<"ms"<<endl;
-  auto[size4,start4,end4] = getRange(bucket,"1992_index.csv",object,awsClient);
-  if(end4 == 0) end4 = size4;
-  s3SelectbyIndex(bucket, keyName, awsClient, col2,start4,end4);
-  high_resolution_clock::time_point EndS1 = high_resolution_clock::now();
-  milliseconds Times1 = chrono::duration_cast<milliseconds>(EndS1 - End1);
-  cout<<"selectbyIndex2总耗时："<<Times1.count()<<"ms"<<endl;
-}
-void test(shared_ptr<Aws::S3::S3Client> awsClient){
-  string bucket = "wikidata0.98";
-  string keyName = "1992.csv";
-  string object = "1652989";
-  high_resolution_clock::time_point begin = high_resolution_clock::now();
-  vector<size_t>filter={1652989};
-  auto result = getObject(bucket, keyName, awsClient, {"subject","object"}, 2282446);
-  auto result_= getobjectfilter(result,"object","subject",filter);
-  high_resolution_clock::time_point End = high_resolution_clock::now();
-  milliseconds Time = chrono::duration_cast<milliseconds>(End - begin);
-  cout<<"getObjectb总耗时："<<Time.count()<<"ms"<<endl;
-  vector<string>col2={"?v0","1652989"};
-  s3Select(bucket, keyName, awsClient, col2);
-}
-
 int main() {
   string str;
     Aws::SDKOptions options;
@@ -125,9 +53,9 @@ int main() {
       if(str == "exit") {
         break;
       }
-      // ExeQuery(str, s3Client);
-      testindex(s3Client);
-      test(s3Client);
+      ExeQuery(str, s3Client);
+      // testindex(s3Client);
+      // test(s3Client);
    }
     Aws::ShutdownAPI(options);
     spdlog::info("S3 Client连接断开,结束程序");
@@ -326,6 +254,6 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
   spdlog::info("Numbers of result: {}", number);
   high_resolution_clock::time_point endTime = high_resolution_clock::now();
   milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - beginTime);
-  // printResult(result);
+  printResult(result);
   cout<<"总耗时："<<timeInterval.count()<<"ms"<<endl;
 }

@@ -1,4 +1,0 @@
-select ?subject ?products 
-where { 
-?subject <http://dbpedia.org/property/products> ?products .
-}
