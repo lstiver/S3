@@ -36,7 +36,7 @@ struct QueryInfo {
 };
 
 bool compareByTime(const QueryInfo& a, const QueryInfo& b);
-vector<vector<string>> get_query(string file_path);
+pair<vector<string>, vector<vector<string>>> get_query(string file_path);
 vector<QueryInfo> getTimeAndCost(const string &bucket, 
                                             const vector<string> &row, 
                                             int index, 

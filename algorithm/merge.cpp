@@ -149,6 +149,7 @@ shared_ptr<arrow::Table> filter(shared_ptr<arrow::Table> table,
                 arrow::compute::literal(static_cast<size_t>(std::stoull(col1)))
             );
     options->filter = filter_expr;
+    options->add_augmented_fields = false;
     options->projection = cp::project({arrow::compute::field_ref(col2)}, {col2});
     auto scan_node_options = arrow::dataset::ScanNodeOptions{dataset, options};
     arrow::acero::Declaration scan{"scan", std::move(scan_node_options)};

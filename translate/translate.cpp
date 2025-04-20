@@ -9,11 +9,8 @@ bool compareByTime(const QueryInfo& a, const QueryInfo& b) {
     return a.time < b.time;
 }
 
-vector<vector<string>> get_query(string file_path){
-  // string dbPath = "/data/dbpedia1B/index";
-  string dbPath = "/data/wikidata/index";
-  // string dbPath = "/data/watdiv1000m/index";
-  // string dbPath = "/home/ec2-user/s3/S3C++/index";
+pair<vector<string>, vector<vector<string>>> get_query(string file_path){
+  string dbPath = "/data/watdiv500m/index";
 
   // 打开levedb
   leveldb::DB* db;
@@ -98,7 +95,7 @@ vector<vector<string>> get_query(string file_path){
     }
     file.close(); //关闭文件
     delete db;
-    return query_result;
+    return {column,query_result};
   } else {
     delete db;
     perror("打开文件失败");
@@ -109,7 +106,7 @@ vector<vector<string>> get_query(string file_path){
 vector<QueryInfo> getTimeAndCost(const string &bucket, 
                                            const vector<string> & row, 
                                            int index, 
-                                           std::shared_ptr<Aws::S3::S3Client> awsClient){
+                                           shared_ptr<Aws::S3::S3Client> awsClient){
   string key = row[1] + "_index.csv";
   size_t index_size = 0;//index文件大小
   Aws::S3::Model::HeadObjectRequest request;
@@ -123,7 +120,7 @@ vector<QueryInfo> getTimeAndCost(const string &bucket,
       index_size = outcome.GetResult().GetContentLength();
       cout<<index_size<<endl;
   } else {
-      std::cerr << "Error: " << outcome.GetError().GetMessage() << std::endl;
+      cerr << "Error: " << outcome.GetError().GetMessage() << endl;
   }
   auto[size,start,end] = getRangebyget(bucket,key,row[3],awsClient);
   size_t total=0; //用来记录查询totallength
@@ -199,11 +196,10 @@ void writeVectorToCSV(ofstream &csvFile, const vector<string>& resultVector) {
     csvFile << "\n";
 }
 
-void printResult(const std::shared_ptr<arrow::Table> table) {
+void printResult(const shared_ptr<arrow::Table> table) {
   int64_t num_columns = table->num_columns();
-int64_t num_rows = table->num_rows();
-// string dbPath = "/home/ec2-user/s3/S3C++/index";
-string dbPath = "/data/watdiv500m/result_index";
+  int64_t num_rows = table->num_rows();
+  string dbPath = "/data/watdiv500m/result_index";
 
   // 打开levedb
   leveldb::DB* db;
@@ -244,9 +240,9 @@ for (int64_t row = 0; row < num_rows; ++row) {
                     string t;
                     auto status = db->Get(leveldb::ReadOptions(), scalar->ToString(), &t); 
                     // 打印列名和该行值
-                    std::cout << t << " ";
+                    cout << t << " ";
                 } else {
-                    std::cerr << "Error: " << result.status().ToString() << std::endl;
+                    cerr << "Error: " << result.status().ToString() << endl;
                 }
                 break;  // 找到对应 chunk，跳出循环
             } else {

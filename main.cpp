@@ -70,7 +70,7 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
   high_resolution_clock::time_point beginTime = high_resolution_clock::now();
 
   //获得分解后的子查询
-  auto query_result = get_query(file_path); 
+  auto [column_name,query_result] = get_query(file_path); 
   int index = 0;
   vector<vector<QueryInfo>>selectQuery;
   for (const auto& row : query_result) {
@@ -251,6 +251,18 @@ void ExeQuery(string query_name, shared_ptr<Aws::S3::S3Client> awsClient){
   if(result != nullptr) {
     number = result->num_rows();
   }
+  index = result->num_columns();
+  vector<int>columns;
+  columns.reserve(index);
+  auto colname = result->ColumnNames();
+  for(const string& col : column_name){
+    for(int i =0;i < index; i++){
+      if(col == colname[i]) {
+        columns.emplace_back(i);
+      }
+    }
+  }
+  result = result->SelectColumns(columns).ValueOrDie();
   spdlog::info("Numbers of result: {}", number);
   high_resolution_clock::time_point endTime = high_resolution_clock::now();
   milliseconds timeInterval = chrono::duration_cast<milliseconds>(endTime - beginTime);

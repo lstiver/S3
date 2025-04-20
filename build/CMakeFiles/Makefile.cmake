@@ -80,7 +80,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake/Modules/FindPkgConfig.cmake"
   "/usr/share/cmake/Modules/FindPython.cmake"
   "/usr/share/cmake/Modules/FindPython/Support.cmake"
-  "/usr/share/cmake/Modules/FindPython3.cmake"
   "/usr/share/cmake/Modules/FindThreads.cmake"
   "/usr/share/cmake/Modules/FindZLIB.cmake"
   "/usr/share/cmake/Modules/GNUInstallDirs.cmake"
